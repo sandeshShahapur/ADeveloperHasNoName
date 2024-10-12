@@ -6,8 +6,18 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Oct 2024 18:32:49 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2024 20:41:18 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Glossary</title>
+      <link>http://localhost:1313/glossary/</link>
+      <pubDate>Sat, 12 Oct 2024 20:41:18 +0530</pubDate>
+      <guid>http://localhost:1313/glossary/</guid>
+      <description>&lt;dl&gt;
+&lt;dt&gt;Protocol&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;set of rules and guidelines&lt;/strong&gt; that dictate how participants (whether they are devices, software components, or users) in a system should behave.&lt;/dd&gt;
+&lt;/dl&gt;</description>
+    </item>
     <item>
       <title>What Is OAuth (2.0)? | Definition, Use Cases, and How it Works</title>
       <link>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</link>

@@ -1,6 +1,7 @@
 ---
 title: 'What Is OAuth (2.0)? | Definition, Use Cases, and How it Works'
 date: 2024-10-12T18:32:49+05:30
+author: "Sandesh Shahapur"
 draft: true
 tags: ['OAuth', 'OAuth 2.0', 'Security']
 categories: ['Development', 'Security', 'Article']
@@ -22,7 +23,7 @@ In this way, OAuth enables communication between different services while mainta
 In this guide, we will focus on OAuth 2.0, which is the latest version of the OAuth protocol. Other versions are OAuth 1.0 and OAuth 1.0a, which are now considered outdated due to security vulnerabilities and limitations.
 
 ## Definition
-OAuth (Open Authorization) is a [protocol]( {{< ref "" >}} ) that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.
+OAuth (Open Authorization) is a {{< glossary "protocol" >}} that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.
 
 ## Use Cases of OAuth 2.0
 OAuth 2.0 is widely used in various scenarios to grant access to user data securely. Some common use cases of OAuth 2.0 include:

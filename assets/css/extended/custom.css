@@ -1,0 +1,23 @@
+.glossary-term {
+    border-bottom: 1px dashed;
+    cursor: help;
+    position: relative;
+}
+
+.glossary-term:hover::after {
+    content: attr(data-title);
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 4px;
+    top: 30px;
+    left: 0;
+    z-index: 100;
+    max-width: 300px;
+    white-space: normal;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
