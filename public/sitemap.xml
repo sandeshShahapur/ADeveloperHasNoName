@@ -2,22 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/access-tokens/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
     <lastmod>2024-10-09T12:31:07+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/</loc>
     <lastmod>2024-10-09T12:31:07+05:30</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/concurrency/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/jwt/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/oauth/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/react/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/redis/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/tutorials/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/web-development/</loc>
+    <lastmod>2024-10-09T12:31:07+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/web-security/</loc>
     <lastmod>2024-10-09T12:31:07+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/api/</loc>
     <lastmod>2024-10-09T12:29:04+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/caching/</loc>
-    <lastmod>2024-10-09T12:29:04+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2024-10-09T12:29:04+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/discord/</loc>
@@ -29,19 +59,7 @@
     <loc>http://localhost:1313/tags/rate-limit/</loc>
     <lastmod>2024-10-09T12:29:04+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/redis/</loc>
-    <lastmod>2024-10-09T12:29:04+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-10-09T12:29:04+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/tutorials/</loc>
-    <lastmod>2024-10-09T12:29:04+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/web-development/</loc>
-    <lastmod>2024-10-09T12:29:04+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/web-development/</loc>
     <lastmod>2024-10-09T12:29:04+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>

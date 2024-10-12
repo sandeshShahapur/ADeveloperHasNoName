@@ -6,8 +6,15 @@
     <description>Recent content in Redis on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2024 12:29:04 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 09 Oct 2024 12:31:07 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)</title>
+      <link>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</link>
+      <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</guid>
+      <description>A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.</description>
+    </item>
     <item>
       <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
       <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>

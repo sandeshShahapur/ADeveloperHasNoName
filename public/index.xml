@@ -9,13 +9,11 @@
     <lastBuildDate>Wed, 09 Oct 2024 12:31:07 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Overcoming Concurrent Refresh Attempts of Access Tokens (Jwt)</title>
+      <title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)</title>
       <link>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</link>
       <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</guid>
-      <description>&lt;h2 id=&#34;background&#34;&gt;Background:&lt;/h2&gt;
-&lt;p&gt;I was tasked with developing a web interface for an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord. They wanted to extend their services to a website, and I was responsible for making it happen.
-Because the database for users was modeled around their discord account ID, the website required integrating with Discord. As Discord provides an OAuth service (&lt;a href=&#34;http://localhost:1313/content/blogs/overcoming-(discord)-api-rate-limits-with-redis-cache.md&#34;&gt;OAuth explained&lt;/a&gt;), by using JWT (learn what JWT is here) I implemented login feature through Discord OAuth (learn how to do it yourself here).&lt;/p&gt;</description>
+      <description>A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.</description>
     </item>
     <item>
       <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
