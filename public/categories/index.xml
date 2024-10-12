@@ -6,19 +6,26 @@
     <description>Recent content in Categories on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Oct 2024 12:29:04 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2024 18:32:49 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title> Web Security</title>
+      <link>http://localhost:1313/categories/-web-security/</link>
+      <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
+      <guid>http://localhost:1313/categories/-web-security/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Tutorials</title>
       <link>http://localhost:1313/categories/tutorials/</link>
-      <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
+      <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
       <guid>http://localhost:1313/categories/tutorials/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Development</title>
       <link>http://localhost:1313/categories/web-development/</link>
-      <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
+      <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
       <guid>http://localhost:1313/categories/web-development/</guid>
       <description></description>
     </item>

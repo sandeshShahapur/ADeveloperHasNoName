@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Web Development on ADeveloperHasNoName</title>
-    <link>http://localhost:1313/tags/web-development/</link>
-    <description>Recent content in Web Development on ADeveloperHasNoName</description>
+    <title>Security on ADeveloperHasNoName</title>
+    <link>http://localhost:1313/categories/security/</link>
+    <description>Recent content in Security on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 12 Oct 2024 18:32:49 +0530</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What Is OAuth (2.0)? | Definition, Use Cases, and How it Works</title>
       <link>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</link>
       <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
       <guid>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</guid>
       <description>A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data.</description>
-    </item>
-    <item>
-      <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
-      <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>
-      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
-      <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
     </item>
   </channel>
 </rss>

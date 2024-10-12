@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) | ADeveloperHasNoName</title>
-<meta name="keywords" content="JWT, OAuth, Concurrency, Redis, Access Tokens, React">
-<meta name="description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.">
-<meta name="author" content="Sandesh Shahapur">
-<link rel="canonical" href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">
+<title>What Is OAuth (2.0)? | Definition, Use Cases, and How it Works | ADeveloperHasNoName</title>
+<meta name="keywords" content="OAuth, OAuth 2.0, Security, Web Development">
+<meta name="description" content="A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.54405a410796490bc874ab6181fac9b675753cc2b91375d8f882566459eca428.css" integrity="sha256-VEBaQQeWSQvIdKthgfrJtnV1PMK5E3XY&#43;IJWZFnspCg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,16 +55,16 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)" />
-<meta property="og:description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security." />
+</noscript><meta property="og:title" content="What Is OAuth (2.0)? | Definition, Use Cases, and How it Works" />
+<meta property="og:description" content="A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/" /><meta property="article:section" content="blogs" />
-<meta property="article:published_time" content="2024-10-09T10:04:58+05:30" />
-<meta property="article:modified_time" content="2024-10-12T11:39:05+05:30" />
+<meta property="og:url" content="http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2024-10-12T18:32:49+05:30" />
+<meta property="article:modified_time" content="2024-10-12T18:32:49+05:30" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)"/>
-<meta name="twitter:description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security."/>
+<meta name="twitter:title" content="What Is OAuth (2.0)? | Definition, Use Cases, and How it Works"/>
+<meta name="twitter:description" content="A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data."/>
 
 
 <script type="application/ld+json">
@@ -81,8 +81,8 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)",
-      "item": "http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/"
+      "name": "What Is OAuth (2.0)? | Definition, Use Cases, and How it Works",
+      "item": "http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/"
     }
   ]
 }
@@ -91,24 +91,20 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)",
-  "name": "Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)",
-  "description": "A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.",
+  "headline": "What Is OAuth (2.0)? | Definition, Use Cases, and How it Works",
+  "name": "What Is OAuth (2.0)? | Definition, Use Cases, and How it Works",
+  "description": "A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data.",
   "keywords": [
-    "JWT", "OAuth", "Concurrency", "Redis", "Access Tokens", "React"
+    "OAuth", "OAuth 2.0", "Security", "Web Development"
   ],
-  "articleBody": "Background: I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. The aim was to develop a web interface by integrating it with Discord, which provides OAuth authentication. Since the database for users was modeled around their Discord account ID, I implemented login functionality using Discord OAuth and JWT tokens.\nAuthorization Workflow: Initially, the user is logged out. Upon login, an access token and refresh token are created, both stored as JWTs in cookies. The access token is sent with all requests (via the bearer authorization header), while the refresh token is only sent to a specific refresh endpoint (/refresh). The backend verifies these tokens (JWT verification) whenever frontend makes a request to it.\nIf verification fails for reasons other than expiration, the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending a request to backend at /refresh. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.\nThe Problem: This process works well when only one request is sent at a time. However, since the website uses client-side rendering (CSR) and is a single-page application (SPA) built with React, users often send multiple AJAX requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.\nWhy does this happen? When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated to the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user’s session thereby logging them out.\nSolution Options: Extend token expiration periods: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution. Queue requests: When the frontend detects an expired token, it queues the requests until the refresh is completed. This can slow down the app, especially when expiration times are short. Locking mechanism of Refresh Token: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time. The Chosen Solution: Redis-based Locking Mechanism I chose to implement a locking mechanism using Redis, a fast in-memory data store with built-in key expiry.\nWe allow the first request to refresh the token while the others wait for the result of the first request. Here’s how it works:\nThe backend returns Token expiration error, the frontend then sends a refresh request to the backend at /refresh. Two Redis keys are used: refresh_token_lock:: Indicates whether the refresh token is being processed. refresh_token:: Holds the result status of the refresh attempt for the Token. At /refresh backend first checks if a refresh_token: key exists in Redis. If it does, the system returns the corresponding status. If the key does not exist, we check for the refresh_token_lock: key to see if another request has acquired the lock. If the lock is held, the request waits for it to be released and then checks the status key again. If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned. This ensures that only the first request refreshes the token, while other requests wait for the result.\nConclusion: The Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.\ntags: [OAuth, JWT, Redis, Security, Web Development]\n",
-  "wordCount" : "664",
+  "articleBody": "Why OAuth? Before we dive into OAuth, let’s understand why it is essential in the context of security. Every tool that humans create is done for fixing a problem, and OAuth is no different.\nLet us consider a scenario where you have stored your media files (images, videos, etc.) on a cloud storage service like Google Drive. Now, you are using a media editing application and want to edit an image/video that is stored on your Google Drive. You don’t want to download the file to your local system, edit it with the editing application, and then upload it back to Google Drive, because you find it inconvenient. Instead, you want the media editing application to directly access the file on Google Drive and make the necessary changes.\nSo, how can the media editing application access your files on Google Drive? The files are private and can only be accessed by you. One way is to provide your Google Drive credentials (username and password) to the media editing application. But this is a security risk because the application can misuse your credentials or store them insecurely. This is where OAuth comes into play. It provides a secure way for you to grant access to your Google Drive files to the media editing application without sharing your credentials.\nIn this way, OAuth enables communication between different services while maintaining the security and privacy of user data.\n2.0? Are there different versions of OAuth? In this guide, we will focus on OAuth 2.0, which is the latest version of the OAuth protocol. Other versions are OAuth 1.0 and OAuth 1.0a, which are now considered outdated due to security vulnerabilities and limitations.\nDefinition OAuth (Open Authorization) is a protocol that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.\nUse Cases of OAuth 2.0 OAuth 2.0 is widely used in various scenarios to grant access to user data securely. Some common use cases of OAuth 2.0 include:\nSocial Login: Users can log in to applications using their social media accounts like Google, Facebook, or Twitter (remember the “Log in with Google” or “Log in with Facebook” buttons?). As authentication is provided by the social media accounts, this eliminates the need to create a new account and remember another set of credentials. It also lifts the burden of password management and security from the application owner. It enables Single Sign-On (SSO): Users can log in to multiple applications using a single set of credentials. API Authorization: Third-Party applications including plugins/extensions can access user data through APIs like Discord, Google Drive, Twitter, GitHub, etc. Components of OAuth 2.0 Resource Owner: The user who owns the data and grants access to it. In the Google Drive example, you are the resource owner. Client: The third-party application or website that wants to access the user’s data. In the Google Drive example, the media editing application is the client. Authorization Server: The server that authenticates the user and issues Access Tokens. In the Google Drive example, Google Drive’s authorization server. Resource Server: The server that hosts the user’s data and verifies Access Tokens. In the Google Drive example, Google Drive itself. How OAuth 2.0 Works If the users don’t share their credentials, how does OAuth 2.0 work? Through the term we mentioned earlier: “Access Tokens.” Access Tokens are like keys that allow the client to access the user’s data without knowing the user’s credentials. These tokens are short-lived and can be revoked by the user at any time. As they are short lived, we often use another key called the “Refresh Token” to get a new Access Token when the current one expires.\nOAuth 2.0 works by following a series of steps to grant access to the user’s data:\nAuthorization Request: The client sends an authorization request to the authorization server, asking for permission to access the user’s data. The set of permissions requested is known as a “scope” (e.g., read-only access, read-write access, delete access). Example: “Can I access this user’s Google Drive files?” User Authentication: The user authenticates with the authorization server and grants permission to the client. (You should always check the scope of permissions requested before granting access). Example: You log in to your Google account and authorize the media editing application to access your Google Drive files. Access Token Request: The client sends a request to the authorization server for an Access Token. Example: The media editing application requests an Access Token to access your Google Drive files. Access Token Grant: The authorization server issues an Access Token to the client. Example: Google Drive issues an Access Token to the media editing application. Access Resource: The client sends the Access Token to the resource server to access the user’s data. Example: The media editing application uses the Access Token to access your Google Drive files. Resource Access: The resource server verifies the Access Token and grants access to the user’s data. Example: Google Drive verifies the Access Token and allows the media editing application to access your files. Conclusion OAuth 2.0 is a powerful and secure protocol that allows users to grant access to their data without sharing their credentials. It is widely used in various applications and scenarios to provide a secure and flexible way to access user data. Understanding OAuth 2.0 is essential for developers who want to build secure and user-friendly applications that interact with third-party services.\n",
+  "wordCount" : "908",
   "inLanguage": "en",
-  "datePublished": "2024-10-09T10:04:58+05:30",
-  "dateModified": "2024-10-12T11:39:05+05:30",
-  "author":{
-    "@type": "Person",
-    "name": "Sandesh Shahapur"
-  },
+  "datePublished": "2024-10-12T18:32:49+05:30",
+  "dateModified": "2024-10-12T18:32:49+05:30",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/"
+    "@id": "http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/"
   },
   "publisher": {
     "@type": "Organization",
@@ -230,7 +226,7 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blogs/">Blogs</a></div>
     <h1 class="post-title entry-hint-parent">
-      Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)
+      What Is OAuth (2.0)? | Definition, Use Cases, and How it Works
       <span class="entry-hint" title="Draft">
         <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
           <path
@@ -238,7 +234,7 @@
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2024-10-09 10:04:58 +0530 IST'>October 9, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Sandesh Shahapur&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/Overcoming-Concurrent-Refresh-Attempts-of-Access-Tokens-%28Jwt%29.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2024-10-12 18:32:49 +0530 IST'>October 12, 2024</span>&nbsp;·&nbsp;5 min&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/What_Is_OAuth_%282.0%29_Definition,_Use_Cases,_and_How_it_Works.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> <div class="toc">
@@ -249,93 +245,116 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#background" aria-label="Background:">Background:</a></li>
+                    <a href="#why-oauth" aria-label="Why OAuth?">Why OAuth?</a></li>
                 <li>
-                    <a href="#authorization-workflow" aria-label="Authorization Workflow:">Authorization Workflow:</a></li>
+                    <a href="#20-are-there-different-versions-of-oauth" aria-label="2.0? Are there different versions of OAuth?">2.0? Are there different versions of OAuth?</a></li>
                 <li>
-                    <a href="#the-problem" aria-label="The Problem:">The Problem:</a><ul>
-                        
+                    <a href="#definition" aria-label="Definition">Definition</a></li>
                 <li>
-                    <a href="#why-does-this-happen" aria-label="Why does this happen?">Why does this happen?</a></li></ul>
-                </li>
+                    <a href="#use-cases-of-oauth-20" aria-label="Use Cases of OAuth 2.0">Use Cases of OAuth 2.0</a></li>
                 <li>
-                    <a href="#solution-options" aria-label="Solution Options:">Solution Options:</a></li>
+                    <a href="#components-of-oauth-20" aria-label="Components of OAuth 2.0">Components of OAuth 2.0</a></li>
                 <li>
-                    <a href="#the-chosen-solution-redis-based-locking-mechanism" aria-label="The Chosen Solution: Redis-based Locking Mechanism">The Chosen Solution: Redis-based Locking Mechanism</a></li>
+                    <a href="#how-oauth-20-works" aria-label="How OAuth 2.0 Works">How OAuth 2.0 Works</a></li>
                 <li>
-                    <a href="#conclusion" aria-label="Conclusion:">Conclusion:</a>
+                    <a href="#conclusion" aria-label="Conclusion">Conclusion</a>
                 </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="background">Background:<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h2>
-<p>I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. The aim was to develop a web interface by integrating it with Discord,  which provides <a href="">OAuth</a> authentication. Since the database for users was modeled around their Discord account ID, <a href="">I implemented login functionality using Discord OAuth</a> and <a href="">JWT</a> tokens.</p>
-<h2 id="authorization-workflow">Authorization Workflow:<a hidden class="anchor" aria-hidden="true" href="#authorization-workflow">#</a></h2>
-<p>Initially, the user is logged out. Upon login, an access token and refresh token are created, both stored as JWTs in <a href="">cookies</a>. The access token is sent with all requests (via the bearer authorization header), while the refresh token is only sent to a specific refresh endpoint (<code>/refresh</code>). The backend verifies these tokens (JWT verification) whenever frontend makes a request to it.</p>
-<p>If verification fails for reasons other than expiration, the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending a request to backend at <code>/refresh</code>. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.</p>
-<h2 id="the-problem">The Problem:<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h2>
-<p>This process works well when only one request is sent at a time. However, since the website uses <a href="">client-side rendering (CSR)</a> and is a <a href="">single-page application (SPA)</a> built with React, users often send multiple <a href="">AJAX</a> requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.</p>
-<h3 id="why-does-this-happen">Why does this happen?<a hidden class="anchor" aria-hidden="true" href="#why-does-this-happen">#</a></h3>
-<p>When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated to the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user&rsquo;s session thereby logging them out.</p>
-<h2 id="solution-options">Solution Options:<a hidden class="anchor" aria-hidden="true" href="#solution-options">#</a></h2>
+  <div class="post-content"><h2 id="why-oauth">Why OAuth?<a hidden class="anchor" aria-hidden="true" href="#why-oauth">#</a></h2>
+<p>Before we dive into OAuth, let&rsquo;s understand why it is essential in the context of security. Every tool that humans create is done for fixing a problem, and OAuth is no different.</p>
+<p>Let us consider a scenario where you have stored your media files (images, videos, etc.) on a cloud storage service like Google Drive. Now, you are using a media editing application and want to edit an image/video that is stored on your Google Drive. You don&rsquo;t want to download the file to your local system, edit it with the editing application, and then upload it back to Google Drive, because you find it inconvenient. Instead, you want the media editing application to directly access the file on Google Drive and make the necessary changes.</p>
+<p>So, how can the media editing application access your files on Google Drive? The files are private and can only be accessed by you.
+One way is to provide your Google Drive credentials (username and password) to the media editing application. But this is a security risk because the application can misuse your credentials or store them insecurely.
+This is where OAuth comes into play. It provides a secure way for you to grant access to your Google Drive files to the media editing application without sharing your credentials.</p>
+<p>In this way, OAuth enables communication between different services while maintaining the security and privacy of user data.</p>
+<h2 id="20-are-there-different-versions-of-oauth">2.0? Are there different versions of OAuth?<a hidden class="anchor" aria-hidden="true" href="#20-are-there-different-versions-of-oauth">#</a></h2>
+<p>In this guide, we will focus on OAuth 2.0, which is the latest version of the OAuth protocol. Other versions are OAuth 1.0 and OAuth 1.0a, which are now considered outdated due to security vulnerabilities and limitations.</p>
+<h2 id="definition">Definition<a hidden class="anchor" aria-hidden="true" href="#definition">#</a></h2>
+<p>OAuth (Open Authorization) is a <a href="">protocol</a> that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.</p>
+<h2 id="use-cases-of-oauth-20">Use Cases of OAuth 2.0<a hidden class="anchor" aria-hidden="true" href="#use-cases-of-oauth-20">#</a></h2>
+<p>OAuth 2.0 is widely used in various scenarios to grant access to user data securely. Some common use cases of OAuth 2.0 include:</p>
 <ol>
-<li><strong>Extend token expiration periods</strong>: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution.</li>
-<li><strong>Queue requests</strong>: When the frontend detects an expired token, it queues the requests until the refresh is completed. This can slow down the app, especially when expiration times are short.</li>
-<li><strong>Locking mechanism of Refresh Token</strong>: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time.</li>
-</ol>
-<h2 id="the-chosen-solution-redis-based-locking-mechanism">The Chosen Solution: Redis-based Locking Mechanism<a hidden class="anchor" aria-hidden="true" href="#the-chosen-solution-redis-based-locking-mechanism">#</a></h2>
-<p>I chose to implement a locking mechanism using <a href="">Redis</a>, a fast in-memory data store with built-in key expiry.</p>
-<p>We allow the first request to refresh the token while the others wait for the result of the first request.
-Here’s how it works:</p>
-<ol>
-<li>The backend returns Token expiration error, the frontend then sends a refresh request to the backend at <code>/refresh</code>.</li>
-<li>Two Redis keys are used:
+<li><strong>Social Login</strong>: Users can log in to applications using their social media accounts like Google, Facebook, or Twitter (remember the &ldquo;Log in with Google&rdquo; or &ldquo;Log in with Facebook&rdquo; buttons?). As authentication is provided by the social media accounts, this eliminates the need to create a new account and remember another set of credentials.
+It also lifts the burden of password management and security from the application owner.
 <ul>
-<li><code>refresh_token_lock:&lt;Refresh Token&gt;</code>: Indicates whether the refresh token is being processed.</li>
-<li><code>refresh_token:&lt;Refresh Token&gt;</code>: Holds the result status of the refresh attempt for the Token.</li>
+<li>It enables Single Sign-On (SSO): Users can log in to multiple applications using a single set of credentials.</li>
 </ul>
 </li>
-<li>At <code>/refresh</code> backend first checks if a <code>refresh_token:&lt;Refresh Token&gt;</code> key exists in Redis. If it does, the system returns the corresponding status.</li>
-<li>If the key does not exist, we check for the <code>refresh_token_lock:&lt;Refresh Token&gt;</code> key to see if another request has acquired the lock. If the lock is held, the request waits for it to be released and then checks the status key again.</li>
-<li>If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned.</li>
+<li><strong>API Authorization</strong>: Third-Party applications including plugins/extensions can access user data through APIs like Discord, Google Drive, Twitter, GitHub, etc.</li>
 </ol>
-<p>This ensures that only the first request refreshes the token, while other requests wait for the result.</p>
-<h2 id="conclusion">Conclusion:<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>The Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.</p>
-<p>tags: [OAuth, JWT, Redis, Security, Web Development]</p>
+<h2 id="components-of-oauth-20">Components of OAuth 2.0<a hidden class="anchor" aria-hidden="true" href="#components-of-oauth-20">#</a></h2>
+<ol>
+<li><strong>Resource Owner</strong>: The user who owns the data and grants access to it. In the Google Drive example, you are the resource owner.</li>
+<li><strong>Client</strong>: The third-party application or website that wants to access the user&rsquo;s data. In the Google Drive example, the media editing application is the client.</li>
+<li><strong>Authorization Server</strong>: The server that authenticates the user and issues Access Tokens. In the Google Drive example, Google Drive&rsquo;s authorization server.</li>
+<li><strong>Resource Server</strong>: The server that hosts the user&rsquo;s data and verifies Access Tokens. In the Google Drive example, Google Drive itself.</li>
+</ol>
+<h2 id="how-oauth-20-works">How OAuth 2.0 Works<a hidden class="anchor" aria-hidden="true" href="#how-oauth-20-works">#</a></h2>
+<p>If the users don&rsquo;t share their credentials, how does OAuth 2.0 work? Through the term we mentioned earlier: &ldquo;Access Tokens.&rdquo;
+Access Tokens are like keys that allow the client to access the user&rsquo;s data without knowing the user&rsquo;s credentials. These tokens are short-lived and can be revoked by the user at any time. As they are short lived, we often use another key called the &ldquo;Refresh Token&rdquo; to get a new Access Token when the current one expires.</p>
+<p>OAuth 2.0 works by following a series of steps to grant access to the user&rsquo;s data:</p>
+<ol>
+<li><strong>Authorization Request</strong>: The client sends an authorization request to the authorization server, asking for permission to access the user&rsquo;s data. The set of permissions requested is known as a &ldquo;scope&rdquo; (e.g., read-only access, read-write access, delete access).
+<ul>
+<li>Example: &ldquo;Can I access this user&rsquo;s Google Drive files?&rdquo;</li>
+</ul>
+</li>
+<li><strong>User Authentication</strong>: The user authenticates with the authorization server and grants permission to the client. (<strong>You should always check the scope of permissions requested before granting access</strong>).
+<ul>
+<li>Example: You log in to your Google account and authorize the media editing application to access your Google Drive files.</li>
+</ul>
+</li>
+<li><strong>Access Token Request</strong>: The client sends a request to the authorization server for an Access Token.
+<ul>
+<li>Example: The media editing application requests an Access Token to access your Google Drive files.</li>
+</ul>
+</li>
+<li><strong>Access Token Grant</strong>: The authorization server issues an Access Token to the client.
+<ul>
+<li>Example: Google Drive issues an Access Token to the media editing application.</li>
+</ul>
+</li>
+<li><strong>Access Resource</strong>: The client sends the Access Token to the resource server to access the user&rsquo;s data.
+<ul>
+<li>Example: The media editing application uses the Access Token to access your Google Drive files.</li>
+</ul>
+</li>
+<li><strong>Resource Access</strong>: The resource server verifies the Access Token and grants access to the user&rsquo;s data.
+<ul>
+<li>Example: Google Drive verifies the Access Token and allows the media editing application to access your files.</li>
+</ul>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>OAuth 2.0 is a powerful and secure protocol that allows users to grant access to their data without sharing their credentials. It is widely used in various applications and scenarios to provide a secure and flexible way to access user data. Understanding OAuth 2.0 is essential for developers who want to build secure and user-friendly applications that interact with third-party services.</p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/jwt/">JWT</a></li>
       <li><a href="http://localhost:1313/tags/oauth/">OAuth</a></li>
-      <li><a href="http://localhost:1313/tags/concurrency/">Concurrency</a></li>
-      <li><a href="http://localhost:1313/tags/redis/">Redis</a></li>
-      <li><a href="http://localhost:1313/tags/access-tokens/">Access Tokens</a></li>
-      <li><a href="http://localhost:1313/tags/react/">React</a></li>
+      <li><a href="http://localhost:1313/tags/oauth-2.0/">OAuth 2.0</a></li>
+      <li><a href="http://localhost:1313/tags/security/">Security</a></li>
+      <li><a href="http://localhost:1313/tags/web-development/">Web Development</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>What Is OAuth (2.0)? | Definition, Use Cases, and How it Works</span>
-  </a>
-  <a class="next" href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">
+  <a class="next" href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">
     <span class="title">Next »</span>
     <br>
-    <span>Overcoming (discord) API Rate Limits With Redis Cache</span>
+    <span>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)</span>
   </a>
 </nav>
 
 
 <ul class="share-buttons">
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on x"
-            href="https://x.com/intent/tweet/?text=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29&amp;url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f&amp;hashtags=JWT%2cOAuth%2cConcurrency%2cRedis%2cAccessTokens%2cReact">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on x"
+            href="https://x.com/intent/tweet/?text=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works&amp;url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f&amp;hashtags=OAuth%2cOAuth2.0%2cSecurity%2cWebDevelopment">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -343,8 +362,8 @@ Here’s how it works:</p>
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f&amp;title=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29&amp;summary=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29&amp;source=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f&amp;title=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works&amp;summary=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works&amp;source=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -352,8 +371,8 @@ Here’s how it works:</p>
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on reddit"
-            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f&title=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f&title=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -361,8 +380,8 @@ Here’s how it works:</p>
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
@@ -370,8 +389,8 @@ Here’s how it works:</p>
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on whatsapp"
-            href="https://api.whatsapp.com/send?text=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29%20-%20http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on whatsapp"
+            href="https://api.whatsapp.com/send?text=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works%20-%20http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -379,8 +398,8 @@ Here’s how it works:</p>
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on telegram"
-            href="https://telegram.me/share/url?text=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29&amp;url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on telegram"
+            href="https://telegram.me/share/url?text=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works&amp;url=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -388,8 +407,8 @@ Here’s how it works:</p>
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Overcoming%20Concurrent%20Refresh%20Attempts%20of%20Access%20Tokens%20%28JWT%29&u=http%3a%2f%2flocalhost%3a1313%2fblogs%2fovercoming-concurrent-refresh-attempts-of-access-tokens-jwt%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share What Is OAuth (2.0)? | Definition, Use Cases, and How it Works on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=What%20Is%20OAuth%20%282.0%29%3f%20%7c%20Definition%2c%20Use%20Cases%2c%20and%20How%20it%20Works&u=http%3a%2f%2flocalhost%3a1313%2fblogs%2fwhat_is_oauth_2.0_definition_use_cases_and_how_it_works%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path
