@@ -6,8 +6,15 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2024 13:32:37 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 16:45:35 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What are HTTP and HTTPS Protocols?</title>
+      <link>http://localhost:1313/blogs/what_are_http_and_https_protocols/</link>
+      <pubDate>Sun, 13 Oct 2024 16:45:35 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/what_are_http_and_https_protocols/</guid>
+      <description>An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet.</description>
+    </item>
     <item>
       <title>What Are Browser HTTP Cookies?</title>
       <link>http://localhost:1313/blogs/what_are_browser_http_cookies/</link>
@@ -25,14 +32,46 @@
 &lt;dd&gt;The &lt;strong&gt;server-side&lt;/strong&gt;/&lt;strong&gt;behind-scenes&lt;/strong&gt; of a application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the client (front-end).&lt;/dd&gt;
 &lt;dt&gt;Client&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a server. Clients can be web browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
+&lt;dt&gt;CSS&lt;/dt&gt;
+&lt;dd&gt;Cascading Style Sheets is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/dd&gt;
+&lt;dt&gt;DNS&lt;/dt&gt;
+&lt;dd&gt;The Domain Name System translates website domain names into IP addresses, which are used by computers to locate websites and other internet resources. It acts as the internet&amp;rsquo;s phone book, eliminating the need for users to remember IP addresses.&lt;/dd&gt;
 &lt;dt&gt;Frontend&lt;/dt&gt;
 &lt;dd&gt;The &lt;strong&gt;client-side&lt;/strong&gt;/&lt;strong&gt;front-scenes&lt;/strong&gt; of an application that is responsible for rendering the user interface and sending requests to the server (backend) for processing.&lt;/dd&gt;
+&lt;dt&gt;HTML&lt;/dt&gt;
+&lt;dd&gt;HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g. headings (&lt;!-- raw HTML omitted --&gt;), paragraphs (&lt;!-- raw HTML omitted --&gt;), images (&lt;!-- raw HTML omitted --&gt;), links (&lt;!-- raw HTML omitted --&gt;), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.&lt;/dd&gt;
+&lt;dt&gt;HTTP&lt;/dt&gt;
+&lt;dd&gt;HyperText Transfer Protocol is the protocol that clients (browsers) and servers (Web-Servers) use to communicate website components like HTML, CSS, JavaScript files, images, etc. with each other over the internet.&lt;/dd&gt;
+&lt;dt&gt;HTTPS&lt;/dt&gt;
+&lt;dd&gt;HyperText Transfer Protocol Secure is the secure version of HTTP. It encrypts the data exchanged between the client and server, ensuring that it cannot be intercepted by unauthorized parties.&lt;/dd&gt;
+&lt;dt&gt;HyperText&lt;/dt&gt;
+&lt;dd&gt;A text that contains links to other texts. When you click on a link, you are taken to another text.&lt;/dd&gt;
+&lt;dt&gt;Idempotent&lt;/dt&gt;
+&lt;dd&gt;An operation that produces the same result no matter how many times it is executed. For example, a GET request is idempotent because it retrieves the same resource every time it is executed.&lt;/dd&gt;
+&lt;dt&gt;Internet&lt;/dt&gt;
+&lt;dd&gt;A global network of computers that are connected and communicate with each other using the Internet Protocol (IP). It allows users to access and share information, resources, and services across the world.&lt;/dd&gt;
+&lt;dt&gt;IP-Address&lt;/dt&gt;
+&lt;dd&gt;An Internet-Protocol Address is a &lt;strong&gt;unique numerical label&lt;/strong&gt; (e.g., 182.98.18.46) that identifies a device connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can be used to identify the location of a device.&lt;/dd&gt;
+&lt;dt&gt;JavaScript&lt;/dt&gt;
+&lt;dd&gt;A high-level, interpreted programming language that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more. JavaScript is executed on the client-side (browser) and can interact with the Document Object Model (DOM) of a web page to update content, style, and structure.&lt;/dd&gt;
+&lt;dt&gt;JSON&lt;/dt&gt;
+&lt;dd&gt;JavaScript Object Notation is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is used to transmit data between a server and a web application as an alternative to XML.&lt;/dd&gt;
+&lt;dt&gt;MAC-Address&lt;/dt&gt;
+&lt;dd&gt;A Media Access Control Address is a hardware identifier that &lt;strong&gt;uniquely identifies&lt;/strong&gt; each device on a network. Primarily, the manufacturer assigns it. They are often found on a device&amp;rsquo;s network interface controller (NIC) card.&lt;/dd&gt;
+&lt;dt&gt;Markup-Language&lt;/dt&gt;
+&lt;dd&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/dd&gt;
 &lt;dt&gt;Protocol&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;set of rules and guidelines&lt;/strong&gt; that dictate how participants (whether they are devices, software components, or users) in a system should behave.&lt;/dd&gt;
 &lt;dt&gt;Server&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;computer program&lt;/strong&gt; or a &lt;strong&gt;device&lt;/strong&gt; that provides functionality to other devices or programs, known as clients, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/dd&gt;
+&lt;dt&gt;Transfer&lt;/dt&gt;
+&lt;dd&gt;Exchange of data between the client and server.&lt;/dd&gt;
+&lt;dt&gt;URL&lt;/dt&gt;
+&lt;dd&gt;A Uniform Resource Locator is a &lt;strong&gt;web address&lt;/strong&gt; that specifies the location of a resource on the internet. It consists of a protocol (e.g., HTTP, HTTPS), a domain name (e.g., example.com), a path to the resource (e.g., /blog) and optional query parameters (e.g., ?id=123) to makeup a complete URL, e.g., &lt;a href=&#34;https://example.com/blog?id=123&#34;&gt;https://example.com/blog?id=123&lt;/a&gt;.&lt;/dd&gt;
 &lt;dt&gt;Web-Server&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;server&lt;/strong&gt; that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.&lt;/dd&gt;
+&lt;dt&gt;XML&lt;/dt&gt;
+&lt;dd&gt;Extensible Markup Language is a markup language that is commonly used to carry and describe data. It is a self-descriptive language that allows you to define your own tags and attributes.&lt;/dd&gt;
 &lt;/dl&gt;</description>
     </item>
     <item>
