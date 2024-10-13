@@ -6,8 +6,29 @@
     <description>Recent content in Tags on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Oct 2024 20:21:52 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 07:56:37 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cookies</title>
+      <link>http://localhost:1313/tags/cookies/</link>
+      <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
+      <guid>http://localhost:1313/tags/cookies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
+      <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
+      <guid>http://localhost:1313/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
     <item>
       <title>OAuth</title>
       <link>http://localhost:1313/tags/oauth/</link>
@@ -20,13 +41,6 @@
       <link>http://localhost:1313/tags/oauth-2.0/</link>
       <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
       <guid>http://localhost:1313/tags/oauth-2.0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
-      <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
-      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
@@ -90,13 +104,6 @@
       <link>http://localhost:1313/tags/rate-limit/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/rate-limit/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Development</title>
-      <link>http://localhost:1313/tags/web-development/</link>
-      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
   </channel>

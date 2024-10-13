@@ -6,8 +6,15 @@
     <description>Recent content in Web Development on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Oct 2024 20:21:06 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 07:56:37 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Are Browser HTTP Cookies?</title>
+      <link>http://localhost:1313/blogs/what_are_browser_http_cookies/</link>
+      <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/what_are_browser_http_cookies/</guid>
+      <description>An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.</description>
+    </item>
     <item>
       <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
       <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>

@@ -3,18 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-13T01:13:14+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/glossary/</loc>
-    <lastmod>2024-10-13T01:13:14+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/article/</loc>
-    <lastmod>2024-10-13T01:13:14+05:30</lastmod>
+    <lastmod>2024-10-13T13:32:37+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/</loc>
-    <lastmod>2024-10-13T01:13:14+05:30</lastmod>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cookies/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-development/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/web-development/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/web-security/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blogs/what_are_browser_http_cookies/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/glossary/</loc>
+    <lastmod>2024-10-13T13:32:37+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/article/</loc>
     <lastmod>2024-10-13T01:13:14+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/development/</loc>
@@ -26,13 +47,7 @@
     <loc>http://localhost:1313/tags/oauth-2.0/</loc>
     <lastmod>2024-10-13T01:13:14+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2024-10-13T01:13:14+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/security/</loc>
-    <lastmod>2024-10-13T01:13:14+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-10-13T01:13:14+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</loc>
@@ -59,12 +74,6 @@
     <loc>http://localhost:1313/categories/tutorials/</loc>
     <lastmod>2024-10-12T20:21:06+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/web-development/</loc>
-    <lastmod>2024-10-12T20:21:06+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/web-security/</loc>
-    <lastmod>2024-10-12T11:39:05+05:30</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/api/</loc>
     <lastmod>2024-10-12T20:21:06+05:30</lastmod>
   </url><url>
@@ -78,9 +87,6 @@
     <lastmod>2024-10-12T20:21:06+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rate-limit/</loc>
-    <lastmod>2024-10-12T20:21:06+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/web-development/</loc>
     <lastmod>2024-10-12T20:21:06+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>

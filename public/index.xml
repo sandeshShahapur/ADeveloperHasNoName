@@ -6,8 +6,15 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2024 01:13:14 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 13:32:37 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Are Browser HTTP Cookies?</title>
+      <link>http://localhost:1313/blogs/what_are_browser_http_cookies/</link>
+      <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/what_are_browser_http_cookies/</guid>
+      <description>An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.</description>
+    </item>
     <item>
       <title>Glossary</title>
       <link>http://localhost:1313/glossary/</link>
@@ -15,11 +22,11 @@
       <guid>http://localhost:1313/glossary/</guid>
       <description>&lt;dl&gt;
 &lt;dt&gt;Backend&lt;/dt&gt;
-&lt;dd&gt;The &lt;strong&gt;server-side&lt;/strong&gt;/&lt;strong&gt;invisible-side&lt;/strong&gt; of a application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the client (front-end).&lt;/dd&gt;
+&lt;dd&gt;The &lt;strong&gt;server-side&lt;/strong&gt;/&lt;strong&gt;behind-scenes&lt;/strong&gt; of a application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the client (front-end).&lt;/dd&gt;
 &lt;dt&gt;Client&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a server. Clients can be web browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
 &lt;dt&gt;Frontend&lt;/dt&gt;
-&lt;dd&gt;The &lt;strong&gt;client-side&lt;/strong&gt;/&lt;strong&gt;visible-side&lt;/strong&gt; of an application that is responsible for rendering the user interface and sending requests to the server (backend) for processing.&lt;/dd&gt;
+&lt;dd&gt;The &lt;strong&gt;client-side&lt;/strong&gt;/&lt;strong&gt;front-scenes&lt;/strong&gt; of an application that is responsible for rendering the user interface and sending requests to the server (backend) for processing.&lt;/dd&gt;
 &lt;dt&gt;Protocol&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;set of rules and guidelines&lt;/strong&gt; that dictate how participants (whether they are devices, software components, or users) in a system should behave.&lt;/dd&gt;
 &lt;dt&gt;Server&lt;/dt&gt;
