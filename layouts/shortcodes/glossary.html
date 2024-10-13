@@ -1,16 +1,17 @@
-{{ $glossary := site.GetPage "glossary.md" }}
-{{ $term := .Get 0 | lower }}
+{{- $glossary := site.GetPage "glossary.md" -}}
+{{- $term := .Get 0}}
+{{- $term_lc := .Get 0 | lower -}}
 
-{{ $definition := "" }}
+{{- $definition := "" -}}
 
-{{ range $key, $value := $glossary.Params.glossary }}
-  {{ if eq (lower $key) $term }}
-    {{ $definition = $value }}
-  {{ end }}
-{{ end }}
+{{- range $key, $value := $glossary.Params.glossary -}}
+  {{- if eq (lower $key) $term_lc -}}
+    {{- $definition = $value -}}
+  {{- end -}}
+{{- end -}}
 
-{{ if $definition }}
+{{- if $definition -}}
     <span class="glossary-term" title="{{ $definition }}" data-title="{{ $definition }}">{{ $term }}</span>
-{{ else }}
-  {{ $term }}
-{{ end }}
+{{- else -}}
+  {{- $term -}}
+{{- end -}}
