@@ -6,7 +6,7 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Oct 2024 20:41:18 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2024 01:13:14 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Glossary</title>
@@ -14,8 +14,18 @@
       <pubDate>Sat, 12 Oct 2024 20:41:18 +0530</pubDate>
       <guid>http://localhost:1313/glossary/</guid>
       <description>&lt;dl&gt;
+&lt;dt&gt;Backend&lt;/dt&gt;
+&lt;dd&gt;The &lt;strong&gt;server-side&lt;/strong&gt;/&lt;strong&gt;invisible-side&lt;/strong&gt; of a application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the client (front-end).&lt;/dd&gt;
+&lt;dt&gt;Client&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a server. Clients can be web browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
+&lt;dt&gt;Frontend&lt;/dt&gt;
+&lt;dd&gt;The &lt;strong&gt;client-side&lt;/strong&gt;/&lt;strong&gt;visible-side&lt;/strong&gt; of an application that is responsible for rendering the user interface and sending requests to the server (backend) for processing.&lt;/dd&gt;
 &lt;dt&gt;Protocol&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;set of rules and guidelines&lt;/strong&gt; that dictate how participants (whether they are devices, software components, or users) in a system should behave.&lt;/dd&gt;
+&lt;dt&gt;Server&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;computer program&lt;/strong&gt; or a &lt;strong&gt;device&lt;/strong&gt; that provides functionality to other devices or programs, known as clients, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/dd&gt;
+&lt;dt&gt;Web-Server&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;server&lt;/strong&gt; that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.&lt;/dd&gt;
 &lt;/dl&gt;</description>
     </item>
     <item>

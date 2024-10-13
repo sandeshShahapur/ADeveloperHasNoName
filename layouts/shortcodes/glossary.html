@@ -1,6 +1,16 @@
-{{ $glossary := site.GetPage "glossary.md" }} {{ $term := .Get 0 }} {{
-$definition := index $glossary.Params.glossary $term }} {{ if $definition }}
-<span class="glossary-term" title="{{ $definition }}" data-title="{{ $definition }}">{{ $term }}</span>
-{{ else }} {{ $term }}
-<!-- In case the term is not found in the glossary, show the term as plain text -->
+{{ $glossary := site.GetPage "glossary.md" }}
+{{ $term := .Get 0 | lower }}
+
+{{ $definition := "" }}
+
+{{ range $key, $value := $glossary.Params.glossary }}
+  {{ if eq (lower $key) $term }}
+    {{ $definition = $value }}
+  {{ end }}
+{{ end }}
+
+{{ if $definition }}
+    <span class="glossary-term" title="{{ $definition }}" data-title="{{ $definition }}">{{ $term }}</span>
+{{ else }}
+  {{ $term }}
 {{ end }}
