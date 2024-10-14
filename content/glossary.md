@@ -13,7 +13,7 @@ glossary:
   HTTPS: HyperText Transfer Protocol Secure is the secure version of HTTP. It encrypts the data exchanged between the client   and server, ensuring that it cannot be intercepted by unauthorized parties.
   HyperText: A text that contains links to other texts. When you click on a link, you are taken to another text.
   Idempotent: An operation that produces the same result no matter how many times it is executed. For example, a GET request   is idempotent because it retrieves the same resource every time it is executed.
-  Internet: A global network of computers that are connected and communicate with each other using the Internet Protocol (IP).   It allows users to access and share information, resources, and services across the world.
+  Internet: It is like an intricate network of highways (data cables) connecting cities (servers) and towns (clients) across the globe. A network of network. It allows users to access and share information, resources, and services across the world and with each other.
   IP-Address: An Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device   connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can   be used to identify the location of a device.
   JavaScript: A high-level, interpreted programming language that is used to make web pages interactive and dynamic. It is   used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the client-side (browser) and can interact with the Document Object Model (DOM) of a web page to   update content, style, and structure.
   JSON: JavaScript Object Notation is a lightweight data-interchange format that is easy for humans to read and write, and   easy for machines to parse and generate. It is used to transmit data between a server and a web application as an   alternative to XML.
@@ -58,7 +58,7 @@ Idempotent
 :   An operation that produces the same result no matter how many times it is executed. For example, a GET request is idempotent because it retrieves the same resource every time it is executed.
 
 Internet
-:   A global network of computers that are connected and communicate with each other using the Internet Protocol (IP). It allows users to access and share information, resources, and services across the world.
+:   It is like an intricate network of highways (data cables) connecting cities (servers) and towns (clients) across the globe. A network of network. It allows users to access and share information, resources, and services across the world and with each other.
 
 IP-Address
 :   An Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can be used to identify the location of a device.
