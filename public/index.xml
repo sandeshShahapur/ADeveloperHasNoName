@@ -6,7 +6,7 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2024 16:45:35 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2024 08:03:12 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What are HTTP and HTTPS Protocols?</title>
@@ -28,12 +28,18 @@
       <pubDate>Sat, 12 Oct 2024 20:41:18 +0530</pubDate>
       <guid>http://localhost:1313/glossary/</guid>
       <description>&lt;dl&gt;
+&lt;dt&gt;Access Token&lt;/dt&gt;
+&lt;dd&gt;It&amp;rsquo;s like a short-lived pass that allows a user or app to access certain parts of a system or service, similar to a ticket for entering an event. It expires after a while, requiring renewal for continued access. It is used to authenticate and authorize requests to a server.&lt;/dd&gt;
+&lt;dt&gt;API&lt;/dt&gt;
+&lt;dd&gt;Application Programming Interface is an interface i.e. a shared-boundary/layer between two software components that provides a means for them to communicate or interact with each other for exchanging information. It defines how access or interaction should occur between the two.&lt;/dd&gt;
 &lt;dt&gt;Backend&lt;/dt&gt;
 &lt;dd&gt;The &lt;strong&gt;server-side&lt;/strong&gt;/&lt;strong&gt;behind-scenes&lt;/strong&gt; of a application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the client (front-end).&lt;/dd&gt;
 &lt;dt&gt;Client&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a server. Clients can be web browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
 &lt;dt&gt;CSS&lt;/dt&gt;
 &lt;dd&gt;Cascading Style Sheets is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/dd&gt;
+&lt;dt&gt;Discord&lt;/dt&gt;
+&lt;dd&gt;A platform where you can chat, speak, stream with your friends or communities. A Discord server is like a big group space. Servers contain channels which are like chat rooms for a specific topic. You can also join voice channels to talk/stream. Discord bots are user interactable community-made programs that can help you manage your server, play music, moderate, play games, etc that you can add to your server.&lt;/dd&gt;
 &lt;dt&gt;DNS&lt;/dt&gt;
 &lt;dd&gt;The Domain Name System translates website domain names into IP addresses, which are used by computers to locate websites and other internet resources. It acts as the internet&amp;rsquo;s phone book, eliminating the need for users to remember IP addresses.&lt;/dd&gt;
 &lt;dt&gt;Frontend&lt;/dt&gt;
@@ -48,6 +54,10 @@
 &lt;dd&gt;A text that contains links to other texts. When you click on a link, you are taken to another text.&lt;/dd&gt;
 &lt;dt&gt;Idempotent&lt;/dt&gt;
 &lt;dd&gt;An operation that produces the same result no matter how many times it is executed. For example, a GET request is idempotent because it retrieves the same resource every time it is executed.&lt;/dd&gt;
+&lt;dt&gt;Interface&lt;/dt&gt;
+&lt;dd&gt;A shared boundary/layer between two entities (e.g., software components, devices, systems, etc.) that provides a means for them to communicate or interact with each other for exchanging information. It defines how access or interaction should occur between the entities.&lt;/dd&gt;
+&lt;dt&gt;User-Interface&lt;/dt&gt;
+&lt;dd&gt;The visual elements of a software application that users interact with, such as buttons, menus, forms, and other controls. It is designed to be intuitive, user-friendly, and responsive to user input.&lt;/dd&gt;
 &lt;dt&gt;Internet&lt;/dt&gt;
 &lt;dd&gt;It is like an intricate network of highways (data cables) connecting cities (servers) and towns (clients) across the globe. A network of network. It allows users to access and share information, resources, and services across the world and with each other.&lt;/dd&gt;
 &lt;dt&gt;IP-Address&lt;/dt&gt;
@@ -62,6 +72,8 @@
 &lt;dd&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/dd&gt;
 &lt;dt&gt;Protocol&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;set of rules and guidelines&lt;/strong&gt; that dictate how participants (whether they are devices, software components, or users) in a system should behave.&lt;/dd&gt;
+&lt;dt&gt;Rate-Limit&lt;/dt&gt;
+&lt;dd&gt;A restriction on the number of requests a client (user or application) can make to a server within a specified time frame. Rate limiting is used to prevent abuse, protect against denial-of-service attacks, and ensure fair usage of resources.&lt;/dd&gt;
 &lt;dt&gt;Server&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;computer program&lt;/strong&gt; or a &lt;strong&gt;device&lt;/strong&gt; that provides functionality to other devices or programs, known as clients, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/dd&gt;
 &lt;dt&gt;Transfer&lt;/dt&gt;

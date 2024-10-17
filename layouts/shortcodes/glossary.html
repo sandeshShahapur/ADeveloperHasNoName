@@ -1,5 +1,7 @@
 {{- $glossary := site.GetPage "glossary.md" -}}
+
 {{- $term := .Get 0}}
+{{- $displayTerm := .Get 1 | default $term -}}
 {{- $term_lc := .Get 0 | lower -}}
 
 {{- $definition := "" -}}
@@ -11,7 +13,7 @@
 {{- end -}}
 
 {{- if $definition -}}
-    <span class="glossary-term" title="{{ $definition }}" data-title="{{ $definition }}">{{ $term }}</span>
+    <span class="glossary-term" title="{{ $definition }}" data-title="{{ $definition }}">{{ $displayTerm }}</span>
 {{- else -}}
-  {{- $term -}}
+  {{- $displayTerm -}}
 {{- end -}}
