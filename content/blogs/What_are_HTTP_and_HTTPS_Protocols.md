@@ -1,11 +1,11 @@
 ---
-title: 'What are HTTP and HTTPS Protocols?'
+title: "What are HTTP and HTTPS Protocols?"
 date: 2024-10-13T16:45:35+05:30
 draft: true
-author: "Sandesh Shahapur"
-tags: ['HTTP', 'HTTPS', 'Networking', 'Web Development', 'Web Security']
-categories: ['Web Development', 'Networking']
-summary: 'An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet.'
+author: "Sandy"
+tags: ["HTTP", "HTTPS", "Networking", "Web Development", "Web Security"]
+categories: ["Web Development", "Networking"]
+summary: "An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet."
 ---
 
 You are familiar with using browsers to access websites and you might have seen {{< glossary "URL" >}}s starting with `http://` or `https://`. When you type a URL like `http://example.com` in your browser's address bar and press Enter, you are then presented with the website's content. How does this happen?
@@ -27,14 +27,16 @@ So, in a nutshell, HTTP is the language that the client and server use to exchan
 HTTP works in a client-server model.
 
 First, the client sends a request to the server. Let's look at how this request looks:
+
 1. **Request Line**: Contains the method, the URL, and the HTTP version.
-    - The method specifies the action to be performed on the resource (GET, POST, PUT, DELETE, etc.).
-    - The URL specifies the location of the resource.
-    - The HTTP version specifies the version of the HTTP protocol being used.
+   - The method specifies the action to be performed on the resource (GET, POST, PUT, DELETE, etc.).
+   - The URL specifies the location of the resource.
+   - The HTTP version specifies the version of the HTTP protocol being used.
 2. **Headers**: Contains additional information about the request like the type of content the client can accept (text/html, application/json, etc.), the type of content the client is sending (application/x-www-form-urlencoded, multipart/form-data, etc.), the type of encoding used (gzip, deflate, etc.), and more.
 3. **Body**: Contains the data being sent to the server. This is optional and is used in POST, PUT and PATCH requests.
 
 Next, the server processes the request and responds with the requested content. Let's look at how this response looks:
+
 1. **Status Line**: Contains the HTTP version, the status code (200 for success, 404 for not found, 500 for server error, etc.), and a status message.
 2. **Headers**: Contains additional information about the response like the type of content being sent (text/html, application/json, etc.), the length of the content, the type of encoding used (gzip, deflate, etc.), and more.
 3. **Body**: Contains the data being sent back to the client. This can be HTML content, {{< glossary "JSON" >}} data, images, etc.
@@ -46,6 +48,7 @@ In this way, HTTP enables the client and server to communicate effectively over 
 ## HTTP Methods
 
 Every HTTP request contains a method that specifies the action to be performed on the resource. Some common HTTP methods are:
+
 1. **GET**: Used to retrieve data from the server. The data is sent in the URL.
 2. **POST**: Used to submit data to the server. The data is sent in the body of the request.
 3. **PUT**: Used to update data on the server. The data is sent in the body of the request.
@@ -57,22 +60,24 @@ Every HTTP request contains a method that specifies the action to be performed o
 ## HTTP Status Codes
 
 Every HTTP response contains a status code that indicates the status of the request. Range of status codes are divided into 5 categories:
+
 1. **1xx**: Informational responses.
-    - Example: 100 Continue, 101 Switching Protocols.
+   - Example: 100 Continue, 101 Switching Protocols.
 2. **2xx**: Success responses.
-    - Example: 200 OK, 201 Created, 204 No Content.
+   - Example: 200 OK, 201 Created, 204 No Content.
 3. **3xx**: Redirection responses.
-    - Example: 301 Moved Permanently, 302 Found, 304 Not Modified.
+   - Example: 301 Moved Permanently, 302 Found, 304 Not Modified.
 4. **4xx**: Client error responses.
-    - Example: 400 Bad Request, 401 Unauthorized, 404 Not Found.
+   - Example: 400 Bad Request, 401 Unauthorized, 404 Not Found.
 5. **5xx**: Server error responses.
-    - Example: 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable.
+   - Example: 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable.
 
 These codes help developers and clients identify the result of the request, enabling effective debugging.
 
 ## Idempotent Methods
 
 Some HTTP methods are considered idempotent, which means that making the same request multiple times has the same effect as making it once. This property is useful in scenarios where requests can be retried without causing unintended side effects. Some idempotent methods are:
+
 1. **GET**: Retrieving data multiple times has the same effect.
 2. **PUT**: Updating data multiple times has the same effect.
 3. **DELETE**: Deleting data multiple times has the same effect.
@@ -84,6 +89,7 @@ Post and Patch methods are not idempotent as making the same request multiple ti
 ## HTTP Versions
 
 HTTP has evolved over the years, with different versions introducing new features and improvements. Some of the major versions are:
+
 1. **HTTP/0.9**: The first version of HTTP, introduced in 1991. It was a simple protocol that allowed clients to request a single file from a server.
 2. **HTTP/1.0**: Introduced in 1996, it added support for multiple types of data, including images, audio, and video. It also introduced status codes and headers.
 3. **HTTP/1.1**: Introduced in 1999, it is the most widely used version of HTTP. It introduced persistent connections, pipelining, and improved caching.

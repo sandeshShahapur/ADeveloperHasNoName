@@ -1,11 +1,11 @@
 ---
-title: 'What Are Browser HTTP Cookies?'
+title: "What Are Browser HTTP Cookies?"
 date: 2024-10-13T07:56:37+05:30
-author: "Sandesh Shahapur"
+author: "Sandy"
 draft: true
-tags: ['Cookies', 'Web Development', 'Security']
-categories: ['Web Development', 'Web Security']
-summary: 'An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.'
+tags: ["Cookies", "Web Development", "Security"]
+categories: ["Web Development", "Web Security"]
+summary: "An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web."
 ---
 
 When you visit a website, you might have noticed a message that says, "This website uses cookies to ensure you get the best experience on our website" or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.
@@ -15,6 +15,7 @@ When you visit a website, you might have noticed a message that says, "This webs
 Browsers use the [HTTP protocol]( {{< ref "" >}} ) to communicate with a {{< glossary "web-server" >}} for requesting web pages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.
 
 There are few options for storing data on the {{< glossary "client" >}} (browser) like:
+
 1. **Cookies**: Small pieces of data.
 2. **Local Storage**: A larger storage area.
 3. **Session Storage**: A storage area that stores data for the duration of the page session.
@@ -26,6 +27,7 @@ Cookies are small pieces of data stored on your browser by websites you visit. T
 ## Why/When to use Cookies over Local/Session Storage?
 
 Cookies provide the following advantages over Local/Session Storage:
+
 1. **Cookies are sent with every request**: Cookies are sent with every request to the server, allowing the server to remember user-specific information. Local/Session Storage is not sent with every request.
 2. **Expiration and Path**: Cookies can have an expiration date and a path, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage).
 3. **Security**: Cookies can have attributes that enhances security whereas Local/Session Storage does not have these security features.
