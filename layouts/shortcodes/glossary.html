@@ -1,8 +1,10 @@
 {{- $glossary := site.GetPage "glossary.md" -}}
 
-{{- $term := .Get 0}}
-{{- $displayTerm := .Get 1 | default $term -}}
-{{- $term_lc := .Get 0 | lower -}}
+{{- $term := .Get "term" -}}
+{{- $displayTerm := .Get "displayTerm" | default $term -}}
+{{- $parentTerm := .Get "parentTerm" | default nil -}}
+
+{{- $term_lc := $term | lower -}}
 
 {{- $definition := "" -}}
 
@@ -13,7 +15,23 @@
 {{- end -}}
 
 {{- if $definition -}}
-    <span class="glossary-term" title="{{ $definition }}" data-title="{{ $definition }}">{{ $displayTerm }}</span>
+    {{- /* Pattern to match the glossary shortcode */ -}}
+    {{- $shortcodePattern := `\{\{< glossary term="([^"]+)"(?: displayTerm="([^"]*)")?(?: parentTerm="([^"]*)")? >\}\}` -}}
+
+    {{- /* Replace matching glossary shortcodes where parentTerm equals the current term */ -}}
+    {{- $definition = replaceRE $shortcodePattern (printf "$1") $definition | replaceRE (printf `parentTerm="%s"` $term) "" -}}
+
+    {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}  <!-- Prevents multiple glossary terms on the same page from sharing the same modal ID -->
+    <span class="glossary-container" onclick="openModal('{{- $term_lc }}', '{{- $unique_id }}')">
+        <span class="glossary-term"> {{- $displayTerm -}} </span>
+
+        <span id="modal-{{- $term_lc }}-{{- $unique_id }}" class="glossary-modal">
+            <span class="modal-content">
+                <span> {{- $definition | markdownify -}} </span>
+                <span class="modal-close" onclick="closeModal('{{- $term_lc }}', '{{- $unique_id }}')">&times;</span>
+            </span>
+        </span>
+    </span>
 {{- else -}}
   {{- $displayTerm -}}
 {{- end -}}

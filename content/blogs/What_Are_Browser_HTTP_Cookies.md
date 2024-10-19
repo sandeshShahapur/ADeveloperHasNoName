@@ -12,9 +12,9 @@ When you visit a website, you might have noticed a message that says, "This webs
 
 ## Why Cookies?
 
-Browsers use the [HTTP protocol]( {{< ref "" >}} ) to communicate with a {{< glossary "web-server" >}} for requesting web pages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.
+Browsers use the [HTTP protocol]( {{< ref "" >}} ) to communicate with a {{< glossary term="web-server" >}} for requesting web pages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.
 
-There are few options for storing data on the {{< glossary "client" >}} (browser) like:
+There are few options for storing data on the {{< glossary term="client" >}} (browser) like:
 
 1. **Cookies**: Small pieces of data.
 2. **Local Storage**: A larger storage area.
@@ -36,7 +36,7 @@ Cookies provide the following advantages over Local/Session Storage:
 
 When you visit a website, the server sends a response to your browser with the web page content and a set of instructions to create cookies. Your browser stores these cookies and sends them back to the server with every subsequent request (given the cookie's path matches the request path) you make to the website.
 
-> Note: In the case when a website uses different domains for its {{< glossary "frontend" >}} and {{< glossary "backend" >}}, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.
+> Note: In the case when a website uses different domains for its {{< glossary term="frontend" >}} and {{< glossary term="backend" >}}, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.
 
 Thus every cookie is associated with only one domain which is the the domain of the web server that set the cookie.
 
@@ -60,7 +60,7 @@ Cookies can have several attributes that define their behavior:
 2. **Domain**: The domain or sub-domains associated with the cookie. The cookie is sent to this sub/domain on subsequent requests.
 3. **Path**: The path on the website where the cookie is valid. The cookie is sent only for requests that match this path.
 4. **Expiration Date**: The date and time when the cookie expires. After this time, the cookie is no longer sent to the server.
-5. **Secure**: A flag that indicates the cookie should only be sent over secure connections ([HTTPS]( {{< ref "" >}} )). This ensures that the cookie is not sent over ( {{< glossary "unencrypted" >}} ) connections.
+5. **Secure**: A flag that indicates the cookie should only be sent over secure connections ([HTTPS]( {{< ref "" >}} )). This ensures that the cookie is not sent over ( {{< glossary term="unencrypted" >}} ) connections.
 6. **HttpOnly**: A flag that indicates the cookie should not be accessible by JavaScript ([`document.cookie`](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)). This helps to prevent [cross-site scripting attacks]( {{< ref "" >}} ) (XSS) where malicious scripts can access sensitive cookies.
 7. **SameSite**: A flag that indicates how the cookie should be sent in [cross-site requests]( {{< ref "" >}} ). It helps prevent [cross-site request forgery]( {{< ref "" >}} ) (CSRF) attacks by restricting when cookies are sent in cross-origin requests.
 

@@ -8,15 +8,15 @@ categories: ["Web Development", "Networking"]
 summary: "An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet."
 ---
 
-You are familiar with using browsers to access websites and you might have seen {{< glossary "URL" >}}s starting with `http://` or `https://`. When you type a URL like `http://example.com` in your browser's address bar and press Enter, you are then presented with the website's content. How does this happen?
+You are familiar with using browsers to access websites and you might have seen {{< glossary term="URL" >}}s starting with `http://` or `https://`. When you type a URL like `http://example.com` in your browser's address bar and press Enter, you are then presented with the website's content. How does this happen?
 
-First, where does the browser get this content from? From a {{< glossary "Web-Server" >}}. Which Web-Server? The one whose {{< glossary "IP-Address" >}} is associated with the domain name `example.com` which is resolved by the {{< glossary "DNS" >}}, say for example `1.1.1.1`.
+First, where does the browser get this content from? From a {{< glossary term="Web-Server" >}}. Which Web-Server? The one whose {{< glossary term="IP-Address" >}} is associated with the domain name `example.com` which is resolved by the {{< glossary term="DNS" >}}, say for example `1.1.1.1`.
 
 Now, the browser just can't ask 'Hey `1.1.1.1`, I want something', it needs to be able to ask in a way that the Web-Server understands. This is where the HTTP Protocol comes into play.
 
 ## What is HTTP?
 
-HTTP stands for **{{< glossary "HyperText" >}} {{< glossary "Transfer" >}} {{< glossary "Protocol" >}}**. It is the format that {{< glossary "client" >}}s (browsers) and {{< glossary "server" >}}s (Web-Servers) use to communicate website components like {{< glossary "HTML" >}}, {{< glossary "CSS" >}}, {{< glossary "JavaScript" >}} files, images, etc. with each other over the {{< glossary "internet" >}}.
+HTTP stands for **{{< glossary term="HyperText" >}} {{< glossary term="Transfer" >}} {{< glossary term="Protocol" >}}**. It is the format that {{< glossary term="client" >}}s (browsers) and {{< glossary term="server" >}}s (Web-Servers) use to communicate website components like {{< glossary term="HTML" >}}, {{< glossary term="CSS" >}}, {{< glossary term="JavaScript" >}} files, images, etc. with each other over the {{< glossary term="internet" >}}.
 
 It is one of the Application Layer Protocols in [TCP/IP]( {{< ref "" >}} ), which means it is responsible for the communication between software applications on the network.
 
@@ -39,7 +39,7 @@ Next, the server processes the request and responds with the requested content. 
 
 1. **Status Line**: Contains the HTTP version, the status code (200 for success, 404 for not found, 500 for server error, etc.), and a status message.
 2. **Headers**: Contains additional information about the response like the type of content being sent (text/html, application/json, etc.), the length of the content, the type of encoding used (gzip, deflate, etc.), and more.
-3. **Body**: Contains the data being sent back to the client. This can be HTML content, {{< glossary "JSON" >}} data, images, etc.
+3. **Body**: Contains the data being sent back to the client. This can be HTML content, {{< glossary term="JSON" >}} data, images, etc.
 
 One of the key features of HTTP is that it is a **stateless protocol**, which means each request is independent of the previous one. The server does not maintain any information about the client's previous requests. To maintain state between requests, technologies like [cookies]( {{< ref "What_Are_Browser_HTTP_Cookies" >}} ) and sessions are used.
 

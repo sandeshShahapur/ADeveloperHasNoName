@@ -1,3 +1,10 @@
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+
 baseURL: https://adeveloperhasnoname.dev/
 languageCode: en-us
 title: ADeveloperHasNoName

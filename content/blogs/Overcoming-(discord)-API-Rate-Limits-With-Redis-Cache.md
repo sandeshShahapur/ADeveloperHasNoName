@@ -10,11 +10,11 @@ summary: "How to handle (Discord) API rate limits using a Redis-based caching me
 
 ## Background
 
-I was tasked with developing a web interface for an e-sports FIFA tournament service (SAFA) that had been operating primarily on {{< glossary "Discord" >}} through a Discord Bot. They wanted to extend their services to a website, and I was responsible for making it happen.
+I was tasked with developing a web interface for an e-sports FIFA tournament service (SAFA) that had been operating primarily on {{< glossary term="Discord" >}} through a Discord Bot. They wanted to extend their services to a website, and I was responsible for making it happen.
 
 After a new user joins their Discord server, before they could interact further (e.g., searching/joining teams), they were required to update their profile using a form. After which, they were given the role "updated-profile" and "free-agent" (not present in any team). A player, if present in a team, has the role "player".
 
-## The Problem: {{< glossary "API" >}} {{< glossary "Rate-Limit" "Rate-Limits">}}
+## The Problem: {{< glossary term="API" >}} {{< glossary term="Rate-Limit" displayTerm="Rate-Limits">}}
 
 Whenever a user registers or logs into the website using Discord [OAuth]( {{< ref "What_Is_OAuth_(2.0)_Definition,_Use_Cases,_and_How_it_Works" >}} ), the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:
 

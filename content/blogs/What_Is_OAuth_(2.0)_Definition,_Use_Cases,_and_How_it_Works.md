@@ -26,7 +26,7 @@ In this guide, we will focus on OAuth 2.0, which is the latest version of the OA
 
 ## Definition
 
-OAuth (Open Authorization) is a {{< glossary "protocol" >}} that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.
+OAuth (Open Authorization) is a {{< glossary term="protocol" >}} that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.
 
 ## Use Cases of OAuth 2.0
 
