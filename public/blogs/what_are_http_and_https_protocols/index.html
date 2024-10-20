@@ -60,7 +60,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/blogs/what_are_http_and_https_protocols/" /><meta property="article:section" content="blogs" />
 <meta property="article:published_time" content="2024-10-13T16:45:35+05:30" />
-<meta property="article:modified_time" content="2024-10-17T19:13:03+05:30" />
+<meta property="article:modified_time" content="2024-10-19T16:17:49+05:30" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="What are HTTP and HTTPS Protocols?"/>
@@ -97,11 +97,11 @@
   "keywords": [
     "HTTP", "HTTPS", "Networking", "Web Development", "Web Security"
   ],
-  "articleBody": "You are familiar with using browsers to access websites and you might have seen URL\rA Uniform Resource Locator is a web address that specifies the location of a resource on the internet. It consists of a protocol (e.g., HTTP, HTTPS), a domain name (e.g., example.com), a path to the resource (e.g., /blog) and optional query parameters (e.g., ?id=123) to makeup a complete URL, e.g., https://example.com/blog?id=123.\r×\rs starting with http:// or https://. When you type a URL like http://example.com in your browser’s address bar and press Enter, you are then presented with the website’s content. How does this happen?\nFirst, where does the browser get this content from? From a Web-Server\rA server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.\r×\r. Which Web-Server? The one whose IP-Address\rAn Internet-Protocol Address is a unique numerical label (e.g., 182.98.18.46) that identifies a device connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can be used to identify the location of a device.\r×\ris associated with the domain name example.com which is resolved by the DNS\rThe Domain Name System translates website domain names into IP addresses, which are used by computers to locate websites and other internet resources. It acts as the internet’s phone book, eliminating the need for users to remember IP addresses.\r×\r, say for example 1.1.1.1.\nNow, the browser just can’t ask ‘Hey 1.1.1.1, I want something’, it needs to be able to ask in a way that the Web-Server understands. This is where the HTTP Protocol comes into play.\nWhat is HTTP? HTTP stands for HyperText\rA text that contains links to other texts. When you click on a link, you are taken to another text.\r×\rTransfer\rExchange of data between the client and server.\r×\rProtocol\rA set of rules and guidelines that dictate how participants (whether they are devices, software components, or users) in a system should behave.\r×\r. It is the format that client\rA device or software that accesses services or resources provided by a server\rA computer program or a device that provides functionality to other devices or programs, known as {{\u003c glossary term=\"client\" preventRecursion=\"true\" \u003e}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.\r×\rby making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\rs (browsers) and server\rA computer program or a device that provides functionality to other devices or programs, known as client\rA device or software that accesses services or resources provided by a {{\u003c glossary term=\"server\" preventRecursion=\"true\" \u003e}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\r, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.\r×\rs (Web-Servers) use to communicate website components like HTML\rHyperText Markup Language is the standard markup language for creating web pages and web applications. It describes the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g. headings (), paragraphs (), images (), links (), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.\r×\r, CSS\rㅤ Cascading\rA process in which an operation or set of operations is repeated multiple times, with the output of each operation becoming the input for the next operation. {{\u003c hr \u003e}} Applying a priority order when multiple rules target the same element. The \"cascade\" ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In {{\u003c glossary term=\"CSS\" preventRecursion=\"true\" \u003e}}, inline \u003e internal \u003e external and id \u003e class \u003e element.\r×\rStyle Sheets\rA language used to describe the presentation or formatting of a document written in a markup language\rSystems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.\r×\rlike HTML\rHyperText Markup Language is the standard markup language for creating web pages and web applications. It describes the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g. headings (), paragraphs (), images (), links (), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.\r×\r, typically defining how elements should be displayed or rendered across different media.\r×\ris a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.\r×\r, JavaScript\rA high-level, interpreted programming language that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more. JavaScript is executed on the client-side (browser) and can interact with the Document Object Model (DOM) of a web page to update content, style, and structure.\r×\rfiles, images, etc. with each other over the internet\rIt is like an intricate network of highways (data cables) connecting cities (servers) and towns (clients) across the globe. A network of network. It allows users to access and share information, resources, and services across the world and with each other.\r×\r.\nIt is one of the Application Layer Protocols in TCP/IP, which means it is responsible for the communication between software applications on the network.\nSo, in a nutshell, HTTP is the language that the client and server use to exchange web components over the internet.\nHow Does HTTP Work? HTTP works in a client-server model.\nFirst, the client sends a request to the server. Let’s look at how this request looks:\nRequest Line: Contains the method, the URL, and the HTTP version. The method specifies the action to be performed on the resource (GET, POST, PUT, DELETE, etc.). The URL specifies the location of the resource. The HTTP version specifies the version of the HTTP protocol being used. Headers: Contains additional information about the request like the type of content the client can accept (text/html, application/json, etc.), the type of content the client is sending (application/x-www-form-urlencoded, multipart/form-data, etc.), the type of encoding used (gzip, deflate, etc.), and more. Body: Contains the data being sent to the server. This is optional and is used in POST, PUT and PATCH requests. Next, the server processes the request and responds with the requested content. Let’s look at how this response looks:\nStatus Line: Contains the HTTP version, the status code (200 for success, 404 for not found, 500 for server error, etc.), and a status message. Headers: Contains additional information about the response like the type of content being sent (text/html, application/json, etc.), the length of the content, the type of encoding used (gzip, deflate, etc.), and more. Body: Contains the data being sent back to the client. This can be HTML content, JSON\rJavaScript Object Notation is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is used to transmit data between a server and a web application as an alternative to XML.\r×\rdata, images, etc. One of the key features of HTTP is that it is a stateless protocol, which means each request is independent of the previous one. The server does not maintain any information about the client’s previous requests. To maintain state between requests, technologies like cookies and sessions are used.\nIn this way, HTTP enables the client and server to communicate effectively over the internet.\nHTTP Methods Every HTTP request contains a method that specifies the action to be performed on the resource. Some common HTTP methods are:\nGET: Used to retrieve data from the server. The data is sent in the URL. POST: Used to submit data to the server. The data is sent in the body of the request. PUT: Used to update data on the server. The data is sent in the body of the request. DELETE: Used to delete data on the server. The data is sent in the URL. PATCH: Used to partially update data on the server. The data is sent in the body of the request. HEAD: Similar to GET but only returns the headers OPTIONS: Used to check what methods are allowed on a resource HTTP Status Codes Every HTTP response contains a status code that indicates the status of the request. Range of status codes are divided into 5 categories:\n1xx: Informational responses. Example: 100 Continue, 101 Switching Protocols. 2xx: Success responses. Example: 200 OK, 201 Created, 204 No Content. 3xx: Redirection responses. Example: 301 Moved Permanently, 302 Found, 304 Not Modified. 4xx: Client error responses. Example: 400 Bad Request, 401 Unauthorized, 404 Not Found. 5xx: Server error responses. Example: 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable. These codes help developers and clients identify the result of the request, enabling effective debugging.\nIdempotent Methods Some HTTP methods are considered idempotent, which means that making the same request multiple times has the same effect as making it once. This property is useful in scenarios where requests can be retried without causing unintended side effects. Some idempotent methods are:\nGET: Retrieving data multiple times has the same effect. PUT: Updating data multiple times has the same effect. DELETE: Deleting data multiple times has the same effect. HEAD: Retrieving headers multiple times has the same effect. OPTIONS: Checking allowed methods multiple times has the same effect. Post and Patch methods are not idempotent as making the same request multiple times can have different effects.\nHTTP Versions HTTP has evolved over the years, with different versions introducing new features and improvements. Some of the major versions are:\nHTTP/0.9: The first version of HTTP, introduced in 1991. It was a simple protocol that allowed clients to request a single file from a server. HTTP/1.0: Introduced in 1996, it added support for multiple types of data, including images, audio, and video. It also introduced status codes and headers. HTTP/1.1: Introduced in 1999, it is the most widely used version of HTTP. It introduced persistent connections, pipelining, and improved caching. HTTP/2: Introduced in 2015, it is a major revision of the HTTP protocol. It introduced features like multiplexing, header compression, and server push to improve performance. HTTP/3: Introduced in 2020, it is the latest version of HTTP. It is based on the QUIC protocol and aims to improve performance and security. Each version of HTTP builds on the previous one, adding new features and improvements to make the protocol more efficient and secure.\nHTTPS HTTP is a text-based protocol, which means that data sent over HTTP requests and responses is not encrypted. This means that anyone who intercepts the data can read it easily as plain text.\nConsider the scenarios where you are logging into your bank account over an unencrypted HTTP connection. If someone intercepts the data, they can read your username and password, compromising your account. Or consider when you are entering your credit card details on an e-commerce website, if the HTTP connection is not encrypted, your credit card information can be stolen.\nTo address this security concern, HTTPS was introduced. HTTPS stands for HyperText Transfer Protocol Secure. It is the secure version of HTTP that encrypts the data sent between the client and server, making it difficult for attackers to intercept and read the data. HTTPS uses the SSL/TLS protocol to encrypt the data, ensuring that sensitive information like passwords, credit card details, and personal information is protected.\nWhen you visit a website that uses HTTPS, you will see a padlock icon in the address bar of your browser, indicating that the connection is secure. It is important to use HTTPS on websites that handle sensitive information to protect user data from interception and theft.\nConclusion HTTP/S is the backbone of the internet, enabling communication between clients and servers. Understanding how HTTP works, its methods, status codes, versions, and security features is essential for web developers to build secure and efficient web applications. By following the principles of HTTP, developers can create fast, reliable, and secure web experiences for users around the world.\n",
-  "wordCount" : "2155",
+  "articleBody": "You are familiar with using browsers to access websites and you might have seen URL\rA Uniform Resource Locator is a **web address** that specifies the location of a resource on the internet. It consists of a protocol (e.g., HTTP, HTTPS), a domain name (e.g., example.com), a path to the resource (e.g., /blog) and optional query parameters (e.g., ?id=123) to makeup a complete URL, e.g., https://example.com/blog?id=123.\r×\rs starting with http:// or https://. When you type a URL like http://example.com in your browser’s address bar and press Enter, you are then presented with the website’s content. How does this happen?\nFirst, where does the browser get this content from? From a Web-Server\rA server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.\r×\r. Which Web-Server? The one whose IP-Address\rAn Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can be used to identify the location of a device.\r×\ris associated with the domain name example.com which is resolved by the DNS\rThe Domain Name System translates website domain names into IP addresses, which are used by computers to locate websites and other internet resources. It acts as the internet's phone book, eliminating the need for users to remember IP addresses.\r×\r, say for example 1.1.1.1.\nNow, the browser just can’t ask ‘Hey 1.1.1.1, I want something’, it needs to be able to ask in a way that the Web-Server understands. This is where the HTTP Protocol comes into play.\nWhat is HTTP? HTTP stands for HyperText\rA text that contains links to other texts. When you click on a link, you are taken to another text.\r×\rTransfer\rExchange of data between the client and server.\r×\rProtocol\rA set of rules and guidelines that dictate how participants (whether they are devices, software components, or users) in a system should behave.\r×\r. It is the format that client\rA device or software that accesses services or resources provided by a {{\u003c glossary term=\"server\" displayTerm=\"server\" ancestorTerms=\"{client}\" \u003e}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\rs (browsers) and server\rA computer program or a device that provides functionality to other devices or programs, known as {{\u003c glossary term=\"client\" displayTerm=\"client\" ancestorTerms=\"{server}\" \u003e}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.\r×\rs (Web-Servers) use to communicate website components like HTML\rHyperText Markup Language is the standard markup language for creating web pages and web applications. It describes the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g. headings (), paragraphs (), images (), links (), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.\r×\r, CSS\rTest {{\u003c glossary term=\"Cascading\" displayTerm=\"Cascading\" ancestorTerms=\"{css}\" \u003e}} {{\u003c glossary term=\"Style-Sheet-Language\" displayTerm=\"Style Sheets\" ancestorTerms=\"{css}\" \u003e}} is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.\r×\r, JavaScript\rA high-level, interpreted programming language that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more. JavaScript is executed on the client-side (browser) and can interact with the Document Object Model (DOM) of a web page to update content, style, and structure.\r×\rfiles, images, etc. with each other over the internet\rIt is like an intricate network of highways (data cables) connecting cities (servers) and towns (clients) across the globe. A network of network. It allows users to access and share information, resources, and services across the world and with each other.\r×\r.\nIt is one of the Application Layer Protocols in TCP/IP, which means it is responsible for the communication between software applications on the network.\nSo, in a nutshell, HTTP is the language that the client and server use to exchange web components over the internet.\nHow Does HTTP Work? HTTP works in a client-server model.\nFirst, the client sends a request to the server. Let’s look at how this request looks:\nRequest Line: Contains the method, the URL, and the HTTP version. The method specifies the action to be performed on the resource (GET, POST, PUT, DELETE, etc.). The URL specifies the location of the resource. The HTTP version specifies the version of the HTTP protocol being used. Headers: Contains additional information about the request like the type of content the client can accept (text/html, application/json, etc.), the type of content the client is sending (application/x-www-form-urlencoded, multipart/form-data, etc.), the type of encoding used (gzip, deflate, etc.), and more. Body: Contains the data being sent to the server. This is optional and is used in POST, PUT and PATCH requests. Next, the server processes the request and responds with the requested content. Let’s look at how this response looks:\nStatus Line: Contains the HTTP version, the status code (200 for success, 404 for not found, 500 for server error, etc.), and a status message. Headers: Contains additional information about the response like the type of content being sent (text/html, application/json, etc.), the length of the content, the type of encoding used (gzip, deflate, etc.), and more. Body: Contains the data being sent back to the client. This can be HTML content, JSON\rJavaScript Object Notation is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is used to transmit data between a server and a web application as an alternative to XML.\r×\rdata, images, etc. One of the key features of HTTP is that it is a stateless protocol, which means each request is independent of the previous one. The server does not maintain any information about the client’s previous requests. To maintain state between requests, technologies like cookies and sessions are used.\nIn this way, HTTP enables the client and server to communicate effectively over the internet.\nHTTP Methods Every HTTP request contains a method that specifies the action to be performed on the resource. Some common HTTP methods are:\nGET: Used to retrieve data from the server. The data is sent in the URL. POST: Used to submit data to the server. The data is sent in the body of the request. PUT: Used to update data on the server. The data is sent in the body of the request. DELETE: Used to delete data on the server. The data is sent in the URL. PATCH: Used to partially update data on the server. The data is sent in the body of the request. HEAD: Similar to GET but only returns the headers OPTIONS: Used to check what methods are allowed on a resource HTTP Status Codes Every HTTP response contains a status code that indicates the status of the request. Range of status codes are divided into 5 categories:\n1xx: Informational responses. Example: 100 Continue, 101 Switching Protocols. 2xx: Success responses. Example: 200 OK, 201 Created, 204 No Content. 3xx: Redirection responses. Example: 301 Moved Permanently, 302 Found, 304 Not Modified. 4xx: Client error responses. Example: 400 Bad Request, 401 Unauthorized, 404 Not Found. 5xx: Server error responses. Example: 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable. These codes help developers and clients identify the result of the request, enabling effective debugging.\nIdempotent Methods Some HTTP methods are considered idempotent, which means that making the same request multiple times has the same effect as making it once. This property is useful in scenarios where requests can be retried without causing unintended side effects. Some idempotent methods are:\nGET: Retrieving data multiple times has the same effect. PUT: Updating data multiple times has the same effect. DELETE: Deleting data multiple times has the same effect. HEAD: Retrieving headers multiple times has the same effect. OPTIONS: Checking allowed methods multiple times has the same effect. Post and Patch methods are not idempotent as making the same request multiple times can have different effects.\nHTTP Versions HTTP has evolved over the years, with different versions introducing new features and improvements. Some of the major versions are:\nHTTP/0.9: The first version of HTTP, introduced in 1991. It was a simple protocol that allowed clients to request a single file from a server. HTTP/1.0: Introduced in 1996, it added support for multiple types of data, including images, audio, and video. It also introduced status codes and headers. HTTP/1.1: Introduced in 1999, it is the most widely used version of HTTP. It introduced persistent connections, pipelining, and improved caching. HTTP/2: Introduced in 2015, it is a major revision of the HTTP protocol. It introduced features like multiplexing, header compression, and server push to improve performance. HTTP/3: Introduced in 2020, it is the latest version of HTTP. It is based on the QUIC protocol and aims to improve performance and security. Each version of HTTP builds on the previous one, adding new features and improvements to make the protocol more efficient and secure.\nHTTPS HTTP is a text-based protocol, which means that data sent over HTTP requests and responses is not encrypted. This means that anyone who intercepts the data can read it easily as plain text.\nConsider the scenarios where you are logging into your bank account over an unencrypted HTTP connection. If someone intercepts the data, they can read your username and password, compromising your account. Or consider when you are entering your credit card details on an e-commerce website, if the HTTP connection is not encrypted, your credit card information can be stolen.\nTo address this security concern, HTTPS was introduced. HTTPS stands for HyperText Transfer Protocol Secure. It is the secure version of HTTP that encrypts the data sent between the client and server, making it difficult for attackers to intercept and read the data. HTTPS uses the SSL/TLS protocol to encrypt the data, ensuring that sensitive information like passwords, credit card details, and personal information is protected.\nWhen you visit a website that uses HTTPS, you will see a padlock icon in the address bar of your browser, indicating that the connection is secure. It is important to use HTTPS on websites that handle sensitive information to protect user data from interception and theft.\nConclusion HTTP/S is the backbone of the internet, enabling communication between clients and servers. Understanding how HTTP works, its methods, status codes, versions, and security features is essential for web developers to build secure and efficient web applications. By following the principles of HTTP, developers can create fast, reliable, and secure web experiences for users around the world.\n",
+  "wordCount" : "1869",
   "inLanguage": "en",
   "datePublished": "2024-10-13T16:45:35+05:30",
-  "dateModified": "2024-10-17T19:13:03+05:30",
+  "dateModified": "2024-10-19T16:17:49+05:30",
   "author":{
     "@type": "Person",
     "name": "Sandy"
@@ -238,7 +238,7 @@
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2024-10-13 16:45:35 +0530 IST'>October 13, 2024</span>&nbsp;·&nbsp;11 min&nbsp;·&nbsp;Sandy&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/What_are_HTTP_and_HTTPS_Protocols.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2024-10-13 16:45:35 +0530 IST'>October 13, 2024</span>&nbsp;·&nbsp;9 min&nbsp;·&nbsp;Sandy&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/What_are_HTTP_and_HTTPS_Protocols.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> <div class="toc">
@@ -270,198 +270,125 @@
     </details>
 </div>
 
-  <div class="post-content"><p>You are familiar with using browsers to access websites and you might have seen 
-    <span class="glossary-container" onclick="openModal('url', '127315101411141356289')">
+  <div class="post-content"><p>You are familiar with using browsers to access websites and you might have seen <span class="glossary-container" onclick="openModal('url', '821414121076111335159')">
         <span class="glossary-term">URL</span>
 
-        <span id="modal-url-127315101411141356289" class="glossary-modal">
+        <span id="modal-url-821414121076111335159" class="glossary-modal">
             <span class="modal-content">
-                <span>A Uniform Resource Locator is a <strong>web address</strong> that specifies the location of a resource on the internet. It consists   of a protocol (e.g., HTTP, HTTPS), a domain name (e.g., example.com), a path to the resource (e.g., /blog) and optional   query parameters (e.g., ?id=123) to makeup a complete URL, e.g., <a href="https://example.com/blog?id=123">https://example.com/blog?id=123</a>.</span>
-                <span class="modal-close" onclick="closeModal('url', '127315101411141356289')">&times;</span>
+                <span>A Uniform Resource Locator is a **web address** that specifies the location of a resource on the internet. It consists   of a protocol (e.g., HTTP, HTTPS), a domain name (e.g., example.com), a path to the resource (e.g., /blog) and optional   query parameters (e.g., ?id=123) to makeup a complete URL, e.g., https://example.com/blog?id=123.</span>
+                <span class="modal-close" onclick="closeModal('url', '821414121076111335159')">&times;</span>
             </span>
         </span>
     </span>s starting with <code>http://</code> or <code>https://</code>. When you type a URL like <code>http://example.com</code> in your browser&rsquo;s address bar and press Enter, you are then presented with the website&rsquo;s content. How does this happen?</p>
-<p>First, where does the browser get this content from? From a 
-    <span class="glossary-container" onclick="openModal('web-server', '510123146715134219118')">
+<p>First, where does the browser get this content from? From a <span class="glossary-container" onclick="openModal('web-server', '131381512911514410762')">
         <span class="glossary-term">Web-Server</span>
 
-        <span id="modal-web-server-510123146715134219118" class="glossary-modal">
+        <span id="modal-web-server-131381512911514410762" class="glossary-modal">
             <span class="modal-content">
                 <span>A server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.</span>
-                <span class="modal-close" onclick="closeModal('web-server', '510123146715134219118')">&times;</span>
+                <span class="modal-close" onclick="closeModal('web-server', '131381512911514410762')">&times;</span>
             </span>
         </span>
-    </span>. Which Web-Server? The one whose 
-    <span class="glossary-container" onclick="openModal('ip-address', '131512834127111051496')">
+    </span>. Which Web-Server? The one whose <span class="glossary-container" onclick="openModal('ip-address', '101271121451531341698')">
         <span class="glossary-term">IP-Address</span>
 
-        <span id="modal-ip-address-131512834127111051496" class="glossary-modal">
+        <span id="modal-ip-address-101271121451531341698" class="glossary-modal">
             <span class="modal-content">
-                <span>An Internet-Protocol Address is a <strong>unique numerical label</strong> (e.g., 182.98.18.46) that identifies a device   connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can   be used to identify the location of a device.</span>
-                <span class="modal-close" onclick="closeModal('ip-address', '131512834127111051496')">&times;</span>
+                <span>An Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device   connected to the internet or a local network that uses the Internet Protocol for communication. It is geo-locatable and can   be used to identify the location of a device.</span>
+                <span class="modal-close" onclick="closeModal('ip-address', '101271121451531341698')">&times;</span>
             </span>
         </span>
-    </span> is associated with the domain name <code>example.com</code> which is resolved by the 
-    <span class="glossary-container" onclick="openModal('dns', '101131356189412715142')">
+    </span> is associated with the domain name <code>example.com</code> which is resolved by the <span class="glossary-container" onclick="openModal('dns', '712156119451314823110')">
         <span class="glossary-term">DNS</span>
 
-        <span id="modal-dns-101131356189412715142" class="glossary-modal">
+        <span id="modal-dns-712156119451314823110" class="glossary-modal">
             <span class="modal-content">
-                <span>The Domain Name System translates website domain names into IP addresses, which are used by computers to locate websites and other internet resources. It acts as the internet&rsquo;s phone book, eliminating the need for users to remember IP addresses.</span>
-                <span class="modal-close" onclick="closeModal('dns', '101131356189412715142')">&times;</span>
+                <span>The Domain Name System translates website domain names into IP addresses, which are used by computers to locate websites and other internet resources. It acts as the internet&#39;s phone book, eliminating the need for users to remember IP addresses.</span>
+                <span class="modal-close" onclick="closeModal('dns', '712156119451314823110')">&times;</span>
             </span>
         </span>
     </span>, say for example <code>1.1.1.1</code>.</p>
 <p>Now, the browser just can&rsquo;t ask &lsquo;Hey <code>1.1.1.1</code>, I want something&rsquo;, it needs to be able to ask in a way that the Web-Server understands. This is where the HTTP Protocol comes into play.</p>
 <h2 id="what-is-http">What is HTTP?<a hidden class="anchor" aria-hidden="true" href="#what-is-http">#</a></h2>
-<p>HTTP stands for <strong>
-    <span class="glossary-container" onclick="openModal('hypertext', '411059812314215131167')">
+<p>HTTP stands for <strong><span class="glossary-container" onclick="openModal('hypertext', '893141271315411110652')">
         <span class="glossary-term">HyperText</span>
 
-        <span id="modal-hypertext-411059812314215131167" class="glossary-modal">
+        <span id="modal-hypertext-893141271315411110652" class="glossary-modal">
             <span class="modal-content">
                 <span>A text that contains links to other texts. When you click on a link, you are taken to another text.</span>
-                <span class="modal-close" onclick="closeModal('hypertext', '411059812314215131167')">&times;</span>
+                <span class="modal-close" onclick="closeModal('hypertext', '893141271315411110652')">&times;</span>
             </span>
         </span>
-    </span> 
-     <span class="glossary-container" onclick="openModal('transfer', '109112146413821157315')">
+    </span> <span class="glossary-container" onclick="openModal('transfer', '117521214139154368110')">
          <span class="glossary-term">Transfer</span>
  
-         <span id="modal-transfer-109112146413821157315" class="glossary-modal">
+         <span id="modal-transfer-117521214139154368110" class="glossary-modal">
              <span class="modal-content">
                  <span>Exchange of data between the client and server.</span>
-                 <span class="modal-close" onclick="closeModal('transfer', '109112146413821157315')">&times;</span>
+                 <span class="modal-close" onclick="closeModal('transfer', '117521214139154368110')">&times;</span>
              </span>
          </span>
-     </span> 
-     <span class="glossary-container" onclick="openModal('protocol', '101535113214124879611')">
+     </span> <span class="glossary-container" onclick="openModal('protocol', '415913141251136871012')">
          <span class="glossary-term">Protocol</span>
  
-         <span id="modal-protocol-101535113214124879611" class="glossary-modal">
+         <span id="modal-protocol-415913141251136871012" class="glossary-modal">
              <span class="modal-content">
                  <span>A set of rules and guidelines that dictate how participants (whether they are devices, software components, or users) in a system should behave.</span>
-                 <span class="modal-close" onclick="closeModal('protocol', '101535113214124879611')">&times;</span>
+                 <span class="modal-close" onclick="closeModal('protocol', '415913141251136871012')">&times;</span>
              </span>
          </span>
-     </span></strong>. It is the format that 
-    <span class="glossary-container" onclick="openModal('client', '156521217394141113108')">
+     </span></strong>. It is the format that <span class="glossary-container" onclick="openModal('client', '521214491311710861315')">
         <span class="glossary-term">client</span>
 
-        <span id="modal-client-156521217394141113108" class="glossary-modal">
+        <span id="modal-client-521214491311710861315" class="glossary-modal">
             <span class="modal-content">
-                <span>A device or software that accesses services or resources provided by a 
-    <span class="glossary-container" onclick="openModal('server', '111513231417481056129')">
+                <span>A device or software that accesses services or resources provided by a {{&lt; glossary term=&#34;server&#34; displayTerm=&#34;server&#34; ancestorTerms=&#34;{client}&#34; &gt;}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
+                <span class="modal-close" onclick="closeModal('client', '521214491311710861315')">&times;</span>
+            </span>
+        </span>
+    </span>s (browsers) and <span class="glossary-container" onclick="openModal('server', '714154111261031315892')">
         <span class="glossary-term">server</span>
 
-        <span id="modal-server-111513231417481056129" class="glossary-modal">
+        <span id="modal-server-714154111261031315892" class="glossary-modal">
             <span class="modal-content">
-                <span>A computer program or a device that provides functionality to other devices or programs, known as {{&lt; glossary term=&#34;client&#34; preventRecursion=&#34;true&#34; &gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.</span>
-                <span class="modal-close" onclick="closeModal('server', '111513231417481056129')">&times;</span>
+                <span>A computer program or a device that provides functionality to other devices or programs, known as {{&lt; glossary term=&#34;client&#34; displayTerm=&#34;client&#34; ancestorTerms=&#34;{server}&#34; &gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.</span>
+                <span class="modal-close" onclick="closeModal('server', '714154111261031315892')">&times;</span>
             </span>
         </span>
-    </span> by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
-                <span class="modal-close" onclick="closeModal('client', '156521217394141113108')">&times;</span>
-            </span>
-        </span>
-    </span>s (browsers) and 
-    <span class="glossary-container" onclick="openModal('server', '134112106395152117148')">
-        <span class="glossary-term">server</span>
-
-        <span id="modal-server-134112106395152117148" class="glossary-modal">
-            <span class="modal-content">
-                <span>A computer program or a device that provides functionality to other devices or programs, known as 
-    <span class="glossary-container" onclick="openModal('client', '961131578101424511123')">
-        <span class="glossary-term">client</span>
-
-        <span id="modal-client-961131578101424511123" class="glossary-modal">
-            <span class="modal-content">
-                <span>A device or software that accesses services or resources provided by a {{&lt; glossary term=&#34;server&#34; preventRecursion=&#34;true&#34; &gt;}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
-                <span class="modal-close" onclick="closeModal('client', '961131578101424511123')">&times;</span>
-            </span>
-        </span>
-    </span>, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.</span>
-                <span class="modal-close" onclick="closeModal('server', '134112106395152117148')">&times;</span>
-            </span>
-        </span>
-    </span>s (Web-Servers) use to communicate website components like 
-    <span class="glossary-container" onclick="openModal('html', '314101592658131711124')">
+    </span>s (Web-Servers) use to communicate website components like <span class="glossary-container" onclick="openModal('html', '512111321843915146107')">
         <span class="glossary-term">HTML</span>
 
-        <span id="modal-html-314101592658131711124" class="glossary-modal">
+        <span id="modal-html-512111321843915146107" class="glossary-modal">
             <span class="modal-content">
-                <span>HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (<!-- raw HTML omitted -->), paragraphs (<!-- raw HTML omitted -->), images (<!-- raw HTML omitted -->), links (<!-- raw HTML omitted -->), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.</span>
-                <span class="modal-close" onclick="closeModal('html', '314101592658131711124')">&times;</span>
+                <span>HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (&lt;h1-6/&gt;), paragraphs (&lt;p/&gt;), images (&lt;img&gt;), links (&lt;a/&gt;), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.</span>
+                <span class="modal-close" onclick="closeModal('html', '512111321843915146107')">&times;</span>
             </span>
         </span>
-    </span>, 
-    <span class="glossary-container" onclick="openModal('css', '111415104735122131896')">
+    </span>, <span class="glossary-container" onclick="openModal('css', '872111412913131556104')">
         <span class="glossary-term">CSS</span>
 
-        <span id="modal-css-111415104735122131896" class="glossary-modal">
+        <span id="modal-css-872111412913131556104" class="glossary-modal">
             <span class="modal-content">
-                <span>ㅤ 
-    <span class="glossary-container" onclick="openModal('cascading', '151210136215879414311')">
-        <span class="glossary-term">Cascading</span>
-
-        <span id="modal-cascading-151210136215879414311" class="glossary-modal">
-            <span class="modal-content">
-                <span>A process in which an operation or set of operations is repeated multiple times, with the output of each operation becoming the input for the next operation. {{&lt; hr &gt;}} Applying a priority order when multiple rules target the same element. The &#34;cascade&#34; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In {{&lt; glossary term=&#34;CSS&#34; preventRecursion=&#34;true&#34; &gt;}}, inline &gt; internal &gt; external and id &gt; class &gt; element.</span>
-                <span class="modal-close" onclick="closeModal('cascading', '151210136215879414311')">&times;</span>
+                <span>Test {{&lt; glossary term=&#34;Cascading&#34; displayTerm=&#34;Cascading&#34; ancestorTerms=&#34;{css}&#34; &gt;}} {{&lt; glossary term=&#34;Style-Sheet-Language&#34; displayTerm=&#34;Style Sheets&#34; ancestorTerms=&#34;{css}&#34; &gt;}} is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.</span>
+                <span class="modal-close" onclick="closeModal('css', '872111412913131556104')">&times;</span>
             </span>
         </span>
-    </span> 
-     <span class="glossary-container" onclick="openModal('style-sheet-language', '610712113214811515934')">
-         <span class="glossary-term">Style Sheets</span>
- 
-         <span id="modal-style-sheet-language-610712113214811515934" class="glossary-modal">
-             <span class="modal-content">
-                 <span>A language used to describe the presentation or formatting of a document written in a 
-     <span class="glossary-container" onclick="openModal('markup-language', '126711141312594158310')">
-         <span class="glossary-term">markup language</span>
- 
-         <span id="modal-markup-language-126711141312594158310" class="glossary-modal">
-             <span class="modal-content">
-                 <span>Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.</span>
-                 <span class="modal-close" onclick="closeModal('markup-language', '126711141312594158310')">&times;</span>
-             </span>
-         </span>
-     </span> like 
-     <span class="glossary-container" onclick="openModal('html', '286751331111210141549')">
-         <span class="glossary-term">HTML</span>
- 
-         <span id="modal-html-286751331111210141549" class="glossary-modal">
-             <span class="modal-content">
-                 <span>HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (<!-- raw HTML omitted -->), paragraphs (<!-- raw HTML omitted -->), images (<!-- raw HTML omitted -->), links (<!-- raw HTML omitted -->), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.</span>
-                 <span class="modal-close" onclick="closeModal('html', '286751331111210141549')">&times;</span>
-             </span>
-         </span>
-     </span>, typically defining how elements should be displayed or rendered across different media.</span>
-                 <span class="modal-close" onclick="closeModal('style-sheet-language', '610712113214811515934')">&times;</span>
-             </span>
-         </span>
-     </span> is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.</span>
-                <span class="modal-close" onclick="closeModal('css', '111415104735122131896')">&times;</span>
-            </span>
-        </span>
-    </span>, 
-    <span class="glossary-container" onclick="openModal('javascript', '181591043146251213711')">
+    </span>, <span class="glossary-container" onclick="openModal('javascript', '125269811314101413715')">
         <span class="glossary-term">JavaScript</span>
 
-        <span id="modal-javascript-181591043146251213711" class="glossary-modal">
+        <span id="modal-javascript-125269811314101413715" class="glossary-modal">
             <span class="modal-content">
                 <span>A high-level, interpreted programming language that is used to make web pages interactive and dynamic. It is   used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the client-side (browser) and can interact with the Document Object Model (DOM) of a web page to   update content, style, and structure.</span>
-                <span class="modal-close" onclick="closeModal('javascript', '181591043146251213711')">&times;</span>
+                <span class="modal-close" onclick="closeModal('javascript', '125269811314101413715')">&times;</span>
             </span>
         </span>
-    </span> files, images, etc. with each other over the 
-    <span class="glossary-container" onclick="openModal('internet', '179514261115831213104')">
+    </span> files, images, etc. with each other over the <span class="glossary-container" onclick="openModal('internet', '109111412341351267158')">
         <span class="glossary-term">internet</span>
 
-        <span id="modal-internet-179514261115831213104" class="glossary-modal">
+        <span id="modal-internet-109111412341351267158" class="glossary-modal">
             <span class="modal-content">
                 <span>It is like an intricate network of highways (data cables) connecting cities (servers) and towns (clients) across the globe. A network of network. It allows users to access and share information, resources, and services across the world and with each other.</span>
-                <span class="modal-close" onclick="closeModal('internet', '179514261115831213104')">&times;</span>
+                <span class="modal-close" onclick="closeModal('internet', '109111412341351267158')">&times;</span>
             </span>
         </span>
     </span>.</p>
@@ -485,14 +412,13 @@
 <ol>
 <li><strong>Status Line</strong>: Contains the HTTP version, the status code (200 for success, 404 for not found, 500 for server error, etc.), and a status message.</li>
 <li><strong>Headers</strong>: Contains additional information about the response like the type of content being sent (text/html, application/json, etc.), the length of the content, the type of encoding used (gzip, deflate, etc.), and more.</li>
-<li><strong>Body</strong>: Contains the data being sent back to the client. This can be HTML content, 
-    <span class="glossary-container" onclick="openModal('json', '647141015111315238129')">
+<li><strong>Body</strong>: Contains the data being sent back to the client. This can be HTML content, <span class="glossary-container" onclick="openModal('json', '291631311515124781410')">
         <span class="glossary-term">JSON</span>
 
-        <span id="modal-json-647141015111315238129" class="glossary-modal">
+        <span id="modal-json-291631311515124781410" class="glossary-modal">
             <span class="modal-content">
                 <span>JavaScript Object Notation is a lightweight data-interchange format that is easy for humans to read and write, and   easy for machines to parse and generate. It is used to transmit data between a server and a web application as an   alternative to XML.</span>
-                <span class="modal-close" onclick="closeModal('json', '647141015111315238129')">&times;</span>
+                <span class="modal-close" onclick="closeModal('json', '291631311515124781410')">&times;</span>
             </span>
         </span>
     </span> data, images, etc.</li>

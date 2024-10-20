@@ -2,33 +2,54 @@
 
 {{- $term := .Get "term" -}}
 {{- $displayTerm := .Get "displayTerm" | default $term -}}
-{{- $parentTerm := .Get "parentTerm" | default nil -}}
+{{- $ancestorTerms := .Get "ancestorTerms" | default "" -}}
 
-{{- $term_lc := $term | lower -}}
-
+{{- $term := $term | lower -}}
 {{- $definition := "" -}}
 
+{{- /*
+  `ancestorTerms` is a string of previously visited terms delimited by `{}`.
+  If the current term is in the ancestorTerms, then the term is a circular reference
+  and the displayTerm is returned to prevent infinite recursion
+*/ -}}
+{{- if in $ancestorTerms (printf `{%s}` $term) -}}
+    {{- return $displayTerm -}}
+{{- end -}}
+
 {{- range $key, $value := $glossary.Params.glossary -}}
-  {{- if eq (lower $key) $term_lc -}}
+  {{- if eq (lower $key) $term -}}
     {{- $definition = $value -}}
   {{- end -}}
 {{- end -}}
 
 {{- if $definition -}}
-    {{- /* Pattern to match the glossary shortcode */ -}}
-    {{- $shortcodePattern := `\{\{< glossary term="([^"]+)"(?: displayTerm="([^"]*)")?(?: parentTerm="([^"]*)")? >\}\}` -}}
+    {{- /*
+      The glossary shortcode is of the pattern `{{< glossary term="term" displayTerm="displayTerm" ancestorTerms="ancestorTerms" >}}`
+      ancestorTerms is used to prevent infinite recursion in the glossary shortcode where terms are delimited by `{}`
+      Below matches the value of the `ancestorTerms` attribute of the `glossary` shortcode and appends the current term to the ancestorTerms.
+    */ -}}
+    {{- $shortcodePattern := `\{\{[ ]*<[ ]*glossary[ ]+term="(?<d_term>[^"]+)"(?:[ ]+displayTerm="(?<d_displayTerm>[^"]+)")?(?:[ ]+ancestorTerms="(?<d_ancestorTerms>[^"]+)")?[ ]*>[ ]*\}\}` -}}
+    {{- $updatedDefinition := replaceRE $shortcodePattern (printf `{{< glossary term="$d_term" displayTerm="$d_displayTerm" ancestorTerms="%s{%s}" >}}` $ancestorTerms $term) $definition -}}
 
-    {{- /* Replace matching glossary shortcodes where parentTerm equals the current term */ -}}
-    {{- $definition = replaceRE $shortcodePattern (printf "$1") $definition | replaceRE (printf `parentTerm="%s"` $term) "" -}}
+    {{- if not $updatedDefinition -}}
+        {{- return $displayTerm -}}
+    {{- end -}}
 
-    {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}  <!-- Prevents multiple glossary terms on the same page from sharing the same modal ID -->
-    <span class="glossary-container" onclick="openModal('{{- $term_lc }}', '{{- $unique_id }}')">
+    {{- /* Debugging: Print updated definition */ -}}
+    {{- warnf "Term: %s, AncestorTerms: %s, Definition: %s" $term $ancestorTerms $definition -}}
+    {{- warnf "." -}}
+    {{- warnf "." -}}
+
+    {{- /* Prevents multiple glossary terms on the same page from sharing the same modal ID */ -}}
+    {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
+
+    <span class="glossary-container" onclick="openModal('{{- $term }}', '{{- $unique_id }}')">
         <span class="glossary-term"> {{- $displayTerm -}} </span>
 
-        <span id="modal-{{- $term_lc }}-{{- $unique_id }}" class="glossary-modal">
+        <span id="modal-{{- $term }}-{{- $unique_id }}" class="glossary-modal">
             <span class="modal-content">
-                <span> {{- $definition | markdownify -}} </span>
-                <span class="modal-close" onclick="closeModal('{{- $term_lc }}', '{{- $unique_id }}')">&times;</span>
+                <span> {{- $updatedDefinition | markdownify -}} </span>
+                <span class="modal-close" onclick="closeModal('{{- $term }}', '{{- $unique_id }}')">&times;</span>
             </span>
         </span>
     </span>

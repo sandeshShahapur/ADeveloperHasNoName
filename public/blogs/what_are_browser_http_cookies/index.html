@@ -60,7 +60,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/blogs/what_are_browser_http_cookies/" /><meta property="article:section" content="blogs" />
 <meta property="article:published_time" content="2024-10-13T07:56:37+05:30" />
-<meta property="article:modified_time" content="2024-10-17T19:13:03+05:30" />
+<meta property="article:modified_time" content="2024-10-19T16:17:49+05:30" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="What Are Browser HTTP Cookies?"/>
@@ -97,11 +97,11 @@
   "keywords": [
     "Cookies", "Web Development", "Security"
   ],
-  "articleBody": "When you visit a website, you might have noticed a message that says, “This website uses cookies to ensure you get the best experience on our website” or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.\nWhy Cookies? Browsers use the HTTP protocol to communicate with a web-server\rA server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.\r×\rfor requesting web pages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.\nThere are few options for storing data on the client\rA device or software that accesses services or resources provided by a server\rA computer program or a device that provides functionality to other devices or programs, known as {{\u003c glossary term=\"client\" preventRecursion=\"true\" \u003e}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.\r×\rby making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\r(browser) like:\nCookies: Small pieces of data. Local Storage: A larger storage area. Session Storage: A storage area that stores data for the duration of the page session. What Are Cookies? Cookies are small pieces of data stored on your browser by websites you visit. They have a name and a value, and they can also have additional attributes. They are used to store user-specific information like login status, preferences, shopping cart items, and more.\nWhy/When to use Cookies over Local/Session Storage? Cookies provide the following advantages over Local/Session Storage:\nCookies are sent with every request: Cookies are sent with every request to the server, allowing the server to remember user-specific information. Local/Session Storage is not sent with every request. Expiration and Path: Cookies can have an expiration date and a path, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage). Security: Cookies can have attributes that enhances security whereas Local/Session Storage does not have these security features. How Do Cookies Work? When you visit a website, the server sends a response to your browser with the web page content and a set of instructions to create cookies. Your browser stores these cookies and sends them back to the server with every subsequent request (given the cookie’s path matches the request path) you make to the website.\nNote: In the case when a website uses different domains for its frontend\rThe client-side/front-scenes of a application that is responsible for rendering the user interface and sending requests to the server (\rbackend\rThe {{\u003c glossary term=\"server-side\" \u003e}}/behind-scenes of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the {{\u003c glossary term=\"client\" \u003e}} ({{\u003c glossary term=\"frontend\" preventRecursion=\"true\" \u003e}}).\r×\r) for processing.\r×\rand backend\rThe server-side\rThings that happen on the server\rA computer program or a device that provides functionality to other devices or programs, known as client\rA device or software that accesses services or resources provided by a {{\u003c glossary term=\"server\" preventRecursion=\"true\" \u003e}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\r, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.\r×\r, e.g., processing of requests, interacting with databases, etc.\r×\r/behind-scenes of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the client\rA device or software that accesses services or resources provided by a server\rA computer program or a device that provides functionality to other devices or programs, known as {{\u003c glossary term=\"client\" preventRecursion=\"true\" \u003e}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.\r×\rby making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\r(\rfrontend\rThe client-side/front-scenes of a application that is responsible for rendering the user interface and sending requests to the server ({{\u003c glossary term=\"backend\" preventRecursion=\"true\"\u003e}}) for processing.\r×\r).\r×\r, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.\nThus every cookie is associated with only one domain which is the the domain of the web server that set the cookie.\nAs Cookies are associated with a specific domain and path on the website, cookies created by one website cannot be accessed by another website. For example, cookies created by example.com cannot be accessed by anotherexample.com.\nNote: If the frontend and backend are on different domains, and the backend sets a cookie, the frontend cannot access it through document.cookie as it is on a different domain.\nWhy Are Cookies Used? Cookies serve several purposes on the web:\nSession Management: Cookies are used to manage user sessions on websites. They help websites remember your login status, shopping cart items, and other session-related information. Tracking and Analytics: Cookies are used for tracking user behavior on websites. They help website owners understand how users interact with their site, which pages are popular, and more. Advertising: Cookies are used for targeted advertising. They help advertisers show relevant ads to users based on their browsing history and interests. Cookie Attributes Cookies can have several attributes that define their behavior:\nName and Value: The name and value of the cookie. Domain: The domain or sub-domains associated with the cookie. The cookie is sent to this sub/domain on subsequent requests. Path: The path on the website where the cookie is valid. The cookie is sent only for requests that match this path. Expiration Date: The date and time when the cookie expires. After this time, the cookie is no longer sent to the server. Secure: A flag that indicates the cookie should only be sent over secure connections (HTTPS). This ensures that the cookie is not sent over ( unencrypted ) connections. HttpOnly: A flag that indicates the cookie should not be accessible by JavaScript (document.cookie). This helps to prevent cross-site scripting attacks (XSS) where malicious scripts can access sensitive cookies. SameSite: A flag that indicates how the cookie should be sent in cross-site requests. It helps prevent cross-site request forgery (CSRF) attacks by restricting when cookies are sent in cross-origin requests. Managing Cookies Most modern browsers allow you to manage cookies through their settings. You can view the cookies stored on your browser, delete specific cookies, block all cookies, or block cookies from specific websites.\nBy managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.\nConclusion Cookies are an essential part of the web ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.\n",
-  "wordCount" : "1290",
+  "articleBody": "When you visit a website, you might have noticed a message that says, “This website uses cookies to ensure you get the best experience on our website” or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.\nWhy Cookies? Browsers use the HTTP protocol to communicate with a web-server\rA server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.\r×\rfor requesting web pages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.\nThere are few options for storing data on the client\rA device or software that accesses services or resources provided by a {{\u003c glossary term=\"server\" displayTerm=\"server\" ancestorTerms=\"{client}\" \u003e}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.\r×\r(browser) like:\nCookies: Small pieces of data. Local Storage: A larger storage area. Session Storage: A storage area that stores data for the duration of the page session. What Are Cookies? Cookies are small pieces of data stored on your browser by websites you visit. They have a name and a value, and they can also have additional attributes. They are used to store user-specific information like login status, preferences, shopping cart items, and more.\nWhy/When to use Cookies over Local/Session Storage? Cookies provide the following advantages over Local/Session Storage:\nCookies are sent with every request: Cookies are sent with every request to the server, allowing the server to remember user-specific information. Local/Session Storage is not sent with every request. Expiration and Path: Cookies can have an expiration date and a path, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage). Security: Cookies can have attributes that enhances security whereas Local/Session Storage does not have these security features. How Do Cookies Work? When you visit a website, the server sends a response to your browser with the web page content and a set of instructions to create cookies. Your browser stores these cookies and sends them back to the server with every subsequent request (given the cookie’s path matches the request path) you make to the website.\nNote: In the case when a website uses different domains for its frontend\rThe client-side/front-scenes of a application that is responsible for rendering the user interface and sending requests to the server ({{\u003c glossary term=\"backend\" displayTerm=\"backend\" ancestorTerms=\"{frontend}\" \u003e}}) for processing.\r×\rand backend\rThe {{\u003c glossary term=\"server-side\" displayTerm=\"server-side\" ancestorTerms=\"{backend}\" \u003e}}/behind-scenes of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the {{\u003c glossary term=\"client\" displayTerm=\"client\" ancestorTerms=\"{backend}\" \u003e}} ({{\u003c glossary term=\"frontend\" displayTerm=\"frontend\" ancestorTerms=\"{backend}\" \u003e}}).\r×\r, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.\nThus every cookie is associated with only one domain which is the the domain of the web server that set the cookie.\nAs Cookies are associated with a specific domain and path on the website, cookies created by one website cannot be accessed by another website. For example, cookies created by example.com cannot be accessed by anotherexample.com.\nNote: If the frontend and backend are on different domains, and the backend sets a cookie, the frontend cannot access it through document.cookie as it is on a different domain.\nWhy Are Cookies Used? Cookies serve several purposes on the web:\nSession Management: Cookies are used to manage user sessions on websites. They help websites remember your login status, shopping cart items, and other session-related information. Tracking and Analytics: Cookies are used for tracking user behavior on websites. They help website owners understand how users interact with their site, which pages are popular, and more. Advertising: Cookies are used for targeted advertising. They help advertisers show relevant ads to users based on their browsing history and interests. Cookie Attributes Cookies can have several attributes that define their behavior:\nName and Value: The name and value of the cookie. Domain: The domain or sub-domains associated with the cookie. The cookie is sent to this sub/domain on subsequent requests. Path: The path on the website where the cookie is valid. The cookie is sent only for requests that match this path. Expiration Date: The date and time when the cookie expires. After this time, the cookie is no longer sent to the server. Secure: A flag that indicates the cookie should only be sent over secure connections (HTTPS). This ensures that the cookie is not sent over ( unencrypted ) connections. HttpOnly: A flag that indicates the cookie should not be accessible by JavaScript (document.cookie). This helps to prevent cross-site scripting attacks (XSS) where malicious scripts can access sensitive cookies. SameSite: A flag that indicates how the cookie should be sent in cross-site requests. It helps prevent cross-site request forgery (CSRF) attacks by restricting when cookies are sent in cross-origin requests. Managing Cookies Most modern browsers allow you to manage cookies through their settings. You can view the cookies stored on your browser, delete specific cookies, block all cookies, or block cookies from specific websites.\nBy managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.\nConclusion Cookies are an essential part of the web ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.\n",
+  "wordCount" : "1024",
   "inLanguage": "en",
   "datePublished": "2024-10-13T07:56:37+05:30",
-  "dateModified": "2024-10-17T19:13:03+05:30",
+  "dateModified": "2024-10-19T16:17:49+05:30",
   "author":{
     "@type": "Person",
     "name": "Sandy"
@@ -238,7 +238,7 @@
         </svg>
       </span>
     </h1>
-    <div class="post-meta"><span title='2024-10-13 07:56:37 +0530 IST'>October 13, 2024</span>&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Sandy&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/What_Are_Browser_HTTP_Cookies.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+    <div class="post-meta"><span title='2024-10-13 07:56:37 +0530 IST'>October 13, 2024</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Sandy&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/What_Are_Browser_HTTP_Cookies.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
   </header> <div class="toc">
@@ -272,35 +272,23 @@
 
   <div class="post-content"><p>When you visit a website, you might have noticed a message that says, &ldquo;This website uses cookies to ensure you get the best experience on our website&rdquo; or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.</p>
 <h2 id="why-cookies">Why Cookies?<a hidden class="anchor" aria-hidden="true" href="#why-cookies">#</a></h2>
-<p>Browsers use the <a href="">HTTP protocol</a> to communicate with a 
-    <span class="glossary-container" onclick="openModal('web-server', '141510521281339714116')">
+<p>Browsers use the <a href="">HTTP protocol</a> to communicate with a <span class="glossary-container" onclick="openModal('web-server', '511141012139613241578')">
         <span class="glossary-term">web-server</span>
 
-        <span id="modal-web-server-141510521281339714116" class="glossary-modal">
+        <span id="modal-web-server-511141012139613241578" class="glossary-modal">
             <span class="modal-content">
                 <span>A server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.</span>
-                <span class="modal-close" onclick="closeModal('web-server', '141510521281339714116')">&times;</span>
+                <span class="modal-close" onclick="closeModal('web-server', '511141012139613241578')">&times;</span>
             </span>
         </span>
     </span> for requesting web pages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.</p>
-<p>There are few options for storing data on the 
-    <span class="glossary-container" onclick="openModal('client', '691148472510121513311')">
+<p>There are few options for storing data on the <span class="glossary-container" onclick="openModal('client', '139310412155286111417')">
         <span class="glossary-term">client</span>
 
-        <span id="modal-client-691148472510121513311" class="glossary-modal">
+        <span id="modal-client-139310412155286111417" class="glossary-modal">
             <span class="modal-content">
-                <span>A device or software that accesses services or resources provided by a 
-    <span class="glossary-container" onclick="openModal('server', '126134151051139728114')">
-        <span class="glossary-term">server</span>
-
-        <span id="modal-server-126134151051139728114" class="glossary-modal">
-            <span class="modal-content">
-                <span>A computer program or a device that provides functionality to other devices or programs, known as {{&lt; glossary term=&#34;client&#34; preventRecursion=&#34;true&#34; &gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.</span>
-                <span class="modal-close" onclick="closeModal('server', '126134151051139728114')">&times;</span>
-            </span>
-        </span>
-    </span> by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
-                <span class="modal-close" onclick="closeModal('client', '691148472510121513311')">&times;</span>
+                <span>A device or software that accesses services or resources provided by a {{&lt; glossary term=&#34;server&#34; displayTerm=&#34;server&#34; ancestorTerms=&#34;{client}&#34; &gt;}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
+                <span class="modal-close" onclick="closeModal('client', '139310412155286111417')">&times;</span>
             </span>
         </span>
     </span> (browser) like:</p>
@@ -321,94 +309,22 @@
 <h2 id="how-do-cookies-work">How Do Cookies Work?<a hidden class="anchor" aria-hidden="true" href="#how-do-cookies-work">#</a></h2>
 <p>When you visit a website, the server sends a response to your browser with the web page content and a set of instructions to create cookies. Your browser stores these cookies and sends them back to the server with every subsequent request (given the cookie&rsquo;s path matches the request path) you make to the website.</p>
 <blockquote>
-<p>Note: In the case when a website uses different domains for its 
-    <span class="glossary-container" onclick="openModal('frontend', '841061217291535141311')">
+<p>Note: In the case when a website uses different domains for its <span class="glossary-container" onclick="openModal('frontend', '597682121510144131311')">
         <span class="glossary-term">frontend</span>
 
-        <span id="modal-frontend-841061217291535141311" class="glossary-modal">
+        <span id="modal-frontend-597682121510144131311" class="glossary-modal">
             <span class="modal-content">
-                <span>The client-side/front-scenes of a application that is responsible for rendering the user interface and sending requests to the server (
-    <span class="glossary-container" onclick="openModal('backend', '615111324510812379114')">
+                <span>The client-side/front-scenes of a application that is responsible for rendering the user interface and sending requests to the server ({{&lt; glossary term=&#34;backend&#34; displayTerm=&#34;backend&#34; ancestorTerms=&#34;{frontend}&#34; &gt;}}) for processing.</span>
+                <span class="modal-close" onclick="closeModal('frontend', '597682121510144131311')">&times;</span>
+            </span>
+        </span>
+    </span> and <span class="glossary-container" onclick="openModal('backend', '124315710161181395142')">
         <span class="glossary-term">backend</span>
 
-        <span id="modal-backend-615111324510812379114" class="glossary-modal">
+        <span id="modal-backend-124315710161181395142" class="glossary-modal">
             <span class="modal-content">
-                <span>The {{&lt; glossary term=&#34;server-side&#34; &gt;}}/behind-scenes of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the {{&lt; glossary term=&#34;client&#34; &gt;}} ({{&lt; glossary term=&#34;frontend&#34; preventRecursion=&#34;true&#34; &gt;}}).</span>
-                <span class="modal-close" onclick="closeModal('backend', '615111324510812379114')">&times;</span>
-            </span>
-        </span>
-    </span>) for processing.</span>
-                <span class="modal-close" onclick="closeModal('frontend', '841061217291535141311')">&times;</span>
-            </span>
-        </span>
-    </span> and 
-    <span class="glossary-container" onclick="openModal('backend', '109527144813121516311')">
-        <span class="glossary-term">backend</span>
-
-        <span id="modal-backend-109527144813121516311" class="glossary-modal">
-            <span class="modal-content">
-                <span>The 
-    <span class="glossary-container" onclick="openModal('server-side', '317541312891411151062')">
-        <span class="glossary-term">server-side</span>
-
-        <span id="modal-server-side-317541312891411151062" class="glossary-modal">
-            <span class="modal-content">
-                <span>Things that happen on the 
-    <span class="glossary-container" onclick="openModal('server', '715941413251181031261')">
-        <span class="glossary-term">server</span>
-
-        <span id="modal-server-715941413251181031261" class="glossary-modal">
-            <span class="modal-content">
-                <span>A computer program or a device that provides functionality to other devices or programs, known as 
-    <span class="glossary-container" onclick="openModal('client', '111531461011354781292')">
-        <span class="glossary-term">client</span>
-
-        <span id="modal-client-111531461011354781292" class="glossary-modal">
-            <span class="modal-content">
-                <span>A device or software that accesses services or resources provided by a {{&lt; glossary term=&#34;server&#34; preventRecursion=&#34;true&#34; &gt;}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
-                <span class="modal-close" onclick="closeModal('client', '111531461011354781292')">&times;</span>
-            </span>
-        </span>
-    </span>, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.</span>
-                <span class="modal-close" onclick="closeModal('server', '715941413251181031261')">&times;</span>
-            </span>
-        </span>
-    </span>, e.g., processing of requests, interacting with databases, etc.</span>
-                <span class="modal-close" onclick="closeModal('server-side', '317541312891411151062')">&times;</span>
-            </span>
-        </span>
-    </span>/behind-scenes of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the 
-    <span class="glossary-container" onclick="openModal('client', '123856413101297141115')">
-        <span class="glossary-term">client</span>
-
-        <span id="modal-client-123856413101297141115" class="glossary-modal">
-            <span class="modal-content">
-                <span>A device or software that accesses services or resources provided by a 
-    <span class="glossary-container" onclick="openModal('server', '115921431211013715684')">
-        <span class="glossary-term">server</span>
-
-        <span id="modal-server-115921431211013715684" class="glossary-modal">
-            <span class="modal-content">
-                <span>A computer program or a device that provides functionality to other devices or programs, known as {{&lt; glossary term=&#34;client&#34; preventRecursion=&#34;true&#34; &gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.</span>
-                <span class="modal-close" onclick="closeModal('server', '115921431211013715684')">&times;</span>
-            </span>
-        </span>
-    </span> by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.</span>
-                <span class="modal-close" onclick="closeModal('client', '123856413101297141115')">&times;</span>
-            </span>
-        </span>
-    </span> (
-    <span class="glossary-container" onclick="openModal('frontend', '615783910121115132144')">
-        <span class="glossary-term">frontend</span>
-
-        <span id="modal-frontend-615783910121115132144" class="glossary-modal">
-            <span class="modal-content">
-                <span>The client-side/front-scenes of a application that is responsible for rendering the user interface and sending requests to the server ({{&lt; glossary term=&#34;backend&#34; preventRecursion=&#34;true&#34;&gt;}}) for processing.</span>
-                <span class="modal-close" onclick="closeModal('frontend', '615783910121115132144')">&times;</span>
-            </span>
-        </span>
-    </span>).</span>
-                <span class="modal-close" onclick="closeModal('backend', '109527144813121516311')">&times;</span>
+                <span>The {{&lt; glossary term=&#34;server-side&#34; displayTerm=&#34;server-side&#34; ancestorTerms=&#34;{backend}&#34; &gt;}}/behind-scenes of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the {{&lt; glossary term=&#34;client&#34; displayTerm=&#34;client&#34; ancestorTerms=&#34;{backend}&#34; &gt;}} ({{&lt; glossary term=&#34;frontend&#34; displayTerm=&#34;frontend&#34; ancestorTerms=&#34;{backend}&#34; &gt;}}).</span>
+                <span class="modal-close" onclick="closeModal('backend', '124315710161181395142')">&times;</span>
             </span>
         </span>
     </span>, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.</p>
