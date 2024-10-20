@@ -6,7 +6,7 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Oct 2024 16:17:49 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2024 12:30:30 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What are HTTP and HTTPS Protocols?</title>
@@ -29,36 +29,102 @@
       <guid>http://localhost:1313/glossary/</guid>
       <description>&lt;dl&gt;
 &lt;dt&gt;Access Token&lt;/dt&gt;
-&lt;dd&gt;A string of alphanumeric characters (usually random) that is &lt;strong&gt;stand-In for the user&amp;rsquo;s credentials&lt;/strong&gt; that allows a user to access their applications/services, or allows other third-party applications to access the user&amp;rsquo;s application/service data without exposing the user&amp;rsquo;s credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;refresh-token&#39;, &#39;131467811423911512510&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;Refresh-Token&lt;/span&gt;
+&lt;dd&gt;A string of alphanumeric characters (usually random) that is &lt;strong&gt;stand-In for the user&amp;rsquo;s credentials&lt;/strong&gt; that allows a user to access their applications/services, or allows other third-party applications to access the user&amp;rsquo;s application/service data without exposing the user&amp;rsquo;s credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;refresh-token&#39;, &#39;121561179138321441510&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;Refresh-Token&lt;/span&gt;
 
-        &lt;span id=&#34;modal-refresh-token-131467811423911512510&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;An {{&amp;lt; glossary term=&amp;#34;Access-Token&amp;#34; displayTerm=&amp;#34;Access-Token&amp;#34; ancestorTerms=&amp;#34;{refresh-token}&amp;#34; &amp;gt;}} is short lived, meaning on expiry user will have to {{&amp;lt; glossary term=&amp;#34;authentication&amp;#34; displayTerm=&amp;#34;re-authenticate&amp;#34; ancestorTerms=&amp;#34;{refresh-token}&amp;#34; &amp;gt;}}. Refresh-Token is string of alphanumeric characters (usually random) that can be used to be issued with a new Access Token after the current Access Token expires. It is used to maintain the user&amp;#39;s session without requiring the user to re-authenticate while ensuring the Access Token is short-lived and thereby more secure.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;refresh-token&#39;, &#39;131467811423911512510&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-refresh-token-121561179138321441510&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;An &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;access-token&#39;, &#39;361081514112714591312&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;Access-Token&lt;/span&gt;
+
+            &lt;span id=&#34;modal-access-token-361081514112714591312&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A string of alphanumeric characters (usually random) that is &lt;strong&gt;stand-In for the user&amp;rsquo;s credentials&lt;/strong&gt; that allows a user to access their applications/services, or allows other third-party applications to access the user&amp;rsquo;s application/service data without exposing the user&amp;rsquo;s credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using Refresh-Token. If token is compromised, the user&amp;rsquo;s credentials are not exposed, making damage minimal.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;access-token&#39;, &#39;361081514112714591312&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;. If token is compromised, the user&amp;rsquo;s credentials are not exposed, making damage minimal.&lt;/dd&gt;
+        &lt;/span&gt; is short lived, meaning on expiry user will have to &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;authentication&#39;, &#39;912651015171113431428&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;re-authenticate&lt;/span&gt;
+
+            &lt;span id=&#34;modal-authentication-912651015171113431428&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;(Authentication) The process of &lt;strong&gt;verifying the identity&lt;/strong&gt; of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user&amp;rsquo;s identity 
+&lt;hr class=&#34;hr&#34; /&gt; (Authenticate) To log in to a system/service by providing valid credentials (e.g., username and password, biometric data, etc.).&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;authentication&#39;, &#39;912651015171113431428&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;. Refresh-Token is string of alphanumeric characters (usually random) that can be used to be issued with a new Access Token after the current Access Token expires. It is used to maintain the user&amp;rsquo;s session without requiring the user to re-authenticate while ensuring the Access Token is short-lived and thereby more secure.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;refresh-token&#39;, &#39;121561179138321441510&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;. If token is compromised, the user&amp;rsquo;s credentials are not exposed, making damage minimal.&lt;/dd&gt;
 &lt;dt&gt;API&lt;/dt&gt;
-&lt;dd&gt;Application Programming Interface is an &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;interface&#39;, &#39;214181179155101246133&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;interface&lt;/span&gt;
+&lt;dd&gt;Application Programming Interface is an &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;interface&#39;, &#39;154149101211387213165&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;interface&lt;/span&gt;
 
-        &lt;span id=&#34;modal-interface-214181179155101246133&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A shared boundary/layer between two entities (e.g., {{&amp;lt; glossary term=&amp;#34;software-component&amp;#34; displayTerm=&amp;#34;software components&amp;#34; ancestorTerms=&amp;#34;{interface}&amp;#34; &amp;gt;}}, devices, systems, etc.) that provides a means for them to communicate or interact with each other for exchanging information. It defines how access or interaction should occur between the entities.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;interface&#39;, &#39;214181179155101246133&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
-            &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; i.e. a shared-boundary/layer between two &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;software-component&#39;, &#39;112131082796414311155&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;software components&lt;/span&gt;
+            &lt;span id=&#34;modal-interface-154149101211387213165&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A shared boundary/layer between two entities (e.g., &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;software-component&#39;, &#39;457611132915381141210&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;software components&lt;/span&gt;
 
-        &lt;span id=&#34;modal-software-component-112131082796414311155&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A {{&amp;lt; glossary term=&amp;#34;server-process&amp;#34; displayTerm=&amp;#34;server-process&amp;#34; ancestorTerms=&amp;#34;{software-component}&amp;#34; &amp;gt;}} (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;software-component&#39;, &#39;112131082796414311155&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-software-component-457611132915381141210&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-process&#39;, &#39;271312151531441110968&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server-process&lt;/span&gt;
+
+            &lt;span id=&#34;modal-server-process-271312151531441110968&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A program that runs on a computer an a specific &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;port&#39;, &#39;112758151210931314164&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;port&lt;/span&gt;
+
+            &lt;span id=&#34;modal-port-112758151210931314164&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections 
+&lt;hr class=&#34;hr&#34; /&gt; Can be described as an internal address within a host computer that identifies a program or process&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;port&#39;, &#39;112758151210931314164&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; that provides a means for them to communicate or interact with each other for exchanging information. It &lt;strong&gt;defines how access or interaction should occur&lt;/strong&gt; between the two.&lt;/dd&gt;
+        &lt;/span&gt; and listens for incoming requests from clients over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a server machine.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-process&#39;, &#39;271312151531441110968&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;software-component&#39;, &#39;457611132915381141210&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, devices, systems, etc.) that provides a means for them to communicate or interact with each other for exchanging information. It defines how access or interaction should occur between the entities.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;interface&#39;, &#39;154149101211387213165&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; i.e. a shared-boundary/layer between two &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;software-component&#39;, &#39;761252141031911413158&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;software components&lt;/span&gt;
+
+            &lt;span id=&#34;modal-software-component-761252141031911413158&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-process&#39;, &#39;101114698521514313127&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server-process&lt;/span&gt;
+
+            &lt;span id=&#34;modal-server-process-101114698521514313127&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A program that runs on a computer an a specific &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;port&#39;, &#39;710121415211934618135&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;port&lt;/span&gt;
+
+            &lt;span id=&#34;modal-port-710121415211934618135&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections 
+&lt;hr class=&#34;hr&#34; /&gt; Can be described as an internal address within a host computer that identifies a program or process&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;port&#39;, &#39;710121415211934618135&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; and listens for incoming requests from clients over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a server machine.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-process&#39;, &#39;101114698521514313127&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;software-component&#39;, &#39;761252141031911413158&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; that provides a means for them to communicate or interact with each other for exchanging information. It &lt;strong&gt;defines how access or interaction should occur&lt;/strong&gt; between the two.&lt;/dd&gt;
 &lt;dt&gt;Authentication&lt;/dt&gt;
 &lt;dd&gt;The process of &lt;strong&gt;verifying the identity&lt;/strong&gt; of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user&amp;rsquo;s identity.&lt;/dd&gt;
 &lt;dt&gt;‌&lt;/dt&gt;
@@ -66,89 +132,208 @@
 &lt;dt&gt;Authorization&lt;/dt&gt;
 &lt;dd&gt;The process of &lt;strong&gt;determining what a user or system is allowed to do&lt;/strong&gt; or access. It involves granting or denying permissions based on the user&amp;rsquo;s identity, role, or other attributes.&lt;/dd&gt;
 &lt;dt&gt;Backend&lt;/dt&gt;
-&lt;dd&gt;The &lt;strong&gt;&lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-side&#39;, &#39;133814121094111761552&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;server-side&lt;/span&gt;
+&lt;dd&gt;The &lt;strong&gt;&lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-side&#39;, &#39;121532141151109613847&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server-side&lt;/span&gt;
 
-        &lt;span id=&#34;modal-server-side-133814121094111761552&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;Things that happen on the {{&amp;lt; glossary term=&amp;#34;server&amp;#34; displayTerm=&amp;#34;server&amp;#34; ancestorTerms=&amp;#34;{server-side}&amp;#34; &amp;gt;}}, e.g., processing of requests, interacting with databases, etc.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-side&#39;, &#39;133814121094111761552&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-server-side-121532141151109613847&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;Things that happen on the server, e.g., processing of requests, interacting with databases, etc.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-side&#39;, &#39;121532141151109613847&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;&lt;/strong&gt;/&lt;strong&gt;behind-scenes&lt;/strong&gt; of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;144137111651012315298&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
+        &lt;/span&gt;&lt;/strong&gt;/&lt;strong&gt;behind-scenes&lt;/strong&gt; of an application that is responsible for processing requests, interacting with databases, and generating responses to be sent to the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;871363291411041211515&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
 
-        &lt;span id=&#34;modal-client-144137111651012315298&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A device or software that accesses services or resources provided by a {{&amp;lt; glossary term=&amp;#34;server&amp;#34; displayTerm=&amp;#34;server&amp;#34; ancestorTerms=&amp;#34;{client}&amp;#34; &amp;gt;}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;144137111651012315298&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-client-871363291411041211515&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A device or software that accesses services or resources provided by a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;821511110541469731312&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
+
+            &lt;span id=&#34;modal-server-821511110541469731312&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as client, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;821511110541469731312&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; (front-end).&lt;/dd&gt;
+        &lt;/span&gt; by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;871363291411041211515&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; (front-end).&lt;/dd&gt;
 &lt;dt&gt;Cascading&lt;/dt&gt;
 &lt;dd&gt;A process in which an operation or set of operations is repeated multiple times, with the output of each operation becoming the input for the next operation.&lt;/dd&gt;
 &lt;dt&gt;‌&lt;/dt&gt;
-&lt;dd&gt;Applying a priority order when multiple rules target the same element. The &amp;ldquo;cascade&amp;rdquo; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;css&#39;, &#39;147151131289210134615&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;CSS&lt;/span&gt;
+&lt;dd&gt;Applying a priority order when multiple rules target the same element. The &amp;ldquo;cascade&amp;rdquo; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;css&#39;, &#39;121429173511681015413&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;CSS&lt;/span&gt;
 
-        &lt;span id=&#34;modal-css-147151131289210134615&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;Test {{&amp;lt; glossary term=&amp;#34;Cascading&amp;#34; displayTerm=&amp;#34;Cascading&amp;#34; ancestorTerms=&amp;#34;{css}&amp;#34; &amp;gt;}} {{&amp;lt; glossary term=&amp;#34;Style-Sheet-Language&amp;#34; displayTerm=&amp;#34;Style Sheets&amp;#34; ancestorTerms=&amp;#34;{css}&amp;#34; &amp;gt;}} is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;css&#39;, &#39;147151131289210134615&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
-            &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;, inline &amp;gt; internal &amp;gt; external and id &amp;gt; class &amp;gt; element.&lt;/dd&gt;
-&lt;dt&gt;Client&lt;/dt&gt;
-&lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;131529415146312781110&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
+            &lt;span id=&#34;modal-css-121429173511681015413&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;Test &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;cascading&#39;, &#39;121314109815711321546&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;Cascading&lt;/span&gt;
 
-        &lt;span id=&#34;modal-server-131529415146312781110&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as {{&amp;lt; glossary term=&amp;#34;client&amp;#34; displayTerm=&amp;#34;client&amp;#34; ancestorTerms=&amp;#34;{server}&amp;#34; &amp;gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;131529415146312781110&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-cascading-121314109815711321546&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A process in which an operation or set of operations is repeated multiple times, with the output of each operation becoming the input for the next operation. 
+&lt;hr class=&#34;hr&#34; /&gt; Applying a priority order when multiple rules target the same element. The &amp;ldquo;cascade&amp;rdquo; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In CSS, inline &amp;gt; internal &amp;gt; external and id &amp;gt; class &amp;gt; element.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;cascading&#39;, &#39;121314109815711321546&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
-&lt;dt&gt;Client-Side&lt;/dt&gt;
-&lt;dd&gt;Things that happen on the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;313851115122109711446&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
-
-        &lt;span id=&#34;modal-client-313851115122109711446&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A device or software that accesses services or resources provided by a {{&amp;lt; glossary term=&amp;#34;server&amp;#34; displayTerm=&amp;#34;server&amp;#34; ancestorTerms=&amp;#34;{client}&amp;#34; &amp;gt;}} by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;313851115122109711446&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
-            &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;, e.g., rendering of the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;user-interface&#39;, &#39;952415314131118127610&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;user-interface&lt;/span&gt;
-
-        &lt;span id=&#34;modal-user-interface-952415314131118127610&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;The visual elements of a software application that users interact with, such as buttons, menus, forms, and other controls. It is designed to be intuitive, user-friendly, and responsive to user input.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;user-interface&#39;, &#39;952415314131118127610&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
-            &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;, handling user interactions and events, sending requests to the server, computing, etc.&lt;/dd&gt;
-&lt;dt&gt;CSS&lt;/dt&gt;
-&lt;dd&gt;&lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;cascading&#39;, &#39;157414109111286231351&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;Cascading&lt;/span&gt;
-
-        &lt;span id=&#34;modal-cascading-157414109111286231351&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A process in which an operation or set of operations is repeated multiple times, with the output of each operation becoming the input for the next operation. {{&amp;lt; hr &amp;gt;}} Applying a priority order when multiple rules target the same element. The &amp;#34;cascade&amp;#34; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In {{&amp;lt; glossary term=&amp;#34;CSS&amp;#34; displayTerm=&amp;#34;CSS&amp;#34; ancestorTerms=&amp;#34;{cascading}&amp;#34; &amp;gt;}}, inline &amp;gt; internal &amp;gt; external and id &amp;gt; class &amp;gt; element.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;cascading&#39;, &#39;157414109111286231351&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
-            &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;style-sheet-language&#39;, &#39;137810155194123116142&#39;)&#34;&gt;
-         &lt;span class=&#34;glossary-term&#34;&gt;Style Sheets&lt;/span&gt;
+        &lt;/span&gt; &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;style-sheet-language&#39;, &#39;851031114131211569742&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;Style Sheets&lt;/span&gt;
  
-         &lt;span id=&#34;modal-style-sheet-language-137810155194123116142&#34; class=&#34;glossary-modal&#34;&gt;
-             &lt;span class=&#34;modal-content&#34;&gt;
-                 &lt;span&gt;A language used to describe the presentation or formatting of a document written in a {{&amp;lt; glossary term=&amp;#34;markup-language&amp;#34; displayTerm=&amp;#34;markup language&amp;#34; ancestorTerms=&amp;#34;{style-sheet-language}&amp;#34; &amp;gt;}} like {{&amp;lt; glossary term=&amp;#34;HTML&amp;#34; displayTerm=&amp;#34;HTML&amp;#34; ancestorTerms=&amp;#34;{style-sheet-language}&amp;#34; &amp;gt;}}, typically defining how elements should be displayed or rendered across different media.&lt;/span&gt;
-                 &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;style-sheet-language&#39;, &#39;137810155194123116142&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+             &lt;span id=&#34;modal-style-sheet-language-851031114131211569742&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;A language used to describe the presentation or formatting of a document written in a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;markup-language&#39;, &#39;498103121625157111413&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;markup language&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-markup-language-498103121625157111413&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;markup-language&#39;, &#39;498103121625157111413&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
              &lt;/span&gt;
-         &lt;/span&gt;
-     &lt;/span&gt; is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/dd&gt;
+         &lt;/span&gt; like &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;html&#39;, &#39;174528131514311126109&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;HTML&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-html-174528131514311126109&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (&lt;!-- raw HTML omitted --&gt;), paragraphs (&lt;!-- raw HTML omitted --&gt;), images (&lt;!-- raw HTML omitted --&gt;), links (&lt;!-- raw HTML omitted --&gt;), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;html&#39;, &#39;174528131514311126109&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt;, typically defining how elements should be displayed or rendered across different media.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;style-sheet-language&#39;, &#39;851031114131211569742&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt; is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;css&#39;, &#39;121429173511681015413&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, inline &amp;gt; internal &amp;gt; external and id &amp;gt; class &amp;gt; element.&lt;/dd&gt;
+&lt;dt&gt;Client&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;141573112131084259116&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
+
+            &lt;span id=&#34;modal-server-141573112131084259116&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;162143913111041578125&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
+
+            &lt;span id=&#34;modal-client-162143913111041578125&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A device or software that accesses services or resources provided by a server by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;162143913111041578125&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;141573112131084259116&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
+&lt;dt&gt;Client-Side&lt;/dt&gt;
+&lt;dd&gt;Things that happen on the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;141510111295413638127&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
+
+            &lt;span id=&#34;modal-client-141510111295413638127&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A device or software that accesses services or resources provided by a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;151375381411106212149&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
+
+            &lt;span id=&#34;modal-server-151375381411106212149&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as client, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;151375381411106212149&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;141510111295413638127&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, e.g., rendering of the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;user-interface&#39;, &#39;156851321211143107491&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;user-interface&lt;/span&gt;
+
+            &lt;span id=&#34;modal-user-interface-156851321211143107491&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;The visual elements of a software application that users interact with, such as buttons, menus, forms, and other controls. It is designed to be intuitive, user-friendly, and responsive to user input.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;user-interface&#39;, &#39;156851321211143107491&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, handling user interactions and events, sending requests to the server, computing, etc.&lt;/dd&gt;
+&lt;dt&gt;CSS&lt;/dt&gt;
+&lt;dd&gt;&lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;cascading&#39;, &#39;109341271381114256115&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;Cascading&lt;/span&gt;
+
+            &lt;span id=&#34;modal-cascading-109341271381114256115&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A process in which an operation or set of operations is repeated multiple times, with the output of each operation becoming the input for the next operation. 
+&lt;hr class=&#34;hr&#34; /&gt; Applying a priority order when multiple rules target the same element. The &amp;ldquo;cascade&amp;rdquo; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;css&#39;, &#39;123511514109413781162&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;CSS&lt;/span&gt;
+
+            &lt;span id=&#34;modal-css-123511514109413781162&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;Test Cascading &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;style-sheet-language&#39;, &#39;141521137941015813612&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;Style Sheets&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-style-sheet-language-141521137941015813612&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;A language used to describe the presentation or formatting of a document written in a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;markup-language&#39;, &#39;114362815513791121410&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;markup language&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-markup-language-114362815513791121410&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;markup-language&#39;, &#39;114362815513791121410&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt; like &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;html&#39;, &#39;814151291113314510276&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;HTML&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-html-814151291113314510276&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (&lt;!-- raw HTML omitted --&gt;), paragraphs (&lt;!-- raw HTML omitted --&gt;), images (&lt;!-- raw HTML omitted --&gt;), links (&lt;!-- raw HTML omitted --&gt;), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;html&#39;, &#39;814151291113314510276&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt;, typically defining how elements should be displayed or rendered across different media.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;style-sheet-language&#39;, &#39;141521137941015813612&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt; is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;css&#39;, &#39;123511514109413781162&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, inline &amp;gt; internal &amp;gt; external and id &amp;gt; class &amp;gt; element.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;cascading&#39;, &#39;109341271381114256115&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;style-sheet-language&#39;, &#39;510198437611212141513&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;Style Sheets&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-style-sheet-language-510198437611212141513&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;A language used to describe the presentation or formatting of a document written in a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;markup-language&#39;, &#39;129638155710421113141&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;markup language&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-markup-language-129638155710421113141&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;markup-language&#39;, &#39;129638155710421113141&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt; like &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;html&#39;, &#39;121511854271431139106&#39;)&#34;&gt;
+             &lt;span class=&#34;glossary-term&#34;&gt;HTML&lt;/span&gt;
+ 
+             &lt;span id=&#34;modal-html-121511854271431139106&#34; class=&#34;glossary-modal&#34;&gt;
+                 &lt;span class=&#34;modal-content&#34;&gt;
+                     &lt;span&gt;HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (&lt;!-- raw HTML omitted --&gt;), paragraphs (&lt;!-- raw HTML omitted --&gt;), images (&lt;!-- raw HTML omitted --&gt;), links (&lt;!-- raw HTML omitted --&gt;), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;html&#39;, &#39;121511854271431139106&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt;, typically defining how elements should be displayed or rendered across different media.&lt;/span&gt;
+                     &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;style-sheet-language&#39;, &#39;510198437611212141513&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                 &lt;/span&gt;
+             &lt;/span&gt;
+         &lt;/span&gt; is a style sheet language used for describing and styling the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/dd&gt;
 &lt;dt&gt;Discord&lt;/dt&gt;
 &lt;dd&gt;A platform where you can chat, speak, stream with your friends or communities. A Discord server is like a big group space. Servers contain channels which are like chat rooms for a specific topic. You can also join voice channels to talk/stream. Discord bots are user interactable community-made programs that can help you manage your server, play music, moderate, play games, etc that you can add to your server.&lt;/dd&gt;
 &lt;dt&gt;DNS&lt;/dt&gt;
@@ -168,16 +353,35 @@
 &lt;dt&gt;Idempotent&lt;/dt&gt;
 &lt;dd&gt;An operation that produces the same result no matter how many times it is executed. For example, a GET request is idempotent because it retrieves the same resource every time it is executed.&lt;/dd&gt;
 &lt;dt&gt;Interface&lt;/dt&gt;
-&lt;dd&gt;A shared boundary/layer between two entities (e.g., &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;software-component&#39;, &#39;118614510154392711312&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;software components&lt;/span&gt;
+&lt;dd&gt;A shared boundary/layer between two entities (e.g., &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;software-component&#39;, &#39;159148273121115134610&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;software components&lt;/span&gt;
 
-        &lt;span id=&#34;modal-software-component-118614510154392711312&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A {{&amp;lt; glossary term=&amp;#34;server-process&amp;#34; displayTerm=&amp;#34;server-process&amp;#34; ancestorTerms=&amp;#34;{software-component}&amp;#34; &amp;gt;}} (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;software-component&#39;, &#39;118614510154392711312&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-software-component-159148273121115134610&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-process&#39;, &#39;117212193141081541356&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server-process&lt;/span&gt;
+
+            &lt;span id=&#34;modal-server-process-117212193141081541356&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A program that runs on a computer an a specific &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;port&#39;, &#39;123159141113421108756&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;port&lt;/span&gt;
+
+            &lt;span id=&#34;modal-port-123159141113421108756&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections 
+&lt;hr class=&#34;hr&#34; /&gt; Can be described as an internal address within a host computer that identifies a program or process&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;port&#39;, &#39;123159141113421108756&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;, devices, systems, etc.) that provides a means for them to communicate or interact with each other for exchanging information. It defines how access or interaction should occur between the entities.&lt;/dd&gt;
+        &lt;/span&gt; and listens for incoming requests from clients over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a server machine.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-process&#39;, &#39;117212193141081541356&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;software-component&#39;, &#39;159148273121115134610&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, devices, systems, etc.) that provides a means for them to communicate or interact with each other for exchanging information. It defines how access or interaction should occur between the entities.&lt;/dd&gt;
 &lt;dt&gt;User-Interface&lt;/dt&gt;
 &lt;dd&gt;The visual elements of a software application that users interact with, such as buttons, menus, forms, and other controls. It is designed to be intuitive, user-friendly, and responsive to user input.&lt;/dd&gt;
 &lt;dt&gt;Internet&lt;/dt&gt;
@@ -203,93 +407,142 @@
 &lt;dt&gt;Rate-Limit&lt;/dt&gt;
 &lt;dd&gt;A restriction on the number of requests a client (user or application) can make to a server within a specified time frame. Rate limiting is used to prevent abuse, protect against denial-of-service attacks, and ensure fair usage of resources.&lt;/dd&gt;
 &lt;dt&gt;Refresh-Token&lt;/dt&gt;
-&lt;dd&gt;An &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;access-token&#39;, &#39;811047135143126112915&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;Access-Token&lt;/span&gt;
+&lt;dd&gt;An &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;access-token&#39;, &#39;911131253148151764210&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;Access-Token&lt;/span&gt;
 
-        &lt;span id=&#34;modal-access-token-811047135143126112915&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A string of alphanumeric characters (usually random) that is **stand-In for the user&amp;#39;s credentials** that allows a user to access their applications/services, or allows other third-party applications to access the user&amp;#39;s application/service data without exposing the user&amp;#39;s credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using {{&amp;lt; glossary term=&amp;#34;Refresh-Token&amp;#34; displayTerm=&amp;#34;Refresh-Token&amp;#34; ancestorTerms=&amp;#34;{access-token}&amp;#34; &amp;gt;}}. If token is compromised, the user&amp;#39;s credentials are not exposed, making damage minimal.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;access-token&#39;, &#39;811047135143126112915&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
-            &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; is short lived, meaning on expiry user will have to &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;authentication&#39;, &#39;152103159713111261484&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;re-authenticate&lt;/span&gt;
+            &lt;span id=&#34;modal-access-token-911131253148151764210&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A string of alphanumeric characters (usually random) that is &lt;strong&gt;stand-In for the user&amp;rsquo;s credentials&lt;/strong&gt; that allows a user to access their applications/services, or allows other third-party applications to access the user&amp;rsquo;s application/service data without exposing the user&amp;rsquo;s credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;refresh-token&#39;, &#39;691514731321148121051&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;Refresh-Token&lt;/span&gt;
 
-        &lt;span id=&#34;modal-authentication-152103159713111261484&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;(Authentication) The process of **verifying the identity** of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user&amp;#39;s identity {{&amp;lt; hr &amp;gt;}} (Authenticate) To log in to a system/service by providing valid credentials (e.g., username and password, biometric data, etc.).&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;authentication&#39;, &#39;152103159713111261484&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-refresh-token-691514731321148121051&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;An Access-Token is short lived, meaning on expiry user will have to &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;authentication&#39;, &#39;111038515121312976414&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;re-authenticate&lt;/span&gt;
+
+            &lt;span id=&#34;modal-authentication-111038515121312976414&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;(Authentication) The process of &lt;strong&gt;verifying the identity&lt;/strong&gt; of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user&amp;rsquo;s identity 
+&lt;hr class=&#34;hr&#34; /&gt; (Authenticate) To log in to a system/service by providing valid credentials (e.g., username and password, biometric data, etc.).&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;authentication&#39;, &#39;111038515121312976414&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;. Refresh-Token is string of alphanumeric characters (usually random) that can be used to be issued with a new Access Token after the current Access Token expires. It is used to maintain the user&amp;rsquo;s session without requiring the user to re-authenticate while ensuring the Access Token is short-lived and thereby more secure.&lt;/dd&gt;
+        &lt;/span&gt;. Refresh-Token is string of alphanumeric characters (usually random) that can be used to be issued with a new Access Token after the current Access Token expires. It is used to maintain the user&amp;rsquo;s session without requiring the user to re-authenticate while ensuring the Access Token is short-lived and thereby more secure.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;refresh-token&#39;, &#39;691514731321148121051&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;. If token is compromised, the user&amp;rsquo;s credentials are not exposed, making damage minimal.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;access-token&#39;, &#39;911131253148151764210&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; is short lived, meaning on expiry user will have to &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;authentication&#39;, &#39;713241410113856159112&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;re-authenticate&lt;/span&gt;
+
+            &lt;span id=&#34;modal-authentication-713241410113856159112&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;(Authentication) The process of &lt;strong&gt;verifying the identity&lt;/strong&gt; of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user&amp;rsquo;s identity 
+&lt;hr class=&#34;hr&#34; /&gt; (Authenticate) To log in to a system/service by providing valid credentials (e.g., username and password, biometric data, etc.).&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;authentication&#39;, &#39;713241410113856159112&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;. Refresh-Token is string of alphanumeric characters (usually random) that can be used to be issued with a new Access Token after the current Access Token expires. It is used to maintain the user&amp;rsquo;s session without requiring the user to re-authenticate while ensuring the Access Token is short-lived and thereby more secure.&lt;/dd&gt;
 &lt;dt&gt;Server&lt;/dt&gt;
 &lt;dd&gt;A &lt;strong&gt;computer program&lt;/strong&gt; or a &lt;strong&gt;device&lt;/strong&gt; that provides functionality to other devices or programs, known as clients, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/dd&gt;
 &lt;dt&gt;Server-Process&lt;/dt&gt;
-&lt;dd&gt;A program that runs on a computer an a specific &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;port&#39;, &#39;215831312145910147116&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;port&lt;/span&gt;
+&lt;dd&gt;A program that runs on a computer an a specific &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;port&#39;, &#39;515118141097413212163&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;port&lt;/span&gt;
 
-        &lt;span id=&#34;modal-port-215831312145910147116&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections {{&amp;lt; hr &amp;gt;}} Can be described as an internal address within a host computer that identifies a program or process&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;port&#39;, &#39;215831312145910147116&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-port-515118141097413212163&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections 
+&lt;hr class=&#34;hr&#34; /&gt; Can be described as an internal address within a host computer that identifies a program or process&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;port&#39;, &#39;515118141097413212163&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; and listens for incoming requests from clients over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;496357211281013151114&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
+        &lt;/span&gt; and listens for incoming requests from clients over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;897111251564141331210&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
 
-        &lt;span id=&#34;modal-server-496357211281013151114&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as {{&amp;lt; glossary term=&amp;#34;client&amp;#34; displayTerm=&amp;#34;client&amp;#34; ancestorTerms=&amp;#34;{server}&amp;#34; &amp;gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;496357211281013151114&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-server-897111251564141331210&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;155714813912101431162&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
+
+            &lt;span id=&#34;modal-client-155714813912101431162&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A device or software that accesses services or resources provided by a server by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;155714813912101431162&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; machine.&lt;/dd&gt;
+        &lt;/span&gt;, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;897111251564141331210&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; machine.&lt;/dd&gt;
 &lt;dt&gt;Server-Side&lt;/dt&gt;
-&lt;dd&gt;Things that happen on the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;141310541261872111539&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
+&lt;dd&gt;Things that happen on the &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server&#39;, &#39;121841114106153951372&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server&lt;/span&gt;
 
-        &lt;span id=&#34;modal-server-141310541261872111539&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as {{&amp;lt; glossary term=&amp;#34;client&amp;#34; displayTerm=&amp;#34;client&amp;#34; ancestorTerms=&amp;#34;{server}&amp;#34; &amp;gt;}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;141310541261872111539&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-server-121841114106153951372&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A computer program or a device that provides functionality to other devices or programs, known as &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;client&#39;, &#39;101114715512614132983&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;client&lt;/span&gt;
+
+            &lt;span id=&#34;modal-client-101114715512614132983&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A device or software that accesses services or resources provided by a server by making requests. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;client&#39;, &#39;101114715512614132983&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;, e.g., processing of requests, interacting with databases, etc.&lt;/dd&gt;
+        &lt;/span&gt;, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server&#39;, &#39;121841114106153951372&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt;, e.g., processing of requests, interacting with databases, etc.&lt;/dd&gt;
 &lt;dt&gt;Socket&lt;/dt&gt;
 &lt;dd&gt;Port + IP Address. Also known as a communication endpoint.&lt;/dd&gt;
 &lt;dt&gt;‌&lt;/dt&gt;
 &lt;dd&gt;A socket is one endpoint of a two-way communication link between two programs running on the network.&lt;/dd&gt;
 &lt;dt&gt;Software-Component&lt;/dt&gt;
-&lt;dd&gt;A &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-process&#39;, &#39;741361281531092114511&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;server-process&lt;/span&gt;
+&lt;dd&gt;A &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;server-process&#39;, &#39;289131014641553121711&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;server-process&lt;/span&gt;
 
-        &lt;span id=&#34;modal-server-process-741361281531092114511&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;A program that runs on a computer an a specific {{&amp;lt; glossary term=&amp;#34;port&amp;#34; displayTerm=&amp;#34;port&amp;#34; ancestorTerms=&amp;#34;{server-process}&amp;#34; &amp;gt;}} and listens for incoming requests from {{&amp;lt; glossary term=&amp;#34;clients&amp;#34; displayTerm=&amp;#34;clients&amp;#34; ancestorTerms=&amp;#34;{server-process}&amp;#34; &amp;gt;}} over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a {{&amp;lt; glossary term=&amp;#34;server&amp;#34; displayTerm=&amp;#34;server&amp;#34; ancestorTerms=&amp;#34;{server-process}&amp;#34; &amp;gt;}} machine.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-process&#39;, &#39;741361281531092114511&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-server-process-289131014641553121711&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A program that runs on a computer an a specific &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;port&#39;, &#39;231191412417105615138&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;port&lt;/span&gt;
+
+            &lt;span id=&#34;modal-port-231191412417105615138&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections 
+&lt;hr class=&#34;hr&#34; /&gt; Can be described as an internal address within a host computer that identifies a program or process&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;port&#39;, &#39;231191412417105615138&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/dd&gt;
+        &lt;/span&gt; and listens for incoming requests from clients over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a server machine.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;server-process&#39;, &#39;289131014641553121711&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
+            &lt;/span&gt;
+        &lt;/span&gt; (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.&lt;/dd&gt;
 &lt;dt&gt;Style-Sheet-Language&lt;/dt&gt;
-&lt;dd&gt;A language used to describe the presentation or formatting of a document written in a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;markup-language&#39;, &#39;861413412751109311152&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;markup language&lt;/span&gt;
+&lt;dd&gt;A language used to describe the presentation or formatting of a document written in a &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;markup-language&#39;, &#39;111012752159813461413&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;markup language&lt;/span&gt;
 
-        &lt;span id=&#34;modal-markup-language-861413412751109311152&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;markup-language&#39;, &#39;861413412751109311152&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-markup-language-111012752159813461413&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;markup-language&#39;, &#39;111012752159813461413&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt; like &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;html&#39;, &#39;151251314810249611713&#39;)&#34;&gt;
-        &lt;span class=&#34;glossary-term&#34;&gt;HTML&lt;/span&gt;
+        &lt;/span&gt; like &lt;span class=&#34;glossary-container&#34; onclick=&#34;openModal(&#39;html&#39;, &#39;147421061311155891312&#39;)&#34;&gt;
+            &lt;span class=&#34;glossary-term&#34;&gt;HTML&lt;/span&gt;
 
-        &lt;span id=&#34;modal-html-151251314810249611713&#34; class=&#34;glossary-modal&#34;&gt;
-            &lt;span class=&#34;modal-content&#34;&gt;
-                &lt;span&gt;HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (&amp;lt;h1-6/&amp;gt;), paragraphs (&amp;lt;p/&amp;gt;), images (&amp;lt;img&amp;gt;), links (&amp;lt;a/&amp;gt;), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.&lt;/span&gt;
-                &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;html&#39;, &#39;151251314810249611713&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;span id=&#34;modal-html-147421061311155891312&#34; class=&#34;glossary-modal&#34;&gt;
+                &lt;span class=&#34;modal-content&#34;&gt;
+                    &lt;span&gt;HyperText Markup Language is the standard markup language for creating web pages and web applications. It describes   the structure of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (&lt;!-- raw HTML omitted --&gt;), paragraphs (&lt;!-- raw HTML omitted --&gt;), images (&lt;!-- raw HTML omitted --&gt;), links (&lt;!-- raw HTML omitted --&gt;), etc which can be nested inside each other. The browser   reads the HTML file and renders the content on the screen.&lt;/span&gt;
+                    &lt;span class=&#34;modal-close&#34; onclick=&#34;closeModal(&#39;html&#39;, &#39;147421061311155891312&#39;)&#34;&gt;&amp;times;&lt;/span&gt;
+                &lt;/span&gt;
             &lt;/span&gt;
-        &lt;/span&gt;
-    &lt;/span&gt;, typically defining how elements should be displayed or rendered across different media.&lt;/dd&gt;
+        &lt;/span&gt;, typically defining how elements should be displayed or rendered across different media.&lt;/dd&gt;
 &lt;dt&gt;Transfer&lt;/dt&gt;
 &lt;dd&gt;Exchange of data between the client and server.&lt;/dd&gt;
 &lt;dt&gt;UI&lt;/dt&gt;

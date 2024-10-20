@@ -8,51 +8,56 @@
 {{- $definition := "" -}}
 
 {{- /*
-  `ancestorTerms` is a string of previously visited terms delimited by `{}`.
-  If the current term is in the ancestorTerms, then the term is a circular reference
-  and the displayTerm is returned to prevent infinite recursion
-*/ -}}
+  * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
+  * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
+  * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
 {{- if in $ancestorTerms (printf `{%s}` $term) -}}
-    {{- return $displayTerm -}}
+  {{- return $displayTerm -}}
 {{- end -}}
+*/ -}}
 
-{{- range $key, $value := $glossary.Params.glossary -}}
-  {{- if eq (lower $key) $term -}}
-    {{- $definition = $value -}}
+{{- /*
+    *  `ancestorTerms` is a string of previously visited terms delimited by `{}`.
+    *  If the current term is in the ancestorTerms, then the term is a circular reference
+    *  and the displayTerm is returned to prevent infinite recursion
+*/ -}}
+{{- if strings.Contains $ancestorTerms $term -}}
+  {{- $displayTerm -}}
+{{- else -}}
+  {{- range $key, $value := $glossary.Params.glossary -}}
+    {{- if eq (lower $key) $term -}}
+      {{- $definition = $value -}}
+    {{- end -}}
   {{- end -}}
-{{- end -}}
 
-{{- if $definition -}}
+  {{- if $definition -}}
     {{- /*
-      The glossary shortcode is of the pattern `{{< glossary term="term" displayTerm="displayTerm" ancestorTerms="ancestorTerms" >}}`
-      ancestorTerms is used to prevent infinite recursion in the glossary shortcode where terms are delimited by `{}`
-      Below matches the value of the `ancestorTerms` attribute of the `glossary` shortcode and appends the current term to the ancestorTerms.
+        * The glossary shortcode is of the pattern `{{< glossary term="term" displayTerm="displayTerm" ancestorTerms="ancestorTerms" >}}`
+        * ancestorTerms is used to prevent infinite recursion in the glossary shortcode where terms are delimited by `{}`
+        * Below matches the value of the `ancestorTerms` attribute of the `glossary` shortcode and appends the current term to the ancestorTerms.
     */ -}}
     {{- $shortcodePattern := `\{\{[ ]*<[ ]*glossary[ ]+term="(?<d_term>[^"]+)"(?:[ ]+displayTerm="(?<d_displayTerm>[^"]+)")?(?:[ ]+ancestorTerms="(?<d_ancestorTerms>[^"]+)")?[ ]*>[ ]*\}\}` -}}
     {{- $updatedDefinition := replaceRE $shortcodePattern (printf `{{< glossary term="$d_term" displayTerm="$d_displayTerm" ancestorTerms="%s{%s}" >}}` $ancestorTerms $term) $definition -}}
 
-    {{- if not $updatedDefinition -}}
-        {{- return $displayTerm -}}
-    {{- end -}}
+    {{- if $updatedDefinition -}}
+        {{- /* Prevents multiple glossary terms on the same page from sharing the same modal ID */ -}}
+        {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
 
-    {{- /* Debugging: Print updated definition */ -}}
-    {{- warnf "Term: %s, AncestorTerms: %s, Definition: %s" $term $ancestorTerms $definition -}}
-    {{- warnf "." -}}
-    {{- warnf "." -}}
+        <span class="glossary-container" onclick="openModal('{{- $term }}', '{{- $unique_id }}')">
+            <span class="glossary-term"> {{- $displayTerm -}} </span>
 
-    {{- /* Prevents multiple glossary terms on the same page from sharing the same modal ID */ -}}
-    {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
-
-    <span class="glossary-container" onclick="openModal('{{- $term }}', '{{- $unique_id }}')">
-        <span class="glossary-term"> {{- $displayTerm -}} </span>
-
-        <span id="modal-{{- $term }}-{{- $unique_id }}" class="glossary-modal">
-            <span class="modal-content">
-                <span> {{- $updatedDefinition | markdownify -}} </span>
-                <span class="modal-close" onclick="closeModal('{{- $term }}', '{{- $unique_id }}')">&times;</span>
+            <span id="modal-{{- $term }}-{{- $unique_id }}" class="glossary-modal">
+                <span class="modal-content">
+                    <span> {{- $updatedDefinition | markdownify -}} </span>
+                    <span class="modal-close" onclick="closeModal('{{- $term }}', '{{- $unique_id }}')">&times;</span>
+                </span>
             </span>
         </span>
-    </span>
-{{- else -}}
-  {{- $displayTerm -}}
+    {{- else -}}
+        {{- $displayTerm -}}
+    {{- end -}}
+
+  {{- else -}}
+    {{- $displayTerm -}}
+  {{- end -}}
 {{- end -}}
