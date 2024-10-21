@@ -7,6 +7,8 @@
 {{- $term := $term | lower -}}
 {{- $definition := "" -}}
 
+{{- warnf "__________%s" $ancestorTerms }}
+
 {{- /*
   * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
   * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.

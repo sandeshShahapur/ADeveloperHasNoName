@@ -17,7 +17,9 @@ glossary:
 
   backend: The {{< glossary term="server-side" displayTerm="server-side" >}}/behind-scenes of an application that is responsible for storing and handling data, interacting with {{< glossary term="database" displayTerm="databases" >}}, performing user operations, computations, etc. It processes {{< glossary term="request" displayTerm="requests" >}} and sends back {{< glossary term="response" displayTerm="responses" >}} to the {{< glossary term="client" >}}/{{< glossary term="frontend" >}}.
 
-  Binary-Code: Unlike humans who use and understand several symbols (0-9, A-Z, special characters), a computer is a **base-2 system** that uses and understands only two digits, 0 and 1. A {{< glossary term="bit" >}} is the smallest unit of data and represents a binary digit (0 or 1). It uses binary code (**a series of 0s and 1s**) to represent all data, instructions, and information that the computer can understand and process. While it is used by {{< glossary term="machine-code" displayTerm="machine-language" >}}, decades of abstractions has lead to creation of {{< glossary term="high-level" displayTerm="higher level" >}} languages.
+  Binary-Code: Unlike humans who use and understand variety of symbols/values (0-9, A-Z, special characters), a computer is a **base-2 system** that uses and understands only {{< glossary term="bit" displayTerm="bits" >}}. Computers use binary code (**a series of bits**) to represent all data, instructions, and information (whether it's text, images, sound, etc. ). It is the most machine readable and least human readable form of data.
+
+  Bit: The smallest unit of data that represents a binary value, either 0 or 1. Basis for {{< glossary term="binary-code" >}} and all computer operations. A group of 8 bits is called a byte which is the **standard unit** of data storage in computers.
 
   cascading: A process in which an operation or set of operations is repeated multiple times, with the **output of each operation becoming the input** for the next operation. {{< hr >}} Applying a **priority order** when multiple rules target the same element. The "cascade" ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In {{< glossary term="CSS" displayTerm="CSS" >}}, inline > internal > external and id > class > element.
 
@@ -29,11 +31,15 @@ glossary:
 
   Client-Side: \u200B **Things that happen on the {{< glossary term="client" displayTerm="client" >}}**, e.g., rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" >}}, computing, etc.
 
+  Compile: Computers cannot understand or execute {{< glossary term="source-code" >}}. Compilation is the process of **translating the complete source code into {{< glossary term="machine-code" >}}** before the program is executed, opposed to {{< glossary term="interpret" displayTerm="interpreting" >}}. A {{< glossary term="compile" displayTerm="compiler" >}} is required only once, and the compiled code can be executed multiple times. Compiled languages are 'faster' because the whole code is already translated.
+
+  Compiler: A **program** that {{< glossary term="compile" displayTerm="compiles" >}}. It also checks for errors in the code, and optimizes the code for better performance. The output of the compilation process is an executable file that can then be run by the computer.
+
   css: \u200B {{< glossary term="Cascading" >}} {{< glossary term="Style-Sheet-Language" displayTerm="Style Sheets" >}} is used for **describing and styling the presentation** of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.
 
   database: A **structured collection of related data** that is stored and organized in a way that allows for efficient retrieval, updating, and management. Databases are used to store information for applications, websites, and other systems.
 
-  data-structure: A way of **organizing and storing data** so that it can be accessed and modified efficiently. Data structures define the relationship between the data, the operations that can be performed on the data, and the {{< glossary term="algorithm"  displayTerm="algorithms" >}} used to perform these operations. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
+  data-structure: A way of **organizing and storing related data** so that it can be accessed and modified efficiently. A way of structurally uniting/grouping data by defining the relationship between the data. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
 
   decode: The process of **converting {{< glossary term="encode" displayTerm="encoded" >}} data back to its original form**. Decoding is the reverse of encoding and is used to retrieve the original data from its encoded form.
 
@@ -57,7 +63,7 @@ glossary:
 
   HashTable-Diag: ㅤ{{< figure src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*l9eCykFTYwvLZgy62id5Ag.png" alt="Hash Table Data Structure" caption="Hash Table Data Structure" >}}
 
-  High-Level: Designed to be **easy to read and write** for humans. It is **abstracted** from the details of the computer's hardware and is closer to human language than {{< glossary term="machine-language" >}}. Examples include not worrying about {{< glossary term="memory-management" >}}, {{< glossary term="garbage-collection" >}}, etc. High-level languages are more **expressive** and **less complex** than {{< glossary term="low-level" >}} languages.
+  High-Level: Writing code that is **easy to read and write** for humans. It is **abstracted** from the details of the computer's hardware and is closer to human language than {{< glossary term="machine-language" >}}. High-level languages are more **expressive** and **less complex** than {{< glossary term="low-level" >}} languages. However, they are less efficient and slower to execute than low-level languages and more work is required to convert them to machine code.
 
   HTML: \u200B {{< glossary term="HyperText" >}} markup language is the standard {{< glossary term="Markup-Language" >}} **for creating web pages and web applications**. It **describes the structure and semantic meaning** of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (<h1-6/>), paragraphs (<p/>), images (<img>), links (<a/>), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.
 
@@ -73,11 +79,13 @@ glossary:
 
   Internet: It is like an intricate network of highways (data cables) connecting cities ({{< glossary term="server" displayTerm="servers" >}}) and towns ({{< glossary term="client" displayTerm="clients" >}}) across the globe. **A network of network**. It allows users to access and share information, resources, and services across the world and with each other.
 
-  Interpret: The process of **translating AND executing code** line-by-line in real-time of execution of the program as opposed to {{< glossary term="compile" displayTerm="compiling">}}. The system will always require an interpreter software to execute the program. It is slower than compiled code as it has to be **translated every time and live**. Errors cannot be caught before program execution.
+  Interpret: Computers cannot understand or execute {{< glossary term="source-code" >}}. Interpretation is the process of translating a line of source-code into {{< glossary term="machine-code" >}} AND then executing it BEFORE moving to the next line as opposed to {{< glossary term="compile" displayTerm="compiling">}}. The system will ALWAYS require an {{< glossary term="interpreter" >}} software to execute the program. Interpreted languages are 'slower' because translation has to be done during {{< glossary term="run-time" >}} and every time the program is executed.
+
+  Interpreter: A program that {{< glossary term="interpret" displayTerm="interprets" >}}.
 
   IP-Address: An Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device connected to the {{< glossary term="internet" >}}, or a local network that uses the Internet Protocol for communication. Being geo-locatable, it's like a postal address for devices on the internet which helps in transmitting data efficiently between devices.
 
-  JavaScript: A {{< glossary term="high-level" >}}, {{< glossary term="interpreted-programming-language" displayTerm="interpreted programming language" >}} that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the {{< glossary term="client-side" >}} (browser) and can interact with the {{< glossary term="DOM" >}} of a web page to update content, style, and structure.
+  JavaScript: A {{< glossary term="high-level" >}}, {{< glossary term="interpret" displayTerm="interpreted programming language" >}} that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the {{< glossary term="client-side" >}} (browser) and can interact with the {{< glossary term="DOM" >}} of a web page to update content, style, and structure.
 
   JSON: JavaScript Object Notation is a **lightweight data-interchange format** that is easy for humans to read and write, and easy for machines to {{< glossary term="parse" >}} and generate. It is used to transmit data between {{< glossary term="software-component" displayTerm="software components" >}} as an alternative to {{< glossary term="XML" >}}. While it is derived from {{< glossary term="JavaScript" >}}, it is language-independent.
 
@@ -85,9 +93,9 @@ glossary:
 
   LinkedList-Diag: ㅤ{{< figure src="https://media.geeksforgeeks.org/wp-content/uploads/20220829110944/LLdrawio.png" alt="Linked List Data Structure" caption="Linked List Data Structure" >}}
 
-  Low-Level: Designed to be **closer to the computer's hardware** and **more efficient** than {{< glossary term="high-level" >}} languages. It is more closely related to the computer's architecture and is used to perform tasks that require direct hardware access. Examples include handling {{< glossary term="memory-management" >}}, {{< glossary term="garbage-collection" >}}, {{< glossary term="register" displayTerm="registers" >}}, etc.
+  Low-Level: Writing code that is **closer to the computer's hardware**, it is like directly speaking to the computer in its own language making it more efficient and fast but less human readable. Involves giving very specific instructions about how the computer's memory and processor should work. It can be more complex and harder to write than {{< glossary term="high-level" >}} languages. Lesser work required to translate the code into {{< glossary term="machine-code" >}}.
 
-  Machine-Code: A {{< glossary term="low-level" >}} programming language made up of {{< glossary term="binary-code"  displayTerm="binary code">}} that tells a computer's CPU what to do. It is the language that the computer's hardware can execute directly without needing some 'translation'. It is specific to the computer's architecture and is not human-readable. Also called machine-language/machine-code. It is the lowest level of programming languages.
+  Machine-Code: Most fundamental language a computer can understand and execute directly without needing some 'translation'. Operates at hardware level i.e. consists of instructions (made up of {{< glossary term="binary-code"  displayTerm="binary code">}}) that corresponds to a specific operation the CPU can perform; thereby being specific to a computer's architecture. Also called machine-language/machine-code. It is the {{< glossary term="low-level" displayTerm="lowest-level" >}} programming language.
 
   MAC-Address: A Media Access Control Address is a hardware identifier that **uniquely identifies** each device on a network.   Primarily, the manufacturer assigns it. They are often found on a device's network interface controller (NIC) card.
 
@@ -107,6 +115,8 @@ glossary:
 
   Request: Often, it is the {{< glossary term="backend" >}} that stores and handles data, performs operations, etc. The {{< glossary term="client" >}}/{{< glossary "frontend" >}} when it needs data or wants to perform an operation, it must ask the backend {{< glossary term="server" >}} to do so. This asking is called a request, often over the network. The server processes the request and sends back a {{< glossary term="response" >}}.
 
+  RunTime: The period when a program is running i.e. it is in execution/operation and is performing its tasks. The runtime of a program starts when it is executed and ends when it is terminated.
+
   server: A computer program or a device that provides functionality to other devices or programs, known as {{< glossary term="client" displayTerm="client" >}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.
 
   Server-Process: A program that runs on a computer an a specific {{< glossary term="port" displayTerm="port" >}} and listens for incoming requests from {{< glossary term="clients" displayTerm="clients" >}} over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a {{< glossary term="server" displayTerm="server" >}} machine.
@@ -116,6 +126,8 @@ glossary:
   Socket: Port + IP Address. Also known as a communication endpoint. {{< hr >}} A socket is one endpoint of a two-way communication link between two programs running on the network.
 
   Software-Component: A {{< glossary term="server-process" displayTerm="server-process" >}} (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.
+
+  Source-Code: The **raw textual human-readable code** of a computer program written by a programmer in a programming language. Computers do not understand this version of code, thus it needs to be translated into {{< glossary term="machine-code" >}} before it can be executed. Translation is achieved through the process of {{< glossary term="compile" displayTerm="compilation" >}} or {{< glossary term="interpret" displayTerm="interpretation" >}}.
 
   Style-Sheet-Language: A style sheet language that used to describe the presentation or formatting of a document written in a {{< glossary term="markup-language" displayTerm="markup language" >}} like {{< glossary term="HTML" displayTerm="HTML" >}}, typically defining how elements should be displayed or rendered across different media.
 
@@ -160,7 +172,10 @@ Backend
 : The **{{< glossary term="server-side" >}}**/**behind-scenes** of an application that is responsible for storing and handling data, interacting with {{< glossary term="database" displayTerm="databases" >}}, performing user operations, computations, etc. It processes {{< glossary term="request" displayTerm="requests" >}} and sends back {{< glossary term="response" displayTerm="responses" >}} to the {{< glossary term="client" >}}/{{< glossary term="frontend" >}}.
 
 Binary-Code
-: Unlike humans who use and understand several symbols (0-9, A-Z, special characters), a computer is a **base-2 system** that uses and understands only two digits, 0 and 1. A {{< glossary term="bit" >}} is the smallest unit of data and represents a binary digit (0 or 1). It uses binary code (**a series of 0s and 1s**) to represent all data, instructions, and information that the computer can understand and process. While it is used by {{< glossary term="machine-code" displayTerm="machine-language" >}}, decades of abstractions has lead to creation of {{< glossary term="high-level" displayTerm="higher level" >}} languages.
+: Unlike humans who use and understand variety of symbols/values (0-9, A-Z, special characters), a computer is a **base-2 system** that uses and understands only {{< glossary term="bit" displayTerm="bits" >}}. Computers use binary code (**a series of bits**) to represent all data, instructions, and information (whether it's text, images, sound, etc. ). It is the most machine readable and least human readable form of data.
+
+Bit
+: The smallest unit of data that represents a binary value, either 0 or 1. Basis for {{< glossary term="binary-code" >}} and all computer operations. A group of 8 bits is called a byte which is the **standard unit** of data storage in computers.
 
 Cascading
 : A process in which an operation or set of operations is repeated multiple times, with the **output of each operation becoming the input** for the next operation.
@@ -180,6 +195,12 @@ Client
 Client-Side
 : **Things that happen on the {{< glossary term="client" displayTerm="client" >}}**, e.g., rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" >}}, computing, etc.
 
+Compile
+: Computers cannot understand or execute {{< glossary term="source-code" >}}. Compilation is the process of **translating the complete source code into {{< glossary term="machine-code" >}}** before the program is executed, opposed to {{< glossary term="interpret" displayTerm="interpreting" >}}. A {{< glossary term="compile" displayTerm="compiler" >}} is required only once, and the compiled code can be executed multiple times. Compiled languages are 'faster' because the whole code is already translated.
+
+Compiler
+: A **program** that {{< glossary term="compile" displayTerm="compiles" >}}. It also checks for errors in the code, and optimizes the code for better performance. The output of the compilation process is an executable file that can then be run by the computer.
+
 CSS
 : {{< glossary term="Cascading" >}} {{< glossary term="Style-Sheet-Language" displayTerm="Style Sheets" >}} is used for **describing and styling the presentation** of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.
 
@@ -187,7 +208,7 @@ Database
 :  A **structured collection of related data** that is stored and organized in a way that allows for efficient retrieval, updating, and management. Databases are used to store information for applications, websites, and other systems.
 
 Data-Structure
-: A way of **organizing and storing data** so that it can be accessed and modified efficiently. Data structures define the relationship between the data, the operations that can be performed on the data, and the {{< glossary term="algorithm"  displayTerm="algorithms" >}} used to perform these operations. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
+: A way of **organizing and storing related data** so that it can be accessed and modified efficiently. A way of structurally uniting/grouping data by defining the relationship between the data. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
 
 Decode
 : The process of **converting {{< glossary term="encode" displayTerm="encoded" >}} data back to its original form**. Decoding is the reverse of encoding and is used to retrieve the original data from its encoded form.
@@ -220,7 +241,7 @@ Frontend
 : The **{{< glossary term="client-side" >}}/front-scenes** of a application that is responsible for rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" >}}, computing.
 
 High-Level
-: Designed to be **easy to read and write** for humans. It is **abstracted** from the details of the computer's hardware and is closer to human language than {{< glossary term="machine-language" >}}. Examples include not worrying about {{< glossary term="memory-management" >}}, {{< glossary term="garbage-collection" >}}, etc. High-level languages are more **expressive** and **less complex** than {{< glossary term="low-level" >}} languages.
+: Writing code that is **easy to read and write** for humans. It is **abstracted** from the details of the computer's hardware and is closer to human language than {{< glossary term="machine-language" >}}. High-level languages are more **expressive** and **less complex** than {{< glossary term="low-level" >}} languages. However, they are less efficient and slower to execute than low-level languages and more work is required to convert them to machine code.
 
 HTML
 : {{< glossary term="HyperText" >}} markup language is the standard {{< glossary term="Markup-Language" >}} **for creating web pages and web applications**. It **describes the structure and semantic meaning** of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (<h1-6/>), paragraphs (<p/>), images (<img>), links (<a/>), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.
@@ -243,13 +264,17 @@ Interface
 Internet
 : It is like an intricate network of highways (data cables) connecting cities ({{< glossary term="server" displayTerm="servers" >}}) and towns ({{< glossary term="client" displayTerm="clients" >}}) across the globe. **A network of network**. It allows users to access and share information, resources, and services across the world and with each other.
 
-Interpret: The process of **translating AND executing code** line-by-line in real-time of execution of the program as opposed to {{< glossary term="compile" displayTerm="compiling">}}. The system will always require an interpreter software to execute the program. It is slower than compiled code as it has to be **translated every time and live**. Errors cannot be caught before program execution.
+Interpret
+: Computers cannot understand or execute {{< glossary term="source-code" >}}. Interpretation is the process of translating a line of source-code into {{< glossary term="machine-code" >}} AND then executing it BEFORE moving to the next line as opposed to {{< glossary term="compile" displayTerm="compiling">}}. The system will ALWAYS require an {{< glossary term="interpreter" >}} software to execute the program. Interpreted languages are 'slower' because translation has to be done during {{< glossary term="run-time" >}} and every time the program is executed.
+
+Interpreter
+: A program that {{< glossary term="interpret" displayTerm="interprets" >}}.
 
 IP-Address
 : An Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device connected to the {{< glossary term="internet" >}}, or a local network that uses the Internet Protocol for communication. Being geo-locatable, it's like a postal address for devices on the internet which helps in transmitting data efficiently between devices.
 
 JavaScript
-: A {{< glossary term="high-level" >}}, {{< glossary term="interpreted-programming-language" displayTerm="interpreted programming language" >}} that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the {{< glossary term="client-side" >}} (browser) and can interact with the {{< glossary term="DOM" >}} of a web page to update content, style, and structure.
+: A {{< glossary term="high-level" >}}, {{< glossary term="interpret" displayTerm="interpreted programming language" >}} that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the {{< glossary term="client-side" >}} (browser) and can interact with the {{< glossary term="DOM" >}} of a web page to update content, style, and structure.
 
 JSON
 : JavaScript Object Notation is a **lightweight data-interchange format** that is easy for humans to read and write, and easy for machines to {{< glossary term="parse" >}} and generate. It is used to transmit data between {{< glossary term="software-component" displayTerm="software components" >}} as an alternative to {{< glossary term="XML" >}}. While it is derived from {{< glossary term="JavaScript" >}}, it is language-independent.
@@ -258,10 +283,10 @@ Library
 : A collection of pre-written code that provides specific functionality to be used by other code. Libraries are reusable and can save time and effort by allowing developers to use existing code rather than writing it from scratch. All the public methods and signatures forms the API of the library.
 
 Low-Level
-: Designed to be **closer to the computer's hardware** and **more efficient** than {{< glossary term="high-level" >}} languages. It is more closely related to the computer's architecture and is used to perform tasks that require direct hardware access. Examples include handling {{< glossary term="memory-management" >}}, {{< glossary term="garbage-collection" >}}, {{< glossary term="register" displayTerm="registers" >}}, etc.
+: Writing code that is **closer to the computer's hardware**, it is like directly speaking to the computer in its own language making it more efficient and fast but less human readable. Involves giving very specific instructions about how the computer's memory and processor should work. It can be more complex and harder to write than {{< glossary term="high-level" >}} languages. Lesser work required to translate the code into {{< glossary term="machine-code" >}}.
 
 Machine-Code
-: A {{< glossary term="low-level" >}} programming language made up of {{< glossary term="binary-code"  displayTerm="binary code">}} that tells a computer's CPU what to do. It is the language that the computer's hardware can execute directly without needing some 'translation'. It is specific to the computer's architecture and is not human-readable. Also called machine-language/machine-code. It is the lowest level of programming languages.
+: Most fundamental language a computer can understand and execute directly without needing some 'translation'. Operates at hardware level i.e. consists of instructions (made up of {{< glossary term="binary-code"  displayTerm="binary code">}}) that corresponds to a specific operation the CPU can perform; thereby being specific to a computer's architecture. Also called machine-language/machine-code. It is the {{< glossary term="low-level" displayTerm="lowest-level" >}} programming language.
 
 MAC-Address
 : A Media Access Control Address is a hardware identifier that **uniquely identifies** each device on a network. Primarily, the manufacturer assigns it. They are often found on a device's network interface controller (NIC) card.
@@ -310,6 +335,9 @@ Socket
 
 Software-Component
 : A {{< glossary term="server-process" >}} (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.
+
+Source-Code
+: The **raw textual human-readable code** of a computer program written by a programmer in a programming language. Computers do not understand this version of code, thus it needs to be translated into {{< glossary term="machine-code" >}} before it can be executed. Translation is achieved through the process of {{< glossary term="compile" displayTerm="compilation" >}} or {{< glossary term="interpret" displayTerm="interpretation" >}}.
 
 Style-Sheet-Language
 : A language used to describe the presentation or formatting of a document written in a {{< glossary term="markup-language" displayTerm="markup language" >}} like {{< glossary term="HTML" >}}, typically defining how elements should be displayed or rendered across different media.
