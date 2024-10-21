@@ -1,0 +1,102 @@
+{{- $name := .Get "name" | lower -}}
+{{- $text := .Get "text" -}}
+{{- $imageURL := "" -}}
+
+{{/* Mapping diagram names to their respective URLs */}}
+{{- if eq $name "array" -}}
+    {{- $imageURL = "https://www.tutorialspoint.com/data_structures_algorithms/images/arrays1.jpg" -}}
+{{- else if eq $name "hashtable" -}}
+    {{- $imageURL = "https://miro.medium.com/v2/resize:fit:720/format:webp/1*l9eCykFTYwvLZgy62id5Ag.png" -}}
+{{- else if eq $name "linkedlist" -}}
+    {{- $imageURL = "https://media.geeksforgeeks.org/wp-content/uploads/20220829110944/LLdrawio.png" -}}
+{{- else if eq $name "tree" -}}
+    {{- $imageURL = "https://media.geeksforgeeks.org/wp-content/uploads/20240415185343/tree-data-structure-banners-(2).webp" -}}
+{{- else -}}
+    {{- warnf "No diagram found for %s" $name -}}
+{{- end -}}
+
+{{- $modalId := printf "modal-%s" ($name | urlize) -}}
+
+{{- if $imageURL -}}
+    <!-- The clickable text -->
+    <a href="#" class="diag-link" data-toggle="{{ $modalId }}">{{ $text }}</a>
+
+    <!-- The modal -->
+    <div id="{{ $modalId }}" class="diag-modal hidden">
+        <div class="diag-diag-modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="{{ $imageURL }}" alt="{{ $name }} diagram">
+        </div>
+    </div>
+{{- else -}}
+    {{- printf $text -}}
+{{- end -}}
+
+<!-- Include styles and script -->
+<style>
+    .diag-link {
+        color: #18d093;
+        cursor: help;
+    }
+
+    .diag-modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+    }
+
+    .diag-diag-modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.diag-link');
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const modalId = link.getAttribute('data-toggle');
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+        });
+    });
+
+    const modals = document.querySelectorAll('.diag-modal');
+    modals.forEach(modal => {
+        const closeBtn = modal.querySelector('.close-btn');
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});
+</script>

@@ -4,6 +4,7 @@
     "QUIC",
     "relref",
     "shortcode",
-    "shortcodes"
+    "shortcodes",
+    "warnf"
   ]
 }

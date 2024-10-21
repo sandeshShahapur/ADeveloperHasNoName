@@ -43,6 +43,7 @@
         {{- /* Prevents multiple glossary terms on the same page from sharing the same modal ID */ -}}
         {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
 
+        {{- /* Do not use block level elements within the span tag, causes weird over spilling. */ -}}
         <span class="glossary-container" onclick="openModal('{{- $term }}', '{{- $unique_id }}')">
             <span class="glossary-term"> {{- $displayTerm -}} </span>
 
@@ -61,3 +62,93 @@
     {{- $displayTerm -}}
   {{- end -}}
 {{- end -}}
+
+<!-- Include styles and script -->
+<style>
+  .glossary-container {
+    position: relative;
+}
+
+  .glossary-term {
+      color: #007bff;
+      text-decoration-line: underline;
+      text-underline-offset: 3px;
+      text-decoration-style: dashed;
+      cursor: help;
+  }
+
+  .glossary-modal {
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      left: 0%;
+      top: 100%;
+      background-color: rgba(0,0,0,0.8);
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      width: 250px;
+      max-width: 90vw;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-content {
+      margin: 0;
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+  }
+
+  .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .modal-close:hover,
+  .modal-close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  }
+</style>
+
+<script>
+  function openModal(term, uniqueId) {
+    var modal = document.getElementById("modal-" + term + "-" + uniqueId);
+    modal.style.display = "inline";
+  }
+
+  function closeModal(term, uniqueId) {
+      var modal = document.getElementById("modal-" + term + "-" + uniqueId);
+      modal.style.display = "none";
+  }
+
+  // Prevent closing outer modal when interacting with inner modal
+  document.querySelectorAll('.glossary-modal').forEach(function(modal) {
+      modal.onclick = function(event) {
+          event.stopPropagation(); // Stop the event from propagating to parent modals
+      };
+  });
+
+  // Close modal when clicking outside of it
+  window.onclick = function(event) {
+      var glossary_terms = document.getElementsByClassName('glossary-term');
+      var modals = document.getElementsByClassName('glossary-modal');
+
+      var is_glossary_term = false;
+      for (var j = 0; j < glossary_terms.length; j++) {
+          if (event.target === glossary_terms[j]) {
+              is_glossary_term = true;
+          }
+      }
+
+      for (var i = 0; i < modals.length; i++) {
+          if (event.target !== modals[i] && !is_glossary_term) {
+              modals[i].style.display = "none";
+          }
+      }
+  }
+</script>

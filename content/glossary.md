@@ -33,7 +33,7 @@ glossary:
 
   database: A **structured collection of related data** that is stored and organized in a way that allows for efficient retrieval, updating, and management. Databases are used to store information for applications, websites, and other systems.
 
-  data-structure: A way of **organizing and storing data** so that it can be accessed and modified efficiently. Data structures define the relationship between the data, the operations that can be performed on the data, and the {{< glossary term="algorithm"  displayTerm="algorithms">}} used to perform these operations. For example {{< glossary term="array-diag" displayTerm="arrays" >}}, {{< glossary term="linkedlist-diag" displayTerm="LinkedLists" >}}, {{< glossary term="tree-diag" displayTerm="trees" >}}, {{< glossary term="hashtable-diag" displayTerm="hash tables" >}} etc.
+  data-structure: A way of **organizing and storing data** so that it can be accessed and modified efficiently. Data structures define the relationship between the data, the operations that can be performed on the data, and the {{< glossary term="algorithm"  displayTerm="algorithms" >}} used to perform these operations. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
 
   decode: The process of **converting {{< glossary term="encode" displayTerm="encoded" >}} data back to its original form**. Decoding is the reverse of encoding and is used to retrieve the original data from its encoded form.
 
@@ -187,7 +187,7 @@ Database
 :  A **structured collection of related data** that is stored and organized in a way that allows for efficient retrieval, updating, and management. Databases are used to store information for applications, websites, and other systems.
 
 Data-Structure
-: A way of **organizing and storing data** so that it can be accessed and modified efficiently. Data structures define the relationship between the data, the operations that can be performed on the data, and the {{< glossary term="algorithm"  displayTerm="algorithms">}} used to perform these operations. For example {{< glossary term="array-diag" displayTerm="arrays" >}}, {{< glossary term="linkedlist-diag" displayTerm="LinkedLists" >}}, {{< glossary term="tree-diag" displayTerm="trees" >}}, {{< glossary term="hashtable-diag" displayTerm="hash tables" >}} etc.
+: A way of **organizing and storing data** so that it can be accessed and modified efficiently. Data structures define the relationship between the data, the operations that can be performed on the data, and the {{< glossary term="algorithm"  displayTerm="algorithms" >}} used to perform these operations. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
 
 Decode
 : The process of **converting {{< glossary term="encode" displayTerm="encoded" >}} data back to its original form**. Decoding is the reverse of encoding and is used to retrieve the original data from its encoded form.
