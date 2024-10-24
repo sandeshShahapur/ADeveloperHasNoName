@@ -278,103 +278,101 @@ This is where OAuth comes into play. It provides a secure way for you to grant a
 <h2 id="20-are-there-different-versions-of-oauth">2.0? Are there different versions of OAuth?<a hidden class="anchor" aria-hidden="true" href="#20-are-there-different-versions-of-oauth">#</a></h2>
 <p>In this guide, we will focus on OAuth 2.0, which is the latest version of the OAuth protocol. Other versions are OAuth 1.0 and OAuth 1.0a, which are now considered outdated due to security vulnerabilities and limitations.</p>
 <h2 id="definition">Definition<a hidden class="anchor" aria-hidden="true" href="#definition">#</a></h2>
-<p>OAuth (Open Authorization) is a <span class="glossary-container" onclick="openModal('protocol', '147541116131538210912')">
-            <span class="glossary-term">protocol</span>
+<p>OAuth (Open Authorization) is a <span class="glossary-container" onclick="openModal('protocol', '456121131021971381514')">
+        <span class="glossary-term">protocol</span>
 
-            <span id="modal-protocol-147541116131538210912" class="glossary-modal">
-                <span class="modal-content">
-                    <span>A set of rules and guidelines that dictate how participants (whether they are devices, software components, or users) in a system should behave.</span>
-                    <span class="modal-close" onclick="closeModal('protocol', '147541116131538210912')">&times;</span>
-                </span>
+        <span id="modal-protocol-456121131021971381514" class="glossary-modal">
+            <span class="modal-content">
+                <span>A set of rules and guidelines that dictate how participants (whether they are devices, software components, or users) in a system should behave.</span>
+                <span class="modal-close" onclick="closeModal('protocol', '456121131021971381514')">&times;</span>
             </span>
         </span>
-<style>
-  .glossary-container {
-    position: relative;
-}
+    </span><style>
+    .glossary-container {
+        position: relative;
+    }
 
-  .glossary-term {
-      color: #007bff;
-      text-decoration-line: underline;
-      text-underline-offset: 3px;
-      text-decoration-style: dashed;
-      cursor: help;
-  }
+    .glossary-term {
+        color: #007bff;
+        text-decoration-line: underline;
+        text-underline-offset: 3px;
+        text-decoration-style: dashed;
+        cursor: help;
+    }
 
-  .glossary-modal {
-      display: none;
-      position: absolute;
-      z-index: 1000;
-      left: 0%;
-      top: 100%;
-      background-color: rgba(0,0,0,0.8);
-      color: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      width: 250px;
-      max-width: 90vw;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+    .glossary-modal {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        left: 0%;
+        top: 100%;
+        background-color: rgba(0,0,0,0.8);
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        width: 250px;
+        max-width: 90vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .modal-content {
-      margin: 0;
-      font-size: 14px;
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-  }
+    .modal-content {
+        margin: 0;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 
-  .modal-close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-  }
+    .modal-close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-  .modal-close:hover,
-  .modal-close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-  }
+    .modal-close:hover,
+    .modal-close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
+
 <script>
-  function openModal(term, uniqueId) {
-    var modal = document.getElementById("modal-" + term + "-" + uniqueId);
-    modal.style.display = "inline";
-  }
+    function openModal(term, uniqueId) {
+        var modal = document.getElementById("modal-" + term + "-" + uniqueId);
+        modal.style.display = "inline";
+    }
 
-  function closeModal(term, uniqueId) {
-      var modal = document.getElementById("modal-" + term + "-" + uniqueId);
-      modal.style.display = "none";
-  }
+    function closeModal(term, uniqueId) {
+        var modal = document.getElementById("modal-" + term + "-" + uniqueId);
+        modal.style.display = "none";
+    }
 
-  
-  document.querySelectorAll('.glossary-modal').forEach(function(modal) {
-      modal.onclick = function(event) {
-          event.stopPropagation(); 
-      };
-  });
+    document.querySelectorAll('.glossary-modal').forEach(function(modal) {
+        modal.onclick = function(event) {
+            event.stopPropagation();
+        };
+    });
 
-  
-  window.onclick = function(event) {
-      var glossary_terms = document.getElementsByClassName('glossary-term');
-      var modals = document.getElementsByClassName('glossary-modal');
+    window.onclick = function(event) {
+        var glossary_terms = document.getElementsByClassName('glossary-term');
+        var modals = document.getElementsByClassName('glossary-modal');
 
-      var is_glossary_term = false;
-      for (var j = 0; j < glossary_terms.length; j++) {
-          if (event.target === glossary_terms[j]) {
-              is_glossary_term = true;
-          }
-      }
+        var is_glossary_term = false;
+        for (var j = 0; j < glossary_terms.length; j++) {
+            if (event.target === glossary_terms[j]) {
+                is_glossary_term = true;
+            }
+        }
 
-      for (var i = 0; i < modals.length; i++) {
-          if (event.target !== modals[i] && !is_glossary_term) {
-              modals[i].style.display = "none";
-          }
-      }
-  }
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target !== modals[i] && !is_glossary_term) {
+                modals[i].style.display = "none";
+            }
+        }
+    }
 </script> that allows a user to grant limited access to their resources on one site to another site without sharing their credentials.</p>
 <h2 id="use-cases-of-oauth-20">Use Cases of OAuth 2.0<a hidden class="anchor" aria-hidden="true" href="#use-cases-of-oauth-20">#</a></h2>
 <p>OAuth 2.0 is widely used in various scenarios to grant access to user data securely. Some common use cases of OAuth 2.0 include:</p>

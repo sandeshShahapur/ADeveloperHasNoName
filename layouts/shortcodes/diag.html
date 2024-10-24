@@ -11,6 +11,8 @@
     {{- $imageURL = "https://media.geeksforgeeks.org/wp-content/uploads/20220829110944/LLdrawio.png" -}}
 {{- else if eq $name "tree" -}}
     {{- $imageURL = "https://media.geeksforgeeks.org/wp-content/uploads/20240415185343/tree-data-structure-banners-(2).webp" -}}
+{{- else if eq $name "memory-address" }}
+    {{- $imageURL = "https://media.geeksforgeeks.org/wp-content/uploads/20210322122448/1DDynamicArray.png" -}}
 {{- else -}}
     {{- warnf "No diagram found for %s" $name -}}
 {{- end -}}

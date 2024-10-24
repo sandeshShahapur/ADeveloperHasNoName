@@ -1,156 +1,156 @@
 {{- $glossary := site.GetPage "glossary.md" -}}
 
-{{- $term := .Get "term" -}}
-{{- $displayTerm := .Get "displayTerm" | default $term -}}
-{{- $ancestorTerms := .Get "ancestorTerms" | default "" -}}
+{{- $term := .Get "term" | lower -}} {{/* The term to be defined */}}
+{{- $displayTerm := .Get "displayTerm" | default (.Get "term") -}} {{/* The term to be displayed */}}
+{{- $ancestorTerms := .Get "ancestorTerms" | default "" -}} {{/* The recursive terms history */}}
 
-{{- $term := $term | lower -}}
-{{- $definition := "" -}}
-
-{{- warnf "__________%s" $ancestorTerms }}
-
-{{- /*
-  * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
-  * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
-  * THIS CAUSES WEIRD BUG/ERROR. DO NOT USE RETURN. MOVED TO IF ELSE BELOW.
-{{- if in $ancestorTerms (printf `{%s}` $term) -}}
-  {{- return $displayTerm -}}
-{{- end -}}
-*/ -}}
+{{- $definition := "" -}} {{/* The definition of the term */}}
+{{- $renderedDefinition := "" -}} {{/* The rendered definition of the term */}}
+{{- $cachedDefinition := "" -}} {{/* The cached definition of the term */}}
 
 {{- /*
-    *  `ancestorTerms` is a string of previously visited terms delimited by `{}`.
-    *  If the current term is in the ancestorTerms, then the term is a circular reference
-    *  and the displayTerm is returned to prevent infinite recursion
+    /* If the term is already in ancestorTerms, then prevent cyclic recursion by not rendering the term again.
+    /* If the rendered definition is already cached, then use the cached definition.
+    /* Else find the definition of the term in the glossary, render it and cache it.
+    /* If no definition is found, do not set the rendered definition.
+    /*
 */ -}}
-{{- if strings.Contains $ancestorTerms $term -}}
-  {{- $displayTerm -}}
-{{- else -}}
-  {{- range $key, $value := $glossary.Params.glossary -}}
-    {{- if eq (lower $key) $term -}}
-      {{- $definition = $value -}}
+{{- if not (strings.Contains $ancestorTerms (printf "{%s}" $term)) -}} {{/* Prevents cyclic recursion */}}
+    {{- $cachedDefinition = .Scratch.Get $term -}}
+
+    {{- if $cachedDefinition -}}
+        {{- $renderedDefinition = $cachedDefinition -}}
+    {{- else -}}
+        {{- range $key, $value := $glossary.Params.glossary -}}
+            {{- if eq (lower $key) $term -}}
+                {{- $definition = $value -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- if $definition -}}
+            {{- /*
+                * The glossary shortcode is of the pattern {{< glossary term="term" displayTerm="displayTerm" ancestorTerms="ancestorTerms" >}}
+                * ancestorTerms is used to prevent infinite recursion in the glossary shortcode where terms are delimited by {}
+                * Below matches the value of the ancestorTerms attribute of the glossary shortcode and appends the current term to the ancestorTerms.
+            */ -}}
+            {{- $shortcodePattern := `\{\{[ ]*<[ ]*glossary[ ]+term="(?<d_term>[^"]+)"(?:[ ]+displayTerm="(?<d_displayTerm>[^"]+)")?(?:[ ]+ancestorTerms="(?<d_ancestorTerms>[^"]+)")?[ ]*>[ ]*\}\}` -}}
+            {{- $renderedDefinition = replaceRE $shortcodePattern (printf `{{< glossary term="$d_term" displayTerm="$d_displayTerm" ancestorTerms="%s{%s}" >}}` $ancestorTerms $term) $definition -}}
+
+            {{- .Scratch.Set $term ($renderedDefinition | markdownify) -}}
+        {{- end -}}
     {{- end -}}
-  {{- end -}}
+{{- end -}}
 
-  {{- if $definition -}}
-    {{- /*
-        * The glossary shortcode is of the pattern `{{< glossary term="term" displayTerm="displayTerm" ancestorTerms="ancestorTerms" >}}`
-        * ancestorTerms is used to prevent infinite recursion in the glossary shortcode where terms are delimited by `{}`
-        * Below matches the value of the `ancestorTerms` attribute of the `glossary` shortcode and appends the current term to the ancestorTerms.
-    */ -}}
-    {{- $shortcodePattern := `\{\{[ ]*<[ ]*glossary[ ]+term="(?<d_term>[^"]+)"(?:[ ]+displayTerm="(?<d_displayTerm>[^"]+)")?(?:[ ]+ancestorTerms="(?<d_ancestorTerms>[^"]+)")?[ ]*>[ ]*\}\}` -}}
-    {{- $updatedDefinition := replaceRE $shortcodePattern (printf `{{< glossary term="$d_term" displayTerm="$d_displayTerm" ancestorTerms="%s{%s}" >}}` $ancestorTerms $term) $definition -}}
 
-    {{- if $updatedDefinition -}}
-        {{- /* Prevents multiple glossary terms on the same page from sharing the same modal ID */ -}}
-        {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
+{{- /*
+    /* If the rendered definition is not empty, then render the glossary modal.
+    /* Else, display the term as is.
+    /*
+*/ -}}
+{{- if $renderedDefinition -}}
+    {{- /* Prevents multiple glossary terms on the same page from sharing the same modal ID */ -}}
+    {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
 
-        {{- /* Do not use block level elements within the span tag, causes weird over spilling. */ -}}
-        <span class="glossary-container" onclick="openModal('{{- $term }}', '{{- $unique_id }}')">
-            <span class="glossary-term"> {{- $displayTerm -}} </span>
+    {{- /* Render the glossary modal with cached or newly processed definition */ -}}
+    <span class="glossary-container" onclick="openModal('{{- $term -}}', '{{- $unique_id -}}')">
+        <span class="glossary-term"> {{- $displayTerm -}} </span>
 
-            <span id="modal-{{- $term }}-{{- $unique_id }}" class="glossary-modal">
-                <span class="modal-content">
-                    <span> {{- $updatedDefinition | markdownify -}} </span>
-                    <span class="modal-close" onclick="closeModal('{{- $term }}', '{{- $unique_id }}')">&times;</span>
-                </span>
+        <span id="modal-{{- $term -}}-{{- $unique_id -}}" class="glossary-modal">
+            <span class="modal-content">
+                <span> {{- $renderedDefinition -}} </span>
+                <span class="modal-close" onclick="closeModal('{{- $term }}', '{{- $unique_id }}')">&times;</span>
             </span>
         </span>
-    {{- else -}}
-        {{- $displayTerm -}}
-    {{- end -}}
-
-  {{- else -}}
-    {{- $displayTerm -}}
-  {{- end -}}
+    </span>
+{{- else -}}
+  {{- $displayTerm -}}
 {{- end -}}
 
-<!-- Include styles and script -->
+
 <style>
-  .glossary-container {
-    position: relative;
-}
+    .glossary-container {
+        position: relative;
+    }
 
-  .glossary-term {
-      color: #007bff;
-      text-decoration-line: underline;
-      text-underline-offset: 3px;
-      text-decoration-style: dashed;
-      cursor: help;
-  }
+    .glossary-term {
+        color: #007bff;
+        text-decoration-line: underline;
+        text-underline-offset: 3px;
+        text-decoration-style: dashed;
+        cursor: help;
+    }
 
-  .glossary-modal {
-      display: none;
-      position: absolute;
-      z-index: 1000;
-      left: 0%;
-      top: 100%;
-      background-color: rgba(0,0,0,0.8);
-      color: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      width: 250px;
-      max-width: 90vw;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+    .glossary-modal {
+        display: none;
+        position: absolute;
+        z-index: 1000;
+        left: 0%;
+        top: 100%;
+        background-color: rgba(0,0,0,0.8);
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        width: 250px;
+        max-width: 90vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-  .modal-content {
-      margin: 0;
-      font-size: 14px;
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-  }
+    .modal-content {
+        margin: 0;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 
-  .modal-close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-  }
+    .modal-close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-  .modal-close:hover,
-  .modal-close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-  }
+    .modal-close:hover,
+    .modal-close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
+
 <script>
-  function openModal(term, uniqueId) {
-    var modal = document.getElementById("modal-" + term + "-" + uniqueId);
-    modal.style.display = "inline";
-  }
+    function openModal(term, uniqueId) {
+        var modal = document.getElementById("modal-" + term + "-" + uniqueId);
+        modal.style.display = "inline";
+    }
 
-  function closeModal(term, uniqueId) {
-      var modal = document.getElementById("modal-" + term + "-" + uniqueId);
-      modal.style.display = "none";
-  }
+    function closeModal(term, uniqueId) {
+        var modal = document.getElementById("modal-" + term + "-" + uniqueId);
+        modal.style.display = "none";
+    }
 
-  // Prevent closing outer modal when interacting with inner modal
-  document.querySelectorAll('.glossary-modal').forEach(function(modal) {
-      modal.onclick = function(event) {
-          event.stopPropagation(); // Stop the event from propagating to parent modals
-      };
-  });
+    document.querySelectorAll('.glossary-modal').forEach(function(modal) {
+        modal.onclick = function(event) {
+            event.stopPropagation();
+        };
+    });
 
-  // Close modal when clicking outside of it
-  window.onclick = function(event) {
-      var glossary_terms = document.getElementsByClassName('glossary-term');
-      var modals = document.getElementsByClassName('glossary-modal');
+    window.onclick = function(event) {
+        var glossary_terms = document.getElementsByClassName('glossary-term');
+        var modals = document.getElementsByClassName('glossary-modal');
 
-      var is_glossary_term = false;
-      for (var j = 0; j < glossary_terms.length; j++) {
-          if (event.target === glossary_terms[j]) {
-              is_glossary_term = true;
-          }
-      }
+        var is_glossary_term = false;
+        for (var j = 0; j < glossary_terms.length; j++) {
+            if (event.target === glossary_terms[j]) {
+                is_glossary_term = true;
+            }
+        }
 
-      for (var i = 0; i < modals.length; i++) {
-          if (event.target !== modals[i] && !is_glossary_term) {
-              modals[i].style.display = "none";
-          }
-      }
-  }
+        for (var i = 0; i < modals.length; i++) {
+            if (event.target !== modals[i] && !is_glossary_term) {
+                modals[i].style.display = "none";
+            }
+        }
+    }
 </script>
