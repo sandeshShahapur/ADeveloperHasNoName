@@ -43,26 +43,5 @@
       <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
       <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
     </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/blogs/access-modifiers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/access-modifiers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/blogs/untitled-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/untitled-1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/blogs/untitled-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/untitled-2/</guid>
-      <description></description>
-    </item>
   </channel>
 </rss>

@@ -6,7 +6,7 @@
     <description>Recent content on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Oct 2024 19:16:29 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 24 Oct 2024 15:56:35 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What are HTTP and HTTPS Protocols?</title>
@@ -27,7 +27,477 @@
       <link>http://localhost:1313/glossary/</link>
       <pubDate>Sat, 12 Oct 2024 20:41:18 +0530</pubDate>
       <guid>http://localhost:1313/glossary/</guid>
-      <description></description>
+      <description>&lt;dl&gt;
+&lt;dt&gt;Access-Modifiers&lt;/dt&gt;
+&lt;dd&gt;A way to control the &lt;strong&gt;visibility, accessibility, and scope&lt;/strong&gt; of &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;531014941121281371615&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;class&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    class
+&lt;/span&gt;
+ members (&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;136131514127295111048&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;variable&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    variable
+&lt;/span&gt;
+, &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;612743151111359210814&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;method&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    method
+&lt;/span&gt;
+, etc.). They determine whether a member can be accessed from. Common access modifiers are public (accessible from anywhere), private (accessible only within the class), protected (accessible within the class and its subclasses), and default (accessible within the &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;715431152121396101418&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;package&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    package
+&lt;/span&gt;
+).&lt;/dd&gt;
+&lt;dt&gt;Access Token&lt;/dt&gt;
+&lt;dd&gt;A string of alphanumeric characters (usually random) that is &lt;strong&gt;stand-In for the user&amp;rsquo;s credentials&lt;/strong&gt; that allows a user to access their applications/services, or allows other third-party applications to access the user&amp;rsquo;s application/service data without exposing the user&amp;rsquo;s credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;781410151613124113592&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;refresh-token&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    Refresh-Token
+&lt;/span&gt;
+. If token is compromised, the user&amp;rsquo;s credentials are not exposed, making damage minimal.&lt;/dd&gt;
+&lt;dt&gt;Algorithm&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;set of well-defined instructions&lt;/strong&gt; that are executed/performed in an order to perform a task or solve a problem (e.g., a recipe for baking a cake). They are the building blocks of Computer-Science which are used to perform calculations, data processing, and automated reasoning tasks.&lt;/dd&gt;
+&lt;dt&gt;API&lt;/dt&gt;
+&lt;dd&gt;Application Programming Interface is an &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;278155941311121410631&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;interface&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    interface
+&lt;/span&gt;
+ i.e. a shared-boundary/layer between two &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;151347911318122145106&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;software-component&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    software components
+&lt;/span&gt;
+ that provides a means for them to communicate or interact with each other for exchanging information. It &lt;strong&gt;defines how access or interaction should occur&lt;/strong&gt; between the two.&lt;/dd&gt;
+&lt;dt&gt;Argument&lt;/dt&gt;
+&lt;dd&gt;A value/&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;421511671431011398125&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;variable&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    variable
+&lt;/span&gt;
+ that is passed to a &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;542713151410613119812&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;function&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    function
+&lt;/span&gt;
+ when it is &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;131514451811327912610&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;call&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    called
+&lt;/span&gt;
+. Functions can accept zero or more arguments, which are used as input to the function&amp;rsquo;s code block. Arguments are used to customize the behavior of a function. They are also called parameters.&lt;/dd&gt;
+&lt;dt&gt;Authentication&lt;/dt&gt;
+&lt;dd&gt;The process of &lt;strong&gt;verifying the identity&lt;/strong&gt; of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user&amp;rsquo;s identity.&lt;/dd&gt;
+&lt;dt&gt;‌&lt;/dt&gt;
+&lt;dd&gt;(Authenticate) To log in to a system/service by providing valid credentials (e.g., username and password, biometric data, etc.).&lt;/dd&gt;
+&lt;dt&gt;Authorization&lt;/dt&gt;
+&lt;dd&gt;The process of &lt;strong&gt;determining what a user or system is allowed to do&lt;/strong&gt; or access. It involves granting or denying access/permissions based on the user&amp;rsquo;s identity, role, or other attributes.&lt;/dd&gt;
+&lt;dt&gt;Backend&lt;/dt&gt;
+&lt;dd&gt;The &lt;strong&gt;&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;315911781135241461210&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;server-side&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    server-side
+&lt;/span&gt;
+&lt;/strong&gt;/&lt;strong&gt;behind-scenes&lt;/strong&gt; of an application that is responsible for storing and handling data, interacting with &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;517103151484111262913&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;database&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    databases
+&lt;/span&gt;
+, performing user operations, computations, etc. It processes &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;110714151369451238112&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;request&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    requests
+&lt;/span&gt;
+ and sends back &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;141013315957164121128&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;response&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    responses
+&lt;/span&gt;
+ to the &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;510193148412611713152&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;client&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    client
+&lt;/span&gt;
+/&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;813111697215451031214&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;frontend&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    frontend
+&lt;/span&gt;
+.&lt;/dd&gt;
+&lt;dt&gt;Binary-Code&lt;/dt&gt;
+&lt;dd&gt;Unlike humans who use and understand variety of symbols/values (0-9, A-Z, special characters), a computer is a &lt;strong&gt;base-2 system&lt;/strong&gt; that uses and understands only &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;151084261117351214139&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;bit&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    bits
+&lt;/span&gt;
+. Computers use binary code (&lt;strong&gt;a series of bits&lt;/strong&gt;) to represent all data, instructions, and information (whether it&amp;rsquo;s text, images, sound, etc. ). It is the most machine readable and least human readable form of data.&lt;/dd&gt;
+&lt;dt&gt;Bit&lt;/dt&gt;
+&lt;dd&gt;The smallest unit of data that represents a binary value, either 0 or 1. Basis for &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;951331518147124211106&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;binary-code&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    binary-code
+&lt;/span&gt;
+ and all computer operations. A group of 8 bits is called a byte which is the &lt;strong&gt;standard unit&lt;/strong&gt; of data storage in computers.&lt;/dd&gt;
+&lt;dt&gt;Call&lt;/dt&gt;
+&lt;dd&gt;The process of &lt;strong&gt;invoking/executing a &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;211512863101371159144&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;function&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    function
+&lt;/span&gt;
+&lt;/strong&gt;. When a function is called, the program jumps to the function&amp;rsquo;s code block, executes the code, and then returns to the point where the function was called along with the output (if any).&lt;/dd&gt;
+&lt;dt&gt;Cascading&lt;/dt&gt;
+&lt;dd&gt;A process in which an operation or set of operations is repeated multiple times, with the &lt;strong&gt;output of each operation becoming the input&lt;/strong&gt; for the next operation.&lt;/dd&gt;
+&lt;dt&gt;‌&lt;/dt&gt;
+&lt;dd&gt;Applying a &lt;strong&gt;priority order&lt;/strong&gt; when multiple rules target the same element. The &amp;ldquo;cascade&amp;rdquo; ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;141343926101211515187&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;css&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    CSS
+&lt;/span&gt;
+, inline &amp;gt; internal &amp;gt; external and id &amp;gt; class &amp;gt; element.&lt;/dd&gt;
+&lt;dt&gt;Cipher&lt;/dt&gt;
+&lt;dd&gt;An &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;111131283151027659414&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;algorithm&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    algorithm
+&lt;/span&gt;
+ &lt;strong&gt;used for &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;541462151331087111219&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;encryption&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    encryption
+&lt;/span&gt;
+ and &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;146895111037122141513&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;decryption&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    decryption
+&lt;/span&gt;
+&lt;/strong&gt; of data. It takes plain-text data and converts it into a secret scrambled code (&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;671312311910141154285&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;ciphertext&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    ciphertext
+&lt;/span&gt;
+), or vice-versa. It optionally uses an &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;521071581214361311194&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;encryption-key&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    encryption-key
+&lt;/span&gt;
+/&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;169141210313711415258&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;decryption-key&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    decryption-key
+&lt;/span&gt;
+ to perform the operation. Examples include AES, DES, RSA, etc.&lt;/dd&gt;
+&lt;dt&gt;CipherText&lt;/dt&gt;
+&lt;dd&gt;The &lt;strong&gt;secret scrambled code&lt;/strong&gt; produced by a &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;195712103132141568114&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;cipher&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    cipher
+&lt;/span&gt;
+/&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;671129141513510342118&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;encryption&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    encryption
+&lt;/span&gt;
+-&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;892133765111015124114&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;algorithm&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    algorithm
+&lt;/span&gt;
+ when plain-text data is &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;912648101314135711152&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;encrypted&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    encrypted
+&lt;/span&gt;
+. The cipher-text is unreadable without the correct &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;695111510732841312114&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;decryption-key&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    decryption-key
+&lt;/span&gt;
+. Purpose is to keep information confidential and secure.&lt;/dd&gt;
+&lt;dt&gt;Class&lt;/dt&gt;
+&lt;dd&gt;A class is basically &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;639121115141410713582&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;encapsulation&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    encapsulation
+&lt;/span&gt;
+ of data (&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;104152145139617811312&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;state&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    state
+&lt;/span&gt;
+) and behavior (&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;912151411512641338710&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;method&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    method
+&lt;/span&gt;
+s) into a single unit. However, it is abstract and is a blueprint/template. E.g., a class &amp;ldquo;Car&amp;rdquo; can have states like color, model, speed, etc., and behaviors like start(), stop(), accelerate(), etc. To have an actual car, you need to create an &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;121495811615133210147&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;instance&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    instance
+&lt;/span&gt;
+ of the class, called an &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;511124138763101412159&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;object&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    object
+&lt;/span&gt;
+. Also known as an object factory. A fundamental concept in &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;147132691113151281054&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;oop&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    OOP
+&lt;/span&gt;
+.&lt;/dd&gt;
+&lt;dt&gt;Client&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;device&lt;/strong&gt; or &lt;strong&gt;software&lt;/strong&gt; that accesses services or resources provided by a &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;118109213153471416512&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;server&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    server
+&lt;/span&gt;
+ by making &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;271312103614945118151&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;request&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    requests
+&lt;/span&gt;
+. Clients can be website/browsers, mobile applications, desktop applications, etc.&lt;/dd&gt;
+&lt;dt&gt;Client-Side&lt;/dt&gt;
+&lt;dd&gt;&lt;strong&gt;Things that happen on the &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;110133212811975415146&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;client&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    client
+&lt;/span&gt;
+&lt;/strong&gt;, e.g., rendering of the &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;810325941171415113126&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;user-interface&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    user-interface
+&lt;/span&gt;
+, handling user interactions and events, sending &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;151271094113131268514&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;request&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    requests
+&lt;/span&gt;
+ to the &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;131112314915105642781&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;server&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    server
+&lt;/span&gt;
+, computing, etc.&lt;/dd&gt;
+&lt;dt&gt;Cohesion&lt;/dt&gt;
+&lt;dd&gt;The degree to which the elements (like &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;111310691215214735841&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;variable&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    variables
+&lt;/span&gt;
+, &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;131214310895172151164&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;function&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    functions
+&lt;/span&gt;
+) inside an entity (like a &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;213315109112114857614&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;class&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    class
+&lt;/span&gt;
+ or &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;145731011161224813915&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;module&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    module
+&lt;/span&gt;
+) are related to each other. High cohesion means that the elements inside the entity are closely related and work together to perform the same/single tasks. Low cohesion means that the elements inside the entity are not closely related and perform different/multiple tasks.&lt;/dd&gt;
+&lt;dt&gt;Contiguous&lt;/dt&gt;
+&lt;dd&gt;&lt;strong&gt;Continuous&lt;/strong&gt; or &lt;strong&gt;adjacent&lt;/strong&gt;, without any gaps/breaks/spaces in between. In the context of memory, it refers to a block of memory locations that are next to each other, forming a continuous range of addresses. 
+    &lt;a href=&#34;#&#34; class=&#34;diag-link&#34; data-toggle=&#34;modal-memory-address&#34;&gt;Visualize&lt;/a&gt;
+
+    
+    &lt;div id=&#34;modal-memory-address&#34; class=&#34;diag-modal hidden&#34;&gt;
+        &lt;div class=&#34;diag-diag-modal-content&#34;&gt;
+            &lt;span class=&#34;close-btn&#34;&gt;&amp;times;&lt;/span&gt;
+            &lt;img src=&#34;https://media.geeksforgeeks.org/wp-content/uploads/20210322122448/1DDynamicArray.png&#34; alt=&#34;memory-address diagram&#34;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;style&gt;
+    .diag-link {
+        color: #18d093;
+        cursor: help;
+    }
+
+    .diag-modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+    }
+
+    .diag-diag-modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+&lt;/style&gt;
+
+&lt;script&gt;
+document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+    const links = document.querySelectorAll(&#39;.diag-link&#39;);
+    links.forEach(link =&gt; {
+        link.addEventListener(&#39;click&#39;, function(event) {
+            event.preventDefault();
+            const modalId = link.getAttribute(&#39;data-toggle&#39;);
+            const modal = document.getElementById(modalId);
+            modal.style.display = &#39;block&#39;;
+        });
+    });
+
+    const modals = document.querySelectorAll(&#39;.diag-modal&#39;);
+    modals.forEach(modal =&gt; {
+        const closeBtn = modal.querySelector(&#39;.close-btn&#39;);
+        closeBtn.addEventListener(&#39;click&#39;, function() {
+            modal.style.display = &#39;none&#39;;
+        });
+
+        modal.addEventListener(&#39;click&#39;, function(event) {
+            if (event.target === modal) {
+                modal.style.display = &#39;none&#39;;
+            }
+        });
+    });
+});
+&lt;/script&gt;
+.&lt;/dd&gt;
+&lt;dt&gt;Compile&lt;/dt&gt;
+&lt;dd&gt;Computers cannot understand or execute &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;611011521343141587912&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;source-code&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    source-code
+&lt;/span&gt;
+. Compilation is the process of &lt;strong&gt;translating the complete source code into &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;107851531111369214412&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;machine-code&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    machine-code
+&lt;/span&gt;
+&lt;/strong&gt; before the program is executed, opposed to &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;471081215611391213145&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;interpret&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    interpreting
+&lt;/span&gt;
+. A &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;115101314615724912813&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;compile&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    compiler
+&lt;/span&gt;
+ is required only once, and the compiled code can be executed multiple times. Compiled languages are &amp;lsquo;faster&amp;rsquo; because the whole code is already translated.&lt;/dd&gt;
+&lt;dt&gt;Compiler&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;program&lt;/strong&gt; that &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;138101527121459311614&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;compile&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    compiles
+&lt;/span&gt;
+. It also checks for errors in the code, and optimizes the code for better performance. The output of the compilation process is an executable file that can then be run by the computer.&lt;/dd&gt;
+&lt;dt&gt;Compile-Time&lt;/dt&gt;
+&lt;dd&gt;The period when a program is being &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;911210753141215113864&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;compile&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    compiled
+&lt;/span&gt;
+. It precedes the &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;101314913212758114615&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;run-time&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    run-time
+&lt;/span&gt;
+. Some languages only have a run time, as they are &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;139456721214151183110&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;interpret&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    interpreted
+&lt;/span&gt;
+.&lt;/dd&gt;
+&lt;dt&gt;Coupling&lt;/dt&gt;
+&lt;dd&gt;The degree of &lt;strong&gt;interdependence&lt;/strong&gt; between two entities (like &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;121181914321013645157&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;class&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    class
+&lt;/span&gt;
+, &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;710191214281365114315&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;module&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    module
+&lt;/span&gt;
+, &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;131567109132414581112&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;function&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    function
+&lt;/span&gt;
+, etc.). High coupling means that the entities are closely related and depend on each other, making them harder to change independently. Low coupling means that the entities are loosely related and can be changed independently without affecting each other.&lt;/dd&gt;
+&lt;dt&gt;CSS&lt;/dt&gt;
+&lt;dd&gt;&lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;341213528141510611179&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;cascading&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    Cascading
+&lt;/span&gt;
+ &lt;span class=&#34;glossary-term&#34;
+       glossary-data-tree-id=&#34;144151251310621381197&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;style-sheet-language&#34;
+       onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+     Style Sheets
+ &lt;/span&gt;
+ is used for &lt;strong&gt;describing and styling the presentation&lt;/strong&gt; of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.&lt;/dd&gt;
+&lt;dt&gt;Database&lt;/dt&gt;
+&lt;dd&gt;A &lt;strong&gt;structured collection of related data&lt;/strong&gt; that is stored and organized in a way that allows for efficient retrieval, updating, and management. Databases are used to store information for applications, websites, and other systems.&lt;/dd&gt;
+&lt;dt&gt;data-hiding&lt;/dt&gt;
+&lt;dd&gt;
+&lt;p&gt;A concept in &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;147512113810415613192&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;oop&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    OOP
+&lt;/span&gt;
+ that puts &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;131413415128106571129&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;encapsulation&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    encapsulation
+&lt;/span&gt;
+ into good use by restricting the direct access of a &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;117814155161341239102&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;class&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    class
+&lt;/span&gt;
+&amp;rsquo;s &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;111012144151781329536&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;state&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    state
+&lt;/span&gt;
+ from anywhere outside the class. It enforces a forcefield around the state by allowing only the class&amp;rsquo;s &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;581131211510414136927&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;method&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    method
+&lt;/span&gt;
+s to access and manipulate the state, and allowing access to state from outside the class only through these methods. It is achieved through &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;984271510114612351311&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;access-modifier&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    access-modifiers
+&lt;/span&gt;
+. Forcefield helps in preventing misuse of the state, accidental changes, and ensuring data integrity. Provides &lt;span class=&#34;glossary-term&#34;
+      glossary-data-tree-id=&#34;913846271123105141115&#34;glossary-data-tree-node-id=&#34;0&#34;glossary-data-term=&#34;coupling&#34;
+      onclick=&#34;fetchAndRenderGlossaryDefinition(this)&#34;&gt;
+    high-coupling
+&lt;/span&gt;
+ by reducing the dependency on the internal state of the class, thus allowing interdependent components to be changed independently. 
+&lt;hr class=&#34;hr&#34; /&gt; &amp;lsquo;hiding&amp;rsquo; is a misnomer, it is more about controlling access&lt;/p&gt;</description>
     </item>
     <item>
       <title>What Is OAuth (2.0)? | Definition, Use Cases, and How it Works</title>
@@ -49,27 +519,6 @@
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
       <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/blogs/access-modifiers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/access-modifiers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/blogs/untitled-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/untitled-1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/blogs/untitled-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blogs/untitled-2/</guid>
-      <description></description>
     </item>
   </channel>
 </rss>

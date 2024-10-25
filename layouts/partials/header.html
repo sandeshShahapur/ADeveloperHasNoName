@@ -59,7 +59,7 @@
     }
 </style>
 
-{{- /* only show the bar on blog posts */}}
+{{- /* only show the bar on blog posts  */}}
 {{ if and (eq .Kind "page") (eq .Type "blogs") }}
 {{- /* if and (eq .Kind "page") (or (eq .Type "blogs") (eq .Type "projects")) */}}
 <div id="progress-container">
@@ -68,13 +68,16 @@
 {{- end }}
 
 <script>
-    window.addEventListener("scroll", function () {
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
-        const clientHeight = document.documentElement.clientHeight;
-        const scrollPercentage = Math.ceil((scrollTop / (scrollHeight - clientHeight)) * 100);
-        document.getElementById("progress-bar").style.width = scrollPercentage + "%";
-    });
+    // only show the bar on blog posts
+    if (document.getElementById("progress-container")) {
+        window.addEventListener("scroll", function () {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+            const scrollPercentage = Math.ceil((scrollTop / (scrollHeight - clientHeight)) * 100);
+            document.getElementById("progress-bar").style.width = scrollPercentage + "%";
+        });
+    }
 </script>
 
 <header class="header">

@@ -1,0 +1,41 @@
+
+/* Glossary Modals */
+.glossary-term {
+    color: #007bff;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+    text-decoration-style: dashed;
+    cursor: help;
+}
+
+.glossary-modal {
+    position: absolute;
+    z-index: 1000;
+    color: #fff;
+    background-color: rgba(0,0,0,0.8);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    width: auto; 
+}
+
+.glossary-modal-content {
+    position: relative;
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+    gap: 5px;
+}
+
+.glossary-modal-close {
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.glossary-modal-close:hover {
+    color: #333;
+}

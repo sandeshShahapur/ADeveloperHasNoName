@@ -2,219 +2,15 @@
 title: "Glossary"
 date: 2024-10-12T20:41:18+05:30
 draft: false
+glossary: true
 regex:
   purpose: if missing, adds displayTerm to glossary call (required for the shortcode in frontmatter)
   pattern: term="([^"]+)" >\}\} (case sensitive)
   replace: term="$1" displayTerm="$1" >}}
 
-glossary:
-  Access-Modifiers: A way to control the **visibility, accessibility, and scope** of {{< glossary term="class" displayTerm="class" >}} members ({{< glossary term="variable" displayTerm="variable" >}}, {{< glossary term="method" displayTerm="method" >}}, etc.). They determine whether a member can be accessed from. Common access modifiers are public (accessible from anywhere), private (accessible only within the class), protected (accessible within the class and its subclasses), and default (accessible within the {{< glossary term="package" displayTerm="package" >}}).
-
-  Access-Token: A string of alphanumeric characters (usually random) that is **stand-In for the user's credentials** that allows a user to access their applications/services, or allows other third-party applications to access the user's application/service data without exposing the user's credentials. Access tokens are short-lived and can be revoked by the user at any time, and needs to be refreshed periodically using {{< glossary term="Refresh-Token" displayTerm="Refresh-Token" >}}. If token is compromised, the user's credentials are not exposed, making damage minimal.
-
-  Algorithm: A **set of well-defined instructions** that are executed/performed in an order to perform a task or solve a problem (e.g., a recipe for baking a cake). They are the building blocks of Computer-Science which are used to perform calculations, data processing, and automated reasoning tasks.
-
-  API: Application Programming Interface is an {{< glossary term="interface" displayTerm="interface" >}} i.e. a shared-boundary/layer between two {{< glossary term="software-component" displayTerm="software components" >}} that provides a means for them to communicate or interact with each other for exchanging information. It **defines how access or interaction should occur** between the two.
-
-  Argument: A value/{{< glossary term="variable" displayTerm="variable" >}} that is passed to a {{< glossary term="function" displayTerm="function" >}} when it is {{< glossary term="call" displayTerm="called" >}}. Functions can accept zero or more arguments, which are used as input to the function's code block. Arguments are used to customize the behavior of a function. They are also called parameters.
-
-  Array-Diag: ㅤ{{< figure src="https://www.tutorialspoint.com/data_structures_algorithms/images/arrays1.jpg" alt="Array Data Structure" caption="Array Data Structure" >}}
-
-  Authentication: (Authentication) The process of **verifying the identity** of a user or system to ensure that they are who they claim to be. It is commonly used to grant access to resources or services based on the user's identity {{< hr >}} (Authenticate) To log in to a system/service by providing valid credentials (e.g., username and password, biometric data, etc.).
-
-  Authorization: The process of **determining what a user or system is allowed to do** or access. It involves granting or denying access/permissions based on the user's identity, role, or other attributes.
-
-  backend: The {{< glossary term="server-side" displayTerm="server-side" >}}/behind-scenes of an application that is responsible for storing and handling data, interacting with {{< glossary term="database" displayTerm="databases" >}}, performing user operations, computations, etc. It processes {{< glossary term="request" displayTerm="requests" >}} and sends back {{< glossary term="response" displayTerm="responses" >}} to the {{< glossary term="client" displayTerm="client" >}}/{{< glossary term="frontend" displayTerm="frontend" >}}.
-
-  Behavior: The actions of an {{< glossary term="object" displayTerm="object" >}} which represents what the object can do. They are **{{< glossary term="function" displayTerm="functions" >}}** that is associated with an object. Also known as a method/member-function. It can be {{< glossary term="call" displayTerm="called" >}} to perform a specific task or operation on the object's {{< glossary term="state" displayTerm="state" >}}. With a dog as an example object, its behavior would include bark(), eat(), sleep(), play(), etc.
-
-  Binary-Code: Unlike humans who use and understand variety of symbols/values (0-9, A-Z, special characters), a computer is a **base-2 system** that uses and understands only {{< glossary term="bit" displayTerm="bits" >}}. Computers use binary code (**a series of bits**) to represent all data, instructions, and information (whether it's text, images, sound, etc. ). It is the most machine readable and least human readable form of data.
-
-  Bit: The smallest unit of data that represents a binary value, either 0 or 1. Basis for {{< glossary term="binary-code" displayTerm="binary-code" >}} and all computer operations. A group of 8 bits is called a byte which is the **standard unit** of data storage in computers.
-
-  Call: The process of **invoking/executing a {{< glossary term="function" displayTerm="function" >}}**. When a function is called, the program jumps to the function's code block, executes the code, and then returns to the point where the function was called along with the output (if any).
-
-  cascading: A process in which an operation or set of operations is repeated multiple times, with the **output of each operation becoming the input** for the next operation. {{< hr >}} Applying a **priority order** when multiple rules target the same element. The "cascade" ensures that the most specific rule (or the last one defined) wins, allowing different styles to be combined smoothly. In {{< glossary term="CSS" displayTerm="CSS" >}}, inline > internal > external and id > class > element.
-
-  cipher: An {{< glossary term="algorithm" displayTerm="algorithm" >}} **used for {{< glossary term="encryption" displayTerm="encryption" >}} and {{< glossary term="decryption" displayTerm="decryption" >}}** of data. It takes plain-text data and converts it into a secret scrambled code ({{< glossary term="ciphertext" displayTerm="ciphertext" >}}), or vice-versa. It optionally uses an {{< glossary term="encryption-key" displayTerm="encryption-key" >}}/{{< glossary term="decryption-key" displayTerm="decryption-key" >}} to perform the operation. Examples include AES, DES, RSA, etc.
-
-  ciphertext: The **secret scrambled code** produced by a {{< glossary term="cipher" displayTerm="cipher" >}}/{{< glossary term="encryption" displayTerm="encryption" >}}-{{< glossary term="algorithm" displayTerm="algorithm" >}} when plain-text data is {{< glossary term="encrypted" displayTerm="encrypted" >}}. The cipher-text is unreadable without the correct {{< glossary term="decryption-key" displayTerm="decryption-key" >}}. Purpose is to keep information confidential and secure.
-
-  class: A class is basically {{< glossary term="encapsulation" displayTerm="encapsulation" >}} of data ({{< glossary term="state" displayTerm="state" >}}) and behavior ({{< glossary term="method" displayTerm="method" >}}s) into a single unit. However, it is abstract and is a blueprint/template. E.g., a class "Car" can have states like color, model, speed, etc., and behaviors like start(), stop(), accelerate(), etc. To have an actual car, you need to create an {{< glossary term="instance" displayTerm="instance" >}} of the class, called an {{< glossary term="object" displayTerm="object" >}}. Also known as an object factory. A fundamental concept in {{< glossary term="OOP" displayTerm="OOP" >}}.
-
-  client: A **device** or **software** that accesses services or resources provided by a {{< glossary term="server" displayTerm="server" >}} by making {{< glossary term="request" displayTerm="requests" >}}. Clients can be website/browsers, mobile applications, desktop applications, etc.
-
-  Client-Side: ㅤ**Things that happen on the {{< glossary term="client" displayTerm="client" >}}**, e.g., rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" displayTerm="server" >}}, computing, etc.
-
-  Cohesion: The degree to which the elements (like {{< glossary term="variable" displayTerm="variables" >}}, {{< glossary term="function" displayTerm="functions" >}}) inside an entity (like a {{< glossary term="class" displayTerm="class" >}} or {{< glossary term="module" displayTerm="module" >}}) are related to each other. High cohesion means that the elements inside the entity are closely related and work together to perform the same/single tasks. Low cohesion means that the elements inside the entity are not closely related and perform different/multiple tasks.
-
-  Compile: Computers cannot understand or execute {{< glossary term="source-code" displayTerm="source-code" >}}. Compilation is the process of **translating the complete source code into {{< glossary term="machine-code" displayTerm="machine-code" >}}** before the program is executed, opposed to {{< glossary term="interpret" displayTerm="interpreting" >}}. A {{< glossary term="compile" displayTerm="compiler" >}} is required only once, and the compiled code can be executed multiple times. Compiled languages are 'faster' because the whole code is already translated.
-
-  Compiler: A **program** that {{< glossary term="compile" displayTerm="compiles" >}}. It also checks for errors in the code, and optimizes the code for better performance. The output of the compilation process is an executable file that can then be run by the computer.
-
-  Compile-Time: The period when a program is being {{< glossary term="compile" displayTerm="compiled" >}}. It precedes the {{< glossary term="run-time" displayTerm="run-time" >}}. Some languages only have a run time, as they are {{< glossary term="interpret" displayTerm="interpreted" >}}.
-
-  Contiguous: ㅤ**Continuous** or **adjacent**, without any gaps/breaks/spaces in between. In the context of memory, it refers to a block of memory locations that are next to each other, forming a continuous range of addresses. {{< diag name="memory-address" text="Visualize" >}}.
-
-  Coupling: The degree of **interdependence** between two entities (like {{< glossary term="class" displayTerm="class" >}}, {{< glossary term="module" displayTerm="module" >}}, {{< glossary term="function" displayTerm="function" >}}, etc.). High coupling means that the entities are closely related and depend on each other, making them harder to change independently. Low coupling means that the entities are loosely related and can be changed independently without affecting each other.
-
-  css: ㅤ{{< glossary term="Cascading" displayTerm="Cascading" >}} {{< glossary term="Style-Sheet-Language" displayTerm="Style Sheets" >}} is used for **describing and styling the presentation** of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. E.g., changing the color, font, size, spacing, positioning, and layout of elements on a web page.
-
-  database: A **structured collection of related data** that is stored and organized in a way that allows for efficient retrieval, updating, and management. Databases are used to store information for applications, websites, and other systems.
-
-  data-hiding:  A concept in {{< glossary term="OOP" displayTerm="OOP" >}} that puts {{< glossary term="encapsulation" displayTerm="encapsulation" >}} into good use by restricting the direct access of a {{< glossary term="class" displayTerm="class" >}}'s {{< glossary term="state" displayTerm="state" >}} from anywhere outside the class. It enforces a forcefield around the state by allowing only the class's {{< glossary term="method" displayTerm="method" >}}s to access and manipulate the state, and allowing access to state from outside the class only through these methods. It is achieved through {{< glossary term="access-modifier" displayTerm="access-modifiers" >}}. Forcefield helps in preventing misuse of the state, accidental changes, and ensuring data integrity. Provides {{< glossary term="coupling" displayTerm="high-coupling" >}} by reducing the dependency on the internal state of the class, thus allowing interdependent components to be changed independently. **'hiding' is a misnomer, it is more about controlling access**.
-
-  data-structure: A way of **organizing and storing related data** so that it can be accessed and modified efficiently. A way of structurally uniting/grouping data by defining the relationship between the data. For example {{< diag name="array" text="arrays" >}}, {{< diag name="linkedlist" text="LinkedLists" >}}, {{< diag name="tree" text="Trees" >}}, {{< diag name="hashtable" text="HashTables" >}} etc.
-
-  Data-Type: It specifies the type of data that a {{< glossary term="variable" displayTerm="variable" >}} is allowed to store ({{< glossary term="statically-typed" displayTerm="statically-typed" >}} languages) or the type of data that a variable currently holds ({{< glossary term="dynamically-typed" displayTerm="dynamically-typed" >}} languages). It defines the operations that can be performed on the data. Examples include integers, strings, booleans, {{< glossary term="function" displayTerm="functions" >}}, {{< glossary term="object" displayTerm="objects" >}}, etc.
-
-  decode: The process of **converting {{< glossary term="encode" displayTerm="encoded" >}} data back to its original form**. Decoding is the reverse of encoding and is used to retrieve the original data from its encoded form.
-
-  decryption: The process of **converting secret scrambled code ({{< glossary term="ciphertext" displayTerm="ciphertext" >}}) back into plain-text data**. A {{< glossary term="cipher" displayTerm="cipher" >}}/{{< glossary term="algorithm" displayTerm="algorithm" >}} is used to decrypt the data (optionally with a {{< glossary term="decryption-key" displayTerm="decryption-key" >}}) to reveal the original message.
-
-  decryption-key: A secret value (random string of characters) that is **used to {{< glossary term="decrypt" displayTerm="decrypt" >}}** secret scrambled code ({{< glossary term="ciphertext" displayTerm="ciphertext" >}}) back into plain-text data. The key is used by a {{< glossary term="cipher" displayTerm="cipher" >}}/{{< glossary term="algorithm" displayTerm="algorithm" >}} to perform the decryption operation.
-
-  discord: A platform where you can chat, speak, stream with your friends or communities. A Discord server is like a big group space. Servers contain channels which are like chat rooms for a specific topic. You can also join voice channels to talk/stream. Discord bots are user interactable community-made programs that can help you manage your server, play music, moderate, play games, etc that you can add to your server.
-
-  dns: The Domain Name System **translates/resolves website domain names into {{< glossary term="IP-Address" displayTerm="IP Addresses" >}}**, which are used by browsers as the locations to {{< glossary term="request" displayTerm="request" >}} websites/{{< glossary term="webpage-components" displayTerm="webpage-components" >}} from the {{< glossary term="web-server" displayTerm="web-servers" >}} bearing those IP Addresses that hosts the files. It acts as the internet's phone book, eliminating the need for users to remember IP addresses.
-
-  DOM:  Before {{< glossary term="javascript" displayTerm="JS" >}}, web pages had little/no interactivity, the content, style, layout of the webpage could not be altered after it was loaded and rendered on the {{< glossary term="client" displayTerm="client" >}}(browser). Document object Model is a {{< diag name="tree" text="tree-like" >}} {{< glossary term="data-structure" displayTerm="data-structure" >}} representing the structure of a webpage through {{< glossary term="Object" displayTerm="objects >}} where each object represents a part of the page (e.g., elements, attributes, text, etc.). It allows JS to manipulate the content, layout, and style of the webpage on {{< glossary term="client-side" displayTerm="client-side" >}}. Thus, it is a programming {{< glossary term="interface" displayTerm="interface" >}} for webpages that enables interaction with the page's content and structure, e.g. changing color theme, click/hover effects, animation effects, menu toggles, etc.
-
-  Dynamically-Typed: A programming language in which the **{{< glossary term="data-type" displayTerm="data-type" >}} is associated with values** and not with {{< glossary term="variable" displayTerm="variables" >}}. The type of data is determined at {{< glossary term="runtime" displayTerm="runtime" >}}. The type of data a variable holds can change during the execution of the program. Less strict and more flexible than {{< glossary term="statically-typed" displayTerm="statically-typed" >}} languages. Examples include JavaScript, Python, Ruby, etc.
-
-  Encapsulation: In {{< glossary term="cohesion" displayTerm="low-cohesion" >}} systems, the data ({{< glossary term="variable" displayTerm="variables" >}}) and {{< glossary term="function" displayTerm="functions" >}} are scattered and not related. Encapsulation is the bundling/grouping of data and functions that operate on that data (i.e. those data and functions that are related) into a single unit, called a {{< glossary term="class" displayTerm="class" >}}. It is considered one of the four fundamental {{< glossary term="OOP" displayTerm="OOP" >}} concepts. Encapsulation enables {{< glossary term="data-hiding" displayTerm="data-hiding" >}} and increases cohesion.
-
-  Encode: The process of **converting data from one form to another**, usually to ensure that it is **compatible** with a specific format/system, or to **efficiently** and properly transmit/store the data. Examples include URL encoding, base64 encoding, etc. Unlike {{< glossary term="encryption" displayTerm="encryption" >}}, encoding does not provide security or confidentiality.
-
-  Encryption: The process of **converting plain-text data into a secret code ({{< glossary term="ciphertext" displayTerm="ciphertext" >}})** to prevent unwanted people from reading it. A {{< glossary term="cipher" displayTerm="cipher" >}}/{{< glossary term="algorithm" displayTerm="algorithm" >}} is used to encrypt (optionally with an {{< glossary term="encryption-key" displayTerm="encryption-key" >}}) the data. The scrambled message can only be understood by someone who has the correct decryption key.
-
-  Encryption-Key: A secret value (random string of characters) that is **used to {{< glossary term="encryption" displayTerm="encrypt" >}} plain-text data**. The key is used by an encryption-{{< glossary term="algorithm" displayTerm="algorithm" >}}/{{< glossary term="cipher" displayTerm="cipher" >}} to convert the plain-text data into a secret scrambled code ({{< glossary term="ciphertext" displayTerm="ciphertext" >}}).
-
-  First-Class-Citizen: In programming languages, it is a entity/{{< glossary term="data-type" displayTerm="data-type" >}} that can be **treated like any other value or {{< glossary term="variable" displayTerm="variable" >}}**. It can be passed as an {{< glossary term="argument" displayTerm="argument" >}} to a {{< glossary term="function" displayTerm="function" >}}, returned from a function, assigned to a variable as a value. In some languages, functions are first-class citizens, meaning they can be treated like any other value. This allows for more flexibility and power in the language.
-
-  Framework: A collection of tools and {{< glossary term="library" displayTerm="libraries" >}} that help developers build applications **more efficiently** by providing pre-written code for common/boiler-plate tasks. Frameworks provide a **structure** for developing applications and **enforce** certain patterns and practices to **ensure** consistency and maintainability.
-
-  frontend: The **{{< glossary term="client-side" displayTerm="client-side" >}}/front-scenes** of a application that is responsible for rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" displayTerm="server" >}}, computing.
-
-  Function: A **block of code** that performs a specific task or operation. They take {{< glossary term="argument"  displayTerm="arguments" >}}, perform computations/work, and optionally return output. Function themselves {{< glossary term="compile" displayTerm="compiled" >}}/{{< glossary term="interpret" displayTerm="interpreted" >}} into a series of instructions (more nuanced when function includes {{< glossary term="metadata" displayTerm="metadata" >}} or is a more complex {{< glossary term="object" displayTerm="object" >}}). In some programming languages, functions are {{< glossary term="first-class-citizen" displayTerm="first-class-citizen" >}} i.e. they are nothing but a value which is a {{< glossary term="reference" displayTerm="reference" >}} to the first instruction of the function (note possible nuances).
-
-  HashTable-Diag: ㅤ{{< figure src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*l9eCykFTYwvLZgy62id5Ag.png" alt="Hash Table Data Structure" caption="Hash Table Data Structure" >}}
-
-  High-Level: Writing code that is **easy to read and write** for humans. It is **abstracted** from the details of the computer's hardware and is closer to human language than {{< glossary term="machine-language" displayTerm="machine-language" >}}. High-level languages are more **expressive** and **less complex** than {{< glossary term="low-level" displayTerm="low-level" >}} languages. However, they are less efficient and slower to execute than low-level languages and more work is required to convert them to machine code.
-
-  HTML: ㅤ{{< glossary term="HyperText" displayTerm="HyperText" >}} markup language is the standard {{< glossary term="Markup-Language" displayTerm="Markup-Language" >}} **for creating web pages and web applications**. It **describes the structure and semantic meaning** of web content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g.   headings (<h1-6/>), paragraphs (<p/>), images (<img>), links (<a/>), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.
-
-  HTTP: ㅤ{{< glossary term="HyperText" displayTerm="HyperText" >}} {{< glossary term="Transfer" displayTerm="Transfer" >}} Protocol is the {{< glossary term="Protocol" displayTerm="Protocol" >}} that {{< glossary term="client" displayTerm="clients" >}} (browsers) and {{< glossary term="server" displayTerm="servers" >}} ({{< glossary term="web-server" displayTerm="Web-Servers" >}}) use to communicate {{< glossary term="webpage-components" displayTerm="website components" >}} with each other over the {{< glossary term="internet" displayTerm="internet" >}}.
-
-  HTTPS: ㅤ{{< glossary term="HyperText" displayTerm="HyperText" >}} {{< glossary term="Transfer" displayTerm="Transfer" >}} {{< glossary term="Protocol" displayTerm="Protocol" >}} Secure is the **secure version of {{< glossary term="HTTP" displayTerm="HTTP" >}}**. It {{< glossary term="encryption" displayTerm="encrypts" >}} the data exchanged between the {{< glossary term="client" displayTerm="client" >}} and {{< glossary term="server" displayTerm="server" >}}, ensuring that it cannot be intercepted, read and understood by unauthorized parties.
-
-  HyperText: A text that contains links to other texts. When you click on a link, you are taken to another text. In the context of the {{< glossary term="web" displayTerm="web" >}}, it refers to web pages that contain links to other web pages.
-
-  Idempotent: An operation that produces the **same result no matter how many times it is executed**. For example, a GET request is idempotent because it retrieves the same resource every time it is executed.
-
-  Instance: An occurrence/implementation/realization (i.e. a concrete entity) of an abstract entity. In the context of {{< glossary term="oop" displayTerm="object-oriented-programming" >}}, an instance is a specific {{< glossary term="object" displayTerm="object" >}} (concrete entity) created from a {{< glossary term="class" displayTerm="class" >}} (abstract entity). Each instance has its own unique data and can perform actions defined by the class.
-
-  Instantiate: The process of **creating an {{< glossary term="instance" displayTerm="instance" >}}** of a {{< glossary term="class" displayTerm="class" >}} in {{< glossary term="object-oriented-programming" displayTerm="object-oriented-programming" >}}. When a class is instantiated, a new object is created based on the class's blueprint.
-
-  Interface: A shared boundary/layer between two entities (e.g., {{< glossary term="software-component" displayTerm="software components" >}}, devices, systems, etc.) that provides a means for them to communicate or interact with each other for exchanging information. It **defines how access or interaction should occur** between the entities.
-
-  Internet: It is like an intricate network of highways (data cables) connecting cities ({{< glossary term="server" displayTerm="servers" >}}) and towns ({{< glossary term="client" displayTerm="clients" >}}) across the globe. **A network of network**. It allows users to access and share information, resources, and services across the world and with each other.
-
-  Interpret: Computers cannot understand or execute {{< glossary term="source-code" displayTerm="source-code" >}}. Interpretation is the process of translating a line of source-code into {{< glossary term="machine-code" displayTerm="machine-code" >}} AND then executing it BEFORE moving to the next line as opposed to {{< glossary term="compile" displayTerm="compiling">}}. The system will ALWAYS require an {{< glossary term="interpreter" displayTerm="interpreter" >}} software to execute the program. Interpreted languages are 'slower' because translation has to be done during {{< glossary term="run-time" displayTerm="run-time" >}} and every time the program is executed.
-
-  Interpreter: A program that {{< glossary term="interpret" displayTerm="interprets" >}}.
-
-  IP-Address: An Internet-Protocol Address is a **unique numerical label** (e.g., 182.98.18.46) that identifies a device connected to the {{< glossary term="internet" displayTerm="internet" >}}, or a local network that uses the Internet Protocol for communication. Being geo-locatable, it's like a postal address for devices on the internet which helps in transmitting data efficiently between devices.
-
-  JavaScript: A {{< glossary term="high-level" displayTerm="high-level" >}}, {{< glossary term="interpret" displayTerm="interpreted programming language" >}} that is used to make web pages interactive and dynamic. It is used to create responsive, interactive elements on web pages, such as pop-ups, animations, form validation, and more.   JavaScript is executed on the {{< glossary term="client-side" displayTerm="client-side" >}} (browser) and can interact with the {{< glossary term="DOM" displayTerm="DOM" >}} of a web page to update content, style, and structure.
-
-  JSON: JavaScript Object Notation is a **lightweight data-interchange format** that is easy for humans to read and write, and easy for machines to {{< glossary term="parse" displayTerm="parse" >}} and generate. It is used to transmit data between {{< glossary term="software-component" displayTerm="software components" >}} as an alternative to {{< glossary term="XML" displayTerm="XML" >}}. While it is derived from {{< glossary term="JavaScript" displayTerm="JavaScript" >}}, it is language-independent.
-
-  Library: A collection of pre-written code that provides specific functionality to be used by other code. Libraries are reusable and can save time and effort by allowing developers to use existing code rather than writing it from scratch. All the public methods and signatures forms the API of the library.
-
-  LinkedList-Diag: ㅤ{{< figure src="https://media.geeksforgeeks.org/wp-content/uploads/20220829110944/LLdrawio.png" alt="Linked List Data Structure" caption="Linked List Data Structure" >}}
-
-  Low-Level: Writing code that is **closer to the computer's hardware**, it is like directly speaking to the computer in its own language making it more efficient and fast but less human readable. Involves giving very specific instructions about how the computer's memory and processor should work. It can be more complex and harder to write than {{< glossary term="high-level" displayTerm="high-level" >}} languages. Lesser work required to translate the code into {{< glossary term="machine-code" displayTerm="machine-code" >}}.
-
-  Machine-Code: Most fundamental language a computer can understand and execute directly without needing some 'translation'. Operates at hardware level i.e. consists of instructions (made up of {{< glossary term="binary-code"  displayTerm="binary code">}}) that corresponds to a specific operation the CPU can perform; thereby being specific to a computer's architecture. Also called machine-language/machine-code. It is the {{< glossary term="low-level" displayTerm="lowest-level" >}} programming language.
-
-  MAC-Address: A Media Access Control Address is a hardware identifier that **uniquely identifies** each device on a network.   Primarily, the manufacturer assigns it. They are often found on a device's network interface controller (NIC) card.
-
-  Markup-Language: Systems for annotating a document in a way that is syntactically distinguishable from the text. The annotations typically define how the document should be structured, formatted, or displayed. They are static and do not have any logic or programming capabilities.
-
-  Memory-Address: Computers have memory which stores data. When you want to access some data, the computer needs to know where exactly it is stored in memory. Thus every {{< glossary term="bit" displayTerm="byte" >}} of memory has an associated unique address which locates the data. When the data in the memory is the address of another memory location, it is called a {{< glossary term="pointer" displayTerm="pointer" >}}. Memory is usually {{< glossary term="contiguous" displayTerm="contiguous" >}}.
-
-  MetaData: ㅤ**Data about data**. It provides information about other data. A good example would be a .jpg file of an image you take with your camera. If you open that image in, say, Photoshop, you can view the data itself as being the visible image of the photo you took, and you could also view and even edit the metadata which includes information like name of the photographer, date and time the photo was taken, camera model, etc. Every file has metadata associated with it.
-
-  Module: Represents a distinct unit of code that serves a unique and specific purpose, it's {{< glossary term="self-contained" displayTerm="self-contained" >}} and can be reused again and again. When people talk about things like {{< glossary term="package" displayTerm="packages" >}}, or {{< glossary term="library" displayTerm="libraries" >}}, they are also talking about "modules". It is used to mean "some self contained bit of code that does this one specific thing".
-
-  Namespace: Consider two people with the same name in a room, it would be confusing to call out their name. To avoid this, you could say "John from the marketing department" and "John from the sales department". This is what namespaces do in programming. They allow you to use the same name for different things without causing confusion and naming conflicts. For example, two {{< glossary term="library" displayTerm="libraries" >}} might have a {{< glossary term="function" displayTerm="function" >}} with the same name, but they can be distinguished by their namespace (e.g., com.example.library1.function() and com.example.library2.function()) so that you can use both in the same program. The reverse order of the organization domain name is a common way to create namespaces.
-
-  Object: An object is a **real-world entity** that has **{{< glossary term="state" displayTerm="state" >}}** and **{{< glossary term="behavior" displayTerm="behavior" >}}**. While {{< glossary term="class" displayTerm="class" >}} is an abstract entity, an object is its concrete entity, it is an {{< glossary term="instance" displayTerm="instance" >}} of a class. For example, a class "Car" can have states like color, model, speed, etc., and behaviors like start(), stop(), accelerate(), etc. To have an actual car, you need to create an object of the class. Objects are the building blocks of {{< glossary term="OOP" displayTerm="OOP" >}}.
-
-  OOP: ㅤObject-Oriented-Programming is a programming paradigm that is based on the concept of "{{< glossary term="object" displayTerm="objects" >}}". Real-World entities of a system are modeled as {{< glossary term="class" displayTerm="classes" >}} whose {{< glossary term="instance" displayTerm="instances" >}} communicate with each other to perform tasks. It allows for the organization of code in a way that is more modular, reusable, and easier to maintain. OOP include the concepts {{< glossary term="encapsulation" displayTerm="encapsulation" >}}, {{< glossary term="inheritance" displayTerm="inheritance" >}}, {{< glossary term="polymorphism" displayTerm="polymorphism" >}}, and {{< glossary term="abstraction" displayTerm="abstraction" >}} and principles like {{< glossary term="SOLID" displayTerm="SOLID" >}}.
-
-  Package: A package is used to provide a higher level, logical organization unit by grouping related {{< glossary term="module" displayTerm="modules" >}}/{{< glossary term="class" displayTerm="classes" >}}/{{< glossary term="interface" displayTerm="interfaces" >}} together that provide a set of functionalities/tools. They provide {{< glossary term="namespace" displayTerm="namespace" >}} and are nestable. Often used to distribute and manage code, reuse code, and manage dependencies.
-
-  Parse: The process of **analyzing a string of symbols** to determine its grammatical structure with respect to a given formal grammar. It is used in programming to convert data from one format to another, such as from a string to a {{< glossary term="data-structure" displayTerm="data structure" >}}. For example, parsing {{< glossary term="JSON" displayTerm="JSON" >}} string data into a {{< glossary term="JavaScript" displayTerm="JavaScript" >}} {{< glossary term="object" displayTerm="object" >}}, or parsing an {{< glossary term="HTML" displayTerm="HTML" >}} document into a {{< glossary term="DOM" displayTerm="DOM" >}} tree, etc.
-
-  Pointer: A {{< glossary term="variable" displayTerm="variable" >}} whose value is a {{< glossary term="reference" displayTerm="reference" >}}. One use is that it is lightweight because it does store the actual whole data, but only points to location of data.
-
-  Port: A specific point of communication that allows a computer to send and receive data over a network. Ports are identified by numbers, and each port is associated with a specific protocol or service. For example, port 80 is commonly used for HTTP traffic, and port 5432 is used for PostgreSQL database connections {{< hr >}} Can be described as an internal address within a host computer that identifies a program or process
-
-  protocol: A set of rules and guidelines that dictate how participants (whether they are devices, software components, or users) in a system should behave.
-
-  Rate-Limit: A restriction on the number of requests a client (user or application) can make to a server within a specified time frame. Rate limiting is used to prevent abuse, protect against denial-of-service attacks, and ensure fair usage of resources.
-
-  Reference: A reference is a type of data value that is a {{< glossary term="memory-address" displayTerm="memory-address" >}} of another value/data i.e. it indicates where some other data is stored. As it points to some other data, it is used to access that data. A variable that stores a reference is called a {{< glossary term="pointer" displayTerm="pointer" >}}.
-
-  Refresh-Token: An {{< glossary term="Access-Token" displayTerm="Access-Token" >}} is short lived, meaning on expiry user will have to {{< glossary term="authentication" displayTerm="re-authenticate" >}}. Refresh-Token is string of alphanumeric characters (usually random) that can be used to be issued with a new Access Token after the current Access Token expires. It is used to maintain the user's session without requiring the user to re-authenticate while ensuring the Access Token is short-lived and thereby more secure.
-
-  Response: When a {{< glossary term="server" displayTerm="server" >}} receives a {{< glossary term="request" displayTerm="request" >}} from a {{< glossary term="client" displayTerm="client" >}}, it figures out what the client wants, processes the request and answers back to the client. This answer is called a response. The response typically contains the requested data or information, along with a status code indicating the success or failure of the request.
-
-  Request: Often, it is the {{< glossary term="backend" displayTerm="backend" >}} that stores and handles data, performs operations, etc. The {{< glossary term="client" displayTerm="client" >}}/{{< glossary term="frontend" displayTerm="frontend" >}} when it needs data or wants to perform an operation, it must ask the backend {{< glossary term="server" displayTerm="server" >}} to do so. This asking is called a request, often over the network. The server processes the request and sends back a {{< glossary term="response" displayTerm="response" >}}.
-
-  RunTime: The period when a program is running i.e. it is in execution/operation and is performing its tasks. The runtime of a program starts when it is executed and ends when it is terminated.
-
-  self-contained: Something that is independent and complete on its own, without needing external components/resources to function. Though it may still interact with or expose parts of itself to other components.
-
-  server: A computer program or a device that provides functionality to other devices or programs, known as {{< glossary term="client" displayTerm="client" >}}, by responding to their requests. These devices are typically dedicated to serving the needs of other programs or users, therefore being powerful machines which lack output devices like a monitor.
-
-  Server-Process: A program that runs on a computer an a specific {{< glossary term="port" displayTerm="port" >}} and listens for incoming requests from {{< glossary term="clients" displayTerm="clients" >}} over a network. It processes these requests and sends back responses to the clients. E.g., a web server, database server, etc. These processes usually run on a {{< glossary term="server" displayTerm="server" >}} machine.
-
-  Server-Side: Things that happen on the {{< glossary term="server" displayTerm="server" >}}, e.g., processing of requests, interacting with databases, etc.
-
-  Socket: Port + IP Address. Also known as a communication endpoint. {{< hr >}} A socket is one endpoint of a two-way communication link between two programs running on the network.
-
-  Software-Component: A {{< glossary term="server-process" displayTerm="server-process" >}} (e.g. a web server, database server, etc.), a client application (e.g. a website/browser, mobile app, desktop app, etc.), or a library/module that provides specific functionality to a software system.
-
-  Source-Code: The **raw textual human-readable code** of a computer program written by a programmer in a programming language. Computers do not understand this version of code, thus it needs to be translated into {{< glossary term="machine-code" displayTerm="machine-code" >}} before it can be executed. Translation is achieved through the process of {{< glossary term="compile" displayTerm="compilation" >}} or {{< glossary term="interpret" displayTerm="interpretation" >}}.
-
-  State: The characteristics of an {{< glossary term="object" displayTerm="object" >}} which represents what an object is or what it looks like. It is the data (stored in {{< glossary term="variable" displayTerm="variables" >}}) that an object holds at a given point in time. Also called attributes/properties. It defines the object's {{< glossary term="behavior" displayTerm="behavior" >}}. With a dog as an example object, its state would include its name, breed, age, color, etc.
-
-  Statically-Typed: A programming language where the **{{< glossary term="data-type" displayTerm="data type" >}} of a {{< glossary term="variable" displayTerm="variable" >}} is known at {{< glossary term="compile-time" displayTerm="compile time" >}}**. The data type of a variable is explicitly declared when the variable is created, and it cannot change during the program's execution. Statically-typed languages are more strict and less flexible than {{< glossary term="dynamically-typed" displayTerm="dynamically-typed" >}} languages. Examples include C, Java, C++, etc.
-
-  Style-Sheet-Language: A style sheet language that used to describe the presentation or formatting of a document written in a {{< glossary term="markup-language" displayTerm="markup language" >}} like {{< glossary term="HTML" displayTerm="HTML" >}}, typically defining how elements should be displayed or rendered across different media.
-
-  Transfer: Exchange of data between the client and server.
-
-  Tree-Diag: ㅤ{{< figure src="https://media.geeksforgeeks.org/wp-content/uploads/20240415185343/tree-data-structure-banners-(2).webp" alt="Tree Data Structure" width="500px" height="150px" >}}
-
-  UI: User Interface, the visual elements of a software application that users interact with, such as buttons, menus, forms, and other controls. It is designed to be intuitive, user-friendly, and responsive to user input.
-
-  User-Interface: The visual elements of a software application that users interact with, such as buttons, menus, forms, and other controls. It is designed to be intuitive, user-friendly, and responsive to user input.
-
-  UX: User Experience, the overall experience of a person using a product such as a website or computer application, especially in terms of how easy or pleasing it is to use.
-
-  URL: A Uniform Resource Locator is a **web address** that specifies the location of a resource on the internet. It consists   of a protocol (e.g., HTTP, HTTPS), a domain name (e.g., example.com), a path to the resource (e.g., /blog) and optional   query parameters (e.g., ?id=123) to makeup a complete URL, e.g., https://example.com/blog?id=123.
-
-  Variable: When writing a program, often you will want to store data in memory for later use. Instead of explicitly using the {{< glossary term="memory-address" displayTerm="memory-address" >}} to refer/access the data, you can give a descriptive name of your choice so that it gets associated with the data (alias) and allows you to access/refer to it through the name. This name is called a variable. The data it holds can be varied/changed. So, basically it is a container for storing data values by being an alias to the memory location. Values can be of different types (e.g., numbers, strings, objects, etc.) and sizes.
-
-  webpage-components: HTML, CSS files, JavaScript files, images, videos, etc. that make up a webpage. Related webpages make up a website, sharing a common domain name.
-
-  web-server: A server that hosts website component files (such as HTML, CSS, JavaScript files, images, etc.) and an HTTP server that processes incoming requests from clients (web browsers) and responds with the requested resources. Web servers are accessed through the domain names of the websites they host.
-
-  XML: Extensible Markup Language is a markup language that is commonly used to carry and describe data. It is a self-descriptive language that allows you to define your own tags and attributes.
+  purpose: markdown bold to html strong
+  pattern: \*\*([^**]+)\*\*
+  replace: <strong>$1</strong>
 ---
 
 Access-Modifiers
@@ -274,7 +70,8 @@ Client
 Client-Side
 : **Things that happen on the {{< glossary term="client" displayTerm="client" >}}**, e.g., rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" >}}, computing, etc.
 
-Cohesion: The degree to which the elements (like {{< glossary term="variable" displayTerm="variables" >}}, {{< glossary term="function" displayTerm="functions" >}}) inside an entity (like a {{< glossary term="class" >}} or {{< glossary term="module" >}}) are related to each other. High cohesion means that the elements inside the entity are closely related and work together to perform the same/single tasks. Low cohesion means that the elements inside the entity are not closely related and perform different/multiple tasks.
+Cohesion
+: The degree to which the elements (like {{< glossary term="variable" displayTerm="variables" >}}, {{< glossary term="function" displayTerm="functions" >}}) inside an entity (like a {{< glossary term="class" >}} or {{< glossary term="module" >}}) are related to each other. High cohesion means that the elements inside the entity are closely related and work together to perform the same/single tasks. Low cohesion means that the elements inside the entity are not closely related and perform different/multiple tasks.
 
 Contiguous
 : **Continuous** or **adjacent**, without any gaps/breaks/spaces in between. In the context of memory, it refers to a block of memory locations that are next to each other, forming a continuous range of addresses. {{< diag name="memory-address" text="Visualize" >}}.
@@ -299,8 +96,7 @@ Database
 
 data-hiding
 
-:  A concept in {{< glossary term="OOP" >}} that puts {{< glossary term="encapsulation" >}} into good use by restricting the direct access of a {{< glossary term="class" >}}'s {{< glossary term="state" >}} from anywhere outside the class. It enforces a forcefield around the state by allowing only the class's {{< glossary term="method" >}}s to access and manipulate the state, and allowing access to state from outside the class only through these methods. It is achieved through {{< glossary term="access-modifier" displayTerm="access-modifiers" >}}. Forcefield helps in preventing misuse of the state, accidental changes, and ensuring data integrity. Provides {{< glossary term="coupling" displayTerm="high-coupling" >}} by reducing the dependency on the internal state of the class, thus allowing interdependent components to be changed independently.
-> 'hiding' is a misnomer, it is more about controlling access
+:  A concept in {{< glossary term="OOP" >}} that puts {{< glossary term="encapsulation" >}} into good use by restricting the direct access of a {{< glossary term="class" >}}'s {{< glossary term="state" >}} from anywhere outside the class. It enforces a forcefield around the state by allowing only the class's {{< glossary term="method" >}}s to access and manipulate the state, and allowing access to state from outside the class only through these methods. It is achieved through {{< glossary term="access-modifier" displayTerm="access-modifiers" >}}. Forcefield helps in preventing misuse of the state, accidental changes, and ensuring data integrity. Provides {{< glossary term="coupling" displayTerm="high-coupling" >}} by reducing the dependency on the internal state of the class, thus allowing interdependent components to be changed independently. {{< hr >}} 'hiding' is a misnomer, it is more about controlling access
 
 
 Data-Structure
@@ -351,7 +147,8 @@ Framework
 Frontend
 : The **{{< glossary term="client-side" >}}/front-scenes** of a application that is responsible for rendering of the {{< glossary term="user-interface" displayTerm="user-interface" >}}, handling user interactions and events, sending {{< glossary term="request" displayTerm="requests" >}} to the {{< glossary term="server" >}}, computing.
 
-Function: A **block of code** that performs a specific task or operation. They take {{< glossary term="argument"  displayTerm="arguments" >}}, perform computations/work, and optionally return output. Function themselves {{< glossary term="compile" displayTerm="compiled" >}}/{{< glossary term="interpret" displayTerm="interpreted" >}} into a series of instructions (more nuanced when function includes {{< glossary term="metadata" >}} or is a more complex {{< glossary term="object" >}}). In some programming languages, functions are {{< glossary term="first-class-citizen" >}} i.e. they are nothing but a value which is a {{< glossary term="reference" >}} to the first instruction of the function (note possible nuances).
+Function
+: A **block of code** that performs a specific task or operation. They take {{< glossary term="argument"  displayTerm="arguments" >}}, perform computations/work, and optionally return output. Function themselves {{< glossary term="compile" displayTerm="compiled" >}}/{{< glossary term="interpret" displayTerm="interpreted" >}} into a series of instructions (more nuanced when function includes {{< glossary term="metadata" >}} or is a more complex {{< glossary term="object" >}}). In some programming languages, functions are {{< glossary term="first-class-citizen" >}} i.e. they are nothing but a value which is a {{< glossary term="reference" >}} to the first instruction of the function (note possible nuances).
 
 High-Level
 : Writing code that is **easy to read and write** for humans. It is **abstracted** from the details of the computer's hardware and is closer to human language than {{< glossary term="machine-language" >}}. High-level languages are more **expressive** and **less complex** than {{< glossary term="low-level" >}} languages. However, they are less efficient and slower to execute than low-level languages and more work is required to convert them to machine code.
