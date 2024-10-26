@@ -32,8 +32,11 @@ menu:
       name: Archive
       url: /archives/
       weight: 5
+    - identifier: glossary
+      name: Glossary
+      url: /glossary
+      weight: 6
 params:
-  env: production
   mainSections:
     - blogs
     - projects
