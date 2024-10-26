@@ -4,13 +4,13 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex, nofollow">
 <title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) | ADeveloperHasNoName</title>
 <meta name="keywords" content="JWT, OAuth, Concurrency, Redis, Access Tokens, React">
 <meta name="description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.">
 <meta name="author" content="Sandy">
 <link rel="canonical" href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.a24ba15994bf638297675d4496d3606a9ce0bbf779f65fbc988aa709b67effcd.css" integrity="sha256-okuhWZS/Y4KXZ11EltNgapzgu/d59l&#43;8mIqnCbZ&#43;/80=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8215e7752438d986cb70736c75ec2ae41f73e0115f333d9bba4de60ca2137a71.css" integrity="sha256-ghXndSQ42YbLcHNsdewq5B9z4BFfMz2buk3mDKITenE=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -55,71 +55,7 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)" />
-<meta property="og:description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/" /><meta property="article:section" content="blogs" />
-<meta property="article:published_time" content="2024-10-09T10:04:58+05:30" />
-<meta property="article:modified_time" content="2024-10-17T19:13:03+05:30" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)"/>
-<meta name="twitter:description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security."/>
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Blogs",
-      "item": "http://localhost:1313/blogs/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)",
-      "item": "http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)",
-  "name": "Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)",
-  "description": "A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.",
-  "keywords": [
-    "JWT", "OAuth", "Concurrency", "Redis", "Access Tokens", "React"
-  ],
-  "articleBody": "Background: I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. The aim was to develop a web interface by integrating it with Discord, which provides OAuth authentication. Since the database for users was modeled around their Discord account ID, I implemented login functionality using Discord OAuth and JWT tokens.\nAuthorization Workflow: Initially, the user is logged out. Upon login, an access token and refresh token are created, both stored as JWTs in cookies. The access token is sent with all requests (via the bearer authorization header), while the refresh token is only sent to a specific refresh endpoint (/refresh). The backend verifies these tokens (JWT verification) whenever frontend makes a request to it.\nIf verification fails for reasons other than expiration, the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending a request to backend at /refresh. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.\nThe Problem: This process works well when only one request is sent at a time. However, since the website uses client-side rendering (CSR) and is a single-page application (SPA) built with React, users often send multiple AJAX requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.\nWhy does this happen? When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated to the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user’s session thereby logging them out.\nSolution Options: Extend token expiration periods: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution. Queue requests: When the frontend detects an expired token, it queues the requests until the refresh is completed. This can slow down the app, especially when expiration times are short. Locking mechanism of Refresh Token: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time. The Chosen Solution: Redis-based Locking Mechanism I chose to implement a locking mechanism using Redis, a fast in-memory data store with built-in key expiry.\nWe allow the first request to refresh the token while the others wait for the result of the first request. Here’s how it works:\nThe backend returns Token expiration error, the frontend then sends a refresh request to the backend at /refresh. Two Redis keys are used: refresh_token_lock:: Indicates whether the refresh token is being processed. refresh_token:: Holds the result status of the refresh attempt for the Token. At /refresh backend first checks if a refresh_token: key exists in Redis. If it does, the system returns the corresponding status. If the key does not exist, we check for the refresh_token_lock: key to see if another request has acquired the lock. If the lock is held, the request waits for it to be released and then checks the status key again. If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned. This ensures that only the first request refreshes the token, while other requests wait for the result.\nConclusion: The Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.\ntags: [OAuth, JWT, Redis, Security, Web Development]\n",
-  "wordCount" : "664",
-  "inLanguage": "en",
-  "datePublished": "2024-10-09T10:04:58+05:30",
-  "dateModified": "2024-10-17T19:13:03+05:30",
-  "author":{
-    "@type": "Person",
-    "name": "Sandy"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "ADeveloperHasNoName",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
-    }
-  }
-}
-</script>
+</noscript>
 </head>
 
 <body class="" id="top">
@@ -224,6 +160,11 @@
                     <span>Archive</span>
                 </a>
             </li>
+            <li>
+                <a href="http://localhost:1313/glossary" title="Glossary">
+                    <span>Glossary</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -244,52 +185,25 @@
     <div class="post-meta"><span title='2024-10-09 10:04:58 +0530 IST'>October 9, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Sandy&nbsp;|&nbsp;<a href="https://github.com/%3cpath_to_repo%3e/content/blogs/Overcoming-Concurrent-Refresh-Attempts-of-Access-Tokens-%28Jwt%29.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
-  </header> <div class="toc">
-    <details >
-        <summary accesskey="c" title="(Alt + C)">
-            <span class="details">Table of Contents</span>
-        </summary>
+  </header> 
 
-        <div class="inner"><ul>
-                <li>
-                    <a href="#background" aria-label="Background:">Background:</a></li>
-                <li>
-                    <a href="#authorization-workflow" aria-label="Authorization Workflow:">Authorization Workflow:</a></li>
-                <li>
-                    <a href="#the-problem" aria-label="The Problem:">The Problem:</a><ul>
-                        
-                <li>
-                    <a href="#why-does-this-happen" aria-label="Why does this happen?">Why does this happen?</a></li></ul>
-                </li>
-                <li>
-                    <a href="#solution-options" aria-label="Solution Options:">Solution Options:</a></li>
-                <li>
-                    <a href="#the-chosen-solution-redis-based-locking-mechanism" aria-label="The Chosen Solution: Redis-based Locking Mechanism">The Chosen Solution: Redis-based Locking Mechanism</a></li>
-                <li>
-                    <a href="#conclusion" aria-label="Conclusion:">Conclusion:</a>
-                </li>
-            </ul>
-        </div>
-    </details>
-</div>
-
-  <div class="post-content"><h2 id="background">Background:<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h2>
-<p>I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. The aim was to develop a web interface by integrating it with Discord, which provides <a href="">OAuth</a> authentication. Since the database for users was modeled around their Discord account ID, <a href="">I implemented login functionality using Discord OAuth</a> and <a href="">JWT</a> tokens.</p>
-<h2 id="authorization-workflow">Authorization Workflow:<a hidden class="anchor" aria-hidden="true" href="#authorization-workflow">#</a></h2>
-<p>Initially, the user is logged out. Upon login, an access token and refresh token are created, both stored as JWTs in <a href="">cookies</a>. The access token is sent with all requests (via the bearer authorization header), while the refresh token is only sent to a specific refresh endpoint (<code>/refresh</code>). The backend verifies these tokens (JWT verification) whenever frontend makes a request to it.</p>
+  <div class="post-content"><h2 id="background">
+    Background:</h2><p>I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. The aim was to develop a web interface by integrating it with Discord, which provides <a href="">OAuth</a> authentication. Since the database for users was modeled around their Discord account ID, <a href="">I implemented login functionality using Discord OAuth</a> and <a href="">JWT</a> tokens.</p>
+<h2 id="authorization-workflow">
+    Authorization Workflow:</h2><p>Initially, the user is logged out. Upon login, an access token and refresh token are created, both stored as JWTs in <a href="">cookies</a>. The access token is sent with all requests (via the bearer authorization header), while the refresh token is only sent to a specific refresh endpoint (<code>/refresh</code>). The backend verifies these tokens (JWT verification) whenever frontend makes a request to it.</p>
 <p>If verification fails for reasons other than expiration, the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending a request to backend at <code>/refresh</code>. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.</p>
-<h2 id="the-problem">The Problem:<a hidden class="anchor" aria-hidden="true" href="#the-problem">#</a></h2>
-<p>This process works well when only one request is sent at a time. However, since the website uses <a href="">client-side rendering (CSR)</a> and is a <a href="">single-page application (SPA)</a> built with React, users often send multiple <a href="">AJAX</a> requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.</p>
-<h3 id="why-does-this-happen">Why does this happen?<a hidden class="anchor" aria-hidden="true" href="#why-does-this-happen">#</a></h3>
-<p>When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated to the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user&rsquo;s session thereby logging them out.</p>
-<h2 id="solution-options">Solution Options:<a hidden class="anchor" aria-hidden="true" href="#solution-options">#</a></h2>
-<ol>
+<h2 id="the-problem">
+    The Problem:</h2><p>This process works well when only one request is sent at a time. However, since the website uses <a href="">client-side rendering (CSR)</a> and is a <a href="">single-page application (SPA)</a> built with React, users often send multiple <a href="">AJAX</a> requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.</p>
+<h3 id="why-does-this-happen">
+    Why does this happen?</h3><p>When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated to the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user&rsquo;s session thereby logging them out.</p>
+<h2 id="solution-options">
+    Solution Options:</h2><ol>
 <li><strong>Extend token expiration periods</strong>: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution.</li>
 <li><strong>Queue requests</strong>: When the frontend detects an expired token, it queues the requests until the refresh is completed. This can slow down the app, especially when expiration times are short.</li>
 <li><strong>Locking mechanism of Refresh Token</strong>: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time.</li>
 </ol>
-<h2 id="the-chosen-solution-redis-based-locking-mechanism">The Chosen Solution: Redis-based Locking Mechanism<a hidden class="anchor" aria-hidden="true" href="#the-chosen-solution-redis-based-locking-mechanism">#</a></h2>
-<p>I chose to implement a locking mechanism using <a href="">Redis</a>, a fast in-memory data store with built-in key expiry.</p>
+<h2 id="the-chosen-solution-redis-based-locking-mechanism">
+    The Chosen Solution: Redis-based Locking Mechanism</h2><p>I chose to implement a locking mechanism using <a href="">Redis</a>, a fast in-memory data store with built-in key expiry.</p>
 <p>We allow the first request to refresh the token while the others wait for the result of the first request.
 Here’s how it works:</p>
 <ol>
@@ -305,8 +219,8 @@ Here’s how it works:</p>
 <li>If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned.</li>
 </ol>
 <p>This ensures that only the first request refreshes the token, while other requests wait for the result.</p>
-<h2 id="conclusion">Conclusion:<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>The Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.</p>
+<h2 id="conclusion">
+    Conclusion:</h2><p>The Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.</p>
 <p>tags: [OAuth, JWT, Redis, Security, Web Development]</p>
 
 
@@ -518,7 +432,11 @@ Here’s how it works:</p>
             codeblock.parentNode.appendChild(copybutton);
         }
     });
-</script>
+</script><script>
+        const environment = '';
+    </script>
+
+    
         <script src="/js/glossary.js"></script>
     
 </body>

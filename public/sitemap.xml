@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-24T15:56:35+05:30</lastmod>
+    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/</loc>
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
@@ -49,9 +49,6 @@
   </url><url>
     <loc>http://localhost:1313/blogs/what_are_browser_http_cookies/</loc>
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/glossary/</loc>
-    <lastmod>2024-10-24T15:56:35+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/article/</loc>
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
@@ -109,6 +106,8 @@
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
     <lastmod>2024-10-09T12:10:34+05:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/glossary/</loc>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
     <lastmod>2024-10-09T12:11:53+05:30</lastmod>
