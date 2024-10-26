@@ -13,12 +13,18 @@ async function fetchGlossaryData() {
     const response = await fetch("/data/glossary.json");
     const glossaryData = await response.json();
 
-    localStorage.setItem(GLOSSARY_CACHE_KEY, JSON.stringify(glossaryData));
-    localStorage.setItem(
-        GLOSSARY_CACHE_EXPIRATION_KEY,
-        now + 24 * 60 * 60 * 1000
-    );
+    if (environment === "production") {
+        localStorage.setItem(GLOSSARY_CACHE_KEY, JSON.stringify(glossaryData));
+        localStorage.setItem(
+            GLOSSARY_CACHE_EXPIRATION_KEY,
+            now + 24 * 60 * 60 * 1000
+        );
+    }
     return glossaryData;
+}
+
+function getDefinition(term, glossaryData) {
+    return glossaryData[term.toLowerCase()];
 }
 
 function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossaryData) {
@@ -28,16 +34,16 @@ function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossa
         "g"
     );
 
-    return definition.replace(glossaryPattern, (match, term, displayTerm) => {
+    return definition.replace(glossaryPattern, (_, term, displayTerm) => {
         child_num = child_num + 1;
-        const termDefinition = glossaryData[term.toLowerCase()];
+        const termDefinition = getDefinition(term, glossaryData);
 
         // modal has to receive tree_id and tree_node_id through glossary-term
         return termDefinition
             ? `<span class="glossary-term" glossary-data-tree-id="${tree_id}" glossary-data-tree-node-id="${tree_node_id},${child_num}" glossary-data-term="${term}" onclick="fetchAndRenderGlossaryDefinition(this)">${
                   displayTerm || term
               }</span>`
-            : `<span>${displayTerm || term}</span>`;
+            : `${displayTerm || term}`;
     });
 }
 
@@ -48,8 +54,9 @@ function isModalOpen(tree_id, tree_node_id) {
     );
 }
 
-function prepareModal(modal, tree_id, tree_node_id, processedDefinition) {
+function prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefinition) {
     modal.classList.add("glossary-modal");
+    modal.setAttribute("style", `max-width: ${ isTermImage? "100vw" : "300px"}`);
     // Add tree_id and tree_node_id to the modal to close all child modals
     modal.setAttribute("m-glossary-data-tree-id", tree_id);
     modal.setAttribute("m-glossary-data-tree-node-id", tree_node_id);
@@ -62,9 +69,9 @@ function prepareModal(modal, tree_id, tree_node_id, processedDefinition) {
     `;
 }
 
-function positionModal(modal, element) {
+function positionModal(isTermImage, modal, element) {
     const rect = element.getBoundingClientRect();
-    const modalWidth = 300; // TODO or use modal.offsetWidth after showing
+    const modalWidth = 300; // isTermImage ? window.innerWidth : 300; // TODO or use modal.offsetWidth after showing
     const rightSpace = window.innerWidth - rect.right;
     const bottomSpace = window.innerHeight - rect.bottom;
 
@@ -83,6 +90,7 @@ function positionModal(modal, element) {
 
 async function fetchAndRenderGlossaryDefinition(element) {
     const term = element.getAttribute("glossary-data-term");
+    const isTermImage = term.startsWith("diag-");
     const tree_id = element.getAttribute("glossary-data-tree-id");
     const tree_node_id = element.getAttribute("glossary-data-tree-node-id");
 
@@ -90,7 +98,7 @@ async function fetchAndRenderGlossaryDefinition(element) {
     if (isModalOpen(tree_id, tree_node_id)) return;
 
     const glossaryData = await fetchGlossaryData();
-    let definition = glossaryData[term];
+    let definition = getDefinition(term, glossaryData);
 
     if (!definition) {
         alert("Definition not found!");
@@ -98,12 +106,12 @@ async function fetchAndRenderGlossaryDefinition(element) {
     }
 
     // Process the definition text for nested glossary terms
-    const processedDefinition = processGlossaryDefinitionText( tree_id, tree_node_id, definition, glossaryData);
+    const processedDefinition = processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossaryData);
 
     // Create the modal
     const modal = document.createElement("div");
-    prepareModal(modal, tree_id, tree_node_id, processedDefinition);
-    positionModal(modal, element);
+    prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefinition);
+    positionModal(isTermImage, modal, element);
 
     document.body.appendChild(modal);
 }
@@ -150,7 +158,6 @@ setTimeout(() => {
         if (event.target.classList.contains("glossary-modal-close")) return;
 
         // Close all modals if clicked outside of any modal
-        console.log(modals);
         Array.from(modals).forEach(modal => modal.remove());
     });
 }, 0);

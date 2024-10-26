@@ -23,7 +23,11 @@
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 
-    {{ if or (eq .Section "blogs") (eq .Section "projects") (eq .Type "post") (.Params.glossary) (eq .Section "blog") (eq .Section "project") }}
+    <script>
+        const environment = '{{ .Site.Params.environment }}';
+    </script>
+
+    {{ if or (eq .Section "blogs") (eq .Section "projects") (eq .Type "blogs") (eq .Type "projects" ) (.Params.glossary) }}
         <script src="/js/glossary.js"></script>
     {{ end }}
 </body>
