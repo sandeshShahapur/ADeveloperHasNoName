@@ -28,7 +28,8 @@
     </script>
 
     {{ if or (eq .Section "blogs") (eq .Section "projects") (eq .Type "blogs") (eq .Type "projects" ) (.Params.glossary) }}
-        <script src="/js/glossary.js"></script>
+        {{ $js := resources.Get "js/glossary.js" | resources.Minify | resources.Fingerprint }}
+        <script src="{{ $js.RelPermalink }}"></script>
     {{ end }}
 </body>
 

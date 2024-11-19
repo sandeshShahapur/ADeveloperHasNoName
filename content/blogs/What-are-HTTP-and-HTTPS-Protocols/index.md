@@ -47,6 +47,9 @@ Next, the server processes the request and responds with the requested content. 
 
 One of the key features of HTTP is that it is a **stateless protocol**, which means each request is independent of the previous one. The server does not maintain any information about the client's previous requests. To maintain state between requests, technologies like {{< glossary term="cookie" displayTerm="cookies" >}} and sessions are used.
 
+{{< br >}}
+{{< figure src="httpFlow.svg" alt="HTTP flow diagram" caption="HTTP flow diagram" loading="lazy" >}}
+
 In this way, HTTP enables the client and server to communicate effectively over the internet.
 
 ## HTTP Methods

@@ -47,6 +47,8 @@ Here’s how it works:
 4. If the key does not exist, we check for the `refresh_token_lock:<Refresh Token>` key to see if another request has acquired the lock and is already processing the refresh token. If the lock is held, the request waits for it to be released and repeats previous step.
 5. If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned.
 
+{{< figure src="concurrentRefreshAttemptsRedisSolution.svg" alt="Solution flowchart diagram" caption="Solution flowchart diagram" loading="lazy" >}}
+
 This ensures that only the first request refreshes the token, while other requests wait for the result.
 
 ## Conclusion

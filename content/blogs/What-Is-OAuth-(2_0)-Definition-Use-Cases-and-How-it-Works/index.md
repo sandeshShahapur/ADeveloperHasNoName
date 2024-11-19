@@ -72,6 +72,9 @@ OAuth 2.0 works by following a series of steps to grant access to the user's dat
 6. **Resource Access**: The resource server verifies the Access Token and grants access to the user's data.
    - Example: Google Drive verifies the Access Token and allows the media editing application to access your files.
 
+{{< br >}}
+{{< figure src="OAuthFlow.svg" alt="OAuth flow diagram" caption="OAuth flow diagram" loading="lazy" width="800" height="700" >}}
+
 ## Conclusion
 
 OAuth 2.0 is a secure {{< glossary term="protocol" >}} that allows users to grant access to their data without sharing their credentials. It is widely used in various applications and scenarios to provide a secure and flexible way to access user data. Understanding OAuth 2.0 is essential for developers who want to build secure and user-friendly applications that interact with third-party services.

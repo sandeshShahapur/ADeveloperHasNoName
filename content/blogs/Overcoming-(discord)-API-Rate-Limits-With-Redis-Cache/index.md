@@ -59,6 +59,9 @@ If the rate-limit key isn’t found, we proceed to fetch the user’s roles from
 - If the request is successful, we cache the data with a key of the pattern `discord_roles_<ServerID>_<UserID>` and return it.
 - If the request receives a rate-limit error, we create the key `discord_roles_<ServerID>_<AccessToken>_retry-after` with an expiry set to the rate-limit reset time (plus 1 second). After this, we return the previously cached data.
 
+{{< br >}}
+{{< figure src="discordRateLimitRedisCacheSolution.svg" alt="Solution flowchart diagram" caption="Solution flowchart diagram" loading="lazy" >}}
+
 ## What I Learned and Future Considerations
 
 While this solution worked well for our use case, I realized that using Redis opened up more possibilities for handling similar challenges elsewhere in the project. For instance, I later used Redis to solve another issue related to [concurrent refresh attempts of access tokens]( {{% ref "Overcoming-Concurrent-Refresh-Attempts-of-Access-Tokens-(Jwt)" %}} ).
