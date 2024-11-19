@@ -10,23 +10,23 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What are HTTP and HTTPS Protocols?</title>
-      <link>http://localhost:1313/blogs/what_are_http_and_https_protocols/</link>
+      <link>http://localhost:1313/blogs/what-are-http-and-https-protocols/</link>
       <pubDate>Sun, 13 Oct 2024 16:45:35 +0530</pubDate>
-      <guid>http://localhost:1313/blogs/what_are_http_and_https_protocols/</guid>
+      <guid>http://localhost:1313/blogs/what-are-http-and-https-protocols/</guid>
       <description>An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet.</description>
     </item>
     <item>
       <title>What Are Browser HTTP Cookies?</title>
-      <link>http://localhost:1313/blogs/what_are_browser_http_cookies/</link>
+      <link>http://localhost:1313/blogs/what-are-browser-http-cookies/</link>
       <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
-      <guid>http://localhost:1313/blogs/what_are_browser_http_cookies/</guid>
+      <guid>http://localhost:1313/blogs/what-are-browser-http-cookies/</guid>
       <description>An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.</description>
     </item>
     <item>
       <title>What Is OAuth (2.0)? | Definition, Use Cases, and How it Works</title>
-      <link>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</link>
+      <link>http://localhost:1313/blogs/what-is-oauth-2_0-definition-use-cases-and-how-it-works/</link>
       <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
-      <guid>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</guid>
+      <guid>http://localhost:1313/blogs/what-is-oauth-2_0-definition-use-cases-and-how-it-works/</guid>
       <description>A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data.</description>
     </item>
     <item>

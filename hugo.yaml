@@ -18,11 +18,11 @@ menu:
       weight: 1
     - identifier: search
       name: Search
-      url: /search
+      url: /search/
       weight: 2
     - identifier: blogs
       name: Blogs
-      url: /blogs
+      url: /blogs/
       weight: 3
     - identifier: projects
       name: Projects
@@ -34,7 +34,7 @@ menu:
       weight: 5
     - identifier: glossary
       name: Glossary
-      url: /glossary
+      url: /glossary/
       weight: 6
 params:
   mainSections:
@@ -79,10 +79,10 @@ params:
       icon: buymeacoffee
   ShowBreadcrumbs: true
   ShowReadingTime: true
-  ShowToc: true
   ShowCodeCopyButtons: true
-  ShowShareButtons: true
+  ShowToc: true
   ShowPostNavLinks: true
+  ShowShareButtons: true
 outputs:
   home:
     - HTML

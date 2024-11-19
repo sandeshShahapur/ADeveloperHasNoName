@@ -11,9 +11,9 @@ json_path = 'static/data/glossary.json'
 
 def get_yaml_hash(file_path):
     try:
-        with open(file_path, 'r') as yaml_file:
+        with open(file_path, 'r', encoding='utf-8') as yaml_file:
             data = yaml.load(yaml_file)
-            return hashlib.md5(json.dumps(data, sort_keys=True).encode()).hexdigest(), data
+            return hashlib.md5(json.dumps(data, sort_keys=True, ensure_ascii=False).encode()).hexdigest(), data
     except Exception as e:
         print(f"Error reading YAML file: {e}")
         return None, None
@@ -26,8 +26,8 @@ while True:
 
     if new_hash and new_hash != old_hash:
         try:
-            with open(json_path, 'w') as json_file:
-                json.dump(new_yaml_data, json_file, indent=2)
+            with open(json_path, 'w', encoding='utf-8') as json_file:
+                json.dump(new_yaml_data, json_file, ensure_ascii=False, indent=2)
             print(f"YAML file '{yaml_path}' has been converted to JSON and saved to '{json_path}'")
             old_hash = new_hash
         except Exception as e:

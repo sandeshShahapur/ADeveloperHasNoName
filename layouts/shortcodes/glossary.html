@@ -8,5 +8,6 @@
       glossary-data-tree-node-id="0" {{- /* unique id for a node in a tree prefixed by ancestors. 0 is root. ex: `0,0,1,0,3,4` where the length is level and individual value is child number */ -}}
       glossary-data-term="{{ $term }}"
       onclick="fetchAndRenderGlossaryDefinition(this)">
-    {{ $displayTerm }}
+    {{- $displayTerm -}}
 </span>
+{{- /* Don't leave blank lines above me to avoid extra spaces in the output */ -}}

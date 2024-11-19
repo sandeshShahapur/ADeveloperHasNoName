@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-26T17:37:36+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/</loc>
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
@@ -12,16 +12,16 @@
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/http/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T16:45:35+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/https/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T16:45:35+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/networking/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T16:45:35+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/networking/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T16:45:35+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
@@ -33,40 +33,40 @@
     <lastmod>2024-10-19T16:17:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web-security/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T16:45:35+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/what_are_http_and_https_protocols/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <loc>http://localhost:1313/blogs/what-are-http-and-https-protocols/</loc>
+    <lastmod>2024-10-13T16:45:35+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cookies/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/security/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/web-security/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-17T19:13:03+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/what_are_browser_http_cookies/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <loc>http://localhost:1313/blogs/what-are-browser-http-cookies/</loc>
+    <lastmod>2024-10-13T07:56:37+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/article/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-12T18:32:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/development/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-12T18:32:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/oauth/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-17T19:13:03+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/oauth-2.0/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-12T18:32:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/security/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <lastmod>2024-10-12T18:32:49+05:30</lastmod>
   </url><url>
-    <loc>http://localhost:1313/blogs/what_is_oauth_2.0_definition_use_cases_and_how_it_works/</loc>
-    <lastmod>2024-10-19T16:17:49+05:30</lastmod>
+    <loc>http://localhost:1313/blogs/what-is-oauth-2_0-definition-use-cases-and-how-it-works/</loc>
+    <lastmod>2024-10-12T18:32:49+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/access-tokens/</loc>
     <lastmod>2024-10-17T19:13:03+05:30</lastmod>
@@ -108,6 +108,7 @@
     <lastmod>2024-10-09T12:10:34+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/glossary/</loc>
+    <lastmod>2024-10-26T17:37:36+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/search/</loc>
     <lastmod>2024-10-09T12:11:53+05:30</lastmod>

@@ -1,5 +1,8 @@
+const BASE_URL = window.location.origin;
+
 const GLOSSARY_CACHE_KEY = "glossaryCache";
-const GLOSSARY_CACHE_EXPIRATION_KEY = "cacheExpiration";
+const GLOSSARY_CACHE_EXPIRATION_KEY = "glossaryCacheExpiration";
+
 
 async function fetchGlossaryData() {
     const now = new Date().getTime();
@@ -17,35 +20,57 @@ async function fetchGlossaryData() {
         localStorage.setItem(GLOSSARY_CACHE_KEY, JSON.stringify(glossaryData));
         localStorage.setItem(
             GLOSSARY_CACHE_EXPIRATION_KEY,
-            now + 24 * 60 * 60 * 1000
+            now + 24 * 60 * 60 * 1000 // 24 hours
         );
     }
     return glossaryData;
 }
 
+
 function getDefinition(term, glossaryData) {
     return glossaryData[term.toLowerCase()];
 }
 
+
 function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossaryData) {
     let child_num = -1;
+
     const glossaryPattern = new RegExp(
-        '\\{\\{\\s*<\\s*glossary term="([^"]+)"(?:\\s+displayTerm="([^"]+)")?\\s*>\\s*\\}\\}',
+        '\\{\\{\\s*<\\s*glossary term="?([^"\\s]+)"?(?:\\s+displayTerm="?((?:(?!"?\\s+>\\s*\\}\\}).)+)"?)?\\s*>\\s*\\}\\}',
         "g"
     );
-
-    return definition.replace(glossaryPattern, (_, term, displayTerm) => {
+    definition = definition.replace(glossaryPattern, (_, term, displayTerm) => {
         child_num = child_num + 1;
         const termDefinition = getDefinition(term, glossaryData);
+        const displayText = (displayTerm || term).trim();
 
         // modal has to receive tree_id and tree_node_id through glossary-term
         return termDefinition
-            ? `<span class="glossary-term" glossary-data-tree-id="${tree_id}" glossary-data-tree-node-id="${tree_node_id},${child_num}" glossary-data-term="${term}" onclick="fetchAndRenderGlossaryDefinition(this)">${
-                  displayTerm || term
-              }</span>`
-            : `${displayTerm || term}`;
+            ? `<span class="glossary-term" glossary-data-tree-id="${tree_id}" glossary-data-tree-node-id="${tree_node_id},${child_num}" glossary-data-term="${term}" onclick="fetchAndRenderGlossaryDefinition(this)">${displayText}</span>`.trim()
+            : displayText;
     });
+
+    const refPattern = new RegExp('\\[([^\\]]+)\\]\\(\\s*\\{\\{\\s*%\\s*ref\\s+\\"?([^\\"]+)\\"?\\s*%\\s*}}\\s*\\)', "g");
+    definition = definition.replace(refPattern, (_, text, absUrl) => {
+        const displayText = text || absUrl;
+        absUrl = absUrl.split("").filter(char => !["(", ")"].includes(char)).join("");
+
+        if (!absUrl.startsWith("/")) absUrl = "/" + absUrl;
+        return `<a href="${BASE_URL+absUrl}" target="_blank" rel="noopener">${displayText}</a>`;
+    });
+
+    const boldPattern = new RegExp("\\*\\*([^**]+)\\*\\*", "g");
+    definition = definition.replace(boldPattern, "<strong>$1</strong>");
+
+    const hrPattern = new RegExp('\\{\\{\\s*<\\s*hr\\s*>\\s*\\}\\}')
+    definition = definition.replace(hrPattern, '<br><svg height="2" width="100%"><line x1="0" y1="0" x2="100%" y2="0" style="stroke:#ccc;stroke-width:2"/></svg><br>');
+
+    const hrSpanPattern = new RegExp('\\{\\{\\s*<\\s*hr-span\\s*>\\s*\\}\\}')
+    definition = definition.replace(hrSpanPattern, '<span style="display: block; width: 100%; height: 1px; background-color: rgb(30, 30, 30); margin: 0.5rem 0;"></span>');
+
+    return definition;
 }
+
 
 function isModalOpen(tree_id, tree_node_id) {
     const tree_nodes = document.querySelectorAll(`[m-glossary-data-tree-id="${tree_id}"]`);
@@ -53,6 +78,7 @@ function isModalOpen(tree_id, tree_node_id) {
         node => node.getAttribute("m-glossary-data-tree-node-id") === tree_node_id
     );
 }
+
 
 function prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefinition) {
     modal.classList.add("glossary-modal");
@@ -68,6 +94,7 @@ function prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefini
         </div>
     `;
 }
+
 
 function positionModal(isTermImage, modal, element) {
     const rect = element.getBoundingClientRect();
@@ -88,11 +115,12 @@ function positionModal(isTermImage, modal, element) {
     modal.style.left = `${leftPosition}px`;
 }
 
+
 async function fetchAndRenderGlossaryDefinition(element) {
     const term = element.getAttribute("glossary-data-term");
     const isTermImage = term.startsWith("diag-");
-    const tree_id = element.getAttribute("glossary-data-tree-id");
-    const tree_node_id = element.getAttribute("glossary-data-tree-node-id");
+    const tree_id = element.getAttribute("glossary-data-tree-id"); // unique global ID for a glossary tree
+    const tree_node_id = element.getAttribute("glossary-data-tree-node-id"); // local ID for the glossary node in the tree
 
     // ensures idempotency
     if (isModalOpen(tree_id, tree_node_id)) return;
@@ -101,7 +129,8 @@ async function fetchAndRenderGlossaryDefinition(element) {
     let definition = getDefinition(term, glossaryData);
 
     if (!definition) {
-        alert("Definition not found!");
+        // TODO give option to create issue on github or mail the author
+        showAlert("Definition not found!");
         return;
     }
 
@@ -115,6 +144,7 @@ async function fetchAndRenderGlossaryDefinition(element) {
 
     document.body.appendChild(modal);
 }
+
 
 function getChildrenGlossaryModals(modal) {
     let childModals = []; // Array to store child modals (including the modal itself)
@@ -142,6 +172,7 @@ function closeGlossaryModal(modal) {
     childGlossaryModals.forEach(modal => modal.remove());
 }
 
+
 // Handle outside clicks to close modals
 setTimeout(() => {
     window.addEventListener("click", function closeOnOutsideClick(event) {
@@ -161,3 +192,27 @@ setTimeout(() => {
         Array.from(modals).forEach(modal => modal.remove());
     });
 }, 0);
+
+
+function showAlert(message) {
+    const alertBox = document.createElement("div");
+    alertBox.textContent = message;
+    alertBox.style.position = "fixed";
+    alertBox.style.top = "10px";
+    alertBox.style.left = "10%";
+    alertBox.style.width = "80%";
+    alertBox.style.backgroundColor = "#ffcccc";
+    alertBox.style.color = "#990000";
+    alertBox.style.padding = "10px";
+    alertBox.style.textAlign = "center";
+    alertBox.style.fontWeight = "500";
+    alertBox.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+    alertBox.style.zIndex = "1000";
+
+    document.body.appendChild(alertBox);
+
+    // Remove the alert after 3 seconds
+    setTimeout(() => {
+        alertBox.remove();
+    }, 3000);
+}
