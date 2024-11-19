@@ -2,7 +2,7 @@
 title: "What are HTTP and HTTPS Protocols?"
 date: 2024-10-13T16:45:35+05:30
 author: "Sandesh Shahapur"
-draft: true
+draft: false
 tags: ["HTTP", "HTTPS", "Networking", "Web Development", "Web Security"]
 categories: ["Web Development", "Networking"]
 summary: "An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet."

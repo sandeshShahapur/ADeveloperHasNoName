@@ -2,7 +2,7 @@
 title: "What Are Browser HTTP Cookies?"
 date: 2024-10-13T07:56:37+05:30
 author: "Sandesh Shahapur"
-draft: true
+draft: false
 tags: ["Cookies", "Web Development", "Security"]
 categories: ["Web Development", "Web Security"]
 summary: "An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web."
