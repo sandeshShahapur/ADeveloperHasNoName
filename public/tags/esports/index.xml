@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ESports on ADeveloperHasNoName</title>
+    <link>http://localhost:1313/tags/esports/</link>
+    <description>Recent content in ESports on ADeveloperHasNoName</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Nov 2024 11:35:30 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/esports/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SAFA</title>
+      <link>http://localhost:1313/projects/safa/</link>
+      <pubDate>Wed, 20 Nov 2024 11:35:30 +0530</pubDate>
+      <guid>http://localhost:1313/projects/safa/</guid>
+      <description>SAFA is a web interface for managing eSports FIFA tournaments, offering features like team creation, stats profiles, and Discord-integrated authentication.</description>
+    </item>
+  </channel>
+</rss>
