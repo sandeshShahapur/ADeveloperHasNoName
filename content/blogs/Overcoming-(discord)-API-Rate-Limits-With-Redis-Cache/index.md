@@ -5,6 +5,7 @@ author: "Sandesh Shahapur"
 draft: false
 tags: ["API", "Redis", "Discord", "Web Development", "Caching", "Rate Limit"]
 categories: ["Web Development", "Tutorials"]
+description: "Learn how to tackle Discord API rate limits in your web application by implementing a Redis-based caching mechanism for efficiency and compliance."
 summary: "How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application."
 todo: ["Add discord API links", "Add diagrams" ]
 ---

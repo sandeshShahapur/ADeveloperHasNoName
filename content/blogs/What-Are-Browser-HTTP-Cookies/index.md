@@ -5,6 +5,7 @@ author: "Sandesh Shahapur"
 draft: false
 tags: ["Cookies", "Web Development", "Security"]
 categories: ["Web Development", "Web Security"]
+description: "Learn what browser HTTP cookies are, their purpose, how they work, and their attributes. This article explains their use in session management, personalization, tracking, and web advertising."
 summary: "An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web."
 ---
 

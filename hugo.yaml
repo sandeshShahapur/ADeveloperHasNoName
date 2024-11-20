@@ -58,7 +58,7 @@ params:
   #   Content: "Welcome to my blog. I write about programming, technology, and other things that interest me."
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/sandeshShahapur/ADeveloperHasNoName/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
   socialIcons:

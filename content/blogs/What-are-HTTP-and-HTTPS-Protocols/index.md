@@ -3,9 +3,10 @@ title: "What are HTTP and HTTPS Protocols?"
 date: 2024-10-13T16:45:35+05:30
 author: "Sandesh Shahapur"
 draft: false
+description: "Explore HTTP and HTTPS protocols, their workings, methods, status codes, versions, and security mechanisms that underpin modern web communication."
+summary: "An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet."
 tags: ["HTTP", "HTTPS", "Networking", "Web Development", "Web Security"]
 categories: ["Web Development", "Networking"]
-summary: "An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet."
 ---
 
 You are familiar with using browsers to access {{< glossary term="website" displayTerm="websites" >}} and have seen {{< glossary term="URL" displayTerm="URLs" >}} of website {{< glossary term="domain" displayTerm="domains" >}} starting with `http://` or `https://`, where when you type a URL like `http://example.com` in your browser's address bar and press Enter, you are then presented with the website. How does this happen?
