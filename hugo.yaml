@@ -5,6 +5,7 @@ markup:
         block: true
         title: true
 
+environment: production
 baseURL: https://adeveloperhasnoname.dev/
 languageCode: en-us
 title: ADeveloperHasNoName
