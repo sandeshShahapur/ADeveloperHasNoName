@@ -6,14 +6,14 @@
     <description>Recent content in Backtracking on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Nov 2024 03:14:55 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2024 16:36:03 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/backtracking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tournament Scheduler</title>
       <link>http://localhost:1313/projects/tournament-scheduler/</link>
       <pubDate>Wed, 20 Nov 2024 03:14:55 +0530</pubDate>
       <guid>http://localhost:1313/projects/tournament-scheduler/</guid>
-      <description>A web application to create customizable round-robin sports tournament schedules with user-defined parameters and constraints.</description>
+      <description>A feature-rich web application for generating customizable round-robin tournament schedules, incorporating user-defined constraints and parameters to create tailored sports schedules. Built with a focus on flexibility and algorithmic efficiency.</description>
     </item>
   </channel>
 </rss>

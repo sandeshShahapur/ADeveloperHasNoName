@@ -6,14 +6,14 @@
     <description>Recent content in Cookies on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Nov 2024 17:34:25 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2024 16:35:32 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/cookies/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>What Are Browser HTTP Cookies?</title>
       <link>http://localhost:1313/blogs/what-are-browser-http-cookies/</link>
       <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
       <guid>http://localhost:1313/blogs/what-are-browser-http-cookies/</guid>
-      <description>An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.</description>
+      <description>Learn what browser HTTP cookies are, their purpose, how they work, and their attributes. This article explains their use in session management, personalization, tracking, and web advertising.</description>
     </item>
   </channel>
 </rss>

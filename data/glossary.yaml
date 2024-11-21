@@ -327,7 +327,8 @@ http: '
 '
 
 
-http-server: HTTP-Server is **a {{< glossary term="server-process" >}} software that understands {{< glossary term="URL" displayTerm="URLs" >}} (web addresses) and {{< glossary term="HTTP" >}}**. {{< glossary term="client" displayTerm="Clients" >}} (browsers) can access it through {{< glossary term="domain" >}} names of the {{< glossary term="website" displayTerm="websites" >}} it stores, which then delivers the {{< glossary term="request" displayTerm="requested" >}} {{< glossary term="web-component" displayTerm="website components" >}} back to the clients.
+http-server: HTTP-Server is **a {{< glossary term="server-process" >}} software that understands {{< glossary term="URL" displayTerm="URLs" >}} (web addresses) and {{< glossary term="HTTP" >}}**. It listens for incoming HTTP requests from {{< glossary term="client" >}} (browsers) and sends back HTTP responses containing the requested {{< glossary term="webpage" >}} or data.
+# {{< glossary term="client" displayTerm="Clients" >}} (browsers) can access it through {{< glossary term="domain" >}} names of the {{< glossary term="website" displayTerm="websites" >}} it stores, which then delivers the {{< glossary term="request" displayTerm="requested" >}} {{< glossary term="web-component" displayTerm="website components" >}} back to the clients.
 
 
 https: '
@@ -741,13 +742,13 @@ web-origin: Every {{< glossary term="web-component" >}} delivered to a {{< gloss
 web-script: A Script is a {{< glossary term="JavaScript" >}} file that contains code and is linked by a {{< glossary term="web-document" >}} which is executed by the browser after the document loads the script through {{< glossary term="HTTP" >}}. It can make {{< glossary term="AJAX-request" displayTerm="AJAX-requests" >}}, manipulate the {{< glossary term="DOM" >}}, etc.
 
 
-web-server: A {{< glossary term="server" >}} that **hosts {{< glossary term="web-component" >}} files, and an {{< glossary term="HTTP-server" >}}** that processes incoming {{< glossary term="request" displayTerm="requests" >}} from {{< glossary term="client" displayTerm="clients" >}} (web browsers) and {{< glossary term="response" displayTerm="responds" >}} with the requested resources. Web servers are accessed through the {{< glossary term="dns" displayTerm="domain names" >}} of the {{< glossary term="website" displayTerm="websites" >}} they host.
+web-server: A {{< glossary term="server" >}} that **hosts {{< glossary term="web-component" >}} files, and an {{< glossary term="HTTP-server" >}}**. Web servers are accessed through the {{< glossary term="dns" displayTerm="domain names" >}} of the {{< glossary term="website" displayTerm="websites" >}} they host.
 
 
-webapp: A Web Application is a **software application that is accessible through a {{< glossary term="web-browser" >}} over the {{< glossary term="internet" >}}**. It is designed to provide interactive and dynamic user experiences, often using technologies like {{< glossary term="HTML" >}}, {{< glossary term="CSS" >}}, and {{< glossary term="JavaScript" >}}. Web applications can be simple, like a blog, or complex, like a social media platform.
+webapp: A Web Application is a **software application that is accessible through a browser over the {{< glossary term="internet" >}}**. It is designed to provide interactive and dynamic user experiences. Web applications can be simple, like a todo list, or complex, like a social media platform.
 
 
-# might want to add term 'dynamic'
+#TODO might want to add term 'dynamic'
 webapp-server: A Web Application Server is a **{{< glossary term="server" >}} that hosts and runs {{< glossary term="webapp" displayTerm="webapps" >}}**. It uses a {{< glossary term="framework" displayTerm="software-framework" >}} that provides an environment for web applications to run, including services such as access to the [HTTP request and response]( {{% ref "/blogs/what-are-http-and-https-protocols/#how-does-http-work" %}} ) objects, {{< glossary term="database" >}} connectivity, OS file system, etc. It enables {{< glossary term="server-side-rendering" >}}.
 
 
