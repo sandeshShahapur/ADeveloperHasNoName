@@ -13,7 +13,7 @@ tags: ['Discord Bot', 'Python', 'PostgreSQL']
 categories: ['Software Development', 'Discord Bots']
 ---
 
-A Discord bot that serves as a general-purpose bot with various features aimed enhancing discord server management and engagement.
+A {{< glossary term="Discord" >}} bot that serves as a general-purpose bot with various features aimed enhancing discord server management and engagement.
 
 ## Features
 
@@ -39,8 +39,8 @@ In my discord server, many new comers after interacting with few people would wr
 
 ## Challenges
 
-- **Database Design and Queries**: I required a database to support the features I wanted to implement. However, I had no prior experience with databases. I had to learn about databases, design the database schema with normalization and relationships, and write queries to support the features I wanted to implement.
-- **Ethical Considerations**: When I was reaching out for help on my bot, I was told that some of the features while complied with Discord ToS, were concerned with user privacy and ethical considerations. I thought about making the bot transparent about what data it collects and how it uses it, like having the new users agree to a privacy policy to stay in the server. But it felt too much work and I left it there to be implemented later.
+- **Database Design and Queries**: I required a {{< glossary term="database" >}} to support the features I wanted to implement. However, I had no prior experience with databases. I had to learn about databases, design the database schema with normalization and relationships, and write queries to support the features I wanted to implement.
+- **Ethical Considerations**: When I reached out for help with my bot, I was informed that while the features complied with Discord's ToS, some of them raised concerns about user privacy and ethical considerations. I thought about making the bot transparent about what data it collects and how it uses it, like having the new users agree to a privacy policy to stay in the server. But it felt too much work and I left it there to be implemented later.
 
 ## Tech Stack
 

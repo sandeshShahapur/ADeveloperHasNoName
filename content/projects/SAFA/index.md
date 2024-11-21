@@ -8,7 +8,7 @@ tags: ['eSports', 'FIFA', 'web interface', 'Discord integration', 'team manageme
 categories: ['Web Development', 'eSports', 'Full-stack']
 ---
 
-SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The web interface was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.
+SAFA is a {{< glossary term="web" >}} {{< glossary term="UI" displayTerm="interface" >}} for an eSports FIFA tournament service that was operating in {{< glossary term="Discord" >}} through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user {{< glossary term="authentication" >}} and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.
 
 ## Features
 
@@ -22,18 +22,18 @@ SAFA is a web interface for an eSports FIFA tournament service that was operatin
 
 ## Implementation
 
-- **Authentication**: Discord OAuth2 for user authentication using JWT and cookies.
-- **Backend**: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management.
+- **Authentication**: Discord {{< glossary term="OAuth" >}} for user authentication using {{< glossary term="JWT" >}} and {{< glossary term="cookie" displayTerm="cookies" >}}.
+- **Backend**: Three layered architecture (controller, service, DAO) with Express and Sequelize. {{< glossary term="Redis" >}} for {{< glossary term="cache" displayTerm="caching" >}} and session management.
 
 ## Challenges
 
-- **Rate Limiting**: Discord API has strict rate limits for some endpoints. I [used fetching with cache fallback]( {{% ref "Overcoming-(discord)-API-Rate-Limits-With-Redis-Cache" %}} ) using Redis to handle this.
-- **Concurrent Refresh Requests**: In session management, multiple requests to refresh the access token was causing issues. I handled this [by using Redis as a mutex lock manager]( {{% ref "Overcoming-Concurrent-Refresh-Attempts-of-Access-Tokens-(Jwt)" %}} ).
+- **Rate Limiting**: Discord API has strict {{< glossary term="rate-limit" displayTerm="rate-limits" >}} for some endpoints. I [used fetching with cache fallback]( {{% ref "Overcoming-(discord)-API-Rate-Limits-With-Redis-Cache" %}} ) using Redis to handle this.
+- **Concurrent Refresh Requests**: In session management, multiple {{< glossary term="request" displayTerm="requests" >}} to refresh the {{< glossary term="access-token" >}} was causing issues. I handled this [by using Redis as a mutex lock manager]( {{% ref "Overcoming-Concurrent-Refresh-Attempts-of-Access-Tokens-(Jwt)" %}} ).
 
 ## Mistakes and Learnings
 
-- **Development environment flexibility**: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on environment (development/production). This made it difficult to test and debug.
-- **Backend software architecture**: I initially started with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.
+- **Development environment flexibility**: When testing features, at {{< glossary term="frontend" >}} I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.
+- **Backend software architecture**: I initially started developing the {{< glossary term="backend" >}} with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.
 - **Testing**: I didn't write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing.
 
 ## Tech Stack

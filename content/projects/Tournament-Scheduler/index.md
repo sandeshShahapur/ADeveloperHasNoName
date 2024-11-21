@@ -13,7 +13,7 @@ tags: ['sports', 'scheduling', 'algorithm', 'backtracking', 'tournament']
 categories: ['Web Development', 'Algorithms']
 ---
 
-A WebApp to schedule customizable round-robin sports tournaments. It's a tool where users can input the playing teams and customize various parameters and constraints to generate and view [round-robin](https://en.wikipedia.org/wiki/Round-robin_tournament) tournament schedules.
+A {{< glossary term="WebApp" >}} to schedule customizable round-robin sports tournaments. It's a tool where users can input the playing teams and customize various parameters and constraints to generate and view [round-robin](https://en.wikipedia.org/wiki/Round-robin_tournament) tournament schedules.
 [Check it out!](https://sandeshshahapur.github.io/sportsScheduler/)
 
 ## Supported parameters
@@ -52,4 +52,4 @@ So, I got to work, using backtracking as the approach of which I had prior famil
 
 - **Frontend**: React, Bootstrap
 - **Backend**: Spring Boot
-- **Deployment**: GitHub Pages for frontend, Render for backend with Docker
+- **Deployment**: GitHub Pages for {{< glossary term="frontend," >}} Render for {{< glossary term="backend" >}} with Docker

@@ -199,7 +199,15 @@
     </details>
 </div>
 
-  <div class="post-content"><p>SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The web interface was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
+  <div class="post-content"><p>SAFA is a <span class="glossary-term"
+      glossary-data-tree-id="119112104136278351415"glossary-data-tree-node-id="0"glossary-data-term="web"
+      onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
+       glossary-data-tree-id="914121552761131413108"glossary-data-tree-node-id="0"glossary-data-term="ui"
+       onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
+      glossary-data-tree-id="743109612213151458111"glossary-data-tree-node-id="0"glossary-data-term="discord"
+      onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
+      glossary-data-tree-id="587123961421113151014"glossary-data-tree-node-id="0"glossary-data-term="authentication"
+      onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
 <h2 id="features">
     Features</h2><ol>
 <li><strong>User Authentication</strong>: Users can login with their Discord account to access the service.</li>
@@ -211,18 +219,38 @@
 <p><a href="https://imgur.com/a/safa-JpSDADI">Gallery</a></p>
 <h2 id="implementation">
     Implementation</h2><ul>
-<li><strong>Authentication</strong>: Discord OAuth2 for user authentication using JWT and cookies.</li>
-<li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management.</li>
+<li><strong>Authentication</strong>: Discord <span class="glossary-term"
+      glossary-data-tree-id="914815134210371115126"glossary-data-tree-node-id="0"glossary-data-term="oauth"
+      onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
+      glossary-data-tree-id="641411151598723121013"glossary-data-tree-node-id="0"glossary-data-term="jwt"
+      onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
+      glossary-data-tree-id="131493410711556111228"glossary-data-tree-node-id="0"glossary-data-term="cookie"
+      onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
+<li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
+      glossary-data-tree-id="101339141256271481511"glossary-data-tree-node-id="0"glossary-data-term="redis"
+      onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
+      glossary-data-tree-id="131110864712231491515"glossary-data-tree-node-id="0"glossary-data-term="cache"
+      onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
 </ul>
 <h2 id="challenges">
     Challenges</h2><ul>
-<li><strong>Rate Limiting</strong>: Discord API has strict rate limits for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
-<li><strong>Concurrent Refresh Requests</strong>: In session management, multiple requests to refresh the access token was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
+<li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
+      glossary-data-tree-id="116810514731341212915"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
+      onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
+<li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
+      glossary-data-tree-id="263101449815131257111"glossary-data-tree-node-id="0"glossary-data-term="request"
+      onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
+      glossary-data-tree-id="467111359121415821103"glossary-data-tree-node-id="0"glossary-data-term="access-token"
+      onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
 </ul>
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
-<li><strong>Development environment flexibility</strong>: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on environment (development/production). This made it difficult to test and debug.</li>
-<li><strong>Backend software architecture</strong>: I initially started with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
+<li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
+      glossary-data-tree-id="154131191510387212146"glossary-data-tree-node-id="0"glossary-data-term="frontend"
+      onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
+<li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
+      glossary-data-tree-id="561011247129381514131"glossary-data-tree-node-id="0"glossary-data-term="backend"
+      onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
 <li><strong>Testing</strong>: I didn&rsquo;t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing.</li>
 </ul>
 <h2 id="tech-stack">
