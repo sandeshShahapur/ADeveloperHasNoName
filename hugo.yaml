@@ -73,7 +73,7 @@ params:
       url: "mailto:adeveloperhasnoname@gmail.com"
       icon: email
     - name: cv
-      url: "sandeshShahapurResume.pdf"
+      url: "/sandeshShahapurResume.pdf"
       icon: cv
     - name: buymeacoffee
       url: "https://buymeacoffee.com/adeveloperl"
