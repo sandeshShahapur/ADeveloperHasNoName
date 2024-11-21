@@ -5,7 +5,6 @@ markup:
         block: true
         title: true
 
-environment: production
 baseURL: https://adeveloperhasnoname.dev/
 languageCode: en-us
 title: ADeveloperHasNoName
@@ -38,6 +37,7 @@ menu:
       url: /glossary/
       weight: 6
 params:
+  environment: production
   mainSections:
     - blogs
     - projects
