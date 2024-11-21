@@ -1,28 +1,32 @@
 const BASE_URL = window.location.origin;
 
 const GLOSSARY_CACHE_KEY = "glossaryCache";
-const GLOSSARY_CACHE_EXPIRATION_KEY = "glossaryCacheExpiration";
+const GLOSSARY_CACHE_LAST_FETCH_KEY = "glossaryCacheLastFetch";
 
 
 async function fetchGlossaryData() {
+    // manually store last time glossary data was edited in project
+    // TODO: automate this process
+    const lastEdited = new Date("November 21, 2024 14:30:00").getTime();
+
     const now = new Date().getTime();
     const cachedData = localStorage.getItem(GLOSSARY_CACHE_KEY);
-    const cacheExpiration = localStorage.getItem(GLOSSARY_CACHE_EXPIRATION_KEY);
+    const lastFetch = localStorage.getItem(GLOSSARY_CACHE_LAST_FETCH_KEY);
 
-    if (cachedData && cacheExpiration && now < parseInt(cacheExpiration)) {
+    if (
+        environment === "production" &&
+        cachedData &&
+        lastFetch && parseInt(lastFetch) > lastEdited
+    ) {
         return JSON.parse(cachedData);
     }
 
     const response = await fetch("/data/glossary.json");
     const glossaryData = await response.json();
 
-    if (environment === "production") {
-        localStorage.setItem(GLOSSARY_CACHE_KEY, JSON.stringify(glossaryData));
-        localStorage.setItem(
-            GLOSSARY_CACHE_EXPIRATION_KEY,
-            now + 24 * 60 * 60 * 1000 // 24 hours
-        );
-    }
+    localStorage.setItem(GLOSSARY_CACHE_KEY, JSON.stringify(glossaryData));
+    localStorage.setItem(GLOSSARY_CACHE_LAST_FETCH_KEY, now);
+
     return glossaryData;
 }
 
