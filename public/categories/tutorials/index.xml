@@ -13,14 +13,14 @@
       <link>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</link>
       <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</guid>
-      <description>Learn how to handle concurrent refresh attempts of JWT-based access tokens in single-page applications using Redis-based locking mechanisms for robust token management.</description>
+      <description>A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.</description>
     </item>
     <item>
       <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
       <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
-      <description>Learn how to tackle Discord API rate limits in your web application by implementing a Redis-based caching mechanism for efficiency and compliance.</description>
+      <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
     </item>
   </channel>
 </rss>

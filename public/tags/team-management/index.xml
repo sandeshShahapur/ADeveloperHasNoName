@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/safa/</link>
       <pubDate>Wed, 20 Nov 2024 11:35:30 +0530</pubDate>
       <guid>http://localhost:1313/projects/safa/</guid>
-      <description>SAFA is a web interface for managing eSports FIFA tournaments, offering features like team creation, stats profiles, and Discord-integrated authentication.</description>
+      <description>SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.</description>
     </item>
   </channel>
 </rss>

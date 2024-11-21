@@ -13,7 +13,7 @@
       <link>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</link>
       <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</guid>
-      <description>Learn how to handle concurrent refresh attempts of JWT-based access tokens in single-page applications using Redis-based locking mechanisms for robust token management.</description>
+      <description>A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.</description>
     </item>
   </channel>
 </rss>

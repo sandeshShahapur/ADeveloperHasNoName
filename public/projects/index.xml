@@ -13,21 +13,21 @@
       <link>http://localhost:1313/projects/safa/</link>
       <pubDate>Wed, 20 Nov 2024 11:35:30 +0530</pubDate>
       <guid>http://localhost:1313/projects/safa/</guid>
-      <description>SAFA is a web interface for managing eSports FIFA tournaments, offering features like team creation, stats profiles, and Discord-integrated authentication.</description>
+      <description>SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.</description>
     </item>
     <item>
       <title>ABotHasNoName</title>
       <link>http://localhost:1313/projects/abothasnoname/</link>
       <pubDate>Wed, 20 Nov 2024 04:44:01 +0530</pubDate>
       <guid>http://localhost:1313/projects/abothasnoname/</guid>
-      <description>ABotHasNoName is a multi-purpose Discord bot that provides advanced server management features such as role statistics, activity tracking, bump reminders, and more.</description>
+      <description>A comprehensive Discord bot designed to enhance server management and engagement with unique features like role statistics, activity tracking, and invite monitoring.</description>
     </item>
     <item>
       <title>Tournament Scheduler</title>
       <link>http://localhost:1313/projects/tournament-scheduler/</link>
       <pubDate>Wed, 20 Nov 2024 03:14:55 +0530</pubDate>
       <guid>http://localhost:1313/projects/tournament-scheduler/</guid>
-      <description>A feature-rich web application for generating customizable round-robin tournament schedules, incorporating user-defined constraints and parameters to create tailored sports schedules. Built with a focus on flexibility and algorithmic efficiency.</description>
+      <description>A web application to create customizable round-robin sports tournament schedules with user-defined parameters and constraints.</description>
     </item>
   </channel>
 </rss>

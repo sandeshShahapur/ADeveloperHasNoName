@@ -3,7 +3,6 @@ title: 'SAFA'
 date: 2024-11-20T11:35:30+05:30
 author: "Sandesh Shahapur"
 draft: false
-description: "SAFA is a web interface for managing eSports FIFA tournaments, offering features like team creation, stats profiles, and Discord-integrated authentication."
 summary: "SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord."
 tags: ['eSports', 'FIFA', 'web interface', 'Discord integration', 'team management', 'Redis', 'OAuth2']
 categories: ['Web Development', 'eSports', 'Full-stack']
@@ -18,6 +17,8 @@ SAFA is a web interface for an eSports FIFA tournament service that was operatin
 3. **Player/Team/League Profiles**: Detailed profiles with stats and role-based views.
 4. **Team Management**: Managers can manage teams and players.
 5. **Search**: Public searching for players, teams, and leagues.
+
+[Gallery](https://imgur.com/a/safa-JpSDADI)
 
 ## Implementation
 

@@ -8,7 +8,6 @@ cover:
     alt: "Database ERD for ABotHasNoName"
     hiddenInSingle: true
     relative: true
-description: "ABotHasNoName is a multi-purpose Discord bot that provides advanced server management features such as role statistics, activity tracking, bump reminders, and more."
 summary: "A comprehensive Discord bot designed to enhance server management and engagement with unique features like role statistics, activity tracking, and invite monitoring."
 tags: ['Discord Bot', 'Python', 'PostgreSQL']
 categories: ['Software Development', 'Discord Bots']

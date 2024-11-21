@@ -8,7 +8,6 @@ cover:
     alt: "Screenshot of website with sample input/output"
     hiddenInSingle: true
     relative: true
-description: "A feature-rich web application for generating customizable round-robin tournament schedules, incorporating user-defined constraints and parameters to create tailored sports schedules. Built with a focus on flexibility and algorithmic efficiency."
 summary: "A web application to create customizable round-robin sports tournament schedules with user-defined parameters and constraints."
 tags: ['sports', 'scheduling', 'algorithm', 'backtracking', 'tournament']
 categories: ['Web Development', 'Algorithms']

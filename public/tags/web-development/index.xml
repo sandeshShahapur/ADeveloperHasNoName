@@ -13,21 +13,21 @@
       <link>http://localhost:1313/blogs/what-are-http-and-https-protocols/</link>
       <pubDate>Sun, 13 Oct 2024 16:45:35 +0530</pubDate>
       <guid>http://localhost:1313/blogs/what-are-http-and-https-protocols/</guid>
-      <description>Explore HTTP and HTTPS protocols, their workings, methods, status codes, versions, and security mechanisms that underpin modern web communication.</description>
+      <description>An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet.</description>
     </item>
     <item>
       <title>What Are Browser HTTP Cookies?</title>
       <link>http://localhost:1313/blogs/what-are-browser-http-cookies/</link>
       <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
       <guid>http://localhost:1313/blogs/what-are-browser-http-cookies/</guid>
-      <description>Learn what browser HTTP cookies are, their purpose, how they work, and their attributes. This article explains their use in session management, personalization, tracking, and web advertising.</description>
+      <description>An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.</description>
     </item>
     <item>
       <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
       <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
-      <description>Learn how to tackle Discord API rate limits in your web application by implementing a Redis-based caching mechanism for efficiency and compliance.</description>
+      <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
     </item>
   </channel>
 </rss>

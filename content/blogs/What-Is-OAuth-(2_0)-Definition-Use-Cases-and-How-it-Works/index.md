@@ -3,7 +3,6 @@ title: "What Is OAuth (2.0)? | Definition, Use Cases, and How it Works"
 date: 2024-10-12T18:32:49+05:30
 author: "Sandesh Shahapur"
 draft: false
-description: "Learn what OAuth 2.0 is, how it works, and its use cases for secure access delegation between applications without sharing credentials."
 summary: "A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data."
 tags: ["OAuth", "OAuth 2.0", "Security"]
 categories: ["Development", "Security", "Article"]

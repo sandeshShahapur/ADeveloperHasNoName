@@ -13,42 +13,42 @@
       <link>http://localhost:1313/projects/safa/</link>
       <pubDate>Wed, 20 Nov 2024 11:35:30 +0530</pubDate>
       <guid>http://localhost:1313/projects/safa/</guid>
-      <description>SAFA is a web interface for managing eSports FIFA tournaments, offering features like team creation, stats profiles, and Discord-integrated authentication.</description>
+      <description>SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.</description>
     </item>
     <item>
       <title>Tournament Scheduler</title>
       <link>http://localhost:1313/projects/tournament-scheduler/</link>
       <pubDate>Wed, 20 Nov 2024 03:14:55 +0530</pubDate>
       <guid>http://localhost:1313/projects/tournament-scheduler/</guid>
-      <description>A feature-rich web application for generating customizable round-robin tournament schedules, incorporating user-defined constraints and parameters to create tailored sports schedules. Built with a focus on flexibility and algorithmic efficiency.</description>
+      <description>A web application to create customizable round-robin sports tournament schedules with user-defined parameters and constraints.</description>
     </item>
     <item>
       <title>What are HTTP and HTTPS Protocols?</title>
       <link>http://localhost:1313/blogs/what-are-http-and-https-protocols/</link>
       <pubDate>Sun, 13 Oct 2024 16:45:35 +0530</pubDate>
       <guid>http://localhost:1313/blogs/what-are-http-and-https-protocols/</guid>
-      <description>Explore HTTP and HTTPS protocols, their workings, methods, status codes, versions, and security mechanisms that underpin modern web communication.</description>
+      <description>An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet.</description>
     </item>
     <item>
       <title>What Are Browser HTTP Cookies?</title>
       <link>http://localhost:1313/blogs/what-are-browser-http-cookies/</link>
       <pubDate>Sun, 13 Oct 2024 07:56:37 +0530</pubDate>
       <guid>http://localhost:1313/blogs/what-are-browser-http-cookies/</guid>
-      <description>Learn what browser HTTP cookies are, their purpose, how they work, and their attributes. This article explains their use in session management, personalization, tracking, and web advertising.</description>
+      <description>An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.</description>
     </item>
     <item>
       <title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)</title>
       <link>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</link>
       <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</guid>
-      <description>Learn how to handle concurrent refresh attempts of JWT-based access tokens in single-page applications using Redis-based locking mechanisms for robust token management.</description>
+      <description>A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.</description>
     </item>
     <item>
       <title>Overcoming (discord) API Rate Limits With Redis Cache</title>
       <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
-      <description>Learn how to tackle Discord API rate limits in your web application by implementing a Redis-based caching mechanism for efficiency and compliance.</description>
+      <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
     </item>
   </channel>
 </rss>

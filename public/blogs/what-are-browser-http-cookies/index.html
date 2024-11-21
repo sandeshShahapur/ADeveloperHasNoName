@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>What Are Browser HTTP Cookies? | ADeveloperHasNoName</title>
 <meta name="keywords" content="Cookies, Web Development, Security">
-<meta name="description" content="Learn what browser HTTP cookies are, their purpose, how they work, and their attributes. This article explains their use in session management, personalization, tracking, and web advertising.">
+<meta name="description" content="An in-depth look at what browser HTTP cookies are, why they are used, how they work, and their attributes. Learn how cookies are used for session management, personalization, tracking, and advertising on the web.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/what-are-browser-http-cookies/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3dcbddbc841241a196ea5ecb2d985e1a68c0fe52442a20d9d4464ab10f2e3120.css" integrity="sha256-PcvdvIQSQaGW6l7LLZheGmjA/lJEKiDZ1EZKsQ8uMSA=" rel="preload stylesheet" as="style">
@@ -176,9 +176,6 @@
     <h1 class="post-title entry-hint-parent">
       What Are Browser HTTP Cookies?
     </h1>
-    <div class="post-description">
-      Learn what browser HTTP cookies are, their purpose, how they work, and their attributes. This article explains their use in session management, personalization, tracking, and web advertising.
-    </div>
     <div class="post-meta"><span title='2024-10-13 07:56:37 +0530 IST'>October 13, 2024</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Sandesh Shahapur&nbsp;|&nbsp;<a href="https://github.com/sandeshShahapur/ADeveloperHasNoName/tree/main/content/blogs/What-Are-Browser-HTTP-Cookies/index.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
@@ -212,22 +209,22 @@
 </div>
 
   <div class="post-content"><p>When you visit a <span class="glossary-term"
-      glossary-data-tree-id="111361225149104783151"glossary-data-tree-node-id="0"glossary-data-term="website"
+      glossary-data-tree-id="462111412581013151937"glossary-data-tree-node-id="0"glossary-data-term="website"
       onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, you might have noticed a message that says, &ldquo;This website uses cookies to ensure you get the best experience on our website&rdquo; or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.</p>
 <h2 id="why-cookies">
     Why Cookies?</h2><p>Browsers use the <span class="glossary-term"
-      glossary-data-tree-id="410142598113121516713"glossary-data-tree-node-id="0"glossary-data-term="http"
+      glossary-data-tree-id="101581211341311497265"glossary-data-tree-node-id="0"glossary-data-term="http"
       onclick="fetchAndRenderGlossaryDefinition(this)">HTTP</span> <span class="glossary-term"
-       glossary-data-tree-id="101214415286513139711"glossary-data-tree-node-id="0"glossary-data-term="protocol"
+       glossary-data-tree-id="987641121531215101413"glossary-data-tree-node-id="0"glossary-data-term="protocol"
        onclick="fetchAndRenderGlossaryDefinition(this)">protocol</span> to communicate with a <span class="glossary-term"
-      glossary-data-tree-id="151197165231248101413"glossary-data-tree-node-id="0"glossary-data-term="web-server"
+      glossary-data-tree-id="134712811101361429515"glossary-data-tree-node-id="0"glossary-data-term="web-server"
       onclick="fetchAndRenderGlossaryDefinition(this)">web-server</span> for requesting <span class="glossary-term"
-      glossary-data-tree-id="379131024126141158115"glossary-data-tree-node-id="0"glossary-data-term="webpage"
+      glossary-data-tree-id="141331101595811612247"glossary-data-tree-node-id="0"glossary-data-term="webpage"
       onclick="fetchAndRenderGlossaryDefinition(this)">webpages</span>, images, videos, and other resources. HTTP is a stateless protocol, meaning that each <span class="glossary-term"
-      glossary-data-tree-id="115971561122141310483"glossary-data-tree-node-id="0"glossary-data-term="request"
+      glossary-data-tree-id="151431251394101187126"glossary-data-tree-node-id="0"glossary-data-term="request"
       onclick="fetchAndRenderGlossaryDefinition(this)">request</span> is independent of the previous one, and the server does not maintain any information about your previous interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.</p>
 <p>There are few options for storing data on the <span class="glossary-term"
-      glossary-data-tree-id="614951015124133117218"glossary-data-tree-node-id="0"glossary-data-term="client"
+      glossary-data-tree-id="138157101459114632112"glossary-data-tree-node-id="0"glossary-data-term="client"
       onclick="fetchAndRenderGlossaryDefinition(this)">client</span> (browser) like:</p>
 <ol>
 <li><strong>Cookies</strong>: Small pieces of data.</li>
@@ -240,24 +237,24 @@
     Why/When to use Cookies over Local/Session Storage?</h2><p>Cookies provide the following advantages over Local/Session Storage:</p>
 <ol>
 <li><strong>Cookies are sent with every request</strong>: Every time you make a request to a website including <span class="glossary-term"
-      glossary-data-tree-id="108913144611212151375"glossary-data-tree-node-id="0"glossary-data-term="ajax-request"
+      glossary-data-tree-id="141345311159671121028"glossary-data-tree-node-id="0"glossary-data-term="ajax-request"
       onclick="fetchAndRenderGlossaryDefinition(this)">ajax-requests</span>, cookies are sent along automatically, providing server side accessibility. This is not the case with Local/Session Storage.</li>
 <li><strong>Expiration and Path</strong>: Cookies can have an expiration date and a <span class="glossary-term"
-      glossary-data-tree-id="861121513914742105311"glossary-data-tree-node-id="0"glossary-data-term="url-path"
+      glossary-data-tree-id="341361147510891215112"glossary-data-tree-node-id="0"glossary-data-term="url-path"
       onclick="fetchAndRenderGlossaryDefinition(this)">path</span>, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage).</li>
 <li><strong>Security</strong>: Cookies can have attributes that enhances security whereas Local/Session Storage does not have these security features.</li>
 </ol>
 <h2 id="how-do-cookies-work">
     How Do Cookies Work?</h2><p>When you visit a website, the server sends a <span class="glossary-term"
-      glossary-data-tree-id="815311414911367210125"glossary-data-tree-node-id="0"glossary-data-term="response"
+      glossary-data-tree-id="151362312141110514897"glossary-data-tree-node-id="0"glossary-data-term="response"
       onclick="fetchAndRenderGlossaryDefinition(this)">response</span> to your browser with the web page document and a set of instructions to create cookies. Your browser creates and stores these cookies and sends them back to the server with every subsequent request (given the cookie&rsquo;s path matches the request path) you make to the website.</p>
 <blockquote>
 <p>Note: In the case when a website uses different <span class="glossary-term"
-      glossary-data-tree-id="651149131415103287112"glossary-data-tree-node-id="0"glossary-data-term="domain"
+      glossary-data-tree-id="111153512147613810249"glossary-data-tree-node-id="0"glossary-data-term="domain"
       onclick="fetchAndRenderGlossaryDefinition(this)">domains</span> for its <span class="glossary-term"
-      glossary-data-tree-id="414116583131291510127"glossary-data-tree-node-id="0"glossary-data-term="frontend"
+      glossary-data-tree-id="142869412101337151115"glossary-data-tree-node-id="0"glossary-data-term="frontend"
       onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> and <span class="glossary-term"
-      glossary-data-tree-id="131083159711412526114"glossary-data-tree-node-id="0"glossary-data-term="backend"
+      glossary-data-tree-id="561387314111011529412"glossary-data-tree-node-id="0"glossary-data-term="backend"
       onclick="fetchAndRenderGlossaryDefinition(this)">backend</span>, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.</p>
 </blockquote>
 <p>Thus every cookie is associated with only one domain which is the the domain of the web server that set the cookie.</p>
@@ -295,7 +292,7 @@
 </li>
 <li>
 <p><strong>Domain</strong>: The domain or <span class="glossary-term"
-      glossary-data-tree-id="192714156133851211104"glossary-data-tree-node-id="0"glossary-data-term="subdomain"
+      glossary-data-tree-id="647111415298101213351"glossary-data-tree-node-id="0"glossary-data-term="subdomain"
       onclick="fetchAndRenderGlossaryDefinition(this)">sub-domains</span> associated with the cookie. The cookie is sent only to these sub/domain on subsequent requests.</p>
 </li>
 <li>
@@ -306,25 +303,25 @@
 </li>
 <li>
 <p><strong>Secure</strong>: A flag that indicates that the cookie should only be sent over secure connections (<span class="glossary-term"
-      glossary-data-tree-id="715811123913144106512"glossary-data-tree-node-id="0"glossary-data-term="https"
+      glossary-data-tree-id="128137911210414516315"glossary-data-tree-node-id="0"glossary-data-term="https"
       onclick="fetchAndRenderGlossaryDefinition(this)">HTTPS</span>). This ensures that the cookie values sent over the network are <span class="glossary-term"
-      glossary-data-tree-id="121425113371511106498"glossary-data-tree-node-id="0"glossary-data-term="encryption"
+      glossary-data-tree-id="146511281531371291041"glossary-data-tree-node-id="0"glossary-data-term="encryption"
       onclick="fetchAndRenderGlossaryDefinition(this)">encrypted</span> and not readable by unauthorized parties.</p>
 </li>
 <li>
 <p><strong>HttpOnly</strong>: A flag that indicates the cookie should not be accessible by <span class="glossary-term"
-      glossary-data-tree-id="115712192104313158614"glossary-data-tree-node-id="0"glossary-data-term="javascript"
+      glossary-data-tree-id="212713144115581191036"glossary-data-tree-node-id="0"glossary-data-term="javascript"
       onclick="fetchAndRenderGlossaryDefinition(this)">JavaScript</span> (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie"><code>document.cookie</code></a>) on the <span class="glossary-term"
-      glossary-data-tree-id="351011132128714491615"glossary-data-tree-node-id="0"glossary-data-term="client-side"
+      glossary-data-tree-id="142811291311107153456"glossary-data-tree-node-id="0"glossary-data-term="client-side"
       onclick="fetchAndRenderGlossaryDefinition(this)">client-side</span>. This helps to prevent <span class="glossary-term"
-      glossary-data-tree-id="911157462313810145112"glossary-data-tree-node-id="0"glossary-data-term="xss"
+      glossary-data-tree-id="159321147461312111085"glossary-data-tree-node-id="0"glossary-data-term="xss"
       onclick="fetchAndRenderGlossaryDefinition(this)">XSS</span> attacks from accessing sensitive cookies.</p>
 </li>
 <li>
 <p><strong>SameSite</strong>: A flag that controls whether or not a cookie is sent with cross-site requests <span class="glossary-term"
-      glossary-data-tree-id="711162158124149531310"glossary-data-tree-node-id="0"glossary-data-term="cross-origin"
+      glossary-data-tree-id="133128659112101471514"glossary-data-tree-node-id="0"glossary-data-term="cross-origin"
       onclick="fetchAndRenderGlossaryDefinition(this)">cross-site requests</span>. It helps prevent <span class="glossary-term"
-      glossary-data-tree-id="131483915710126514211"glossary-data-tree-node-id="0"glossary-data-term="csrf"
+      glossary-data-tree-id="117215121439413108561"glossary-data-tree-node-id="0"glossary-data-term="csrf"
       onclick="fetchAndRenderGlossaryDefinition(this)">CSRF</span> attacks from making users unknowingly perform unwanted actions on other websites.</p>
 </li>
 </ol>
@@ -333,7 +330,7 @@
 <p>By managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.</p>
 <h2 id="conclusion">
     Conclusion</h2><p>Cookies are an essential part of the <span class="glossary-term"
-      glossary-data-tree-id="365131841210141572911"glossary-data-tree-node-id="0"glossary-data-term="web"
+      glossary-data-tree-id="121478913115102311465"glossary-data-tree-node-id="0"glossary-data-term="web"
       onclick="fetchAndRenderGlossaryDefinition(this)">web</span> ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.</p>
 
 

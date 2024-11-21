@@ -13,7 +13,7 @@
       <link>http://localhost:1313/projects/tournament-scheduler/</link>
       <pubDate>Wed, 20 Nov 2024 03:14:55 +0530</pubDate>
       <guid>http://localhost:1313/projects/tournament-scheduler/</guid>
-      <description>A feature-rich web application for generating customizable round-robin tournament schedules, incorporating user-defined constraints and parameters to create tailored sports schedules. Built with a focus on flexibility and algorithmic efficiency.</description>
+      <description>A web application to create customizable round-robin sports tournament schedules with user-defined parameters and constraints.</description>
     </item>
   </channel>
 </rss>

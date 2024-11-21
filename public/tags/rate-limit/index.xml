@@ -13,7 +13,7 @@
       <link>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</guid>
-      <description>Learn how to tackle Discord API rate limits in your web application by implementing a Redis-based caching mechanism for efficiency and compliance.</description>
+      <description>How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.</description>
     </item>
   </channel>
 </rss>

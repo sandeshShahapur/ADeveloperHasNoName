@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT) | ADeveloperHasNoName</title>
 <meta name="keywords" content="JWT, OAuth, Concurrency, Redis, Access Tokens, React">
-<meta name="description" content="Learn how to handle concurrent refresh attempts of JWT-based access tokens in single-page applications using Redis-based locking mechanisms for robust token management.">
+<meta name="description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3dcbddbc841241a196ea5ecb2d985e1a68c0fe52442a20d9d4464ab10f2e3120.css" integrity="sha256-PcvdvIQSQaGW6l7LLZheGmjA/lJEKiDZ1EZKsQ8uMSA=" rel="preload stylesheet" as="style">
@@ -176,9 +176,6 @@
     <h1 class="post-title entry-hint-parent">
       Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)
     </h1>
-    <div class="post-description">
-      Learn how to handle concurrent refresh attempts of JWT-based access tokens in single-page applications using Redis-based locking mechanisms for robust token management.
-    </div>
     <div class="post-meta"><span title='2024-10-09 10:04:58 +0530 IST'>October 9, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Sandesh Shahapur&nbsp;|&nbsp;<a href="https://github.com/sandeshShahapur/ADeveloperHasNoName/tree/main/content/blogs/Overcoming-Concurrent-Refresh-Attempts-of-Access-Tokens-%28Jwt%29/index.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
 </div>
@@ -213,46 +210,46 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="914521234101113681517"glossary-data-tree-node-id="0"glossary-data-term="discord"
+      glossary-data-tree-id="141910347611821251513"glossary-data-tree-node-id="0"glossary-data-term="discord"
       onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot, to the web. Since the <span class="glossary-term"
-      glossary-data-tree-id="431311614598210115127"glossary-data-tree-node-id="0"glossary-data-term="database"
+      glossary-data-tree-id="141310151637829115124"glossary-data-tree-node-id="0"glossary-data-term="database"
       onclick="fetchAndRenderGlossaryDefinition(this)">database</span> for users was modeled around their Discord account ID, the aim was to develop a <span class="glossary-term"
-      glossary-data-tree-id="864751221014313151911"glossary-data-tree-node-id="0"glossary-data-term="ui"
+      glossary-data-tree-id="131694127821110315514"glossary-data-tree-node-id="0"glossary-data-term="ui"
       onclick="fetchAndRenderGlossaryDefinition(this)">web interface</span> by integrating it with Discord. Thus I implemented login functionality using Discord <span class="glossary-term"
-      glossary-data-tree-id="412158213109116131475"glossary-data-tree-node-id="0"glossary-data-term="oauth"
+      glossary-data-tree-id="108491512113761251413"glossary-data-tree-node-id="0"glossary-data-term="oauth"
       onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>.</p>
 <h2 id="session-management-workflow">
     Session Management Workflow</h2><p>Initially, the user is logged out. When the user logs in with their discord account, an <span class="glossary-term"
-      glossary-data-tree-id="691311254103871114215"glossary-data-tree-node-id="0"glossary-data-term="access-token"
+      glossary-data-tree-id="511514413311621087912"glossary-data-tree-node-id="0"glossary-data-term="access-token"
       onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> and <span class="glossary-term"
-      glossary-data-tree-id="126849147351012131511"glossary-data-tree-node-id="0"glossary-data-term="refresh-token"
+      glossary-data-tree-id="213101489451115761231"glossary-data-tree-node-id="0"glossary-data-term="refresh-token"
       onclick="fetchAndRenderGlossaryDefinition(this)">refresh-token</span> is created, both stored as <span class="glossary-term"
-      glossary-data-tree-id="563111213418151079214"glossary-data-tree-node-id="0"glossary-data-term="jwt"
+      glossary-data-tree-id="243115715910128613114"glossary-data-tree-node-id="0"glossary-data-term="jwt"
       onclick="fetchAndRenderGlossaryDefinition(this)">JWTs</span> in <span class="glossary-term"
-      glossary-data-tree-id="149110116381224751513"glossary-data-tree-node-id="0"glossary-data-term="cookie"
+      glossary-data-tree-id="561121214415938101317"glossary-data-tree-node-id="0"glossary-data-term="cookie"
       onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>. The access token is sent with all <span class="glossary-term"
-      glossary-data-tree-id="141315146253119810127"glossary-data-tree-node-id="0"glossary-data-term="request"
+      glossary-data-tree-id="953118147141310621215"glossary-data-tree-node-id="0"glossary-data-term="request"
       onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> via the bearer authorization header for <span class="glossary-term"
-      glossary-data-tree-id="841715211149131051236"glossary-data-tree-node-id="0"glossary-data-term="authentication"
+      glossary-data-tree-id="164914111213257381510"glossary-data-tree-node-id="0"glossary-data-term="authentication"
       onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and <span class="glossary-term"
-      glossary-data-tree-id="111912102814643751315"glossary-data-tree-node-id="0"glossary-data-term="authorization"
+      glossary-data-tree-id="129141311051584116372"glossary-data-tree-node-id="0"glossary-data-term="authorization"
       onclick="fetchAndRenderGlossaryDefinition(this)">authorization</span> purposes, while the refresh token is only sent to a specific refresh endpoint (<code>/refresh</code>). The <span class="glossary-term"
-      glossary-data-tree-id="951063138111447121512"glossary-data-tree-node-id="0"glossary-data-term="backend"
+      glossary-data-tree-id="118155726121141394103"glossary-data-tree-node-id="0"glossary-data-term="backend"
       onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> verifies these tokens (JWT verification) whenever <span class="glossary-term"
-      glossary-data-tree-id="612141182910151315347"glossary-data-tree-node-id="0"glossary-data-term="frontend"
+      glossary-data-tree-id="511791101321415631248"glossary-data-tree-node-id="0"glossary-data-term="frontend"
       onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> (<span class="glossary-term"
-      glossary-data-tree-id="141556128111341391027"glossary-data-tree-node-id="0"glossary-data-term="website"
+      glossary-data-tree-id="469111217528151014313"glossary-data-tree-node-id="0"glossary-data-term="website"
       onclick="fetchAndRenderGlossaryDefinition(this)">website</span>) makes a request to it.</p>
 <p>If verification fails for reasons other than token expiration (missing token, invalid token signature), the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending an additional request to backend at <code>/refresh</code>. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.</p>
 <h2 id="the-problem">
     The Problem</h2><p>This process works well when only one request is sent at a time. However, since the website uses <span class="glossary-term"
-      glossary-data-tree-id="101715148456312119132"glossary-data-tree-node-id="0"glossary-data-term="client-side-rendering"
+      glossary-data-tree-id="461713101421215113589"glossary-data-tree-node-id="0"glossary-data-term="client-side-rendering"
       onclick="fetchAndRenderGlossaryDefinition(this)">client-side-rendering</span> and is a <span class="glossary-term"
-      glossary-data-tree-id="811391137612414251510"glossary-data-tree-node-id="0"glossary-data-term="single-page-application"
+      glossary-data-tree-id="826144315101311129157"glossary-data-tree-node-id="0"glossary-data-term="single-page-application"
       onclick="fetchAndRenderGlossaryDefinition(this)">single-page-application</span> built with React, the web app often sends multiple <span class="glossary-term"
-      glossary-data-tree-id="613111275314128415910"glossary-data-tree-node-id="0"glossary-data-term="ajax-request"
+      glossary-data-tree-id="310136212578411411915"glossary-data-tree-node-id="0"glossary-data-term="ajax-request"
       onclick="fetchAndRenderGlossaryDefinition(this)">ajax-requests</span> simultaneously. This can lead to unintended session termination due to <span class="glossary-term"
-      glossary-data-tree-id="141262831595411311710"glossary-data-tree-node-id="0"glossary-data-term="concurrency"
+      glossary-data-tree-id="811412715351141310269"glossary-data-tree-node-id="0"glossary-data-term="concurrency"
       onclick="fetchAndRenderGlossaryDefinition(this)">concurrent</span> refresh attempts which logs the user out.</p>
 <h3 id="why-does-this-happen">
     Why does this happen?</h3><p>When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated in the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user&rsquo;s session thereby logging them out.</p>
@@ -264,7 +261,7 @@
 </ol>
 <h2 id="the-chosen-solution-redis-based-locking-mechanism">
     The Chosen Solution: Redis-based Locking Mechanism</h2><p>I chose to implement a locking mechanism using <span class="glossary-term"
-      glossary-data-tree-id="610141315845137912211"glossary-data-tree-node-id="0"glossary-data-term="redis"
+      glossary-data-tree-id="121561113109121474835"glossary-data-tree-node-id="0"glossary-data-term="redis"
       onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, a fast in-memory data store with built-in key expiry.</p>
 <p>We allow the first request to refresh the token while the others wait for the result of the first request.
 Here’s how it works:</p>
