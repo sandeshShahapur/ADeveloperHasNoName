@@ -4,13 +4,13 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Overcoming (discord) API Rate Limits With Redis Cache | ADeveloperHasNoName</title>
 <meta name="keywords" content="API, Redis, Discord, Web Development, Caching, Rate Limit">
 <meta name="description" content="How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3dcbddbc841241a196ea5ecb2d985e1a68c0fe52442a20d9d4464ab10f2e3120.css" integrity="sha256-PcvdvIQSQaGW6l7LLZheGmjA/lJEKiDZ1EZKsQ8uMSA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d478f5f940fc835c872c9c7a0591a24990e89516ecd327208870621ba0cdae30.css" integrity="sha256-1Hj1&#43;UD8g1yHLJx6BZGiSZDolRbs0ycgiHBiG6DNrjA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -55,7 +55,71 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="Overcoming (discord) API Rate Limits With Redis Cache" />
+<meta property="og:description" content="How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2024-10-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-11-21T15:30:10+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Overcoming (discord) API Rate Limits With Redis Cache"/>
+<meta name="twitter:description" content="How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "http://localhost:1313/blogs/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Overcoming (discord) API Rate Limits With Redis Cache",
+      "item": "http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Overcoming (discord) API Rate Limits With Redis Cache",
+  "name": "Overcoming (discord) API Rate Limits With Redis Cache",
+  "description": "How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.",
+  "keywords": [
+    "API", "Redis", "Discord", "Web Development", "Caching", "Rate Limit"
+  ],
+  "articleBody": "\rBackgroundI was tasked with developing a web interface for an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord Bot. They wanted to extend their services to a website, and I was responsible for making it happen.\nAfter a new user joins their Discord server, before they can interact further (e.g., searching/joining teams), they are required to update their profile using a form. After which, they were given the roles “updated-profile” and “free-agent” (indicates not being present in any team). A player if present in a team has the role “player”.\nThe Problem: API Rate-LimitsWhenever a user registers or logs into the website using Discord OAuth, the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:\nIs the user part of the Discord server? (If not, prompt them to join) Has the user updated their profile? (If not, show the form) Is the user a “free-agent”? (If yes, provide options to join/create a team) Is the user a “team manager”? (If yes, provide team management options) These role details are fetched from the Discord API. However, the API has strict rate-limits: 5 requests per minute, with a soft reset allowing 1 request per minute after. The rate limit applies to a specific Access-Token for a Discord server.\nSince user roles can change based on user interactions through their existing Discord Bot (e.g., joining the server, updating profile, joining a team), we needed to re-fetch roles each time the browser tab was re-focused or reloaded. Additionally, in a React development environment with StrictMode enabled, each component renders twice which doubled the number of API requests. This often led to rate-limiting issues.\nThe Solution OptionsThere were two main approaches to handle this issue:\nMaintain Internal User Data: This option would involve using WebSockets with the bot to track user role changes in real-time and storing this data in a database. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.\nCache Fetched Data from the Discord API: This simpler solution involves caching user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.\nWe opted for the caching approach using Redis, as it provides both efficiency and native data expiry.\nThe Solution: Fetch with Cache FallbackWe implemented a fetch-with-cache fallback mechanism. Here’s how it works:\n1. Check for Rate-Limit KeyBefore making an API call, we check if we’ve been currently rate-limited by looking for a Redis key of the pattern discord_roles___retry-after. This key is created when a previous request was rate-limited.\n2. Handle Rate-Limited RequestsIf this rate-limit key exists, we don’t attempt to make a new API call. Instead, we return the cached data stored in Redis with the key of pattern discord_roles__.\n3. Make API RequestIf the rate-limit key isn’t found, we proceed to fetch the user’s roles from the Discord API.\nIf the request is successful, we cache the data with a key of the pattern discord_roles__ and return it. If the request receives a rate-limit error, we create the key discord_roles___retry-after with an expiry set to the rate-limit reset time (plus 1 second). After this, we return the previously cached data. Solution flowchart diagram\nWhat I Learned and Future ConsiderationsWhile this solution worked well for our use case, I realized that using Redis opened up more possibilities for handling similar challenges elsewhere in the project. For instance, I later used Redis to solve another issue related to concurrent refresh attempts of access tokens.\nIn retrospect, there is another approach we could consider for future versions. Partial WebSocket Implementation: Given the requirement for very specific role updates, partial WebSocket integration in the website with Discord Gateway API could help fetch only critical updates in real-time without introducing unnecessary overhead.\nConclusionA simple fetch-with-cache fallback system using Redis allowed us to deliver a smooth user experience while adhering to Discord’s API constraints. The combination of simplicity and effectiveness made Redis a good fit for this project.\n",
+  "wordCount" : "693",
+  "inLanguage": "en",
+  "datePublished": "2024-10-08T00:00:00Z",
+  "dateModified": "2024-11-21T15:30:10+05:30",
+  "author":{
+    "@type": "Person",
+    "name": "Sandesh Shahapur"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ADeveloperHasNoName",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -147,7 +211,7 @@
             </li>
             <li>
                 <a href="http://localhost:1313/blogs/" title="Blogs">
-                    <span>Blogs</span>
+                    <span class="active">Blogs</span>
                 </a>
             </li>
             <li>
@@ -214,16 +278,16 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with developing a web <span class="glossary-term"
-      glossary-data-tree-id="491415371051821113126"glossary-data-tree-node-id="0"glossary-data-term="ui"
+      glossary-data-tree-id="513410915112126873114"glossary-data-tree-node-id="0"glossary-data-term="ui"
       onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="414711515319108621312"glossary-data-tree-node-id="0"glossary-data-term="discord"
+      glossary-data-tree-id="159122314131165714108"glossary-data-tree-node-id="0"glossary-data-term="discord"
       onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord Bot. They wanted to extend their services to a <span class="glossary-term"
-      glossary-data-tree-id="241581214691153711310"glossary-data-tree-node-id="0"glossary-data-term="website"
+      glossary-data-tree-id="133481065914212157111"glossary-data-tree-node-id="0"glossary-data-term="website"
       onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, and I was responsible for making it happen.</p>
 <p>After a new user joins their Discord server, before they can interact further (e.g., searching/joining teams), they are required to update their profile using a form. After which, they were given the roles &ldquo;updated-profile&rdquo; and &ldquo;free-agent&rdquo; (indicates not being present in any team). A player if present in a team has the role &ldquo;player&rdquo;.</p>
 <h2 id="the-problem-api-rate-limits">
     The Problem: API Rate-Limits</h2><p>Whenever a user registers or logs into the website using Discord <span class="glossary-term"
-      glossary-data-tree-id="151496425171113812103"glossary-data-tree-node-id="0"glossary-data-term="oauth"
+      glossary-data-tree-id="131125739124141810615"glossary-data-tree-node-id="0"glossary-data-term="oauth"
       onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>, the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:</p>
 <ol>
 <li>Is the user part of the Discord server? (If not, prompt them to join)</li>
@@ -232,13 +296,13 @@
 <li>Is the user a &ldquo;team manager&rdquo;? (If yes, provide team management options)</li>
 </ol>
 <p>These role details are fetched from the Discord <span class="glossary-term"
-      glossary-data-tree-id="514911138713151210624"glossary-data-tree-node-id="0"glossary-data-term="api"
+      glossary-data-tree-id="111864279514131031512"glossary-data-tree-node-id="0"glossary-data-term="api"
       onclick="fetchAndRenderGlossaryDefinition(this)">API</span>. However, the API has strict <span class="glossary-term"
-      glossary-data-tree-id="134215831695121410117"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
+      glossary-data-tree-id="141101273241311815956"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
       onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span>: 5 <span class="glossary-term"
-      glossary-data-tree-id="214106153158971312114"glossary-data-tree-node-id="0"glossary-data-term="request"
+      glossary-data-tree-id="714132968111210415153"glossary-data-tree-node-id="0"glossary-data-term="request"
       onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> per minute, with a soft reset allowing 1 request per minute after. The rate limit applies to a specific <span class="glossary-term"
-      glossary-data-tree-id="101221471411515139836"glossary-data-tree-node-id="0"glossary-data-term="access-token"
+      glossary-data-tree-id="451071421591338611121"glossary-data-tree-node-id="0"glossary-data-term="access-token"
       onclick="fetchAndRenderGlossaryDefinition(this)">Access-Token</span> for a Discord server.</p>
 <p>Since user roles can change based on user interactions through their existing Discord Bot (e.g., joining the server, updating profile, joining a team), we needed to re-fetch roles each time the browser tab was re-focused or reloaded. Additionally, in a React development environment with StrictMode enabled, each component renders twice which doubled the number of API requests. This often led to rate-limiting issues.</p>
 <h2 id="the-solution-options">
@@ -247,20 +311,20 @@
 <li>
 <p><strong>Maintain Internal User Data:</strong>
 This option would involve using <span class="glossary-term"
-      glossary-data-tree-id="147310815614121113952"glossary-data-tree-node-id="0"glossary-data-term="websocket"
+      glossary-data-tree-id="138316159122111047145"glossary-data-tree-node-id="0"glossary-data-term="websocket"
       onclick="fetchAndRenderGlossaryDefinition(this)">WebSockets</span> with the bot to track user role changes in real-time and storing this data in a <span class="glossary-term"
-      glossary-data-tree-id="151371248141121659103"glossary-data-tree-node-id="0"glossary-data-term="database."
-      onclick="fetchAndRenderGlossaryDefinition(this)">database.</span> While this would ensure up-to-date information, it introduces significant complexity and resource overhead.</p>
+      glossary-data-tree-id="131415831264151127109"glossary-data-tree-node-id="0"glossary-data-term="database"
+      onclick="fetchAndRenderGlossaryDefinition(this)">database</span>. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.</p>
 </li>
 <li>
 <p><strong>Cache Fetched Data from the Discord API:</strong>
 This simpler solution involves <span class="glossary-term"
-      glossary-data-tree-id="107125213491114151368"glossary-data-tree-node-id="0"glossary-data-term="cache"
+      glossary-data-tree-id="714241119863121510513"glossary-data-tree-node-id="0"glossary-data-term="cache"
       onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.</p>
 </li>
 </ol>
 <p>We opted for the caching approach using <span class="glossary-term"
-      glossary-data-tree-id="414913101113875615212"glossary-data-tree-node-id="0"glossary-data-term="redis"
+      glossary-data-tree-id="141146981210712151335"glossary-data-tree-node-id="0"glossary-data-term="redis"
       onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, as it provides both efficiency and native data expiry.</p>
 <h2 id="the-solution-fetch-with-cache-fallback">
     The Solution: Fetch with Cache Fallback</h2><p>We implemented a fetch-with-cache fallback mechanism. Here’s how it works:</p>
@@ -499,7 +563,7 @@ This simpler solution involves <span class="glossary-term"
 
     
         
-        <script src="/js/glossary.min.abdcc00e17c5d9fcda9e081466a0dd801085fc20b219649dc55dbeb60fb970d2.js"></script>
+        <script src="/js/glossary.min.54f16377f03eadfbcc3375fb46a97d3e12fe224600cfa43606a8cd45dcd1be23.js"></script>
     
 </body>
 

@@ -4,13 +4,13 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>SAFA | ADeveloperHasNoName</title>
 <meta name="keywords" content="eSports, FIFA, web interface, Discord integration, team management, Redis, OAuth2">
 <meta name="description" content="SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/projects/safa/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3dcbddbc841241a196ea5ecb2d985e1a68c0fe52442a20d9d4464ab10f2e3120.css" integrity="sha256-PcvdvIQSQaGW6l7LLZheGmjA/lJEKiDZ1EZKsQ8uMSA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d478f5f940fc835c872c9c7a0591a24990e89516ecd327208870621ba0cdae30.css" integrity="sha256-1Hj1&#43;UD8g1yHLJx6BZGiSZDolRbs0ycgiHBiG6DNrjA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -55,7 +55,71 @@
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:title" content="SAFA" />
+<meta property="og:description" content="SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/projects/safa/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2024-11-20T11:35:30+05:30" />
+<meta property="article:modified_time" content="2024-11-21T15:48:09+05:30" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SAFA"/>
+<meta name="twitter:description" content="SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "http://localhost:1313/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "SAFA",
+      "item": "http://localhost:1313/projects/safa/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SAFA",
+  "name": "SAFA",
+  "description": "SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.",
+  "keywords": [
+    "eSports", "FIFA", "web interface", "Discord integration", "team management", "Redis", "OAuth2"
+  ],
+  "articleBody": "SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.\nFeatures User Authentication: Users can login with their Discord account to access the service. Team Creation and Joining: Users can create teams and join teams. Player/Team/League Profiles: Detailed profiles with stats and role-based views. Team Management: Managers can manage teams and players. Search: Public searching for players, teams, and leagues. Gallery\nImplementation Authentication: Discord OAuth for user authentication using JWT and cookies. Backend: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management. Challenges Rate Limiting: Discord API has strict rate-limits for some endpoints. I used fetching with cache fallback using Redis to handle this. Concurrent Refresh Requests: In session management, multiple requests to refresh the access-token was causing issues. I handled this by using Redis as a mutex lock manager. Mistakes and Learnings Development environment flexibility: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug. Backend software architecture: I initially started developing the backend with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend. Testing: I didn’t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing. Tech Stack Frontend: React, Tailwind CSS Backend: Node.js, Express, Redis, Sequelize ",
+  "wordCount" : "334",
+  "inLanguage": "en",
+  "datePublished": "2024-11-20T11:35:30+05:30",
+  "dateModified": "2024-11-21T15:48:09+05:30",
+  "author":{
+    "@type": "Person",
+    "name": "Sandesh Shahapur"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/projects/safa/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ADeveloperHasNoName",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -149,7 +213,7 @@
             </li>
             <li>
                 <a href="http://localhost:1313/projects/" title="Projects">
-                    <span>Projects</span>
+                    <span class="active">Projects</span>
                 </a>
             </li>
             <li>
@@ -200,13 +264,13 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="913347128211015511146"glossary-data-tree-node-id="0"glossary-data-term="web"
+      glossary-data-tree-id="512715611148129103413"glossary-data-tree-node-id="0"glossary-data-term="web"
       onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="101541112192137148365"glossary-data-tree-node-id="0"glossary-data-term="ui"
+       glossary-data-tree-id="101279414513138151162"glossary-data-tree-node-id="0"glossary-data-term="ui"
        onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="121169144171081525133"glossary-data-tree-node-id="0"glossary-data-term="discord"
+      glossary-data-tree-id="513987101514111362124"glossary-data-tree-node-id="0"glossary-data-term="discord"
       onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="961382711514101234151"glossary-data-tree-node-id="0"glossary-data-term="authentication"
+      glossary-data-tree-id="624131128311597141510"glossary-data-tree-node-id="0"glossary-data-term="authentication"
       onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
 <h2 id="features">
     Features</h2><ol>
@@ -220,36 +284,36 @@
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="121542141310158961137"glossary-data-tree-node-id="0"glossary-data-term="oauth"
+      glossary-data-tree-id="351142141513961127810"glossary-data-tree-node-id="0"glossary-data-term="oauth"
       onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="141312116151027835419"glossary-data-tree-node-id="0"glossary-data-term="jwt"
+      glossary-data-tree-id="114912115372141013568"glossary-data-tree-node-id="0"glossary-data-term="jwt"
       onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="111291348361412101575"glossary-data-tree-node-id="0"glossary-data-term="cookie"
+      glossary-data-tree-id="315168213410117591412"glossary-data-tree-node-id="0"glossary-data-term="cookie"
       onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="642117312158915131014"glossary-data-tree-node-id="0"glossary-data-term="redis"
+      glossary-data-tree-id="712561039148142111513"glossary-data-tree-node-id="0"glossary-data-term="redis"
       onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="115714310154921281316"glossary-data-tree-node-id="0"glossary-data-term="cache"
+      glossary-data-tree-id="241393157151410116812"glossary-data-tree-node-id="0"glossary-data-term="cache"
       onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
 </ul>
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="123111421361085149715"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
+      glossary-data-tree-id="111354168121421510379"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
       onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="614285151110394127113"glossary-data-tree-node-id="0"glossary-data-term="request"
+      glossary-data-tree-id="546121411151097121338"glossary-data-tree-node-id="0"glossary-data-term="request"
       onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="145826103491127131115"glossary-data-tree-node-id="0"glossary-data-term="access-token"
+      glossary-data-tree-id="514121586103211741319"glossary-data-tree-node-id="0"glossary-data-term="access-token"
       onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
 </ul>
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="141169101235715813124"glossary-data-tree-node-id="0"glossary-data-term="frontend"
+      glossary-data-tree-id="612491273151014581113"glossary-data-tree-node-id="0"glossary-data-term="frontend"
       onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="193155810126713112144"glossary-data-tree-node-id="0"glossary-data-term="backend"
+      glossary-data-tree-id="731556121119814132410"glossary-data-tree-node-id="0"glossary-data-term="backend"
       onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
 <li><strong>Testing</strong>: I didn&rsquo;t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing.</li>
 </ul>
@@ -470,7 +534,7 @@
 
     
         
-        <script src="/js/glossary.min.abdcc00e17c5d9fcda9e081466a0dd801085fc20b219649dc55dbeb60fb970d2.js"></script>
+        <script src="/js/glossary.min.54f16377f03eadfbcc3375fb46a97d3e12fe224600cfa43606a8cd45dcd1be23.js"></script>
     
 </body>
 
