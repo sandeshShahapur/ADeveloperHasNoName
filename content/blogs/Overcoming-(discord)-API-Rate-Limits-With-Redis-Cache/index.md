@@ -33,7 +33,7 @@ Since user roles can change based on user interactions through their existing Di
 There were two main approaches to handle this issue:
 
 1. **Maintain Internal User Data:**
-   This option would involve using {{< glossary term="WebSocket" displayTerm="WebSockets" >}} with the bot to track user role changes in real-time and storing this data in a {{< glossary term="database." >}} While this would ensure up-to-date information, it introduces significant complexity and resource overhead.
+   This option would involve using {{< glossary term="WebSocket" displayTerm="WebSockets" >}} with the bot to track user role changes in real-time and storing this data in a {{< glossary term="database" >}}. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.
 
 2. **Cache Fetched Data from the Discord API:**
    This simpler solution involves {{< glossary term="cache" displayTerm="caching" >}} user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.
