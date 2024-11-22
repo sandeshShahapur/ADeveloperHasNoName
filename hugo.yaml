@@ -37,7 +37,9 @@ menu:
       url: /glossary/
       weight: 6
 params:
-  environment: production
+  env: production
+  author: "Sandesh Shahapur"
+  description: "ADeveloperHasNoName is a place where I share my blogs, projects and thoughts around software development and technology."
   mainSections:
     - blogs
     - projects
