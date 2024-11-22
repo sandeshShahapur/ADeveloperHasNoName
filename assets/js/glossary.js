@@ -84,7 +84,7 @@ function isModalOpen(tree_id, tree_node_id) {
 }
 
 
-function prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefinition) {
+function prepareModal(modal, term, isTermImage, tree_id, tree_node_id, processedDefinition) {
     modal.classList.add("glossary-modal");
     modal.setAttribute("style", `max-width: ${ isTermImage? "100vw" : "300px"}`);
     // Add tree_id and tree_node_id to the modal to close all child modals
@@ -92,10 +92,11 @@ function prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefini
     modal.setAttribute("m-glossary-data-tree-node-id", tree_node_id);
 
     modal.innerHTML = `
-        <div class="glossary-modal-content">
-            <p>${processedDefinition}</p>
-            <span class="glossary-modal-close" onclick="closeGlossaryModal(this)">&times;</span>
+        <div class="glossary-modal-header">
+            <h3 class="glossary-modal-title">${term}</h3>
+            <div class="glossary-modal-close" onclick="closeGlossaryModal(this)">&times;</div>
         </div>
+        <p class="glossary-modal-content">${processedDefinition}</p>
     `;
 }
 
@@ -143,7 +144,7 @@ async function fetchAndRenderGlossaryDefinition(element) {
 
     // Create the modal
     const modal = document.createElement("div");
-    prepareModal(modal, isTermImage, tree_id, tree_node_id, processedDefinition);
+    prepareModal(modal, term, isTermImage, tree_id, tree_node_id, processedDefinition);
     positionModal(isTermImage, modal, element);
 
     document.body.appendChild(modal);

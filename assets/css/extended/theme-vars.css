@@ -1,0 +1,15 @@
+:root {
+    --primary-shadow: rgb(30, 30, 30, 0.2);
+    --link-unvisited: #3343DD;
+    --link-hover: #B50010;
+    --link-visited: #551A8B;
+    --tooltip-bg: #2191FB
+}
+
+.dark {
+    --primary-shadow: rgb(218, 218, 219, 0.2);
+    --link-unvisited: #0099FF;
+    --link-hover: #FF5F4F;
+    --link-visited: #B47DE5;
+    --tooltip-bg: #7F39FB;
+}

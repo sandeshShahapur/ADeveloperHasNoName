@@ -1,0 +1,11 @@
+.post-content a {
+    color: var(--link-unvisited)
+}
+
+.post-content a:hover {
+    color: var(--link-hover)
+}
+
+.post-content a:visited {
+    color: var(--link-visited)
+}
