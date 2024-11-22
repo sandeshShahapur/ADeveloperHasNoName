@@ -40,6 +40,7 @@ params:
   env: production
   author: "Sandesh Shahapur"
   description: "ADeveloperHasNoName is a place where I share my blogs, projects and thoughts around software development and technology."
+  keywords: ["Software Development", "Technology", "Programming", "Web Development", "Blog", "Projects"]
   mainSections:
     - blogs
     - projects

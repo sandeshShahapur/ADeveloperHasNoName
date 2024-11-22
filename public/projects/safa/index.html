@@ -264,13 +264,13 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="512715611148129103413"glossary-data-tree-node-id="0"glossary-data-term="web"
+      glossary-data-tree-id="931061841213214571115"glossary-data-tree-node-id="0"glossary-data-term="web"
       onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="101279414513138151162"glossary-data-tree-node-id="0"glossary-data-term="ui"
+       glossary-data-tree-id="837149115106114521213"glossary-data-tree-node-id="0"glossary-data-term="ui"
        onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="513987101514111362124"glossary-data-tree-node-id="0"glossary-data-term="discord"
+      glossary-data-tree-id="121315107412698143511"glossary-data-tree-node-id="0"glossary-data-term="discord"
       onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="624131128311597141510"glossary-data-tree-node-id="0"glossary-data-term="authentication"
+      glossary-data-tree-id="131121097215864115143"glossary-data-tree-node-id="0"glossary-data-term="authentication"
       onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
 <h2 id="features">
     Features</h2><ol>
@@ -284,36 +284,36 @@
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="351142141513961127810"glossary-data-tree-node-id="0"glossary-data-term="oauth"
+      glossary-data-tree-id="568741511109132121431"glossary-data-tree-node-id="0"glossary-data-term="oauth"
       onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="114912115372141013568"glossary-data-tree-node-id="0"glossary-data-term="jwt"
+      glossary-data-tree-id="112685714931510413112"glossary-data-tree-node-id="0"glossary-data-term="jwt"
       onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="315168213410117591412"glossary-data-tree-node-id="0"glossary-data-term="cookie"
+      glossary-data-tree-id="111385104915146712213"glossary-data-tree-node-id="0"glossary-data-term="cookie"
       onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="712561039148142111513"glossary-data-tree-node-id="0"glossary-data-term="redis"
+      glossary-data-tree-id="106122789111415141353"glossary-data-tree-node-id="0"glossary-data-term="redis"
       onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="241393157151410116812"glossary-data-tree-node-id="0"glossary-data-term="cache"
+      glossary-data-tree-id="121115135146910273418"glossary-data-tree-node-id="0"glossary-data-term="cache"
       onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
 </ul>
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="111354168121421510379"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
+      glossary-data-tree-id="122873131041115614195"glossary-data-tree-node-id="0"glossary-data-term="rate-limit"
       onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="546121411151097121338"glossary-data-tree-node-id="0"glossary-data-term="request"
+      glossary-data-tree-id="127419813101521163514"glossary-data-tree-node-id="0"glossary-data-term="request"
       onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="514121586103211741319"glossary-data-tree-node-id="0"glossary-data-term="access-token"
+      glossary-data-tree-id="314515137928114121106"glossary-data-tree-node-id="0"glossary-data-term="access-token"
       onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
 </ul>
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="612491273151014581113"glossary-data-tree-node-id="0"glossary-data-term="frontend"
+      glossary-data-tree-id="815149510411716213123"glossary-data-tree-node-id="0"glossary-data-term="frontend"
       onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="731556121119814132410"glossary-data-tree-node-id="0"glossary-data-term="backend"
+      glossary-data-tree-id="911451013126834112715"glossary-data-tree-node-id="0"glossary-data-term="backend"
       onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
 <li><strong>Testing</strong>: I didn&rsquo;t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing.</li>
 </ul>

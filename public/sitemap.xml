@@ -3,10 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-11-21T15:48:09+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-11-21T15:48:09+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/discord-integration/</loc>
     <lastmod>2024-11-21T15:48:09+05:30</lastmod>
@@ -30,19 +30,19 @@
     <lastmod>2024-11-21T15:48:09+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/redis/</loc>
-    <lastmod>2024-11-21T15:48:09+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/safa/</loc>
     <lastmod>2024-11-21T15:48:09+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-11-21T15:48:09+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/team-management/</loc>
     <lastmod>2024-11-21T15:48:09+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/web-development/</loc>
-    <lastmod>2024-11-21T15:48:09+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web-interface/</loc>
     <lastmod>2024-11-21T15:48:09+05:30</lastmod>
@@ -87,7 +87,7 @@
     <lastmod>2024-11-21T15:48:09+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/http/</loc>
     <lastmod>2024-11-21T15:30:10+05:30</lastmod>
@@ -102,7 +102,7 @@
     <lastmod>2024-11-21T15:30:10+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web-development/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/web-security/</loc>
     <lastmod>2024-11-21T15:30:10+05:30</lastmod>
@@ -156,22 +156,22 @@
     <lastmod>2024-11-21T15:30:10+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/tutorials/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/api/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/caching/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/discord/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rate-limit/</loc>
-    <lastmod>2024-11-21T15:30:10+05:30</lastmod>
+    <lastmod>2024-11-23T03:28:51+05:30</lastmod>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
     <lastmod>2024-10-09T12:10:34+05:30</lastmod>
