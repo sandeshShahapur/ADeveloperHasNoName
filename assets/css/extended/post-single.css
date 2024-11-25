@@ -1,11 +1,18 @@
-.post-content a {
-    color: var(--link-unvisited)
-}
+/* Standard default colors for links */
+    .post-content a {
+        color: var(--link-unvisited)
+    }
 
-.post-content a:hover {
-    color: var(--link-hover)
-}
+    .post-content a:hover {
+        color: var(--link-hover)
+    }
 
-.post-content a:visited {
-    color: var(--link-visited)
-}
+    .post-content a:visited {
+        color: var(--link-visited)
+    }
+
+/* Make images zoomable */
+    .post-content img,
+    .glossary-modal img {
+        cursor: zoom-in;
+    }

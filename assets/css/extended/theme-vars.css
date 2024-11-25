@@ -1,3 +1,10 @@
+/*
+ * Theme Variables
+ * Root provides light theme variables
+ * Dark provides dark theme variables
+ * link colors provide 7:1 contrast ratio with background
+*/
+
 :root {
     --primary-shadow: rgb(30, 30, 30, 0.2);
     --link-unvisited: #3343DD;

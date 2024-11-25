@@ -2,7 +2,7 @@
 /* Glossary Modals */
 .glossary-term {
     position: relative;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevents the term and connected words from breaking into multiple lines. E.g. frontend/backend -> frontend\n/backend  */
     color: var(--primary);
     text-decoration-line: underline;
     text-decoration-style: dashed;
@@ -61,14 +61,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3px 10px;
+    padding: 0px 10px;
     background-color: var(--secondary);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 
 .glossary-modal-title {
-    font-size: 1.25rem;
     font-weight: bold;
     color: var(--tertiary);
 }
