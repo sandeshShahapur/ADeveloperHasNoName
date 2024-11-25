@@ -233,15 +233,15 @@ decryption: Decryption is the **process of converting the secret scrambled code 
 decryption-key: Decryption key is a secret value (random string of characters) that is **used to {{< glossary term="decryption" displayTerm="decrypt" >}} secret scrambled code ({{< glossary term="ciphertext" >}}) back into plain-text data**. The key is used by the {{< glossary term="cipher" >}} to perform the operation.
 
 
-diag-array: '<img src="https://www.tutorialspoint.com/data_structures_algorithms/images/arrays1.jpg" alt="Array Data Structure" caption="Array Data Structure">'
+diag-array: '<img src="https://www.tutorialspoint.com/data_structures_algorithms/images/arrays1.jpg" width="606px" height="269px" alt="Array Data Structure" caption="Array Data Structure" onclick="this.requestFullscreen()" >'
 
-diag-hashtable: '<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*l9eCykFTYwvLZgy62id5Ag.png" alt="Hash Table Data Structure" caption="Hash Table Data Structure" >'
+diag-hashtable: '<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*l9eCykFTYwvLZgy62id5Ag.png" width="720px" height="351px" alt="Hash Table Data Structure" caption="Hash Table Data Structure" onclick="this.requestFullscreen()" >'
 
-diag-linkedlist: '<img src="https://media.geeksforgeeks.org/wp-content/uploads/20220829110944/LLdrawio.png" alt="Linked List Data Structure" caption="Linked List Data Structure" >'
+diag-linkedlist: '<img src="https://media.geeksforgeeks.org/wp-content/uploads/20220829110944/LLdrawio.png" width="812px" height="221px" alt="Linked List Data Structure" caption="Linked List Data Structure" onclick="this.requestFullscreen()" >'
 
-diag-memory-address: '<img src="http://www.rjhcoding.com/images/pmem.png" alt="Memory Addressing" caption="Memory Addressing" >'
+diag-memory-address: '<img src="http://www.rjhcoding.com/images/pmem.png" width="700px" height="300px" alt="Memory Addressing" caption="Memory Addressing" onclick="this.requestFullscreen()" >'
 
-diag-tree: '<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240415185343/tree-data-structure-banners-(2).webp" alt="Tree Data Structure" >'
+diag-tree: '<img src="https://media.geeksforgeeks.org/wp-content/uploads/20240415185343/tree-data-structure-banners-(2).webp" width="1001px" height="470px" alt="Tree Data Structure" onclick="this.requestFullscreen()" >'
 
 
 digital: Digital is a **discrete representation of data** where the data is represented by discrete values. Examples include binary code, numbers, text, etc.
