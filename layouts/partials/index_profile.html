@@ -1,3 +1,14 @@
+{{/*
+   * This modifies PaperMod's index_profile.html to provide improved title responsiveness for the title "ADeveloperHasNoName"
+   * Original: "<h1>{{ .title | default site.Title | markdownify }}</h1>"
+   * Modified: "<h1 style="font-size: clamp(25px, 7vw, 36px);">{{ .title | default site.Title | markdownify }}</h1>"
+
+   * The title "ADeveloperHasNoName" will not overflow upto 320px screen widths
+   * Steps to arrive at the clamp values:
+        1. For the smallest screen width (here 320px), find the largest font size that fits the title without overflowing and set it as the minimum value (25px)
+        2. Find the largest font size used by theme for the title and set it as the maximum value (h1 - 36px)
+        3. For the smallest screen width (320px), find the relative viewport width (vw) that fits the title without overflowing and set it as expression (7vw)
+*/}}
 <div class="profile">
     {{- with site.Params.profileMode }}
     <div class="profile_inner">

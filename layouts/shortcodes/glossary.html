@@ -1,11 +1,19 @@
+{{/*
+   * This shortcode is used to render a glossary term which can be clicked to view its definition.
+   * It takes two named parameters:
+   *  - term: the term to be displayed in the glossary
+   *  - displayTerm: the term to be displayed on the  page (optional, defaults to term)
+*/}}
 {{- $term := .Get "term" | lower -}}
 {{- $displayTerm := .Get "displayTerm" | default (.Get "term") -}}
 
+{{/*  Each glossary term acts as the root of a tree having zero or more children (other glossary terms in its definition)  */}}
+{{- /* `$unique_id` generates a unique id for each glossary tree (the glossary term being the root), ensuring that the id is different for each root term (even if the same term is used multiple times) */ -}}
+{{- /* the node indicates the position of the term in a glossary tree. the value indicates it being the ith child of the parent node and commas separate the levels of the tree. Here "0" is the root node and the initial level */ -}}
 {{- $unique_id := delimit (shuffle (seq 1 15)) "" -}}
-
 <span class="glossary-term"
-      glossary-data-tree-id="{{ $unique_id }}" {{- /* unique id for each glossary tree */ -}}
-      glossary-data-tree-node-id="0" {{- /* unique id for a node in a tree prefixed by ancestors. 0 is root. ex: `0,0,1,0,3,4` where the length is level and individual value is child number */ -}}
+      glossary-data-tree-id="{{ $unique_id }}"
+      glossary-data-tree-node-id="0"
       glossary-data-term="{{ $term }}"
       onclick="fetchAndRenderGlossaryDefinition(this)">
     {{- $displayTerm -}}

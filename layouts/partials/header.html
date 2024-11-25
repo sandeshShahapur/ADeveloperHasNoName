@@ -1,3 +1,9 @@
+{{/*
+   * This extends PaperMod's header.html for two purposes:
+        1. Add a linear progress bar to blog posts.
+        2. Menu is also active if the current page is a child of the menu item.
+*/}}
+
 {{- /* theme-toggle is enabled */}}
 {{- if (not site.Params.disableThemeToggle) }}
 {{- /* theme is light */}}
@@ -39,7 +45,7 @@
 </script>
 {{- end }}
 
-<!-- Linear Progress Bar -->
+{{/*  Linear Progress Bar  */}}
 <style>
     #progress-container {
         position: fixed;
@@ -55,20 +61,18 @@
         width: 0;
         height: 100%;
         background-color: #1D1E20; /* Color of the progress bar */
-        transition: width 0.2s ease-out;
+        transition: width 0.3s ease-out;
     }
 </style>
 
-{{- /* only show the bar on blog posts  */}}
-{{ if and (eq .Kind "page") (eq .Type "blogs") }}
-{{- /* if and (eq .Kind "page") (or (eq .Type "blogs") (eq .Type "projects")) */}}
-<div id="progress-container">
-    <div id="progress-bar"></div>
-</div>
+{{- /* only show the bar on blog posts and project posts */}}
+{{- if and (eq .Kind "page") (or (eq .Type "blogs") (eq .Type "projects")) }}
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
 {{- end }}
 
 <script>
-    // only show the bar on blog posts
     if (document.getElementById("progress-container")) {
         window.addEventListener("scroll", function () {
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -163,10 +167,12 @@
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range site.Menus.main }}
+            {{/*  $menu_item_url is the absolute menu item URL with a trailing slash. E.g. adeveloperhasnoname.dev/blogs/ */}}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
+            {{/*  $page_url is the absolute current page URL. E.g. adeveloperhasnoname.dev/blogs/2021/01/01/first-post/ */}}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
-            {{- $is_page_home := eq $currentPage.RelPermalink "/" }}
-            {{- $is_active := or (eq $menu_item_url $page_url) (and (ne $menu_item_url ("/" | absLangURL)) (strings.HasPrefix $page_url $menu_item_url)) }}
+            {{/*  $is_active checks if the current page URL is the child of the menu item (except homepage) URL, and the home page menu is checked by the exact match. */}}
+            {{- $is_active := or (and (ne $menu_item_url ("/" | absLangURL)) (strings.HasPrefix $page_url $menu_item_url)) (eq $menu_item_url $page_url) }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
             <li>
                 <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
