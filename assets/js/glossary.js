@@ -61,6 +61,7 @@ function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossa
                 class="glossary-term" glossary-data-tree-id="${tree_id}"
                 glossary-data-tree-node-id="${tree_node_id},${child_num}"
                 glossary-data-term="${term}
+                aria-haspopup="dialog"
                 onclick="fetchAndRenderGlossaryDefinition(this)
             ">
                 ${displayText}
