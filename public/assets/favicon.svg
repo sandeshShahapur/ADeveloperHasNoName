@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="212" height="212"><svg id="SvgjsSvg1018" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212 212">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: 12px;
+      }
+    </style>
+  </defs>
+  <polyline class="cls-1" points="141.93 71.94 141.93 136.5 141.93 138.79 69.93 74.87 69.93 139.44"></polyline>
+  <line class="cls-1" x1="36.18" y1="40.89" x2="175.82" y2="171.11"></line>
+  <circle class="cls-1" cx="106" cy="106" r="100"></circle>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</style></svg>

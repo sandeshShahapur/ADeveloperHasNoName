@@ -11,10 +11,10 @@
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/what-is-oauth-2_0-definition-use-cases-and-how-it-works/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.9b13c61680ad6a123574892d68f0789a5c527133d2d9b0f154150c0dc03e5cc1.css" integrity="sha256-mxPGFoCtahI1dIktaPB4mlxScTPS2bDxVBUMDcA&#43;XME=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/apple_touch_icon.png">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
@@ -115,7 +115,7 @@
     "name": "ADeveloperHasNoName",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "http://localhost:1313/assets/favicon.ico"
     }
   }
 }
@@ -172,7 +172,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="ADeveloperHasNoName (Alt + H)">ADeveloperHasNoName</a>
+            <a href="http://localhost:1313/" accesskey="h" title="ADeveloperHasNoName (Alt + H)">
+                <img src="http://localhost:1313/assets/favicon-96x96.png" alt="" aria-label="logo"
+                    height="24">ADeveloperHasNoName</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -297,25 +299,29 @@ This is where OAuth comes into play. It provides a secure way for you to grant t
     2.0? Are there different versions of OAuth?</h2><p>In this article, we will focus on OAuth 2.0, which is the latest version of OAuth. Other versions are OAuth 1.0 and OAuth 1.0a, which are now considered outdated due to security vulnerabilities and limitations.</p>
 <h2 id="definition">
     Definition</h2><p>OAuth (Open Authorization) is an <span class="glossary-term"
-      glossary-data-tree-id="391514867410111213521"
+      glossary-data-tree-id="154137311101285169214"
       glossary-data-tree-node-id="0"
       glossary-data-term="open-standard"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">open-standard</span> for <strong>access delegation</strong> that allows a user to grant a third-party application access to their account/application&rsquo;s resources or perform actions on behalf of them without them having to sharing their credentials to the third-party application.</p>
 <h2 id="use-cases-of-oauth-20">
     Use Cases of OAuth 2.0</h2><p>OAuth 2.0 is widely used in various scenarios to grant access to user data securely. Some common use cases of OAuth 2.0 include:</p>
 <ol>
 <li><strong>Social Login and Single Sign On</strong>: Social login is facilitated using <span class="glossary-term"
-      glossary-data-tree-id="133122811910615714415"
+      glossary-data-tree-id="131114871091432612515"
       glossary-data-tree-node-id="0"
       glossary-data-term="openid-connect"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">OpenID Connect</span>, an identity layer built on top of OAuth 2.0. This allows users to log in to applications using their social media accounts, such as Google, Facebook, or Twitter (e.g., &ldquo;Log in with Google&rdquo; or &ldquo;Log in with Facebook&rdquo; buttons). By handling <span class="glossary-term"
-      glossary-data-tree-id="495786101431211115132"
+      glossary-data-tree-id="912147133156814112510"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> through these social media accounts, users need not create a new account and remember another set of credentials, enabling <span class="glossary-term"
-      glossary-data-tree-id="145121078913114315261"
+      glossary-data-tree-id="151149758213631110412"
       glossary-data-tree-node-id="0"
       glossary-data-term="single-sign-on"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">Single-Sign-On</span>.
 
 <br class="br" />
@@ -327,34 +333,39 @@ It also lifts the burden of password management and security from the applicatio
 <li><strong>Resource Owner</strong>: The user who owns the data and grants access to it. In the Google Drive example, you are the resource owner.</li>
 <li><strong>Client</strong>: The third-party application that wants to access the user&rsquo;s data. In the Google Drive example, the media editing application is the client.</li>
 <li><strong>Authorization Server</strong>: The <span class="glossary-term"
-      glossary-data-tree-id="510111361314879154212"
+      glossary-data-tree-id="215121113687149531410"
       glossary-data-tree-node-id="0"
       glossary-data-term="server"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">server</span> that <span class="glossary-term"
-      glossary-data-tree-id="531042714111129131568"
+      glossary-data-tree-id="151382913101154127614"
       glossary-data-tree-node-id="0"
       glossary-data-term="authorization"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">authorizes</span> the client to access the user&rsquo;s data. In the Google Drive example, Google&rsquo;s authorization server.</li>
 <li><strong>Resource Server</strong>: The server that hosts the user&rsquo;s data. In the Google Drive example, Google Drive itself.</li>
 </ol>
 <h2 id="how-oauth-20-works">
     How OAuth 2.0 Works</h2><p>If the users don&rsquo;t share their credentials, how does OAuth 2.0 work? Through <span class="glossary-term"
-      glossary-data-tree-id="712101415131396824115"
+      glossary-data-tree-id="712136142155113810419"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">Access Tokens</span>.</p>
 <p>Access Tokens are like keys that allow the client to access the user&rsquo;s data without knowing the user&rsquo;s credentials. As they are short-lived, the authorization server may issue another key called the <span class="glossary-term"
-      glossary-data-tree-id="106541271315911143128"
+      glossary-data-tree-id="125161031113214154798"
       glossary-data-tree-node-id="0"
       glossary-data-term="refresh-token"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">Refresh-Token</span> to get a new Access Token when the current one expires without requiring the user to log in again.</p>
 <p>OAuth 2.0 works by following a series of steps to grant access to the user&rsquo;s data:</p>
 <ol>
 <li>
 <p><strong>Authorization Request</strong>: The client sends an authorization <span class="glossary-term"
-      glossary-data-tree-id="811312113156921074145"
+      glossary-data-tree-id="115513712104119863214"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">request</span> to the authorization server, asking for permission to access the user&rsquo;s data. The set of permissions requested is known as a &ldquo;scope&rdquo; (e.g., read access, write access, delete access).</p>
 <ul>
 <li>Example: &ldquo;Can I access to reading and writing this user&rsquo;s Google Drive files?&rdquo;</li>
@@ -362,9 +373,10 @@ It also lifts the burden of password management and security from the applicatio
 </li>
 <li>
 <p><strong>User Authentication and Authorization</strong>: The authorization server prompts the user to authorize the client to access their data. The user if not already logged in, <span class="glossary-term"
-      glossary-data-tree-id="698142123155101741113"
+      glossary-data-tree-id="107131495151123816412"
       glossary-data-tree-node-id="0"
       glossary-data-term="authenticate"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">authenticate</span> themselves and grants the requested permissions. Upon granting permission, the client receives an authorization code.</p>
 <ul>
 <li>Example: You log in to your Google account and authorize the media editing application to access your Google Drive files.</li>
@@ -408,9 +420,10 @@ It also lifts the burden of password management and security from the applicatio
 </figure></p>
 <h2 id="conclusion">
     Conclusion</h2><p>OAuth 2.0 is a secure <span class="glossary-term"
-      glossary-data-tree-id="414961012111513371285"
+      glossary-data-tree-id="381792136105111241514"
       glossary-data-tree-node-id="0"
       glossary-data-term="protocol"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">protocol</span> that allows users to grant access to their data without sharing their credentials. It is widely used in various applications and scenarios to provide a secure and flexible way to access user data. Understanding OAuth 2.0 is essential for developers who want to build secure and user-friendly applications that interact with third-party services.</p>
 
 

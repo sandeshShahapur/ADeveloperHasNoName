@@ -11,10 +11,10 @@
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/projects/safa/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.9b13c61680ad6a123574892d68f0789a5c527133d2d9b0f154150c0dc03e5cc1.css" integrity="sha256-mxPGFoCtahI1dIktaPB4mlxScTPS2bDxVBUMDcA&#43;XME=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/apple_touch_icon.png">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
@@ -115,7 +115,7 @@
     "name": "ADeveloperHasNoName",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "http://localhost:1313/assets/favicon.ico"
     }
   }
 }
@@ -172,7 +172,9 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="ADeveloperHasNoName (Alt + H)">ADeveloperHasNoName</a>
+            <a href="http://localhost:1313/" accesskey="h" title="ADeveloperHasNoName (Alt + H)">
+                <img src="http://localhost:1313/assets/favicon-96x96.png" alt="" aria-label="logo"
+                    height="24">ADeveloperHasNoName</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -283,21 +285,25 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="291561471013531412811"
+      glossary-data-tree-id="155101129131763144128"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="131412961035711284151"
+       glossary-data-tree-id="131110912821417431565"
        glossary-data-tree-node-id="0"
        glossary-data-term="ui"
+       aria-haspopup="dialog"
        onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="181361435212910471115"
+      glossary-data-tree-id="611431171385921015124"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="121011913231514157648"
+      glossary-data-tree-id="131111481031597512426"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
 <h2 id="features">
     Features</h2><ol>
@@ -311,56 +317,66 @@
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="158147131129104125316"
+      glossary-data-tree-id="984142111157563121013"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="241291368111510141735"
+      glossary-data-tree-id="124912510313118156714"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="698154312251171013114"
+      glossary-data-tree-id="515632148711913101214"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="121458411311157692103"
+      glossary-data-tree-id="117145814133152101296"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="127141521013853691411"
+      glossary-data-tree-id="321213114691078114515"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
 </ul>
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="152175369114101481213"
+      glossary-data-tree-id="294112810515143111367"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="171196131282101453154"
+      glossary-data-tree-id="131181594102561411237"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="621283791410541113115"
+      glossary-data-tree-id="153101246157141191382"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
 </ul>
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="961214513101138121574"
+      glossary-data-tree-id="109145712481313152611"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="101415342856712139111"
+      glossary-data-tree-id="751391114142158101263"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
+      aria-haspopup="dialog"
       onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
 <li><strong>Testing</strong>: I didn&rsquo;t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing.</li>
 </ul>
