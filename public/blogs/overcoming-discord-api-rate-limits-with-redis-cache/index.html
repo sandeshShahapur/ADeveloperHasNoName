@@ -10,7 +10,7 @@
 <meta name="description" content="How to handle (Discord) API rate limits using a Redis-based caching mechanism in a web application.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9b13c61680ad6a123574892d68f0789a5c527133d2d9b0f154150c0dc03e5cc1.css" integrity="sha256-mxPGFoCtahI1dIktaPB4mlxScTPS2bDxVBUMDcA&#43;XME=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.31b1956430ca9461e540aa556b875710592f6073c93a0aadee6a5eeb28ac2d93.css" integrity="sha256-MbGVZDDKlGHlQKpVa4dXEFkvYHPJOgqt7mpe6yisLZM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -296,29 +296,25 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with developing a web <span class="glossary-term"
-      glossary-data-tree-id="145711913112156423810"
+      glossary-data-tree-id="131715356128119410142"
       glossary-data-tree-node-id="0"
       glossary-data-term="ui"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="961811314715131012245"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
+      glossary-data-tree-id="131115214110849356712"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord Bot. They wanted to extend their services to a <span class="glossary-term"
-      glossary-data-tree-id="211615875143101121349"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord Bot. They wanted to extend their services to a <span class="glossary-term"
+      glossary-data-tree-id="131013111479152812465"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, and I was responsible for making it happen.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, and I was responsible for making it happen.</p>
 <p>After a new user joins their Discord server, before they can interact further (e.g., searching/joining teams), they are required to update their profile using a form. After which, they were given the roles &ldquo;updated-profile&rdquo; and &ldquo;free-agent&rdquo; (indicates not being present in any team). A player if present in a team has the role &ldquo;player&rdquo;.</p>
 <h2 id="the-problem-api-rate-limits">
     The Problem: API Rate-Limits</h2><p>Whenever a user registers or logs into the website using Discord <span class="glossary-term"
-      glossary-data-tree-id="141161710131548212953"
+      glossary-data-tree-id="321281545141319117106"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>, the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>, the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:</p>
 <ol>
 <li>Is the user part of the Discord server? (If not, prompt them to join)</li>
 <li>Has the user updated their profile? (If not, show the form)</li>
@@ -326,26 +322,22 @@
 <li>Is the user a &ldquo;team manager&rdquo;? (If yes, provide team management options)</li>
 </ol>
 <p>These role details are fetched from the Discord <span class="glossary-term"
-      glossary-data-tree-id="321213118145610741159"
+      glossary-data-tree-id="115271091513614123814"
       glossary-data-tree-node-id="0"
       glossary-data-term="api"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">API</span>. However, the API has strict <span class="glossary-term"
-      glossary-data-tree-id="121336851141510114972"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">API</span>. However, the API has strict <span class="glossary-term"
+      glossary-data-tree-id="836141147101913512215"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span>: 5 <span class="glossary-term"
-      glossary-data-tree-id="141037134156512211981"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span>: 5 <span class="glossary-term"
+      glossary-data-tree-id="941561025871131114123"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> per minute, with a soft reset allowing 1 request per minute after. The rate limit applies to a specific <span class="glossary-term"
-      glossary-data-tree-id="131105151443812962117"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> per minute, with a soft reset allowing 1 request per minute after. The rate limit applies to a specific <span class="glossary-term"
+      glossary-data-tree-id="710611192121513835144"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Access-Token</span> for a Discord server.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Access-Token</span> for a Discord server.</p>
 <p>Since user roles can change based on user interactions through their existing Discord Bot (e.g., joining the server, updating profile, joining a team), we needed to re-fetch roles each time the browser tab was re-focused or reloaded. Additionally, in a React development environment with StrictMode enabled, each component renders twice which doubled the number of API requests. This often led to rate-limiting issues.</p>
 <h2 id="the-solution-options">
     The Solution Options</h2><p>There were two main approaches to handle this issue:</p>
@@ -353,33 +345,29 @@
 <li>
 <p><strong>Maintain Internal User Data:</strong>
 This option would involve using <span class="glossary-term"
-      glossary-data-tree-id="101381472515124396111"
+      glossary-data-tree-id="121013481192153114657"
       glossary-data-tree-node-id="0"
       glossary-data-term="websocket"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">WebSockets</span> with the bot to track user role changes in real-time and storing this data in a <span class="glossary-term"
-      glossary-data-tree-id="314541098112712136115"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">WebSockets</span> with the bot to track user role changes in real-time and storing this data in a <span class="glossary-term"
+      glossary-data-tree-id="241175812310159614131"
       glossary-data-tree-node-id="0"
       glossary-data-term="database"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">database</span>. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span>. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.</p>
 </li>
 <li>
 <p><strong>Cache Fetched Data from the Discord API:</strong>
 This simpler solution involves <span class="glossary-term"
-      glossary-data-tree-id="671231411042513891115"
+      glossary-data-tree-id="911151073521411364128"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.</p>
 </li>
 </ol>
 <p>We opted for the caching approach using <span class="glossary-term"
-      glossary-data-tree-id="121011132834569714151"
+      glossary-data-tree-id="113611415142123587109"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, as it provides both efficiency and native data expiry.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, as it provides both efficiency and native data expiry.</p>
 <h2 id="the-solution-fetch-with-cache-fallback">
     The Solution: Fetch with Cache Fallback</h2><p>We implemented a fetch-with-cache fallback mechanism. Here’s how it works:</p>
 <h3 id="1-check-for-rate-limit-key">
@@ -616,7 +604,7 @@ This simpler solution involves <span class="glossary-term"
 
     
         
-        <script src="/js/glossary.min.a80a04299b5a8b9dfa42c91d5b6393189d0ce6217b6f2b1dfb0dc4dfd9e80e41.js"></script>
+        <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
     
 </body>
 

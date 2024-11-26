@@ -1,8 +1,9 @@
-const BASE_URL=window.location.origin,GLOSSARY_CACHE_KEY="glossaryCache",GLOSSARY_CACHE_LAST_FETCH_KEY="glossaryCacheLastFetch";async function fetchGlossaryData(){const s=1732436272627,o=new Date(s).getTime(),i=(new Date).getTime(),e=localStorage.getItem(GLOSSARY_CACHE_KEY),t=localStorage.getItem(GLOSSARY_CACHE_LAST_FETCH_KEY);if(environment==="production"&&e&&t&&parseInt(t)>o)return JSON.parse(e);const a=await fetch("/data/glossary.json"),n=await a.json();return localStorage.setItem(GLOSSARY_CACHE_KEY,JSON.stringify(n)),localStorage.setItem(GLOSSARY_CACHE_LAST_FETCH_KEY,i),n}function getDefinition(e,t){return t[e.toLowerCase()]}function processGlossaryDefinitionText(e,t,n,s){let o=-1;const i=new RegExp('\\{\\{\\s*?<\\s*?glossary term="?([^"\\s]+?)"?(?:\\s+?displayTerm="?((?:(?!"?\\s+?>\\s*?\\}\\}).)+)"?)?\\s*?>\\s*?\\}\\}',"g");n=n.replace(i,(n,i,a)=>{o=o+1;const c=getDefinition(i,s),r=(a||i).trim();return`
+const BASE_URL=window.location.origin,GLOSSARY_CACHE_KEY="glossaryCache",GLOSSARY_CACHE_LAST_FETCH_KEY="glossaryCacheLastFetch";async function fetchGlossaryData(){const s=1732631617439,o=new Date(s).getTime(),i=(new Date).getTime(),e=localStorage.getItem(GLOSSARY_CACHE_KEY),t=localStorage.getItem(GLOSSARY_CACHE_LAST_FETCH_KEY);if(environment==="production"&&e&&t&&parseInt(t)>o)return JSON.parse(e);const a=await fetch("/data/glossary.json"),n=await a.json();return localStorage.setItem(GLOSSARY_CACHE_KEY,JSON.stringify(n)),localStorage.setItem(GLOSSARY_CACHE_LAST_FETCH_KEY,i),n}function getDefinition(e,t){return t[e.toLowerCase()]}function processGlossaryDefinitionText(e,t,n,s){let o=-1;const i=new RegExp('\\{\\{\\s*?<\\s*?glossary term="?([^"\\s]+?)"?(?:\\s+?displayTerm="?((?:(?!"?\\s+?>\\s*?\\}\\}).)+)"?)?\\s*?>\\s*?\\}\\}',"g");n=n.replace(i,(n,i,a)=>{o=o+1;const c=getDefinition(i,s),r=(a||i).trim();return`
             <span
                 class="glossary-term" glossary-data-tree-id="${e}"
                 glossary-data-tree-node-id="${t},${o}"
-                glossary-data-term="${i}
+                glossary-data-term="${i}"
+                aria-haspopup="dialog" ${""}
                 onclick="fetchAndRenderGlossaryDefinition(this)
             ">
                 ${r}

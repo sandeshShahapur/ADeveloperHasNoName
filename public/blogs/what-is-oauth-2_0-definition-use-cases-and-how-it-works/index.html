@@ -10,7 +10,7 @@
 <meta name="description" content="A comprehensive guide to understanding OAuth (2.0), its definition, use cases, and how it works to grant secure access to user data.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/what-is-oauth-2_0-definition-use-cases-and-how-it-works/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9b13c61680ad6a123574892d68f0789a5c527133d2d9b0f154150c0dc03e5cc1.css" integrity="sha256-mxPGFoCtahI1dIktaPB4mlxScTPS2bDxVBUMDcA&#43;XME=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.31b1956430ca9461e540aa556b875710592f6073c93a0aadee6a5eeb28ac2d93.css" integrity="sha256-MbGVZDDKlGHlQKpVa4dXEFkvYHPJOgqt7mpe6yisLZM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -299,30 +299,26 @@ This is where OAuth comes into play. It provides a secure way for you to grant t
     2.0? Are there different versions of OAuth?</h2><p>In this article, we will focus on OAuth 2.0, which is the latest version of OAuth. Other versions are OAuth 1.0 and OAuth 1.0a, which are now considered outdated due to security vulnerabilities and limitations.</p>
 <h2 id="definition">
     Definition</h2><p>OAuth (Open Authorization) is an <span class="glossary-term"
-      glossary-data-tree-id="611114215124975133108"
+      glossary-data-tree-id="691315814710112123451"
       glossary-data-tree-node-id="0"
       glossary-data-term="open-standard"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">open-standard</span> for <strong>access delegation</strong> that allows a user to grant a third-party application access to their account/application&rsquo;s resources or perform actions on behalf of them without them having to sharing their credentials to the third-party application.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">open-standard</span> for <strong>access delegation</strong> that allows a user to grant a third-party application access to their account/application&rsquo;s resources or perform actions on behalf of them without them having to sharing their credentials to the third-party application.</p>
 <h2 id="use-cases-of-oauth-20">
     Use Cases of OAuth 2.0</h2><p>OAuth 2.0 is widely used in various scenarios to grant access to user data securely. Some common use cases of OAuth 2.0 include:</p>
 <ol>
 <li><strong>Social Login and Single Sign On</strong>: Social login is facilitated using <span class="glossary-term"
-      glossary-data-tree-id="812131454115101162973"
+      glossary-data-tree-id="127156911311510824314"
       glossary-data-tree-node-id="0"
       glossary-data-term="openid-connect"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">OpenID Connect</span>, an identity layer built on top of OAuth 2.0. This allows users to log in to applications using their social media accounts, such as Google, Facebook, or Twitter (e.g., &ldquo;Log in with Google&rdquo; or &ldquo;Log in with Facebook&rdquo; buttons). By handling <span class="glossary-term"
-      glossary-data-tree-id="276151091434115131128"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OpenID Connect</span>, an identity layer built on top of OAuth 2.0. This allows users to log in to applications using their social media accounts, such as Google, Facebook, or Twitter (e.g., &ldquo;Log in with Google&rdquo; or &ldquo;Log in with Facebook&rdquo; buttons). By handling <span class="glossary-term"
+      glossary-data-tree-id="511716842151413931012"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> through these social media accounts, users need not create a new account and remember another set of credentials, enabling <span class="glossary-term"
-      glossary-data-tree-id="212571113491315861014"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> through these social media accounts, users need not create a new account and remember another set of credentials, enabling <span class="glossary-term"
+      glossary-data-tree-id="111461385342915710112"
       glossary-data-tree-node-id="0"
       glossary-data-term="single-sign-on"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Single-Sign-On</span>.
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Single-Sign-On</span>.
 
 <br class="br" />
 It also lifts the burden of password management and security from the application owner.</li>
@@ -333,51 +329,45 @@ It also lifts the burden of password management and security from the applicatio
 <li><strong>Resource Owner</strong>: The user who owns the data and grants access to it. In the Google Drive example, you are the resource owner.</li>
 <li><strong>Client</strong>: The third-party application that wants to access the user&rsquo;s data. In the Google Drive example, the media editing application is the client.</li>
 <li><strong>Authorization Server</strong>: The <span class="glossary-term"
-      glossary-data-tree-id="210614138111312975415"
+      glossary-data-tree-id="155311187132412106149"
       glossary-data-tree-node-id="0"
       glossary-data-term="server"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">server</span> that <span class="glossary-term"
-      glossary-data-tree-id="152141465813397121011"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">server</span> that <span class="glossary-term"
+      glossary-data-tree-id="101218112596714341315"
       glossary-data-tree-node-id="0"
       glossary-data-term="authorization"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">authorizes</span> the client to access the user&rsquo;s data. In the Google Drive example, Google&rsquo;s authorization server.</li>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authorizes</span> the client to access the user&rsquo;s data. In the Google Drive example, Google&rsquo;s authorization server.</li>
 <li><strong>Resource Server</strong>: The server that hosts the user&rsquo;s data. In the Google Drive example, Google Drive itself.</li>
 </ol>
 <h2 id="how-oauth-20-works">
     How OAuth 2.0 Works</h2><p>If the users don&rsquo;t share their credentials, how does OAuth 2.0 work? Through <span class="glossary-term"
-      glossary-data-tree-id="131051561292841471311"
+      glossary-data-tree-id="147151951338101246112"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Access Tokens</span>.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Access Tokens</span>.</p>
 <p>Access Tokens are like keys that allow the client to access the user&rsquo;s data without knowing the user&rsquo;s credentials. As they are short-lived, the authorization server may issue another key called the <span class="glossary-term"
-      glossary-data-tree-id="512615131411103497128"
+      glossary-data-tree-id="103914514267151211813"
       glossary-data-tree-node-id="0"
       glossary-data-term="refresh-token"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Refresh-Token</span> to get a new Access Token when the current one expires without requiring the user to log in again.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Refresh-Token</span> to get a new Access Token when the current one expires without requiring the user to log in again.</p>
 <p>OAuth 2.0 works by following a series of steps to grant access to the user&rsquo;s data:</p>
 <ol>
 <li>
 <p><strong>Authorization Request</strong>: The client sends an authorization <span class="glossary-term"
-      glossary-data-tree-id="131591164153148721012"
+      glossary-data-tree-id="152812375101364911114"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">request</span> to the authorization server, asking for permission to access the user&rsquo;s data. The set of permissions requested is known as a &ldquo;scope&rdquo; (e.g., read access, write access, delete access).</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">request</span> to the authorization server, asking for permission to access the user&rsquo;s data. The set of permissions requested is known as a &ldquo;scope&rdquo; (e.g., read access, write access, delete access).</p>
 <ul>
 <li>Example: &ldquo;Can I access to reading and writing this user&rsquo;s Google Drive files?&rdquo;</li>
 </ul>
 </li>
 <li>
 <p><strong>User Authentication and Authorization</strong>: The authorization server prompts the user to authorize the client to access their data. The user if not already logged in, <span class="glossary-term"
-      glossary-data-tree-id="152581491014136371112"
+      glossary-data-tree-id="741411382515129611103"
       glossary-data-tree-node-id="0"
       glossary-data-term="authenticate"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">authenticate</span> themselves and grants the requested permissions. Upon granting permission, the client receives an authorization code.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authenticate</span> themselves and grants the requested permissions. Upon granting permission, the client receives an authorization code.</p>
 <ul>
 <li>Example: You log in to your Google account and authorize the media editing application to access your Google Drive files.</li>
 </ul>
@@ -420,11 +410,10 @@ It also lifts the burden of password management and security from the applicatio
 </figure></p>
 <h2 id="conclusion">
     Conclusion</h2><p>OAuth 2.0 is a secure <span class="glossary-term"
-      glossary-data-tree-id="151486213391147101512"
+      glossary-data-tree-id="481052151631213117149"
       glossary-data-tree-node-id="0"
       glossary-data-term="protocol"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">protocol</span> that allows users to grant access to their data without sharing their credentials. It is widely used in various applications and scenarios to provide a secure and flexible way to access user data. Understanding OAuth 2.0 is essential for developers who want to build secure and user-friendly applications that interact with third-party services.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">protocol</span> that allows users to grant access to their data without sharing their credentials. It is widely used in various applications and scenarios to provide a secure and flexible way to access user data. Understanding OAuth 2.0 is essential for developers who want to build secure and user-friendly applications that interact with third-party services.</p>
 
 
   </div>
@@ -638,7 +627,7 @@ It also lifts the burden of password management and security from the applicatio
 
     
         
-        <script src="/js/glossary.min.a80a04299b5a8b9dfa42c91d5b6393189d0ce6217b6f2b1dfb0dc4dfd9e80e41.js"></script>
+        <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
     
 </body>
 

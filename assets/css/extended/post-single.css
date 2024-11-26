@@ -1,4 +1,6 @@
-/* Standard default colors for links */
+/* Custom CSS for single post pages e.g. blog posts, project pages */
+
+/* Enforce Standard default colors for links (overrides PaperMod's black/white) */
     .post-content a {
         color: var(--link-unvisited)
     }
@@ -11,8 +13,7 @@
         color: var(--link-visited)
     }
 
-/* Make images zoomable */
-    .post-content img,
-    .glossary-modal img {
+/* Make images (diagrams) zoomable */
+    .post-content img{
         cursor: zoom-in;
     }

@@ -1,3 +1,9 @@
+'''
+    Given a JSON file with a dictionary of glossary terms and definitions,
+    this script generates a regex pattern that matches any of the keys or their parts.
+    Can be used to highlight glossary terms in a text to check missed glossary terms.
+'''
+
 import json
 import re
 

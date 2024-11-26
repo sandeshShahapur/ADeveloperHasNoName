@@ -15,7 +15,7 @@
       glossary-data-tree-id="{{ $unique_id }}"
       glossary-data-tree-node-id="0"
       glossary-data-term="{{ $term }}"
-      aria-haspopup="dialog"
+      aria-haspopup="dialog" {{- /* prevents chrome tap to search feature on mobile */ -}}
       onclick="fetchAndRenderGlossaryDefinition(this)">
     {{- $displayTerm -}}
 </span>

@@ -10,7 +10,7 @@
 <meta name="description" content="An in-depth look at what the HTTP protocol is, how it works, its methods, status codes, versions, and security features. Learn how HTTP enables communication between clients and servers over the internet.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/what-are-http-and-https-protocols/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9b13c61680ad6a123574892d68f0789a5c527133d2d9b0f154150c0dc03e5cc1.css" integrity="sha256-mxPGFoCtahI1dIktaPB4mlxScTPS2bDxVBUMDcA&#43;XME=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.31b1956430ca9461e540aa556b875710592f6073c93a0aadee6a5eeb28ac2d93.css" integrity="sha256-MbGVZDDKlGHlQKpVa4dXEFkvYHPJOgqt7mpe6yisLZM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -291,116 +291,96 @@
 </div>
 
   <div class="post-content"><p>You are familiar with using browsers to access <span class="glossary-term"
-      glossary-data-tree-id="321178413101514129156"
+      glossary-data-tree-id="109681512315144213711"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">websites</span> and have seen <span class="glossary-term"
-      glossary-data-tree-id="315141371091112842615"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">websites</span> and have seen <span class="glossary-term"
+      glossary-data-tree-id="133114121154278691510"
       glossary-data-tree-node-id="0"
       glossary-data-term="url"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">URLs</span> of website <span class="glossary-term"
-      glossary-data-tree-id="213863745912151101114"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">URLs</span> of website <span class="glossary-term"
+      glossary-data-tree-id="694271412811331151015"
       glossary-data-tree-node-id="0"
       glossary-data-term="domain"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">domains</span> starting with <code>http://</code> or <code>https://</code>, where when you type a URL like <code>http://example.com</code> in your browser&rsquo;s address bar and press Enter, you are then presented with the website. How does this happen?</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">domains</span> starting with <code>http://</code> or <code>https://</code>, where when you type a URL like <code>http://example.com</code> in your browser&rsquo;s address bar and press Enter, you are then presented with the website. How does this happen?</p>
 <p>First, where does the browser get this <span class="glossary-term"
-      glossary-data-tree-id="111314153614128102795"
+      glossary-data-tree-id="521536127419131481110"
       glossary-data-tree-node-id="0"
       glossary-data-term="webpage"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">webpage</span> document from? From a <span class="glossary-term"
-      glossary-data-tree-id="426121198371351510141"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">webpage</span> document from? From a <span class="glossary-term"
+      glossary-data-tree-id="133118109151561221474"
       glossary-data-tree-node-id="0"
       glossary-data-term="web-server"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Web-Server</span>.
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Web-Server</span>.
 
 <br class="br" />
 Which Web-Server? The one whose <span class="glossary-term"
-      glossary-data-tree-id="716211312913485141510"
+      glossary-data-tree-id="710284133651591111412"
       glossary-data-tree-node-id="0"
       glossary-data-term="ip-address"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">IP-Address</span> is associated with the domain name <code>example.com</code> which is resolved by the <span class="glossary-term"
-      glossary-data-tree-id="132914105843611171215"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">IP-Address</span> is associated with the domain name <code>example.com</code> which is resolved by the <span class="glossary-term"
+      glossary-data-tree-id="711510361312895114142"
       glossary-data-tree-node-id="0"
       glossary-data-term="dns"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">DNS</span>, say for example <code>1.1.1.1</code>.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">DNS</span>, say for example <code>1.1.1.1</code>.</p>
 <p>Now, the browser just can&rsquo;t ask &lsquo;Hey <code>1.1.1.1</code>, I want something&rsquo;, it needs to be able to ask in a way that the Web-Server understands. This is where the HTTP Protocol comes into picture.</p>
 <h2 id="what-is-http">
     What is HTTP?</h2><p>HTTP stands for <strong><span class="glossary-term"
-      glossary-data-tree-id="231291576111054138141"
+      glossary-data-tree-id="139175143421161512810"
       glossary-data-tree-node-id="0"
       glossary-data-term="hypertext"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">HyperText</span> <span class="glossary-term"
-       glossary-data-tree-id="133811114615212795104"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">HyperText</span> <span class="glossary-term"
+       glossary-data-tree-id="849131113101512214657"
        glossary-data-tree-node-id="0"
        glossary-data-term="transfer"
-       aria-haspopup="dialog"
-       onclick="fetchAndRenderGlossaryDefinition(this)">Transfer</span> <span class="glossary-term"
-       glossary-data-tree-id="927310138151451161214"
+       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Transfer</span> <span class="glossary-term"
+       glossary-data-tree-id="125241481361510791311"
        glossary-data-tree-node-id="0"
        glossary-data-term="protocol"
-       aria-haspopup="dialog"
-       onclick="fetchAndRenderGlossaryDefinition(this)">Protocol</span></strong>. It is a communication protocol that uses <span class="glossary-term"
-      glossary-data-tree-id="114312141107915652813"
+       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Protocol</span></strong>. It is a communication protocol that uses <span class="glossary-term"
+      glossary-data-tree-id="386451172121011314915"
       glossary-data-tree-node-id="0"
       glossary-data-term="client-server"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">client-server</span> model with <span class="glossary-term"
-      glossary-data-tree-id="411139862531107141512"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client-server</span> model with <span class="glossary-term"
+      glossary-data-tree-id="111125210871341463159"
       glossary-data-tree-node-id="0"
       glossary-data-term="request-response"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">request-response</span> protocol that is <strong>designed to transfer data between networked devices</strong>.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">request-response</span> protocol that is <strong>designed to transfer data between networked devices</strong>.</p>
 <p>It is the foundation of data communication on the <span class="glossary-term"
-      glossary-data-tree-id="136152971145411810123"
+      glossary-data-tree-id="351413111210158716924"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">World Wide Web</span> which allows browsers to retrieve <span class="glossary-term"
-      glossary-data-tree-id="271151412313681091415"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">World Wide Web</span> which allows browsers to retrieve <span class="glossary-term"
+      glossary-data-tree-id="612181331071415112594"
       glossary-data-tree-node-id="0"
       glossary-data-term="webpage"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">webpages</span> and other <span class="glossary-term"
-      glossary-data-tree-id="121511410872113145396"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">webpages</span> and other <span class="glossary-term"
+      glossary-data-tree-id="413129378510141261511"
       glossary-data-tree-node-id="0"
       glossary-data-term="webpage-component"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">components</span> from web-servers.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">components</span> from web-servers.</p>
 <p>It is one of the <span class="glossary-term"
-      glossary-data-tree-id="152113812910116314475"
+      glossary-data-tree-id="812257115910641131314"
       glossary-data-tree-node-id="0"
       glossary-data-term="tcp/ip-application"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">Application Layer Protocols</span> in <span class="glossary-term"
-      glossary-data-tree-id="511921248106715114313"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Application Layer Protocols</span> in <span class="glossary-term"
+      glossary-data-tree-id="864251119123157101314"
       glossary-data-tree-node-id="0"
       glossary-data-term="tcp/ip"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">TCP/IP</span>, which means it is responsible for the communication between software applications on the network.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">TCP/IP</span>, which means it is responsible for the communication between software applications on the network.</p>
 <p>So basically, HTTP is the language that the <span class="glossary-term"
-      glossary-data-tree-id="112211614154851397310"
+      glossary-data-tree-id="915141358161147101223"
       glossary-data-tree-node-id="0"
       glossary-data-term="client"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">client</span> and <span class="glossary-term"
-      glossary-data-tree-id="142613117181291031545"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client</span> and <span class="glossary-term"
+      glossary-data-tree-id="211715126983135114104"
       glossary-data-tree-node-id="0"
       glossary-data-term="server"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">server</span> use to exchange web components over the <span class="glossary-term"
-      glossary-data-tree-id="103412795115148211136"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">server</span> use to exchange web components over the <span class="glossary-term"
+      glossary-data-tree-id="469118571312310151421"
       glossary-data-tree-node-id="0"
       glossary-data-term="internet"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">internet</span>.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">internet</span>.</p>
 <h2 id="how-does-http-work">
     How Does HTTP Work?</h2><p>HTTP works in a client-server model.</p>
 <p>First, the client sends a request to the server. Let&rsquo;s look at how this request looks:</p>
@@ -413,21 +393,18 @@ Which Web-Server? The one whose <span class="glossary-term"
 </ul>
 </li>
 <li><strong>Headers</strong>: Contains additional information about the request like the type of content the client can accept (text/<span class="glossary-term"
-      glossary-data-tree-id="546192111412831513107"
+      glossary-data-tree-id="851326101471214931115"
       glossary-data-tree-node-id="0"
       glossary-data-term="html"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">HTML</span>, application/<span class="glossary-term"
-      glossary-data-tree-id="214479351211368151110"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">HTML</span>, application/<span class="glossary-term"
+      glossary-data-tree-id="198122715106435131411"
       glossary-data-tree-node-id="0"
       glossary-data-term="json"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">JSON</span>, etc.), the type of content the client is sending (application/x-www-form-urlencoded, multipart/form-data, etc.), the type of <span class="glossary-term"
-      glossary-data-tree-id="106947131211814152153"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JSON</span>, etc.), the type of content the client is sending (application/x-www-form-urlencoded, multipart/form-data, etc.), the type of <span class="glossary-term"
+      glossary-data-tree-id="811346147391151021512"
       glossary-data-tree-node-id="0"
       glossary-data-term="encode"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">encoding</span> used (gzip, deflate, etc.), and more.</li>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">encoding</span> used (gzip, deflate, etc.), and more.</li>
 <li><strong>Body</strong>: Contains the data being sent to the server. This is optional and is used in POST, PUT and PATCH requests.</li>
 </ol>
 <p>Next, the server processes the request and responds with the requested content. Let&rsquo;s look at how this response looks:</p>
@@ -437,11 +414,10 @@ Which Web-Server? The one whose <span class="glossary-term"
 <li><strong>Body</strong>: Contains the data being sent back to the client. This can be HTML content, JSON data, images, etc.</li>
 </ol>
 <p>One of the key features of HTTP is that it is a <strong>stateless protocol</strong>, which means each request is independent of the previous one. The server does not maintain any information about the client&rsquo;s previous requests. To maintain state between requests, technologies like <span class="glossary-term"
-      glossary-data-tree-id="312476951138111421510"
+      glossary-data-tree-id="196121114104327815513"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span> and sessions are used.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span> and sessions are used.</p>
 <p>
 <br class="br" />
 
@@ -455,16 +431,14 @@ Which Web-Server? The one whose <span class="glossary-term"
     HTTP Methods</h2><p>Every HTTP request contains a method that specifies the action to be performed on the resource. Some common HTTP methods are:</p>
 <ol>
 <li><strong>GET</strong>: Used to retrieve data from the server. Most webservers do not allow a request body, so the data is sent in the URL using <span class="glossary-term"
-      glossary-data-tree-id="139642157143110511812"
+      glossary-data-tree-id="527131114159310128461"
       glossary-data-tree-node-id="0"
       glossary-data-term="path-parameter"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">path</span> and <span class="glossary-term"
-      glossary-data-tree-id="315114101368725141219"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">path</span> and <span class="glossary-term"
+      glossary-data-tree-id="154111071426133915812"
       glossary-data-tree-node-id="0"
       glossary-data-term="query-parameter"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">query</span> parameters.</li>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">query</span> parameters.</li>
 <li><strong>POST</strong>: Used for creating a new resource and to submit data to the server. The data is sent in the body of the request. A new resource is always created.</li>
 <li><strong>PUT</strong>: Used for creating or replacing a resource on the server. The data is sent in the body of the request. If the resource already exists, it is replaced.</li>
 <li><strong>DELETE</strong>: Used to delete data on the server. Like Get, most webservers do not allow a request body so the data is sent in the URL.</li>
@@ -504,11 +478,10 @@ Which Web-Server? The one whose <span class="glossary-term"
 <p>These codes help developers and clients identify and handle the result of the request, enabling effective debugging.</p>
 <h2 id="idempotent-methods">
     Idempotent Methods</h2><p>Some HTTP methods are considered <span class="glossary-term"
-      glossary-data-tree-id="356104138151112927141"
+      glossary-data-tree-id="182357910151213116414"
       glossary-data-tree-node-id="0"
       glossary-data-term="idempotent"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">idempotent</span>, which means that making the same request multiple times has the same effect as making it once. This property is useful in scenarios where requests can be retried without causing unintended side effects. Some idempotent methods are:</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">idempotent</span>, which means that making the same request multiple times has the same effect as making it once. This property is useful in scenarios where requests can be retried without causing unintended side effects. Some idempotent methods are:</p>
 <ol>
 <li><strong>GET</strong>: Retrieving data multiple times has the same effect.</li>
 <li><strong>PUT</strong>: Replacing data multiple times has the same effect.</li>
@@ -529,18 +502,16 @@ Which Web-Server? The one whose <span class="glossary-term"
 <p>Each version of HTTP builds on the previous one, adding new features and improvements to make the protocol more efficient and secure.</p>
 <h2 id="https">
     HTTPS</h2><p>HTTP is a text-based protocol, which means that data sent over HTTP requests and responses is not <span class="glossary-term"
-      glossary-data-tree-id="154141015132981236711"
+      glossary-data-tree-id="741311932612105814151"
       glossary-data-tree-node-id="0"
       glossary-data-term="encryption"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">encrypted</span>. This allows anyone who intercepts the data to be able to read it easily as plain text.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">encrypted</span>. This allows anyone who intercepts the data to be able to read it easily as plain text.</p>
 <p>Consider the scenarios where you are logging into your bank account over an unencrypted HTTP connection. If someone intercepts the data, they can read your username and password, compromising your account. Or when you are entering your credit card details on an e-commerce website, if the HTTP connection is not encrypted, your credit card information can be stolen.</p>
 <p>To address this security concern, HTTPS was introduced. HTTPS stands for <strong>HyperText Transfer Protocol Secure</strong>. It is the secure version of HTTP that encrypts the data sent between the client and server, making it difficult for attackers to intercept and read the data. HTTPS uses the <span class="glossary-term"
-      glossary-data-tree-id="267481121114359151310"
+      glossary-data-tree-id="613312145102719811154"
       glossary-data-tree-node-id="0"
       glossary-data-term="tls/ssl"
-      aria-haspopup="dialog"
-      onclick="fetchAndRenderGlossaryDefinition(this)">TLS/SSL</span> protocol to encrypt the data, ensuring that sensitive information like passwords, credit card details, and personal information is protected.</p>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">TLS/SSL</span> protocol to encrypt the data, ensuring that sensitive information like passwords, credit card details, and personal information is protected.</p>
 <p>When you visit a website that uses HTTPS, you will see a padlock icon in the address bar of your browser, indicating that the connection is secure. It is important to use HTTPS on websites that handle sensitive information to protect user data from interception and theft.</p>
 <h2 id="conclusion">
     Conclusion</h2><p>HTTP/S is the backbone of the internet, enabling communication between clients and servers. Understanding how HTTP works, its methods, status codes, versions, and security features is essential for web developers to build secure and efficient web applications. By following the principles of HTTP, developers can create fast, reliable, and secure web experiences for users around the world.</p>
@@ -759,7 +730,7 @@ Which Web-Server? The one whose <span class="glossary-term"
 
     
         
-        <script src="/js/glossary.min.a80a04299b5a8b9dfa42c91d5b6393189d0ce6217b6f2b1dfb0dc4dfd9e80e41.js"></script>
+        <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
     
 </body>
 

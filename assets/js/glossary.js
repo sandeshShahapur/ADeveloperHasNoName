@@ -8,7 +8,7 @@ const GLOSSARY_CACHE_LAST_FETCH_KEY = "glossaryCacheLastFetch";
 
 async function fetchGlossaryData() {
     // The last edited epoch of the glossary data. This is used to check if the glossary data has been updated since the client last fetched it. It is automatically updated when the yaml glossary data is updated by script.
-    const lastEditedEpoch = 1732436272627;
+    const lastEditedEpoch = 1732631617439;
     const lastEdited = new Date(lastEditedEpoch).getTime();
 
     const now = new Date().getTime();
@@ -61,7 +61,7 @@ function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossa
                 class="glossary-term" glossary-data-tree-id="${tree_id}"
                 glossary-data-tree-node-id="${tree_node_id},${child_num}"
                 glossary-data-term="${term}"
-                aria-haspopup="dialog"
+                aria-haspopup="dialog" ${ /* prevents chrome tap to search feature on mobile */ '' }
                 onclick="fetchAndRenderGlossaryDefinition(this)
             ">
                 ${displayText}

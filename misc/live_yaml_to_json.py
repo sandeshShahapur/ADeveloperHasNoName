@@ -1,18 +1,27 @@
+'''
+    Converts the glossary.yaml (data/glossary.yaml) file to glossary.json (static/data/glossary.json)
+    anytime the YAML file is modified.
+    and updates the lastEditedEpoch in glossary.js (assets/js/glossary.js) when the YAML file is modified.
+'''
+
+
 import ruamel.yaml
 import json
 import time
 import hashlib
 import re
 
+# YAML parser that supports latest YAML specification
 yaml = ruamel.yaml.YAML(typ='safe')
 
 yaml_path = 'data/glossary.yaml'
 json_path = 'static/data/glossary.json'
 
 js_path = 'assets/js/glossary.js'
-pattern = r"^\s*?const\s*?lastEditedEpoch\s*?=\s*?\d+\s*?;\s*?$"
+pattern = r"^\s*?const\s*?lastEditedEpoch\s*?=\s*?\d+\s*?;\s*?$"  # Pattern to match lastEditedEpoch in glossary.js
 
 
+# makes detecting changes in the YAML efficient by hashing the content
 def get_yaml_hash(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as yaml_file:
@@ -32,6 +41,7 @@ while True:
         current_timestamp = int(time.time() * 1000)
 
         try:
+            # Write the new YAML content to a JSON file
             with open(json_path, 'w', encoding='utf-8') as json_file:
                 json.dump(new_yaml_data, json_file, ensure_ascii=False, indent=2)
             print(f"YAML file '{yaml_path}' has been converted to JSON and saved to '{json_path}'")
