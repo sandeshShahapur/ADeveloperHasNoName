@@ -43,7 +43,8 @@ params:
   # logo
   label:
         #text: "Home"
-        icon: "/assets/favicon-96x96.png"
+        icon_light: "/favicon-light.svg"
+        icon_dark: "/favicon-dark.svg"
         iconHeight: 24
 
   # favicon (used by OUR head.html partial)

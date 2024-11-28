@@ -1,7 +1,8 @@
 {{/*
    * This extends PaperMod's header.html for two purposes:
-        1. Add a linear progress bar to blog posts.
-        2. Menu is also active if the current page is a child of the menu item.
+        1. Add logo theme variant (light/dark) support.
+        2. Add a linear progress bar to blog posts.
+        3. Menu is also active if the current page is a child of the menu item.
 */}}
 
 {{- /* theme-toggle is enabled */}}
@@ -90,26 +91,37 @@
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
             <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
-                {{- if site.Params.label.icon }}
-                {{- $img := resources.Get site.Params.label.icon }}
-                {{- if $img }}
+
+                {{/*  use img_light and img_dark variants instead of img for theme.js to support theme logo  */}}
+                {{- if site.Params.label.icon_light }}
+                {{- $img_light := resources.Get site.Params.label.icon_light }}
+                {{- $img_dark := resources.Get site.Params.label.icon_dark }}
+
+                {{- if and $img_light $img_dark }}
                     {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
                     {{- if hugo.IsExtended -}}
                         {{- $processableFormats = $processableFormats | append "webp" -}}
                     {{- end -}}
                     {{- $prod := (hugo.IsProduction | or (eq site.Params.env "production")) }}
-                    {{- if and (in $processableFormats $img.MediaType.SubType) (eq $prod true)}}
+                    {{- if and (in $processableFormats $img_light.MediaType.SubType) (in $processableFormats $img_dark.MediaType.SubType) (eq $prod true)}}
                         {{- if site.Params.label.iconHeight }}
-                            {{- $img = $img.Resize (printf "x%d" site.Params.label.iconHeight) }}
+                            {{- $img_light = $img_light.Resize (printf "x%d" site.Params.label.iconHeight) }}
+                            {{- $img_dark = $img_dark.Resize (printf "x%d" site.Params.label.iconHeight) }}
                         {{ else }}
-                            {{- $img = $img.Resize "x30" }}
+                            {{- $img_light = $img_light.Resize "x30" }}
+                            {{- $img_dark = $img_dark.Resize "x30" }}
                         {{- end }}
                     {{- end }}
-                    <img src="{{ $img.Permalink }}" alt="" aria-label="logo"
+                    <img src="{{ $img_light.Permalink }}"
+                        data-src-light="{{ $img_light.Permalink }}"
+                        data-src-dark="{{ $img_dark.Permalink }}"
+                        alt="" aria-label="logo"
                         height="{{- site.Params.label.iconHeight | default "30" -}}">
                 {{- else }}
-                <img src="{{- site.Params.label.icon | absURL -}}" alt="" aria-label="logo"
-                    height="{{- site.Params.label.iconHeight | default "30" -}}">
+                <img src="{{- site.Params.label.icon_light | absURL -}}"
+                    data-src-light="{{- site.Params.label.icon_light | absURL -}}"
+                    data-src-dark="{{- site.Params.label.icon_dark | absURL -}}"
+                    alt="" aria-label="logo" height="{{- site.Params.label.iconHeight | default "30" -}}">
                 {{- end -}}
                 {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                     {{ site.Params.label.iconSVG | safeHTML }}
