@@ -1,0 +1,1 @@
+function handleImageAsPerTheme(){const n=document.body.className.includes("dark"),e=n?"data-src-dark":"data-src-light",t=document.querySelectorAll(`img[${e}]`);console.log(t),t.forEach(t=>{t.src=t.getAttribute(e)})}document.getElementById("theme-toggle").addEventListener("click",handleImageAsPerTheme),handleImageAsPerTheme()

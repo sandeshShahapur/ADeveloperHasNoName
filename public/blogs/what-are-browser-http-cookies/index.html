@@ -291,34 +291,34 @@
 </div>
 
   <div class="post-content"><p>When you visit a <span class="glossary-term"
-      glossary-data-tree-id="101312117159414812635"
+      glossary-data-tree-id="133145161592101181274"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, you might have noticed a message that says, &ldquo;This website uses cookies to ensure you get the best experience on our website&rdquo; or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.</p>
 <h2 id="why-cookies">
     Why Cookies?</h2><p>Browsers use the <span class="glossary-term"
-      glossary-data-tree-id="913101415671243112581"
+      glossary-data-tree-id="154315101211813291467"
       glossary-data-tree-node-id="0"
       glossary-data-term="http"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">HTTP</span> <span class="glossary-term"
-       glossary-data-tree-id="101551271141142891363"
+       glossary-data-tree-id="110154313111486271295"
        glossary-data-tree-node-id="0"
        glossary-data-term="protocol"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">protocol</span> to communicate with a <span class="glossary-term"
-      glossary-data-tree-id="179141135106132151284"
+      glossary-data-tree-id="492631114131075121581"
       glossary-data-tree-node-id="0"
       glossary-data-term="web-server"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web-server</span> for requesting <span class="glossary-term"
-      glossary-data-tree-id="212975111015113814643"
+      glossary-data-tree-id="428613793121411110155"
       glossary-data-tree-node-id="0"
       glossary-data-term="webpage"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">webpages</span>, images, videos, and other resources. HTTP is a stateless protocol, meaning that each <span class="glossary-term"
-      glossary-data-tree-id="214912811141013753615"
+      glossary-data-tree-id="416121021131415951378"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">request</span> is independent of the previous one, and the server does not maintain any information about your previous interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.</p>
 <p>There are few options for storing data on the <span class="glossary-term"
-      glossary-data-tree-id="114147231251368151019"
+      glossary-data-tree-id="914111378101122534615"
       glossary-data-tree-node-id="0"
       glossary-data-term="client"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client</span> (browser) like:</p>
@@ -333,12 +333,12 @@
     Why/When to use Cookies over Local/Session Storage?</h2><p>Cookies provide the following advantages over Local/Session Storage:</p>
 <ol>
 <li><strong>Cookies are sent with every request</strong>: Every time you make a request to a website including <span class="glossary-term"
-      glossary-data-tree-id="315110119213141257864"
+      glossary-data-tree-id="231271510138951464111"
       glossary-data-tree-node-id="0"
       glossary-data-term="ajax-request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">ajax-requests</span>, cookies are sent along automatically, providing server side accessibility. This is not the case with Local/Session Storage.</li>
 <li><strong>Expiration and Path</strong>: Cookies can have an expiration date and a <span class="glossary-term"
-      glossary-data-tree-id="713611105815431142912"
+      glossary-data-tree-id="311102841761215145139"
       glossary-data-tree-node-id="0"
       glossary-data-term="url-path"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">path</span>, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage).</li>
@@ -346,21 +346,21 @@
 </ol>
 <h2 id="how-do-cookies-work">
     How Do Cookies Work?</h2><p>When you visit a website, the server sends a <span class="glossary-term"
-      glossary-data-tree-id="212479151311061183514"
+      glossary-data-tree-id="871145614131521231910"
       glossary-data-tree-node-id="0"
       glossary-data-term="response"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">response</span> to your browser with the web page document and a set of instructions to create cookies. Your browser creates and stores these cookies and sends them back to the server with every subsequent request (given the cookie&rsquo;s path matches the request path) you make to the website.</p>
 <blockquote>
 <p>Note: In the case when a website uses different <span class="glossary-term"
-      glossary-data-tree-id="112131104312149651587"
+      glossary-data-tree-id="104812161314111597523"
       glossary-data-tree-node-id="0"
       glossary-data-term="domain"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">domains</span> for its <span class="glossary-term"
-      glossary-data-tree-id="141311812410376515291"
+      glossary-data-tree-id="129141575101142613183"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> and <span class="glossary-term"
-      glossary-data-tree-id="131115261445107812139"
+      glossary-data-tree-id="974510111413138122615"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span>, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.</p>
@@ -373,8 +373,11 @@
 <p>
 <br class="br" />
 
+
 <figure><img src="/blogs/what-are-browser-http-cookies/cookieFlow.svg" onclick="this.requestFullscreen()"
-    alt="Cookie flow diagram" loading="lazy"><figcaption>
+      data-src-light="/blogs/what-are-browser-http-cookies/cookieFlow.svg"
+      data-src-dark="/blogs/what-are-browser-http-cookies/cookieFlow-dark.svg"style="object-fit: contain;"
+    alt="Cookie flow diagram" width="720px" height="440.24px" loading="lazy"><figcaption>
       <p>Cookie flow diagram</p>
     </figcaption>
 </figure></p>
@@ -399,7 +402,7 @@
 </li>
 <li>
 <p><strong>Domain</strong>: The domain or <span class="glossary-term"
-      glossary-data-tree-id="151112613101412758439"
+      glossary-data-tree-id="135983611114107151224"
       glossary-data-tree-node-id="0"
       glossary-data-term="subdomain"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">sub-domains</span> associated with the cookie. The cookie is sent only to these sub/domain on subsequent requests.</p>
@@ -412,37 +415,37 @@
 </li>
 <li>
 <p><strong>Secure</strong>: A flag that indicates that the cookie should only be sent over secure connections (<span class="glossary-term"
-      glossary-data-tree-id="510121591142613311784"
+      glossary-data-tree-id="109341125181413612157"
       glossary-data-tree-node-id="0"
       glossary-data-term="https"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">HTTPS</span>). This ensures that the cookie values sent over the network are <span class="glossary-term"
-      glossary-data-tree-id="310921715513111286414"
+      glossary-data-tree-id="129162851510114731413"
       glossary-data-tree-node-id="0"
       glossary-data-term="encryption"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">encrypted</span> and not readable by unauthorized parties.</p>
 </li>
 <li>
 <p><strong>HttpOnly</strong>: A flag that indicates the cookie should not be accessible by <span class="glossary-term"
-      glossary-data-tree-id="911861353154121210714"
+      glossary-data-tree-id="141211410231915871356"
       glossary-data-tree-node-id="0"
       glossary-data-term="javascript"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JavaScript</span> (<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie"><code>document.cookie</code></a>) on the <span class="glossary-term"
-      glossary-data-tree-id="112963135214748151110"
+      glossary-data-tree-id="147105152111138612934"
       glossary-data-tree-node-id="0"
       glossary-data-term="client-side"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client-side</span>. This helps to prevent <span class="glossary-term"
-      glossary-data-tree-id="579611141381242131510"
+      glossary-data-tree-id="791368311101215452141"
       glossary-data-tree-node-id="0"
       glossary-data-term="xss"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">XSS</span> attacks from accessing sensitive cookies.</p>
 </li>
 <li>
 <p><strong>SameSite</strong>: A flag that controls whether or not a cookie is sent with cross-site requests <span class="glossary-term"
-      glossary-data-tree-id="155121113641314109728"
+      glossary-data-tree-id="371548129213610151114"
       glossary-data-tree-node-id="0"
       glossary-data-term="cross-origin"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cross-site requests</span>. It helps prevent <span class="glossary-term"
-      glossary-data-tree-id="111012137155263141894"
+      glossary-data-tree-id="782612510131114431159"
       glossary-data-tree-node-id="0"
       glossary-data-term="csrf"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">CSRF</span> attacks from making users unknowingly perform unwanted actions on other websites.</p>
@@ -453,7 +456,7 @@
 <p>By managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.</p>
 <h2 id="conclusion">
     Conclusion</h2><p>Cookies are an essential part of the <span class="glossary-term"
-      glossary-data-tree-id="912110146415138511237"
+      glossary-data-tree-id="182156144111231097513"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.</p>
@@ -671,6 +674,9 @@
     
         
         <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
+
+        
+        <script src="/js/theme.min.9841b1d86263f5fcc210edde35637853d3ec0b57c326c9355428f0e776ad2de8.js"></script>
     
 </body>
 

@@ -285,19 +285,19 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="319131061448155712112"
+      glossary-data-tree-id="126391341551214871011"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="291135761384101211514"
+       glossary-data-tree-id="310155421161471129138"
        glossary-data-tree-node-id="0"
        glossary-data-term="ui"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="436151191014128211357"
+      glossary-data-tree-id="104121118537691413152"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="154310691311421278511"
+      glossary-data-tree-id="106112144158712195133"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
@@ -313,24 +313,24 @@
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="581112107141241513693"
+      glossary-data-tree-id="816121571192135141034"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="246125313119101714815"
+      glossary-data-tree-id="371011159138122416145"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="713121181052156144139"
+      glossary-data-tree-id="110111381214951547623"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="131563511248149127101"
+      glossary-data-tree-id="135813101112671521494"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="128251314110937111546"
+      glossary-data-tree-id="151110231279584131146"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
@@ -338,16 +338,16 @@
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="610171213141582115943"
+      glossary-data-tree-id="751311191063124142815"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="641331215211151089147"
+      glossary-data-tree-id="271184121569133141015"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="711128310141315149265"
+      glossary-data-tree-id="619351427415101213118"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
@@ -355,12 +355,12 @@
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="147131215161098531142"
+      glossary-data-tree-id="121187391065141513142"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="111213142171563410598"
+      glossary-data-tree-id="611313971412151015428"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
@@ -584,6 +584,9 @@
     
         
         <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
+
+        
+        <script src="/js/theme.min.9841b1d86263f5fcc210edde35637853d3ec0b57c326c9355428f0e776ad2de8.js"></script>
     
 </body>
 

@@ -32,7 +32,7 @@ Produces [permutations](https://en.wikipedia.org/wiki/Permutation) of schedules 
 
 ## Sample
 
-{{< figure src="sampleTournamentSchedulerOutput.webp" alt="Screenshot of website with sample input/output" loading="lazy" >}}
+{{< figure src="sampleTournamentSchedulerOutput.webp" width="720px" height="393.8px" alt="Screenshot of website with sample input/output" loading="lazy" >}}
 
 ## Motivation
 

@@ -73,7 +73,7 @@ OAuth 2.0 works by following a series of steps to grant access to the user's dat
    - Example: Google Drive verifies the Access Token and allows the media editing application to access your files.
 
 {{< br >}}
-{{< figure src="OAuthFlow.svg" alt="OAuth flow diagram" caption="OAuth flow diagram" loading="lazy" width="800" height="700" >}}
+{{< figure src="OAuthFlow.svg" data-src-light="OAuthFlow.svg" data-src-dark="OAuthFlow-dark.svg" width="720px" height="700px" alt="OAuth flow diagram" caption="OAuth flow diagram" loading="lazy" width="800" height="700" >}}
 
 ## Conclusion
 

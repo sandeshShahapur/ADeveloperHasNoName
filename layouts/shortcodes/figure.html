@@ -1,10 +1,33 @@
-{{/*  This shortcode extends figure shortcode from the Hugo. It adds the ability to click on the image to view it in fullscreen. */}}
+{{/*
+   * This shortcode extends figure shortcode from the Hugo.
+   * It adds the ability to click on the image to view it in fullscreen.
+   * It adds support for theme images (light/dark).
+      * If image does not have a theme variant, only provide src attribute.
+      * If image has a theme variant, provide data-src-light and data-src-dark attributes and set the src attribute to the default variant.
+*/}}
+
 <figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
   {{- if .Get "link" -}}
     <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
   {{- end -}}
 
-  {{- $u := urls.Parse (.Get "src") -}}
+  {{- $light_u := urls.Parse (.Get "data-src-light") -}}
+  {{- $light_src := $light_u.String -}}
+  {{- if not $light_u.IsAbs -}}
+    {{- with or (.Page.Resources.Get $light_u.Path) (resources.Get $light_u.Path) -}}
+      {{- $light_src = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $dark_u := urls.Parse (.Get "data-src-dark") -}}
+  {{- $dark_src := $dark_u.String -}}
+  {{- if not $dark_u.IsAbs -}}
+    {{- with or (.Page.Resources.Get $dark_u.Path) (resources.Get $dark_u.Path) -}}
+      {{- $dark_src = .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $u := urls.Parse (.Get "src" | default "") -}}
   {{- $src := $u.String -}}
   {{- if not $u.IsAbs -}}
     {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
@@ -13,6 +36,11 @@
   {{- end -}}
 
   <img src="{{ $src }}" onclick="this.requestFullscreen()"
+    {{- if and ($light_src) ($dark_src) -}} {{/*  include data-src-light and data-src-dark if they were both provided  */}}
+      data-src-light="{{ $light_src }}"
+      data-src-dark="{{ $dark_src }}"
+    {{- end -}}
+    style="object-fit: contain;"
     {{- if or (.Get "alt") (.Get "caption") }}
     alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
     {{- end -}}

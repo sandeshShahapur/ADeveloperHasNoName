@@ -45,7 +45,7 @@ As Cookies are associated with a specific domain and path on the website, cookie
 > Note: If the frontend and backend are on different domains, and the backend sets a cookie, the frontend cannot access it through [`document.cookie`](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) as it is on a different domain.
 
 {{< br >}}
-{{< figure src="cookieFlow.svg" alt="Cookie flow diagram" caption="Cookie flow diagram" loading="lazy" >}}
+{{< figure src="cookieFlow.svg" data-src-light="cookieFlow.svg" data-src-dark="cookieFlow-dark.svg" width="720px" height="440.24px" alt="Cookie flow diagram" caption="Cookie flow diagram" loading="lazy" >}}
 
 ## Why Are Cookies Used?
 

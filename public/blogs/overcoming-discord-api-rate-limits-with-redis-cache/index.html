@@ -296,22 +296,22 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with developing a web <span class="glossary-term"
-      glossary-data-tree-id="131715356128119410142"
+      glossary-data-tree-id="156791421051121131348"
       glossary-data-tree-node-id="0"
       glossary-data-term="ui"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="131115214110849356712"
+      glossary-data-tree-id="131021151129346714815"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord Bot. They wanted to extend their services to a <span class="glossary-term"
-      glossary-data-tree-id="131013111479152812465"
+      glossary-data-tree-id="151159321371464811012"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, and I was responsible for making it happen.</p>
 <p>After a new user joins their Discord server, before they can interact further (e.g., searching/joining teams), they are required to update their profile using a form. After which, they were given the roles &ldquo;updated-profile&rdquo; and &ldquo;free-agent&rdquo; (indicates not being present in any team). A player if present in a team has the role &ldquo;player&rdquo;.</p>
 <h2 id="the-problem-api-rate-limits">
     The Problem: API Rate-Limits</h2><p>Whenever a user registers or logs into the website using Discord <span class="glossary-term"
-      glossary-data-tree-id="321281545141319117106"
+      glossary-data-tree-id="121314106913841557112"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>, the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:</p>
@@ -322,19 +322,19 @@
 <li>Is the user a &ldquo;team manager&rdquo;? (If yes, provide team management options)</li>
 </ol>
 <p>These role details are fetched from the Discord <span class="glossary-term"
-      glossary-data-tree-id="115271091513614123814"
+      glossary-data-tree-id="791181512131546143102"
       glossary-data-tree-node-id="0"
       glossary-data-term="api"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">API</span>. However, the API has strict <span class="glossary-term"
-      glossary-data-tree-id="836141147101913512215"
+      glossary-data-tree-id="117846151413312191025"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span>: 5 <span class="glossary-term"
-      glossary-data-tree-id="941561025871131114123"
+      glossary-data-tree-id="512914133116154210871"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> per minute, with a soft reset allowing 1 request per minute after. The rate limit applies to a specific <span class="glossary-term"
-      glossary-data-tree-id="710611192121513835144"
+      glossary-data-tree-id="106141113154812215937"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Access-Token</span> for a Discord server.</p>
@@ -345,11 +345,11 @@
 <li>
 <p><strong>Maintain Internal User Data:</strong>
 This option would involve using <span class="glossary-term"
-      glossary-data-tree-id="121013481192153114657"
+      glossary-data-tree-id="131412159114186107253"
       glossary-data-tree-node-id="0"
       glossary-data-term="websocket"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">WebSockets</span> with the bot to track user role changes in real-time and storing this data in a <span class="glossary-term"
-      glossary-data-tree-id="241175812310159614131"
+      glossary-data-tree-id="133118121261510479514"
       glossary-data-tree-node-id="0"
       glossary-data-term="database"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span>. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.</p>
@@ -357,14 +357,14 @@ This option would involve using <span class="glossary-term"
 <li>
 <p><strong>Cache Fetched Data from the Discord API:</strong>
 This simpler solution involves <span class="glossary-term"
-      glossary-data-tree-id="911151073521411364128"
+      glossary-data-tree-id="121523109116148751134"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.</p>
 </li>
 </ol>
 <p>We opted for the caching approach using <span class="glossary-term"
-      glossary-data-tree-id="113611415142123587109"
+      glossary-data-tree-id="615111591231314287104"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, as it provides both efficiency and native data expiry.</p>
@@ -383,8 +383,11 @@ This simpler solution involves <span class="glossary-term"
 <p>
 <br class="br" />
 
+
 <figure><img src="/blogs/overcoming-discord-api-rate-limits-with-redis-cache/discordRateLimitRedisCacheSolution.svg" onclick="this.requestFullscreen()"
-    alt="Solution flowchart diagram" loading="lazy"><figcaption>
+      data-src-light="/blogs/overcoming-discord-api-rate-limits-with-redis-cache/discordRateLimitRedisCacheSolution.svg"
+      data-src-dark="discordRateLimitRedisCacheSolution_dark.svg"style="object-fit: contain;"
+    alt="Solution flowchart diagram" width="720px" height="240.99px" loading="lazy"><figcaption>
       <p>Solution flowchart diagram</p>
     </figcaption>
 </figure></p>
@@ -605,6 +608,9 @@ This simpler solution involves <span class="glossary-term"
     
         
         <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
+
+        
+        <script src="/js/theme.min.9841b1d86263f5fcc210edde35637853d3ec0b57c326c9355428f0e776ad2de8.js"></script>
     
 </body>
 

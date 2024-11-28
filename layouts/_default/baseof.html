@@ -28,8 +28,11 @@
     </script>
 
     {{ if or (eq .Section "blogs") (eq .Section "projects") (eq .Type "blogs") (eq .Type "projects" ) (.Params.glossary) }}
-        {{ $js := resources.Get "js/glossary.js" | resources.Minify | resources.Fingerprint }}
-        <script src="{{ $js.RelPermalink }}"></script>
+        {{ $glossary_js := resources.Get "js/glossary.js" | resources.Minify | resources.Fingerprint }}
+        <script src="{{ $glossary_js.RelPermalink }}"></script>
+
+        {{ $theme_js := resources.Get "js/theme.js" | resources.Minify | resources.Fingerprint }}
+        <script src="{{ $theme_js.RelPermalink }}"></script>
     {{ end }}
 </body>
 

@@ -60,7 +60,7 @@ If the rate-limit key isn’t found, we proceed to fetch the user’s roles from
 - If the request receives a rate-limit error, we create the key `discord_roles_<ServerID>_<AccessToken>_retry-after` with an expiry set to the rate-limit reset time (plus 1 second). After this, we return the previously cached data.
 
 {{< br >}}
-{{< figure src="discordRateLimitRedisCacheSolution.svg" alt="Solution flowchart diagram" caption="Solution flowchart diagram" loading="lazy" >}}
+{{< figure src="discordRateLimitRedisCacheSolution.svg" data-src-light="discordRateLimitRedisCacheSolution.svg" data-src-dark="discordRateLimitRedisCacheSolution_dark.svg" width="720px" height="240.99px" alt="Solution flowchart diagram" caption="Solution flowchart diagram" loading="lazy" >}}
 
 ## What I Learned and Future Considerations
 
