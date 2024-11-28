@@ -52,25 +52,25 @@ Access Tokens are like keys that allow the client to access the user's data with
 
 OAuth 2.0 works by following a series of steps to grant access to the user's data:
 
-1. **Authorization Request**: The client sends an authorization {{< glossary term="request" >}} to the authorization server, asking for permission to access the user's data. The set of permissions requested is known as a "scope" (e.g., read access, write access, delete access).
+1. **Authorization Request**: The client sends an authorization request to the authorization server, asking for permission to access the user's data. The set of permissions requested is known as a "scope" (e.g., read access, write access, delete access).
    - Example: "Can I access to reading and writing this user's Google Drive files?"
 
-2. **User Authentication and Authorization**: The authorization server prompts the user to authorize the client to access their data. The user if not already logged in, {{< glossary term="authenticate" >}} themselves and grants the requested permissions. Upon granting permission, the client receives an authorization code.
+2. **User Authentication and Authorization**: The authorization server prompts the user to authorize the client to access their data. The user, if not already logged in, {{< glossary term="authenticate" >}} themselves and grant the requested permissions. Upon the user granting permission, the client receives an authorization code from the authorization server.
    - Example: You log in to your Google account and authorize the media editing application to access your Google Drive files.
 
    > Note: You should **always check the scope of permissions** requested before granting access.
 
-3. **Access Token Request**: The client exchanges the authorization code for an Access Token by sending a request to the authorization server.
+3. **Access Token Request**: The client exchanges the authorization code for an Access Token by making a {{< glossary term="request" >}} to the authorization server.
    - Example: The media editing application requests an Access Token to access your Google Drive files.
 
-4. **Access Token Grant**: The authorization server issues an Access Token to the client.
+4. **Access Token Grant**: The authorization server validates the authorization code and issues an Access Token to the client.
    - Example: Google Drive issues an Access Token to the media editing application.
 
 5. **Request Resource**: The client sends the Access Token to the resource server to access the user's data.
    - Example: The media editing application uses the Access Token to access your Google Drive files.
 
-6. **Resource Access**: The resource server verifies the Access Token and grants access to the user's data.
-   - Example: Google Drive verifies the Access Token and allows the media editing application to access your files.
+6. **Resource Access**: The resource server validates the Access Token and grants access to the user's data.
+   - Example: Google Drive validates the Access Token and allows the media editing application to access your files.
 
 {{< figure src="OAuthFlow.svg" data-src-light="OAuthFlow.svg" data-src-dark="OAuthFlow-dark.svg" width="720px" height="700px" alt="OAuth flow diagram" caption="OAuth flow diagram" loading="lazy" width="800" height="700" >}}
 
