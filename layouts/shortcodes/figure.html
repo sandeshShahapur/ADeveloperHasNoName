@@ -40,12 +40,11 @@
       data-src-light="{{ $light_src }}"
       data-src-dark="{{ $dark_src }}"
     {{- end -}}
-    style="object-fit: contain;"
+    {{- if and (.Get "width") (.Get "height") -}} style="aspect-ratio: {{ .Get "width" | replaceRE "px" "" | float }} / {{ .Get "height" | replaceRE "px" "" | float }};" {{- end -}}
     {{- if or (.Get "alt") (.Get "caption") }}
     alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
     {{- end -}}
     {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-    {{- with .Get "height" }} height="{{ . }}"{{ end -}}
     {{- with .Get "loading" }} loading="{{ . }}"{{ end -}}
   ><!-- Closing img tag -->
   {{- if .Get "link" }}</a>{{ end -}}
