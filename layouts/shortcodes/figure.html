@@ -1,7 +1,8 @@
 {{/*
    * This shortcode extends figure shortcode from the Hugo.
-   * It adds the ability to click on the image to view it in fullscreen.
-   * It adds support for theme images (light/dark).
+   * Adds responsive height to the image to maintain aspect ratio.
+   * Adds the ability to click on the image to view it in fullscreen.
+   * Adds support for theme images (light/dark).
       * If image does not have a theme variant, only provide src attribute.
       * If image has a theme variant, provide data-src-light and data-src-dark attributes and set the src attribute to the default variant.
 */}}
@@ -36,15 +37,19 @@
   {{- end -}}
 
   <img src="{{ $src }}" onclick="this.requestFullscreen()"
-    {{- if and ($light_src) ($dark_src) -}} {{/*  include data-src-light and data-src-dark if they were both provided  */}}
+    {{- if and ($light_src) ($dark_src) -}}
       data-src-light="{{ $light_src }}"
       data-src-dark="{{ $dark_src }}"
     {{- end -}}
+    {{/*  Adding width and aspect-ratio but not height provides responsive height to the image (width is 100%) in pages while avoiding layout shifts  */}}
     {{- if and (.Get "width") (.Get "height") -}} style="aspect-ratio: {{ .Get "width" | replaceRE "px" "" | float }} / {{ .Get "height" | replaceRE "px" "" | float }};" {{- end -}}
     {{- if or (.Get "alt") (.Get "caption") }}
     alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
     {{- end -}}
-    {{- with .Get "width" }} width="{{ . }}"{{ end -}}
+    {{- with .Get "width" }} width="{{ . }}"{{ end -}} {{/* always provide width */}}
+    {{/* Do not provide height attribute when width is provided because it will override the aspect-ratio style */}}
+    {{- if and (.Get "height") (not (.Get "width")) }} height="{{ .Get "height" }}"{{ end -}}
+    {{- with .Get "class" }} class="{{ . }}"{{ end -}}
     {{- with .Get "loading" }} loading="{{ . }}"{{ end -}}
   ><!-- Closing img tag -->
   {{- if .Get "link" }}</a>{{ end -}}
