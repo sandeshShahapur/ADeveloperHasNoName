@@ -39,23 +39,28 @@ menu:
 params:
   env: production
   author: "Sandesh Shahapur"
+
+  # logo
   label:
         #text: "Home"
         icon: "/assets/favicon-96x96.png"
         iconHeight: 24
-  assets:
-    disableHLJS: true
-    favicon: "/assets/favicon.ico"
-    # favicon16x16: "<link / abs url>"
-    # favicon32x32: "<link / abs url>"
-    favicon96x96: "/assets/favicon-96x96.png"
-    apple_touch_icon: "/assets/apple_touch_icon.png"
-    # safari_pinned_tab: "<link / abs url>"
+
+  # favicon (used by OUR head.html partial)
+  favicon: "/favicon.ico"
+  favicon_svg: "/favicon.svg"
+  favicon_96x96: "/favicon-96x96.png"
+  apple_touch_icon: "/apple-touch-icon.png"
+  site_webmanifest: "/site.webmanifest"
+  # safari_pinned_tab: "<link / abs url>"
+
   description: "ADeveloperHasNoName is a place where I share my blogs, projects and thoughts around software development and technology."
   keywords: ["Software Development", "Technology", "Programming", "Web Development", "Blog", "Projects"]
+
   mainSections:
     - blogs
     - projects
+
   profileMode:
     enabled: true
     subtitle: "Hi 👋 I'm Sandesh, here you can find my blogs where I write about programming, technology, and other things that interest me. You can also find my lists of projects."
