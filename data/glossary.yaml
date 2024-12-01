@@ -9,6 +9,9 @@
 # Glossary definition's surrounding context or depthness should be a linked blog/article
 # Comments below glossary definitions are the context or depthness that should be moved to a linked blog/article
 
+# REMEMBER
+# anchors in ref should be lowercase
+
 ######################################################
 
 
@@ -47,6 +50,15 @@ analog: Analog is a **continuous representation of data** that can take on any v
 # add learn more !1
 api: Application Programming Interface is **an {{< glossary term="interface" >}}** i.e. a shared-boundary/layer between two {{< glossary term="software-component" displayTerm="software components" >}} that provides a means for them to communicate or interact with each other **for accessing/exchanging information**. It **defines how this access or interaction should occur** between the two.
 # A software component often relies on other software components to perform certain tasks. So there needs to be a way for these components to communicate with each other. How do they do that?
+
+
+api-endpoint: '
+    API Endpoint is a **specific {{< glossary term="URI" >}} that is exposed by an {{< glossary term="API" >}}** that represents **a unique location for {{< glossary term="client" displayTerm="clients" >}} to access a resource** and perform actions ({{< glossary term="CRUD" >}}) on it by making {{< glossary term="request" displayTerm="requests" >}}. E.g /graphql, /teams/{teamId}/members, etc.
+
+    {{< hr-span >}}
+
+    Note: Different actions on the same resource URI (e.g. [HTTP methods]( {{% ref "blogs/What-are-HTTP-and-HTTPS-Protocols.md#http-methods" %}} )) are considered as same endpoint.
+'
 
 
 argument: '{{< glossary term="function" displayTerm="Functions" >}} often take in data through {{< glossary term="parameter" displayTerm="parameters" >}}. Arguments are these **data (values/{{< glossary term="variable" displayTerm="variables" >}}) that is passed to a function** when it is {{< glossary term="call" displayTerm="called" >}}. They are used to customize the behavior of a function.'
