@@ -8,7 +8,7 @@ const GLOSSARY_CACHE_LAST_FETCH_KEY = "glossaryCacheLastFetch";
 
 async function fetchGlossaryData() {
     // The last edited epoch of the glossary data. This is used to check if the glossary data has been updated since the client last fetched it. It is automatically updated when the yaml glossary data is updated by script.
-    const lastEditedEpoch = 1732631617439;
+    const lastEditedEpoch = 1732868095373;
     const lastEdited = new Date(lastEditedEpoch).getTime();
 
     const now = new Date().getTime();
@@ -74,6 +74,10 @@ function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossa
     definition = definition.replace(refPattern, (_, text, absUrl) => {
         const displayText = text || absUrl;
 
+        // remove .md from the url (only if at the end with optional html heading anchor)
+        // because hugo removes it from the url
+        absUrl = absUrl.replace(/\.md(?=(?:#[a-zA-Z0-9_-]*)?$)/, "");
+        
         // making link url friendly because hugo removes parentheses from file names in urls.
         // E.g. What-Is-OAuth-(2_0)-Definition-Use-Cases-and-How-it-Works -> BASE_URL/What-Is-OAuth-2_0-Definition-Use-Cases-and-How-it-Works
         absUrl = absUrl.split("").filter(char => !["(", ")"].includes(char)).join("");
