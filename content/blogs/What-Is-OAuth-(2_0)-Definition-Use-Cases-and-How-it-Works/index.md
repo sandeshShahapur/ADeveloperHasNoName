@@ -14,9 +14,13 @@ Before we dive into OAuth, let's understand why it is essential in the context o
 
 Let us consider a scenario where you have stored your media files (images, videos, etc.) on a cloud storage service like Google Drive. Now, you are using a media editing application and want to edit an image/video that is stored on your Google Drive. You don't want to download the file to your local system, edit it with the editing application, and then upload it back to Google Drive, because you find it inconvenient. Instead, you want the media editing application to directly access the file on Google Drive and make the necessary changes.
 
+{{< figure src="OAuthDesign-before.svg" data-src-light="OAuthDesign-before.svg" data-src-dark="OAuthDesign-before-dark.svg" width="1072px" height="516px" alt="Without OAuth design diagram" caption="Without OAuth design diagram" loading="lazy" >}}
+
 So, how do we get the media editing application to access your files on Google Drive? The files are in your Drive account and can only be accessed by you.
 One way is to provide your Google Drive credentials (username and password) to the media editing application. But this is a security risk because the application can misuse your credentials or store them insecurely.
 This is where OAuth comes into play. It provides a secure way for you to grant the media editing application access to your Google Drive files without sharing your credentials.
+
+{{< figure src="OAuthDesign-after.svg" data-src-light="OAuthDesign-after.svg" data-src-dark="OAuthDesign-after-dark.svg" width="831px" height="541px" alt="With OAuth design diagram" caption="With OAuth design diagram" loading="lazy" >}}
 
 In this way, OAuth enables communication between different primary and third-party services while maintaining the security and privacy of user data.
 

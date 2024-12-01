@@ -24,9 +24,11 @@ Whenever a user registers or logs into the website using Discord {{< glossary te
 3. Is the user a "free-agent"? (If yes, provide options to join/create a team)
 4. Is the user a "team manager"? (If yes, provide team management options)
 
-These role details are fetched from the Discord {{< glossary term="API" >}}. However, the API has strict {{< glossary term="rate-limit" displayTerm="rate-limits" >}}: 5 {{< glossary term="request" displayTerm="requests" >}} per minute, with a soft reset allowing 1 request per minute after. The rate limit applies to a specific {{< glossary term="Access-Token" >}} for a Discord server.
+These role details are fetched from the Discord {{< glossary term="API" >}}. However, the API {{< glossary term="api-endpoint" displayTerm="endpoint" >}} [for fetching roles](https://discord.com/developers/docs/resources/user#get-current-user-guild-member) has strict {{< glossary term="rate-limit" displayTerm="rate-limits" >}}: 5 {{< glossary term="request" displayTerm="requests" >}} per minute, with a soft reset allowing 1 request per minute after. This rate limit applies to a specific {{< glossary term="Access-Token" >}} for a Discord server.
 
 Since user roles can change based on user interactions through their existing Discord Bot (e.g., joining the server, updating profile, joining a team), we needed to re-fetch roles each time the browser tab was re-focused or reloaded. Additionally, in a React development environment with StrictMode enabled, each component renders twice which doubled the number of API requests. This often led to rate-limiting issues.
+
+{{< figure src="discordRateLimitRedisCacheSolution-design-before.svg" data-src-light="discordRateLimitRedisCacheSolution-design-before.svg" data-src-dark="discordRateLimitRedisCacheSolution-design-before-dark.svg" width="900px" height="167px" alt="RateLimit problem design diagram" caption="RateLimit problem design diagram" loading="lazy" >}}
 
 ## The Solution Options
 
@@ -39,6 +41,8 @@ There were two main approaches to handle this issue:
    This simpler solution involves {{< glossary term="cache" displayTerm="caching" >}} user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.
 
 We opted for the caching approach using {{< glossary term="Redis" >}}, as it provides both efficiency and native data expiry.
+
+{{< figure src="discordRateLimitRedisCacheSolution-design-after.svg" data-src-light="discordRateLimitRedisCacheSolution-design-after.svg" data-src-dark="discordRateLimitRedisCacheSolution-design-after-dark.svg" width="900px" height="390px" alt="Solution design diagram" caption="Solution design diagram" loading="lazy" >}}
 
 ## The Solution: Fetch with Cache Fallback
 

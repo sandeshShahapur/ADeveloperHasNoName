@@ -101,8 +101,8 @@
   "keywords": [
     "JWT", "OAuth", "Concurrency", "Redis", "Access Tokens", "React"
   ],
-  "articleBody": "\rBackgroundI was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. Since the database for users was modeled around their Discord account ID, the aim was to develop a web interface by integrating it with Discord. Thus I implemented login functionality using Discord OAuth.\nSession Management WorkflowInitially, the user is logged out. When the user logs in with their discord account, an access-token and refresh-token is created, both stored as JWTs in cookies. The access token is sent with all requests via the bearer authorization header for authentication and authorization purposes, while the refresh token is only sent to a specific refresh endpoint (/refresh). The backend verifies these tokens (JWT verification) whenever frontend (website) makes a request to it.\nIf verification fails for reasons other than token expiration (missing token, invalid token signature), the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending an additional request to backend at /refresh. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.\nThe ProblemThis process works well when only one request is sent at a time. However, since the website uses client-side-rendering and is a single-page-application built with React, the web app often sends multiple ajax-requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.\nWhy does this happen?When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated in the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user’s session thereby logging them out.\nSolution Options Extend token expiration time: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution. Queue requests: We queue all the requests, or we queue requests until the refresh is completed when frontend detects (before making a request) that the token is expired. This can slow down the app, especially when expiration times are short. Locking mechanism of Refresh Token: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time. The Chosen Solution: Redis-based Locking MechanismI chose to implement a locking mechanism using Redis, a fast in-memory data store with built-in key expiry.\nWe allow the first request to refresh the token while the others wait for the result of the first request. Here’s how it works:\nThe backend returns Token expiration error for the first request and the frontend then sends a refresh request to the backend at /refresh. Two Redis keys are used: refresh_token_lock:: Indicates whether the refresh token is being processed. refresh_token_res:: Holds the result status of the refresh attempt for the Token. At /refresh, backend first checks if a refresh_token_res: key exists in Redis. If it does, the system returns the corresponding result status. If the key does not exist, we check for the refresh_token_lock: key to see if another request has acquired the lock and is already processing the refresh token. If the lock is held, the request waits for it to be released and repeats previous step. If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned. Solution flowchart diagram\nThis ensures that only the first request refreshes the token, while other requests wait for the result.\nConclusionThe Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts, and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.\n",
-  "wordCount" : "684",
+  "articleBody": "\rBackgroundI was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on Discord through a Discord bot, to the web. Since the database for users was modeled around their Discord account ID, the aim was to develop a web interface by integrating it with Discord. Thus I implemented login functionality using Discord OAuth.\nSession Management WorkflowInitially, the user is logged out. When the user logs in with their discord account, an access-token and refresh-token is created, both stored as JWTs in cookies. The access token is sent with all requests via the bearer authorization header for authentication and authorization purposes, while the refresh token is only sent to a specific refresh endpoint (/refresh). The backend verifies these tokens (JWT verification) whenever frontend (website) makes a request to it.\nIf verification fails for reasons other than token expiration (missing token, invalid token signature), the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending an additional request to backend at /refresh. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.\nThe ProblemThis process works well when only one request is sent at a time. However, since the website uses client-side-rendering and is a single-page-application built with React, the web app often sends multiple ajax-requests simultaneously. This can lead to unintended session termination due to concurrent refresh attempts which logs the user out.\nWhy does this happen?When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated in the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user’s session thereby logging them out.\nConcurrent refresh request problem diagram\nSolution Options Extend token expiration time: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution. Queue requests: We queue all the requests, or we queue requests until the refresh is completed when frontend detects (before making a request) that the token is expired. This can slow down the app, especially when expiration times are short. Locking mechanism of Refresh Token: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time. The Chosen Solution: Redis-based Locking Mechanism\rSolution design diagram\nI chose to implement a locking mechanism using Redis, a fast in-memory data store with built-in key expiry.\nWe allow the first request to refresh the token while the others wait for the result of the first request. Here’s how it works:\nThe backend returns Token expiration error for the first request and the frontend then sends a refresh request to the backend at /refresh. Two Redis keys are used: refresh_token_lock:: Indicates whether the refresh token is being processed. refresh_token_res:: Holds the result status of the refresh attempt for the Token. At /refresh, backend first checks if a refresh_token_res: key exists in Redis. If it does, the system returns the corresponding result status. If the key does not exist, we check for the refresh_token_lock: key to see if another request has acquired the lock and is already processing the refresh token. If the lock is held, the request waits for it to be released and repeats previous step. If no lock is present, the request acquires the lock, performs the refresh, and sets the appropriate status key in Redis. The lock is then released, and the status is returned. Solution flowchart diagram\nThis ensures that only the first request refreshes the token, while other requests wait for the result.\nConclusionThe Redis-based locking mechanism effectively handles and prevents concurrent refresh attempts, and ensures that only one request is allowed to refresh tokens at a time. This solution enhances the overall reliability and security of token management in the system.\n",
+  "wordCount" : "693",
   "inLanguage": "en",
   "datePublished": "2024-10-09T10:04:58+05:30",
   "dateModified": "2024-11-28T15:23:06+05:30",
@@ -300,85 +300,94 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="511741231014158162913"
+      glossary-data-tree-id="116421512710931318145"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot, to the web. Since the <span class="glossary-term"
-      glossary-data-tree-id="911126710514153131248"
+      glossary-data-tree-id="681211131571454931210"
       glossary-data-tree-node-id="0"
       glossary-data-term="database"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span> for users was modeled around their Discord account ID, the aim was to develop a <span class="glossary-term"
-      glossary-data-tree-id="158149653111213102714"
+      glossary-data-tree-id="151114431079158621312"
       glossary-data-tree-node-id="0"
       glossary-data-term="ui"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web interface</span> by integrating it with Discord. Thus I implemented login functionality using Discord <span class="glossary-term"
-      glossary-data-tree-id="104145312138967215111"
+      glossary-data-tree-id="791214151054182133611"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>.</p>
 <h2 id="session-management-workflow">
     Session Management Workflow</h2><p>Initially, the user is logged out. When the user logs in with their discord account, an <span class="glossary-term"
-      glossary-data-tree-id="121114134135107986215"
+      glossary-data-tree-id="917810151151262144133"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> and <span class="glossary-term"
-      glossary-data-tree-id="649141112133815152107"
+      glossary-data-tree-id="131491521465711831210"
       glossary-data-tree-node-id="0"
       glossary-data-term="refresh-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">refresh-token</span> is created, both stored as <span class="glossary-term"
-      glossary-data-tree-id="145712111036815213491"
+      glossary-data-tree-id="471591013123211581416"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWTs</span> in <span class="glossary-term"
-      glossary-data-tree-id="117122141311510698534"
+      glossary-data-tree-id="126114214153981571310"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>. The access token is sent with all <span class="glossary-term"
-      glossary-data-tree-id="410121511367814192135"
+      glossary-data-tree-id="319748121065131415211"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> via the bearer authorization header for <span class="glossary-term"
-      glossary-data-tree-id="141574521091863131112"
+      glossary-data-tree-id="410121321571439511618"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and <span class="glossary-term"
-      glossary-data-tree-id="871412111515136910324"
+      glossary-data-tree-id="910113126837215145114"
       glossary-data-tree-node-id="0"
       glossary-data-term="authorization"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authorization</span> purposes, while the refresh token is only sent to a specific refresh endpoint (<code>/refresh</code>). The <span class="glossary-term"
-      glossary-data-tree-id="114154982531061271311"
+      glossary-data-tree-id="154981151471231061213"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> verifies these tokens (JWT verification) whenever <span class="glossary-term"
-      glossary-data-tree-id="761195481031131512142"
+      glossary-data-tree-id="710185396214154111213"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> (<span class="glossary-term"
-      glossary-data-tree-id="261410121157483913115"
+      glossary-data-tree-id="246912137814510131511"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>) makes a request to it.</p>
 <p>If verification fails for reasons other than token expiration (missing token, invalid token signature), the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending an additional request to backend at <code>/refresh</code>. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.</p>
 <h2 id="the-problem">
     The Problem</h2><p>This process works well when only one request is sent at a time. However, since the website uses <span class="glossary-term"
-      glossary-data-tree-id="310122141387691545111"
+      glossary-data-tree-id="213843561017159121411"
       glossary-data-tree-node-id="0"
       glossary-data-term="client-side-rendering"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client-side-rendering</span> and is a <span class="glossary-term"
-      glossary-data-tree-id="101814114515136127239"
+      glossary-data-tree-id="915846122173131451110"
       glossary-data-tree-node-id="0"
       glossary-data-term="single-page-application"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">single-page-application</span> built with React, the web app often sends multiple <span class="glossary-term"
-      glossary-data-tree-id="251513136101198124714"
+      glossary-data-tree-id="101192115865124731314"
       glossary-data-tree-node-id="0"
       glossary-data-term="ajax-request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">ajax-requests</span> simultaneously. This can lead to unintended session termination due to <span class="glossary-term"
-      glossary-data-tree-id="961552713314411112810"
+      glossary-data-tree-id="142151335796111481012"
       glossary-data-tree-node-id="0"
       glossary-data-term="concurrency"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">concurrent</span> refresh attempts which logs the user out.</p>
 <h3 id="why-does-this-happen">
     Why does this happen?</h3><p>When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated in the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user&rsquo;s session thereby logging them out.</p>
+
+
+<figure><img src="/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/concurrentRefreshAttempts-design-before.svg" onclick="this.requestFullscreen()"data-src-light="/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/concurrentRefreshAttempts-design-before.svg"
+      data-src-dark="/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/concurrentRefreshAttempts-design-before-dark.svg"style="aspect-ratio: 1731 / 511;"
+    alt="Concurrent refresh request problem diagram" width="1731px"
+     loading="lazy"><figcaption>
+      <p>Concurrent refresh request problem diagram</p>
+    </figcaption>
+</figure>
 <h2 id="solution-options">
     Solution Options</h2><ol>
 <li><strong>Extend token expiration time</strong>: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution.</li>
@@ -386,8 +395,17 @@
 <li><strong>Locking mechanism of Refresh Token</strong>: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time.</li>
 </ol>
 <h2 id="the-chosen-solution-redis-based-locking-mechanism">
-    The Chosen Solution: Redis-based Locking Mechanism</h2><p>I chose to implement a locking mechanism using <span class="glossary-term"
-      glossary-data-tree-id="811315111437612109254"
+    The Chosen Solution: Redis-based Locking Mechanism</h2>
+
+<figure><img src="/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/concurrentRefreshAttempts-design-after.svg" onclick="this.requestFullscreen()"data-src-light="/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/concurrentRefreshAttempts-design-after.svg"
+      data-src-dark="/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/concurrentRefreshAttempts-design-after-dark.svg"style="aspect-ratio: 1751 / 882;"
+    alt="Solution design diagram" width="1751px"
+     loading="lazy"><figcaption>
+      <p>Solution design diagram</p>
+    </figcaption>
+</figure>
+<p>I chose to implement a locking mechanism using <span class="glossary-term"
+      glossary-data-tree-id="156473511141312981021"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, a fast in-memory data store with built-in key expiry.</p>
@@ -637,7 +655,7 @@ Here’s how it works:</p>
 
     
         
-        <script src="/js/glossary.min.fd941eaf492d043632b840ab6d587db9967547d4f73c1d36227c1480552bfc3d.js"></script>
+        <script src="/js/glossary.min.6eda496fdc93705fd2deb4e72816fd0a31d54a0e09cc6e132d7857c6ba50f17a.js"></script>
     
 </body>
 

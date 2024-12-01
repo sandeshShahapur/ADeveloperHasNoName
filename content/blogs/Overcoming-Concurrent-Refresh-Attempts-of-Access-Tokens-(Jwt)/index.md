@@ -26,6 +26,8 @@ This process works well when only one request is sent at a time. However, since 
 
 When the access token has expired, the first request to the backend triggers a refresh and retrieves new tokens. However, before these new tokens are updated in the frontend, other requests are sent with the old tokens. If those requests also try to refresh the tokens, Discord returns an error (403) because the refresh token has already been used. This causes the system to terminate the user's session thereby logging them out.
 
+{{< figure src="concurrentRefreshAttempts-design-before.svg" data-src-light="concurrentRefreshAttempts-design-before.svg" data-src-dark="concurrentRefreshAttempts-design-before-dark.svg" width="1731px" height="511px" alt="Concurrent refresh request problem diagram" caption="Concurrent refresh request problem diagram" loading="lazy" >}}
+
 ## Solution Options
 
 1. **Extend token expiration time**: This reduces the frequency of refreshes and unintended session terminations, but it introduces security risks and is not a proper solution.
@@ -33,6 +35,8 @@ When the access token has expired, the first request to the backend triggers a r
 3. **Locking mechanism of Refresh Token**: The backend uses locks on Refresh Tokens, ensuring that only one refresh attempt for a Refresh Token is processed at a time.
 
 ## The Chosen Solution: Redis-based Locking Mechanism
+
+{{< figure src="concurrentRefreshAttempts-design-after.svg" data-src-light="concurrentRefreshAttempts-design-after.svg" data-src-dark="concurrentRefreshAttempts-design-after-dark.svg" width="1751px" height="882px" alt="Solution design diagram" caption="Solution design diagram" loading="lazy" >}}
 
 I chose to implement a locking mechanism using {{< glossary term="Redis" >}}, a fast in-memory data store with built-in key expiry.
 
