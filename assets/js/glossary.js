@@ -26,7 +26,7 @@ async function fetchGlossaryData() {
 
 
     // if the glossary data has been updated since client last fetched it, fetch it again, cache it, and return it
-    const response = await fetch("/data/glossary.json");
+    const response = await fetch("/data/glossary.json?v=" + lastEditedEpoch);
     const glossaryData = await response.json();
 
     localStorage.setItem(GLOSSARY_CACHE_KEY, JSON.stringify(glossaryData));
@@ -77,7 +77,7 @@ function processGlossaryDefinitionText(tree_id, tree_node_id, definition, glossa
         // remove .md from the url (only if at the end with optional html heading anchor)
         // because hugo removes it from the url
         absUrl = absUrl.replace(/\.md(?=(?:#[a-zA-Z0-9_-]*)?$)/, "");
-        
+
         // making link url friendly because hugo removes parentheses from file names in urls.
         // E.g. What-Is-OAuth-(2_0)-Definition-Use-Cases-and-How-it-Works -> BASE_URL/What-Is-OAuth-2_0-Definition-Use-Cases-and-How-it-Works
         absUrl = absUrl.split("").filter(char => !["(", ")"].includes(char)).join("");
