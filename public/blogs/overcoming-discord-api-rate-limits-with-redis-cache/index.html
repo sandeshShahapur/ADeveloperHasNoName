@@ -304,22 +304,22 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with developing a web <span class="glossary-term"
-      glossary-data-tree-id="103842915611214115137"
+      glossary-data-tree-id="718141161531094521213"
       glossary-data-tree-node-id="0"
       glossary-data-term="ui"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="101136112514421579138"
+      glossary-data-tree-id="153910414813127115126"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord Bot. They wanted to extend their services to a <span class="glossary-term"
-      glossary-data-tree-id="711112842359106131514"
+      glossary-data-tree-id="141411128927105151336"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, and I was responsible for making it happen.</p>
 <p>After a new user joins their Discord server, before they can interact further (e.g., searching/joining teams), they are required to update their profile using a form. After which, they were given the roles &ldquo;updated-profile&rdquo; and &ldquo;free-agent&rdquo; (indicates not being present in any team). A player if present in a team has the role &ldquo;player&rdquo;.</p>
 <h2 id="the-problem-api-rate-limits">
     The Problem: API Rate-Limits</h2><p>Whenever a user registers or logs into the website using Discord <span class="glossary-term"
-      glossary-data-tree-id="154141286109713123511"
+      glossary-data-tree-id="131154141210932561178"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>, the dashboard view presented to them is based on their roles within the Discord server. The roles dictate what actions the user can take:</p>
@@ -330,11 +330,11 @@
 <li>Is the user a &ldquo;team manager&rdquo;? (If yes, provide team management options)</li>
 </ol>
 <p>These role details are fetched from the Discord <span class="glossary-term"
-      glossary-data-tree-id="159621041438121111375"
+      glossary-data-tree-id="141065387941121312115"
       glossary-data-tree-node-id="0"
       glossary-data-term="api"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">API</span>. However, the API <span class="glossary-term"
-      glossary-data-tree-id="132391210851111471546"
+      glossary-data-tree-id="131815116122410914537"
       glossary-data-tree-node-id="0"
       glossary-data-term="api-endpoint"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">endpoint</span> <a
@@ -343,15 +343,15 @@
 
 		target = "_blank"
 		rel = "nofollow noopener noreferrer"><span>for fetching roles</span></a> has strict <span class="glossary-term"
-      glossary-data-tree-id="911414101837135621215"
+      glossary-data-tree-id="147212391511311651084"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span>: 5 <span class="glossary-term"
-      glossary-data-tree-id="141245116715398131021"
+      glossary-data-tree-id="158212111310943141675"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> per minute, with a soft reset allowing 1 request per minute after. This rate limit applies to a specific <span class="glossary-term"
-      glossary-data-tree-id="411261512105141313897"
+      glossary-data-tree-id="133115941761512281410"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Access-Token</span> for a Discord server.</p>
@@ -371,11 +371,11 @@
 <li>
 <p><strong>Maintain Internal User Data:</strong>
 This option would involve using <span class="glossary-term"
-      glossary-data-tree-id="135141293118271564101"
+      glossary-data-tree-id="313712986415214101151"
       glossary-data-tree-node-id="0"
       glossary-data-term="websocket"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">WebSockets</span> with the bot to track user role changes in real-time and storing this data in a <span class="glossary-term"
-      glossary-data-tree-id="141221191568310451137"
+      glossary-data-tree-id="141334610121511185297"
       glossary-data-tree-node-id="0"
       glossary-data-term="database"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span>. While this would ensure up-to-date information, it introduces significant complexity and resource overhead.</p>
@@ -383,14 +383,14 @@ This option would involve using <span class="glossary-term"
 <li>
 <p><strong>Cache Fetched Data from the Discord API:</strong>
 This simpler solution involves <span class="glossary-term"
-      glossary-data-tree-id="219124714131168153510"
+      glossary-data-tree-id="107112161312915384514"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> user roles from the Discord API where we use the cached data if the API is rate-limited. The trade-off is a delay in real-time data (maximum of 1 minute), but this was acceptable for our use case.</p>
 </li>
 </ol>
 <p>We opted for the caching approach using <span class="glossary-term"
-      glossary-data-tree-id="513128104141176321159"
+      glossary-data-tree-id="114195827310612131514"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, as it provides both efficiency and native data expiry.</p>
