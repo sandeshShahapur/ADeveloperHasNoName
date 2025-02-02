@@ -17,3 +17,7 @@
     .post-content img{
         cursor: zoom-in;
     }
+
+.post-content .swiper-slide img {
+    border-radius: 0%;
+}
