@@ -299,19 +299,19 @@
 		target = "_blank"
 		rel = "nofollow noopener noreferrer"><span>NPTEL</span></a> provides E-learning through online Web and Video courses in Engineering, Science and Humanities streams.</p>
 <p>I recently had to enrol in an NPTEL course and was surprised by the poor <span class="glossary-term"
-      glossary-data-tree-id="413791053141181226115"
+      glossary-data-tree-id="721412156110841359113"
       glossary-data-tree-node-id="0"
       glossary-data-term="ux"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">user experience</span> on their website. The navigation is unintuitive, the <span class="glossary-term"
-      glossary-data-tree-id="783151314121196105214"
+      glossary-data-tree-id="598123471141110132615"
       glossary-data-tree-node-id="0"
       glossary-data-term="ui"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">UI</span> is <span class="glossary-term"
-      glossary-data-tree-id="141311193210126415758"
+      glossary-data-tree-id="691142513310141781215"
       glossary-data-tree-node-id="0"
       glossary-data-term="responsive"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">non-responsive</span>, and the <span class="glossary-term"
-      glossary-data-tree-id="815113101242517136914"
+      glossary-data-tree-id="185111471531346122910"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> system is outright broken. The frustrating and outdated system is not a standard to be expected from a government funded, <a
@@ -338,7 +338,7 @@
 		target = "_blank"
 		rel = "nofollow noopener noreferrer"><span>Login</span></a> page, which displayed the message: “Please make sure that you login using the same email id you had used while enrolling to the course.”</p>
 <p>At this point, I hadn’t created an account yet, so I attempted to sign up. After filling in the required fields, I clicked “Create,” only to be redirected and be met with a bizarre error: “Your email id doesn’t match our records!” Below it was a “Logout” button which was confusing, since the sign up attempt seemed to have failed. Clicking it redirected me again, this time to an “<span class="glossary-term"
-      glossary-data-tree-id="121141368591410157321"
+      glossary-data-tree-id="107111615231251349814"
       glossary-data-tree-node-id="0"
       glossary-data-term="authorization"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Unauthorized</span>“ error page. Now, I was stuck - unable to sign up, log in, log out or even try again.</p>
@@ -348,7 +348,7 @@
 
 		target = "_blank"
 		rel = "nofollow noopener noreferrer"><span>how sessions work</span></a>, I cleared my browser <span class="glossary-term"
-      glossary-data-tree-id="123849114101357211156"
+      glossary-data-tree-id="157131414925811631012"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span> and tried logging in with the same id and password, thinking my account might have been created. But once again, I got the same “email id doesn’t match” error. I repeated this process multiple times with different email IDs and passwords on different days, but the issue persisted.</p>
@@ -372,7 +372,7 @@
 		rel = "nofollow noopener noreferrer"><span>sign up</span></a> using the same ids I tried on NPTEL, only to receive yet another error: “A user with the specified ID already exists. Please choose a different one.” This suggests:</p>
 <ul>
 <li>The NPTEL and SWAYAM websites share the same <span class="glossary-term"
-      glossary-data-tree-id="219614311854715131210"
+      glossary-data-tree-id="154133171012145892116"
       glossary-data-tree-node-id="0"
       glossary-data-term="database"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span>.</li>
@@ -595,89 +595,140 @@
 
 
 <script>
-    function openCarouselSlideModal(imgElement, descText) {
-        let existingModal = document.getElementById("carousel-slide-modal");
+  function openCarouselSlideModal(imgElement, descText) {
+    let existingModal = document.getElementById("carousel-slide-modal");
 
-        if (!existingModal) {
-            disableBackgroundScroll(); 
+    if (!existingModal) {
+        disableBackgroundScroll(); 
 
-            let modal = document.createElement("div");
-            modal.id = "carousel-slide-modal";
-            modal.style.position = "fixed";
-            modal.style.top = "0";
-            modal.style.left = "0";
-            modal.style.width = "100vw";
-            modal.style.height = "100vh";
-            modal.style.backgroundColor = "var(--code-bg);";
-            modal.style.backdropFilter = "blur(7px)";
-            modal.style.display = "flex";
-            modal.style.alignItems = "center";
-            modal.style.justifyContent = "center";
-            modal.style.zIndex = "1000";
+        let modal = document.createElement("div");
+        modal.id = "carousel-slide-modal";
+        Object.assign(modal.style, {
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.7)", 
+            backdropFilter: "blur(7px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: "1000",
+        });
 
-            let modalContent = document.createElement("div");
-            modalContent.style.position = "relative";
-            modalContent.style.width = "90%";
-            modalContent.style.height = "70%";
-            modalContent.style.display = "flex";
-            modalContent.style.flexDirection = "column";
-            modalContent.style.alignItems = "around";
-            modalContent.style.justifyContent = "center";
-            modalContent.style.gap = "25px";
+        let modalContent = document.createElement("div");
+        Object.assign(modalContent.style, {
+            position: "relative",
+            width: "90%",
+            height: "75%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "20px",
+            padding: "15px",
+        });
 
-            let modalImg = document.createElement("img");
-            modalImg.src = imgElement.src;
-            modalImg.style.width = "100%";
-            modalImg.style.height = "100%";
-            modalImg.style.objectFit = "contain";
-            modalImg.style.cursor = "zoom-in";
+        let modalImg = document.createElement("img");
+        Object.assign(modalImg.style, {
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            cursor: "zoom-in",
+        });
 
-            
-            modalImg.onclick = function () {
-                if (modalImg.style.transform === "scale(2)") {
-                    modalImg.style.transform = "scale(1)";
-                    modalImg.style.cursor = "zoom-in";
-                } else {
-                    modalImg.style.transform = "scale(2)";
-                    modalImg.style.cursor = "zoom-out";
-                }
-            };
+        modalImg.src = imgElement.src;
 
-            if (descText) {
-                let desc = document.createElement("p");
-                desc.innerText = descText;
-                desc.style.color = "var(--primary);";
-                desc.style.textAlign = "center";
-                desc.style.marginTop = "10px";
-                desc.style.fontWeight = "bold";
-                desc.style.fontSize = "18px";
-                desc.style.textShadow = "-1px -1px 0 var(--code-bg), 1px -1px 0 var(--code-bg), -1px 1px 0 var(--code-bg), 1px 1px 0 var(--code-bg)";
-                modalContent.appendChild(desc);
+        
+        modalImg.onclick = function () {
+            if (modalImg.style.transform === "scale(2)") {
+                modalImg.style.transform = "scale(1)";
+                modalImg.style.cursor = "zoom-in";
+            } else {
+                modalImg.style.transform = "scale(2)";
+                modalImg.style.cursor = "zoom-out";
+            }
+        };
+
+        if (descText) {
+            let desc = document.createElement("p");
+            desc.innerText = descText;
+
+            let fontSize;
+            if (window.innerWidth <= 640) {
+              fontSize = "8px";
+            } else if (window.innerWidth <= 800) {
+              fontSize = "10px";
+            } else if (window.innerWidth <= 1024) {
+              fontSize = "12px";
+            } else if (window.innerWidth <= 1300) {
+              fontSize = "16px";
+            } else {
+              fontSize = "18px";
             }
 
-            let closeBtn = document.createElement("span");
-            closeBtn.innerHTML = "&#x2716;";
-            closeBtn.style.position = "absolute";
-            closeBtn.style.top = "30px";
-            closeBtn.style.right = "45px";
-            closeBtn.style.fontSize = "30px";
-            closeBtn.style.color = "var(--primary);";
-            closeBtn.style.fontWeight = "bold";
-            closeBtn.style.cursor = "pointer";
-            closeBtn.onclick = closeModal;
+            Object.assign(desc.style, {
+                color: "#fff", 
+                textAlign: "center",
+                marginTop: "10px",
+                fontWeight: "bold",
+                fontSize: fontSize,
+                padding: "10px",
+                backgroundColor: "rgba(0, 0, 0, 0.6)", 
+                borderRadius: "8px",
+                width: "100%",
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)", 
+            });
 
-            modalContent.appendChild(modalImg);
-            modal.appendChild(modalContent);
-            modal.appendChild(closeBtn);
-            modal.onclick = function (event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            };
-
-            document.body.appendChild(modal);
+            modalContent.appendChild(desc);
         }
+
+        let closeBtn = document.createElement("span");
+        closeBtn.innerHTML = "&#x2716;";
+        if (window.innerWidth <= 640) {
+          fontSize = "14px";
+        } else if (window.innerWidth <= 800) {
+          fontSize = "18px";
+        } else if (window.innerWidth <= 1024) {
+          fontSize = "22px";
+        } else if (window.innerWidth <= 1300) {
+          fontSize = "26px";
+        } else {
+          fontSize = "30px";
+        }
+        Object.assign(closeBtn.style, {
+            position: "absolute",
+            top: (window.innerWidth > 800)? "20px" : "5px",
+            right: (window.innerWidth > 800)? "30px" : "5px",
+            fontSize: fontSize,
+            color: "#fff",
+            fontWeight: "bold",
+            cursor: "pointer",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            padding: "5px 10px",
+            borderRadius: "5px",
+            transition: "background 0.3s ease-in-out",
+        });
+
+        closeBtn.onmouseover = () => (closeBtn.style.backgroundColor = "rgba(255, 255, 255, 0.3)");
+        closeBtn.onmouseout = () => (closeBtn.style.backgroundColor = "rgba(0, 0, 0, 0.5)");
+        closeBtn.onclick = closeModal;
+
+        modalContent.appendChild(modalImg);
+        modal.appendChild(modalContent);
+        modal.appendChild(closeBtn);
+
+        modal.onclick = function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        document.body.appendChild(modal);
     }
+  }
+
 
     function closeModal() {
         document.body.style.overflow = ""; 
@@ -693,6 +744,9 @@
         document.body.style.overflow = "hidden"; 
         document.addEventListener("wheel", preventScroll, { passive: false });
         document.addEventListener("keydown", preventArrowScroll);
+
+        document.addEventListener("touchmove", preventScroll, { passive: false });
+        document.addEventListener("touchstart", preventScroll, { passive: false });
     }
 
     
@@ -700,11 +754,15 @@
         document.body.style.overflow = "";
         document.removeEventListener("wheel", preventScroll);
         document.removeEventListener("keydown", preventArrowScroll);
+
+        document.removeEventListener("touchmove", preventScroll);
+        document.removeEventListener("touchstart", preventScroll);
     }
 
     
     function preventScroll(event) {
-        event.preventDefault();
+        
+        if (event.target.tagName !== "SPAN") event.preventDefault();
     }
 
     

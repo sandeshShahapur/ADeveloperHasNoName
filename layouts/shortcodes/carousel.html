@@ -123,89 +123,140 @@
 
 {{/*  slide.html  */}}
 <script>
-    function openCarouselSlideModal(imgElement, descText) {
-        let existingModal = document.getElementById("carousel-slide-modal");
+  function openCarouselSlideModal(imgElement, descText) {
+    let existingModal = document.getElementById("carousel-slide-modal");
 
-        if (!existingModal) {
-            disableBackgroundScroll(); // Prevent background scrolling
+    if (!existingModal) {
+        disableBackgroundScroll(); // Prevent background scrolling
 
-            let modal = document.createElement("div");
-            modal.id = "carousel-slide-modal";
-            modal.style.position = "fixed";
-            modal.style.top = "0";
-            modal.style.left = "0";
-            modal.style.width = "100vw";
-            modal.style.height = "100vh";
-            modal.style.backgroundColor = "var(--code-bg);";
-            modal.style.backdropFilter = "blur(7px)";
-            modal.style.display = "flex";
-            modal.style.alignItems = "center";
-            modal.style.justifyContent = "center";
-            modal.style.zIndex = "1000";
+        let modal = document.createElement("div");
+        modal.id = "carousel-slide-modal";
+        Object.assign(modal.style, {
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.7)", // Darker background for better contrast
+            backdropFilter: "blur(7px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: "1000",
+        });
 
-            let modalContent = document.createElement("div");
-            modalContent.style.position = "relative";
-            modalContent.style.width = "90%";
-            modalContent.style.height = "70%";
-            modalContent.style.display = "flex";
-            modalContent.style.flexDirection = "column";
-            modalContent.style.alignItems = "around";
-            modalContent.style.justifyContent = "center";
-            modalContent.style.gap = "25px";
+        let modalContent = document.createElement("div");
+        Object.assign(modalContent.style, {
+            position: "relative",
+            width: "90%",
+            height: "75%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "20px",
+            padding: "15px",
+        });
 
-            let modalImg = document.createElement("img");
-            modalImg.src = imgElement.src;
-            modalImg.style.width = "100%";
-            modalImg.style.height = "100%";
-            modalImg.style.objectFit = "contain";
-            modalImg.style.cursor = "zoom-in";
+        let modalImg = document.createElement("img");
+        Object.assign(modalImg.style, {
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            cursor: "zoom-in",
+        });
 
-            // Enable zooming
-            modalImg.onclick = function () {
-                if (modalImg.style.transform === "scale(2)") {
-                    modalImg.style.transform = "scale(1)";
-                    modalImg.style.cursor = "zoom-in";
-                } else {
-                    modalImg.style.transform = "scale(2)";
-                    modalImg.style.cursor = "zoom-out";
-                }
-            };
+        modalImg.src = imgElement.src;
 
-            if (descText) {
-                let desc = document.createElement("p");
-                desc.innerText = descText;
-                desc.style.color = "var(--primary);";
-                desc.style.textAlign = "center";
-                desc.style.marginTop = "10px";
-                desc.style.fontWeight = "bold";
-                desc.style.fontSize = "18px";
-                desc.style.textShadow = "-1px -1px 0 var(--code-bg), 1px -1px 0 var(--code-bg), -1px 1px 0 var(--code-bg), 1px 1px 0 var(--code-bg)";
-                modalContent.appendChild(desc);
+        // Enable zooming
+        modalImg.onclick = function () {
+            if (modalImg.style.transform === "scale(2)") {
+                modalImg.style.transform = "scale(1)";
+                modalImg.style.cursor = "zoom-in";
+            } else {
+                modalImg.style.transform = "scale(2)";
+                modalImg.style.cursor = "zoom-out";
+            }
+        };
+
+        if (descText) {
+            let desc = document.createElement("p");
+            desc.innerText = descText;
+
+            let fontSize;
+            if (window.innerWidth <= 640) {
+              fontSize = "8px";
+            } else if (window.innerWidth <= 800) {
+              fontSize = "10px";
+            } else if (window.innerWidth <= 1024) {
+              fontSize = "12px";
+            } else if (window.innerWidth <= 1300) {
+              fontSize = "16px";
+            } else {
+              fontSize = "18px";
             }
 
-            let closeBtn = document.createElement("span");
-            closeBtn.innerHTML = "&#x2716;";
-            closeBtn.style.position = "absolute";
-            closeBtn.style.top = "30px";
-            closeBtn.style.right = "45px";
-            closeBtn.style.fontSize = "30px";
-            closeBtn.style.color = "var(--primary);";
-            closeBtn.style.fontWeight = "bold";
-            closeBtn.style.cursor = "pointer";
-            closeBtn.onclick = closeModal;
+            Object.assign(desc.style, {
+                color: "#fff", // Bright color for visibility
+                textAlign: "center",
+                marginTop: "10px",
+                fontWeight: "bold",
+                fontSize: fontSize,
+                padding: "10px",
+                backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent dark background
+                borderRadius: "8px",
+                width: "100%",
+                boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)", // Soft shadow for pop-out effect
+            });
 
-            modalContent.appendChild(modalImg);
-            modal.appendChild(modalContent);
-            modal.appendChild(closeBtn);
-            modal.onclick = function (event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            };
-
-            document.body.appendChild(modal);
+            modalContent.appendChild(desc);
         }
+
+        let closeBtn = document.createElement("span");
+        closeBtn.innerHTML = "&#x2716;";
+        if (window.innerWidth <= 640) {
+          fontSize = "14px";
+        } else if (window.innerWidth <= 800) {
+          fontSize = "18px";
+        } else if (window.innerWidth <= 1024) {
+          fontSize = "22px";
+        } else if (window.innerWidth <= 1300) {
+          fontSize = "26px";
+        } else {
+          fontSize = "30px";
+        }
+        Object.assign(closeBtn.style, {
+            position: "absolute",
+            top: (window.innerWidth > 800)? "20px" : "5px",
+            right: (window.innerWidth > 800)? "30px" : "5px",
+            fontSize: fontSize,
+            color: "#fff",
+            fontWeight: "bold",
+            cursor: "pointer",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            padding: "5px 10px",
+            borderRadius: "5px",
+            transition: "background 0.3s ease-in-out",
+        });
+
+        closeBtn.onmouseover = () => (closeBtn.style.backgroundColor = "rgba(255, 255, 255, 0.3)");
+        closeBtn.onmouseout = () => (closeBtn.style.backgroundColor = "rgba(0, 0, 0, 0.5)");
+        closeBtn.onclick = closeModal;
+
+        modalContent.appendChild(modalImg);
+        modal.appendChild(modalContent);
+        modal.appendChild(closeBtn);
+
+        modal.onclick = function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+
+        document.body.appendChild(modal);
     }
+  }
+
 
     function closeModal() {
         document.body.style.overflow = ""; // Restore scrolling
@@ -221,6 +272,9 @@
         document.body.style.overflow = "hidden"; // Disable scrolling
         document.addEventListener("wheel", preventScroll, { passive: false });
         document.addEventListener("keydown", preventArrowScroll);
+
+        document.addEventListener("touchmove", preventScroll, { passive: false });
+        document.addEventListener("touchstart", preventScroll, { passive: false });
     }
 
     // Restore scrolling after modal is closed
@@ -228,11 +282,15 @@
         document.body.style.overflow = "";
         document.removeEventListener("wheel", preventScroll);
         document.removeEventListener("keydown", preventArrowScroll);
+
+        document.removeEventListener("touchmove", preventScroll);
+        document.removeEventListener("touchstart", preventScroll);
     }
 
     // Prevent scrolling via mouse wheel
     function preventScroll(event) {
-        event.preventDefault();
+        // only prevent if the event target is not the close button (touchevents should register as a click on the close button)
+        if (event.target.tagName !== "SPAN") event.preventDefault();
     }
 
     // Prevent scrolling via arrow keys (Up, Down, Left, Right)
