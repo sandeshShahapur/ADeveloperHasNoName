@@ -43,7 +43,7 @@ while True:
         try:
             # Write the new YAML content to a JSON file
             with open(json_path, 'w', encoding='utf-8') as json_file:
-                json.dump(new_yaml_data, json_file, ensure_ascii=False, indent=2)
+                json.dump(new_yaml_data, json_file, ensure_ascii=False, indent=None, separators=(',', ':'))
             print(f"YAML file '{yaml_path}' has been converted to JSON and saved to '{json_path}'")
 
             # Update lastEditedEpoch in glossary.js
