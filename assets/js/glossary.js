@@ -8,7 +8,7 @@ const GLOSSARY_CACHE_LAST_FETCH_KEY = "glossaryCacheLastFetch";
 
 async function fetchGlossaryData() {
     // The last edited epoch of the glossary data. This is used to check if the glossary data has been updated since the client last fetched it. It is automatically updated when the yaml glossary data is updated by script.
-    const lastEditedEpoch = 1732868095373;
+    const lastEditedEpoch = 1738497292930;
     const lastEdited = new Date(lastEditedEpoch).getTime();
 
     const now = new Date().getTime();

@@ -101,8 +101,8 @@
   "keywords": [
     "Cookies", "Web Development", "Security"
   ],
-  "articleBody": "When you visit a website, you might have noticed a message that says, “This website uses cookies to ensure you get the best experience on our website” or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.\nWhy Cookies?Browsers use the HTTP protocol to communicate with a web-server for requesting webpages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your previous interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.\nThere are few options for storing data on the client (browser) like:\nCookies: Small pieces of data. Local Storage: A larger storage area. Session Storage: A storage area that stores data for the duration of the page session. What Are Cookies?Cookies are small pieces of data stored on your browser by websites you visit. They have a name and a value, and can also have additional attributes. They are used to store user-specific information like login status, preferences, shopping cart items, and more.\nWhy/When to use Cookies over Local/Session Storage?Cookies provide the following advantages over Local/Session Storage:\nCookies are sent with every request: Every time you make a request to a website including ajax-requests, cookies are sent along automatically, providing server side accessibility. This is not the case with Local/Session Storage. Expiration and Path: Cookies can have an expiration date and a path, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage). Security: Cookies can have attributes that enhances security whereas Local/Session Storage does not have these security features. How Do Cookies Work?When you visit a website, the server sends a response to your browser with the web page document and a set of instructions to create cookies. Your browser creates and stores these cookies and sends them back to the server with every subsequent request (given the cookie’s path matches the request path) you make to the website.\nNote: In the case when a website uses different domains for its frontend and backend, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.\nThus every cookie is associated with only one domain which is the the domain of the web server that set the cookie.\nAs Cookies are associated with a specific domain and path on the website, cookies created by one website cannot be accessed by another website. For example, cookies created by example.com cannot be accessed by anotherexample.com.\nNote: If the frontend and backend are on different domains, and the backend sets a cookie, the frontend cannot access it through document.cookie\ras it is on a different domain.\nCookie flow diagram\nWhy Are Cookies Used?Cookies serve several purposes on the web:\nSession Management: Cookies are used to manage user sessions on websites. They help websites remember your login status, shopping cart items, and other session-related information.\nTracking and Analytics: Cookies are used for tracking user behavior on websites. They help website owners understand how users interact with their site, which pages are popular, and more.\nAdvertising: Cookies are used for targeted advertising. They help advertisers show relevant ads to users based on their browsing history and interests.\nCookie AttributesCookies can have several attributes that define their behavior:\nName and Value: The name and value of the cookie.\nDomain: The domain or sub-domains associated with the cookie. The cookie is sent only to these sub/domain on subsequent requests.\nPath: The path on the website where the cookie is valid. The cookie is accessible and sent only for requests that match this path.\nExpiration Date: The date and time when the cookie expires. After this time, the cookie is no longer sent to the server and is deleted.\nSecure: A flag that indicates that the cookie should only be sent over secure connections (HTTPS). This ensures that the cookie values sent over the network are encrypted and not readable by unauthorized parties.\nHttpOnly: A flag that indicates the cookie should not be accessible by JavaScript (\rdocument.cookie\r) on the client-side. This helps to prevent XSS attacks from accessing sensitive cookies.\nSameSite: A flag that controls whether or not a cookie is sent with cross-site requests cross-site requests. It helps prevent CSRF attacks from making users unknowingly perform unwanted actions on other websites.\nManaging CookiesMost modern browsers allow you to manage cookies through their settings. You can view the cookies stored on your browser, delete specific cookies, block all cookies, or block cookies from specific websites.\nBy managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.\nConclusionCookies are an essential part of the web ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.\n",
-  "wordCount" : "890",
+  "articleBody": "When you visit a website, you might have noticed a message that says, “This website uses cookies to ensure you get the best experience on our website” or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.\nWhy Cookies?Browsers use the HTTP protocol to communicate with a web-server for requesting webpages, images, videos, and other resources. HTTP is a stateless protocol, meaning that each request is independent of the previous one, and the server does not maintain any information about your previous interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.\nThere are few options for storing data on the client (browser) like:\nCookies: Small pieces of data. Local Storage: A larger storage area. Session Storage: A storage area that stores data for the duration of the page session. What Are Cookies?Cookies are small pieces of data stored on your browser by websites you visit. They have a name and a value, and can also have additional attributes. They are used to store user-specific information like login status, preferences, shopping cart items, and more.\nWhy/When to use Cookies over Local/Session Storage?Cookies provide the following advantages over Local/Session Storage:\nCookies are sent with every request: Every time you make a request to a website including ajax-requests, cookies are sent along automatically, providing server side accessibility. This is not the case with Local/Session Storage. Expiration and Path: Cookies can have an expiration date and a path, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage). Security: Cookies can have attributes that enhances security whereas Local/Session Storage does not have these security features. How Do Cookies Work?When you visit a website, the server sends a response to your browser with the web page document and a set of instructions to create cookies. Your browser creates and stores these cookies and sends them back to the server with every subsequent request (given the cookie’s path matches the request path) you make to the website.\nNote: In the case when a website uses different domains for its frontend and backend, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.\nThus every cookie is associated with only one domain which is the the domain of the web server that set the cookie.\nAs Cookies are associated with a specific domain and path on the website, cookies created by one website cannot be accessed by another website. For example, cookies created by example.com cannot be accessed by anotherexample.com.\nNote: If the frontend and backend are on different domains, and the backend sets a cookie, the frontend cannot access it through document.cookie as it is on a different domain.\nCookie flow diagram\nWhy Are Cookies Used?Cookies serve several purposes on the web:\nSession Management: Cookies are used to manage user sessions on websites. They help websites remember your login status, shopping cart items, and other session-related information.\nTracking and Analytics: Cookies are used for tracking user behavior on websites. They help website owners understand how users interact with their site, which pages are popular, and more.\nAdvertising: Cookies are used for targeted advertising. They help advertisers show relevant ads to users based on their browsing history and interests.\nCookie AttributesCookies can have several attributes that define their behavior:\nName and Value: The name and value of the cookie.\nDomain: The domain or sub-domains associated with the cookie. The cookie is sent only to these sub/domain on subsequent requests.\nPath: The path on the website where the cookie is valid. The cookie is accessible and sent only for requests that match this path.\nExpiration Date: The date and time when the cookie expires. After this time, the cookie is no longer sent to the server and is deleted.\nSecure: A flag that indicates that the cookie should only be sent over secure connections (HTTPS). This ensures that the cookie values sent over the network are encrypted and not readable by unauthorized parties.\nHttpOnly: A flag that indicates the cookie should not be accessible by JavaScript (document.cookie) on the client-side. This helps to prevent XSS attacks from accessing sensitive cookies.\nSameSite: A flag that controls whether or not a cookie is sent with cross-site requests cross-site requests. It helps prevent CSRF attacks from making users unknowingly perform unwanted actions on other websites.\nManaging CookiesMost modern browsers allow you to manage cookies through their settings. You can view the cookies stored on your browser, delete specific cookies, block all cookies, or block cookies from specific websites.\nBy managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.\nConclusionCookies are an essential part of the web ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.\n",
+  "wordCount" : "888",
   "inLanguage": "en",
   "datePublished": "2024-10-13T07:56:37+05:30",
   "dateModified": "2024-11-28T16:02:28+05:30",
@@ -299,34 +299,34 @@
 </div>
 
   <div class="post-content"><p>When you visit a <span class="glossary-term"
-      glossary-data-tree-id="410511141315216378129"
+      glossary-data-tree-id="485910146731112151132"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>, you might have noticed a message that says, &ldquo;This website uses cookies to ensure you get the best experience on our website&rdquo; or have received a prompt to accept cookies. Before understanding what these cookies are and why they are used, let us look at the context around cookies.</p>
 <h2 id="why-cookies">
     Why Cookies?</h2><p>Browsers use the <span class="glossary-term"
-      glossary-data-tree-id="349512101411811327615"
+      glossary-data-tree-id="108141531311642112597"
       glossary-data-tree-node-id="0"
       glossary-data-term="http"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">HTTP</span> <span class="glossary-term"
-       glossary-data-tree-id="411912214681331751015"
+       glossary-data-tree-id="143613715852101129114"
        glossary-data-tree-node-id="0"
        glossary-data-term="protocol"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">protocol</span> to communicate with a <span class="glossary-term"
-      glossary-data-tree-id="122515111364713910814"
+      glossary-data-tree-id="253467912151081114113"
       glossary-data-tree-node-id="0"
       glossary-data-term="web-server"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web-server</span> for requesting <span class="glossary-term"
-      glossary-data-tree-id="121210861113579141534"
+      glossary-data-tree-id="951214231081371611415"
       glossary-data-tree-node-id="0"
       glossary-data-term="webpage"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">webpages</span>, images, videos, and other resources. HTTP is a stateless protocol, meaning that each <span class="glossary-term"
-      glossary-data-tree-id="591161012133181471524"
+      glossary-data-tree-id="310469113214111557812"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">request</span> is independent of the previous one, and the server does not maintain any information about your previous interactions with the website. However, websites often need to remember user-specific information to provide a personalized experience like remembering your login status, preferences, shopping cart items, and more.</p>
 <p>There are few options for storing data on the <span class="glossary-term"
-      glossary-data-tree-id="592147384111516101312"
+      glossary-data-tree-id="261011414311315978512"
       glossary-data-tree-node-id="0"
       glossary-data-term="client"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client</span> (browser) like:</p>
@@ -341,12 +341,12 @@
     Why/When to use Cookies over Local/Session Storage?</h2><p>Cookies provide the following advantages over Local/Session Storage:</p>
 <ol>
 <li><strong>Cookies are sent with every request</strong>: Every time you make a request to a website including <span class="glossary-term"
-      glossary-data-tree-id="612314171081315925114"
+      glossary-data-tree-id="115247131089123511146"
       glossary-data-tree-node-id="0"
       glossary-data-term="ajax-request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">ajax-requests</span>, cookies are sent along automatically, providing server side accessibility. This is not the case with Local/Session Storage.</li>
 <li><strong>Expiration and Path</strong>: Cookies can have an expiration date and a <span class="glossary-term"
-      glossary-data-tree-id="641513512823711411109"
+      glossary-data-tree-id="761481112241315591013"
       glossary-data-tree-node-id="0"
       glossary-data-term="url-path"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">path</span>, allowing them to be stored for a specific duration and accessed only on specific paths. Local/Session Storage either persists forever (Local Storage) or is cleared when the page session ends (Session Storage).</li>
@@ -354,21 +354,21 @@
 </ol>
 <h2 id="how-do-cookies-work">
     How Do Cookies Work?</h2><p>When you visit a website, the server sends a <span class="glossary-term"
-      glossary-data-tree-id="145111071413121568932"
+      glossary-data-tree-id="610548111513141271932"
       glossary-data-tree-node-id="0"
       glossary-data-term="response"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">response</span> to your browser with the web page document and a set of instructions to create cookies. Your browser creates and stores these cookies and sends them back to the server with every subsequent request (given the cookie&rsquo;s path matches the request path) you make to the website.</p>
 <blockquote>
 <p>Note: In the case when a website uses different <span class="glossary-term"
-      glossary-data-tree-id="103119765132141581412"
+      glossary-data-tree-id="413114532158117126109"
       glossary-data-tree-node-id="0"
       glossary-data-term="domain"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">domains</span> for its <span class="glossary-term"
-      glossary-data-tree-id="146738915413521211101"
+      glossary-data-tree-id="121113853469152101417"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> and <span class="glossary-term"
-      glossary-data-tree-id="212516133149108157411"
+      glossary-data-tree-id="529612141510714311138"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span>, cookies are likely not stored by the frontend domain (the website you visit), but by the backend domain.</p>
@@ -378,26 +378,10 @@
 <blockquote>
 <p>Note: If the frontend and backend are on different domains, and the backend sets a cookie, the frontend cannot access it through <a
 
-	
-
 		href = "https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		<code>document.cookie</code>
-	</span>
-
-</a> as it is on a different domain.</p>
+		rel = "nofollow noopener noreferrer"><span><code>document.cookie</code></span></a> as it is on a different domain.</p>
 </blockquote>
 
 
@@ -429,7 +413,7 @@
 </li>
 <li>
 <p><strong>Domain</strong>: The domain or <span class="glossary-term"
-      glossary-data-tree-id="128563471314109111152"
+      glossary-data-tree-id="311128159142541013671"
       glossary-data-tree-node-id="0"
       glossary-data-term="subdomain"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">sub-domains</span> associated with the cookie. The cookie is sent only to these sub/domain on subsequent requests.</p>
@@ -442,58 +426,42 @@
 </li>
 <li>
 <p><strong>Secure</strong>: A flag that indicates that the cookie should only be sent over secure connections (<span class="glossary-term"
-      glossary-data-tree-id="813415793112141215610"
+      glossary-data-tree-id="761051531398142111412"
       glossary-data-tree-node-id="0"
       glossary-data-term="https"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">HTTPS</span>). This ensures that the cookie values sent over the network are <span class="glossary-term"
-      glossary-data-tree-id="914365111528712110134"
+      glossary-data-tree-id="213115171041512836149"
       glossary-data-tree-node-id="0"
       glossary-data-term="encryption"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">encrypted</span> and not readable by unauthorized parties.</p>
 </li>
 <li>
 <p><strong>HttpOnly</strong>: A flag that indicates the cookie should not be accessible by <span class="glossary-term"
-      glossary-data-tree-id="129831115721445110136"
+      glossary-data-tree-id="671213141192141510583"
       glossary-data-tree-node-id="0"
       glossary-data-term="javascript"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JavaScript</span> (<a
 
-	
-
 		href = "https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		<code>document.cookie</code>
-	</span>
-
-</a>) on the <span class="glossary-term"
-      glossary-data-tree-id="415111435179212813106"
+		rel = "nofollow noopener noreferrer"><span><code>document.cookie</code></span></a>) on the <span class="glossary-term"
+      glossary-data-tree-id="111374611531285102914"
       glossary-data-tree-node-id="0"
       glossary-data-term="client-side"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client-side</span>. This helps to prevent <span class="glossary-term"
-      glossary-data-tree-id="614513791421112153810"
+      glossary-data-tree-id="124623158911413510117"
       glossary-data-tree-node-id="0"
       glossary-data-term="xss"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">XSS</span> attacks from accessing sensitive cookies.</p>
 </li>
 <li>
 <p><strong>SameSite</strong>: A flag that controls whether or not a cookie is sent with cross-site requests <span class="glossary-term"
-      glossary-data-tree-id="462103117141585139112"
+      glossary-data-tree-id="511314131224891671015"
       glossary-data-tree-node-id="0"
       glossary-data-term="cross-origin"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cross-site requests</span>. It helps prevent <span class="glossary-term"
-      glossary-data-tree-id="721214846110351511913"
+      glossary-data-tree-id="113107314515986411122"
       glossary-data-tree-node-id="0"
       glossary-data-term="csrf"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">CSRF</span> attacks from making users unknowingly perform unwanted actions on other websites.</p>
@@ -504,7 +472,7 @@
 <p>By managing cookies, you can control your privacy and security while browsing the web. However, blocking all cookies may affect the functionality of some websites that rely on cookies for essential features.</p>
 <h2 id="conclusion">
     Conclusion</h2><p>Cookies are an essential part of the <span class="glossary-term"
-      glossary-data-tree-id="112139741261483515110"
+      glossary-data-tree-id="681491312105273111154"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> ecosystem, allowing websites to remember user-specific information and provide a personalized experience. They are used for session management, personalization, tracking, advertising, and more. By understanding how cookies work and their attributes, you can make informed decisions about your privacy and security while browsing the web.</p>
@@ -730,7 +698,7 @@
 
     
         
-        <script src="/js/glossary.min.44c9d26a0dc47af256df49458f5b2b0daaea6ee8b016ea2d535ea21fbe2905bd.js"></script>
+        <script src="/js/glossary.min.40322288ad406138bb3ae2ad1beec71ecbd98d7aca814aad3e1fdce1f751642d.js"></script>
     
 </body>
 

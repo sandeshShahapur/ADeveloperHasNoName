@@ -101,8 +101,8 @@
   "keywords": [
     "TypeScript", "JavaScript", "Programming Errors", "Module Resolution"
   ],
-  "articleBody": " Error TS2792: Cannot find module ‘…’. Did you mean to set the ‘moduleResolution’ option to ’nodenext’, or to add aliases to the ‘paths’ option?\nThis error can seem weird, as the TypeScript compiler sometimes complains about missing modules that don’t seem directly related to your project. It can be a non-blocking error i.e. the transpilation or other processes are not affected. It occurs when the compiler is not able to locate the required module. At times stack traces have not found to be helpful for me.\nNevertheless, there are a few options to resolve it. If you are not a project maintainer and you are seeing this error in a project/software that you are trying to run, then it is better to contact the project/software maintainer and ask them to resolve it. You could also try the below steps to fix the error yourself.\nSolution 1: Configure Compiler Options in tsconfig.jsonThe moduleResolution property specifies how the compiler tries to find the module that has to be imported. The value of the moduleResolution property depends on the value of the module property which specifies the import/export code style of the project.\nIf moduleResolution is misconfigured, you may encounter this error.\nSteps Open the tsconfig.json file located in the root directory of your project. For example:\n1{ 2 \"compilerOptions\": { 3 ... 4 \"module\": \"ESNext\", 5 \"moduleResolution\": \"node\", 6 ... 7 }, 8 ... 9} Ensure that the module property aligns with your project’s import/export style.\nUpdate the moduleResolution property:\nSet it to node. For example:\n1\"moduleResolution\": \"node\" If it’s not explicitly set, it might default to classic, which could be causing the issue.\nSave the file and recompile your project:\ntsc Solution 2: Add Aliases to the paths OptionIf configuring the compiler options doesn’t work, as a work around you can try installing the missing module and then adding aliases to the paths option in the tsconfig.json file.\nSteps Install the missing module:\nnpm install Add an alias in tsconfig.json under the paths option:\n1{ 2 \"compilerOptions\": { 3 ... 4 \"module\": \"ESNext\", 5 \"moduleResolution\": \"node\", 6 ... 7 \"paths\": { 8 // example: \"undici-types\": [\"./node_modules/undici-types/index.d.ts\"], 9 \"\": [\"./node_modules//\"], 10 } 11 }, 12 ... 13} Save the file and recompile:\ntsc Solution 3: Purge node_modules and package-lock.jsonSometimes, the error is caused by stale or corrupted dependencies.\nSteps Delete the node_modules directory and package-lock.json file:\nrm -rf node_modules package-lock.json Recompile your project:\ntsc If the issue persists, ensure that none of the parent directories of the project have a node_modules directory which could be causing conflicts. Then re-run the TypeScript compiler.\nSolution 4: Solution 3 + Reinstall DependenciesIf you have tried Solution 3 and it did not work, you can try reinstalling all dependencies.\nSteps Run:\nrm -rf node_modules package-lock.json \u0026\u0026 npm install Compile again:\ntsc Solution 5: Downgrade the Module in which the Error OccursIf the error is caused by a specific module, you can try downgrading it to a version that is compatible with your project.\nSteps Identify the problematic module:\nCheck the error message to locate the module causing the issue.\nExample: node_modules/@types/node/globals.d.ts:473:25 - error TS2792: ...\nHere, the issue is in the @types/node module.\nDetermine the compatible version:\nRefer to the module’s documentation, changelog, or issue tracker to find a version compatible with your project’s configuration.\nModify your package.json file:\nAdd the module and its specific version to either “dependencies” or “devDependencies”\r, depending on how it’s used:\n1{ 2 ... 3 \"dependencies\": { 4 ... 5 \"\": \"\" 6 } 7} or\n1{ 2 ... 3 \"devDependencies\": { 4 ... 5 \"\": \"\" 6 } 7} Install the downgraded module:\nnpm install Recompile your project:\ntsc ConclusionI hope one of the above solutions helped you resolve the “Cannot Find Module ‘…’ \" error in TypeScript. If it did not, then quit TypeScript and go Rust!\n",
-  "wordCount" : "640",
+  "articleBody": " Error TS2792: Cannot find module ‘…’. Did you mean to set the ‘moduleResolution’ option to ’nodenext’, or to add aliases to the ‘paths’ option?\nThis error can seem weird because the TypeScript compiler sometimes complains about missing modules that don’t seem directly related to your project. It can be a non-blocking error i.e. the transpilation or other processes are not affected. It occurs when the compiler is not able to locate the required module. At times stack traces have not been found to be helpful for me.\nNevertheless, there are a few options to resolve it. If you are not a project maintainer and you are seeing this error in a project/software that you are trying to run, then it is better to contact the project/software maintainer and ask them to resolve it. You could also try the below steps to fix the error yourself.\nSolution 1: Configure Compiler Options in tsconfig.jsonThe moduleResolution property specifies how the compiler tries to find the module that has to be imported. The value of the moduleResolution property depends on the value of the module property which specifies the import/export code style of the project.\nIf moduleResolution is misconfigured, you may encounter this error.\nSteps Open the tsconfig.json file located in the root directory of your project. For example:\n1{ 2 \"compilerOptions\": { 3 ... 4 \"module\": \"ESNext\", 5 \"moduleResolution\": \"node\", 6 ... 7 }, 8 ... 9} Ensure that the module property aligns with your project’s import/export style.\nUpdate the moduleResolution property:\nSet it to node. For example:\n\"moduleResolution\": \"node\" If it’s not explicitly set, it might default to classic, which could be causing the issue.\nSave the file and recompile your project:\ntsc Solution 2: Add Aliases to the paths OptionIf configuring the compiler options doesn’t work, as a work around you can try installing the missing module and then adding aliases to the paths option in the tsconfig.json file.\nSteps Install the missing module:\nnpm install Add an alias in tsconfig.json under the paths option:\n1{ 2 \"compilerOptions\": { 3 ... 4 \"module\": \"ESNext\", 5 \"moduleResolution\": \"node\", 6 ... 7 \"paths\": { 8 // example: \"undici-types\": [\"./node_modules/undici-types/index.d.ts\"], 9 \"\": [\"./node_modules//\"], 10 } 11 }, 12 ... 13} Save the file and recompile:\ntsc Solution 3: Purge node_modules and package-lock.jsonSometimes, the error is caused by stale or corrupted dependencies.\nSteps Delete the node_modules directory and package-lock.json file:\nbash (Linux/macOS): rm -rf node_modules package-lock.json cmd (Windows): rmdir /s /q node_modules \u0026\u0026 del package-lock.json Recompile your project:\ntsc If the issue persists, ensure that none of the parent directories of the project have a node_modules directory because it could be causing conflicts. Then re-run the TypeScript compiler.\nSolution 4: Solution 3 + Reinstall DependenciesIf you have tried Solution 3 and it did not work, you can then try reinstalling all dependencies.\nSteps Install dependencies again (after deleting node_modules and package-lock.json):\nnpm install Compile again:\ntsc Solution 5: Downgrade the Module in which the Error OccursIf the error is caused by a specific module, you can try downgrading it to a version that is compatible with your project.\nSteps Identify the problematic module:\nCheck the error message to locate the module causing the issue.\nExample: node_modules/@types/node/globals.d.ts:473:25 - error TS2792: ...\nHere, the issue is in the @types/node module.\nDetermine the compatible version:\nRefer to the module’s documentation, changelog, issue tracker, or try trial and error to find a version compatible with your project’s configuration.\nModify your package.json file:\nAdd the module and its specific version to either “dependencies” or “devDependencies”, depending on how it’s used:\n1{ 2 ... 3 \"dependencies\": { 4 ... 5 \"\": \"\" 6 } 7} or\n1{ 2 ... 3 \"devDependencies\": { 4 ... 5 \"\": \"\" 6 } 7} Install the downgraded module:\nnpm install Recompile your project:\ntsc ConclusionI hope one of the above solutions helped you resolve the Cannot Find Module '...' error in TypeScript. If it did not, then quit TypeScript and go Rust!\n",
+  "wordCount" : "658",
   "inLanguage": "en",
   "datePublished": "2025-01-23T18:55:48+05:30",
   "dateModified": "2025-02-02T10:10:34+05:30",
@@ -317,7 +317,15 @@
   <div class="post-content"><blockquote>
 <p><strong>Error</strong> TS2792: Cannot find module &lsquo;&hellip;&rsquo;. Did you mean to set the &lsquo;moduleResolution&rsquo; option to &rsquo;nodenext&rsquo;, or to add aliases to the &lsquo;paths&rsquo; option?</p>
 </blockquote>
-<p>This error can seem weird, as the TypeScript compiler sometimes complains about missing modules that don’t seem directly related to your project. It can be a non-blocking error i.e. the transpilation or other processes are not affected. It occurs when the compiler is not able to locate the required module. At times stack traces have not found to be helpful for me.</p>
+<p>This error can seem weird because the TypeScript <span class="glossary-term"
+      glossary-data-tree-id="521314310121648151197"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="transpiler"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">compiler</span> sometimes complains about missing modules that don’t seem directly related to your project. It can be a non-blocking error i.e. the <span class="glossary-term"
+      glossary-data-tree-id="159118410141312125673"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="transpile"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">transpilation</span> or other processes are not affected. It occurs when the compiler is not able to locate the required module. At times stack traces have not been found to be helpful for me.</p>
 <p>Nevertheless, there are a few options to resolve it. If you are not a project maintainer and you are seeing this error in a project/software that you are trying to run, then it is better to contact the project/software maintainer and ask them to resolve it. You could also try the below steps to fix the error yourself.</p>
 <hr>
 <h2 id="solution-1-configure-compiler-options-in-tsconfigjson">
@@ -343,7 +351,7 @@
 <ul>
 <li>
 <p>Set it to <code>node</code>. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#e6db74">&#34;moduleResolution&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;node&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#757575;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#008900">&#34;moduleResolution&#34;</span><span style="color:#ec0000">:</span> <span style="color:#008900">&#34;node&#34;</span>
 </span></span></code></pre></div></li>
 <li>
 <p>If it’s not explicitly set, it might default to <code>classic</code>, which could be causing the issue.</p>
@@ -392,21 +400,28 @@
     Steps</h3><ol>
 <li>
 <p>Delete the <code>node_modules</code> directory and <code>package-lock.json</code> file:</p>
+<ul>
+<li>bash (Linux/macOS):</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf node_modules package-lock.json
+</span></span></code></pre></div><ul>
+<li>cmd (Windows):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">rmdir</span> /s /q node_modules &amp;&amp; <span style="color:#66d9ef">del</span> package-lock.json
 </span></span></code></pre></div></li>
 <li>
 <p>Recompile your project:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tsc
 </span></span></code></pre></div></li>
 </ol>
-<p>If the issue persists, ensure that none of the parent directories of the project have a <code>node_modules</code> directory which could be causing conflicts. Then re-run the TypeScript compiler.</p>
+<p>If the issue persists, ensure that none of the parent directories of the project have a <code>node_modules</code> directory because it could be causing conflicts. Then re-run the TypeScript compiler.</p>
 <h2 id="solution-4-solution-3--reinstall-dependencies">
-    Solution 4: Solution 3 + Reinstall Dependencies</h2><p>If you have tried Solution 3 and it did not work, you can try reinstalling all dependencies.</p>
+    Solution 4: Solution 3 + Reinstall Dependencies</h2><p>If you have tried Solution 3 and it did not work, you can then try reinstalling all dependencies.</p>
 <h3 id="steps-3">
     Steps</h3><ol>
 <li>
-<p>Run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf node_modules package-lock.json <span style="color:#f92672">&amp;&amp;</span> npm install
+<p>Install dependencies again (after deleting <code>node_modules</code> and <code>package-lock.json</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install
 </span></span></code></pre></div></li>
 <li>
 <p>Compile again:</p>
@@ -430,32 +445,16 @@
 </li>
 <li>
 <p>Determine the compatible version:</p>
-<p>Refer to the module’s documentation, changelog, or issue tracker to find a version compatible with your project’s configuration.</p>
+<p>Refer to the module’s documentation, changelog, issue tracker, or try trial and error to find a version compatible with your project’s configuration.</p>
 </li>
 <li>
 <p>Modify your <code>package.json</code> file:</p>
 <p>Add the module and its specific version to either <a
 
-	
-
 		href = "https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencie"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		&ldquo;dependencies&rdquo; or &ldquo;devDependencies&rdquo;
-	</span>
-
-</a>, depending on how it’s used:</p>
+		rel = "nofollow noopener noreferrer"><span>&ldquo;dependencies&rdquo; or &ldquo;devDependencies&rdquo;</span></a>, depending on how it’s used:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>{
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#960050;background-color:#1e0010">...</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#f92672">&#34;dependencies&#34;</span>: {
@@ -483,7 +482,7 @@
 </ol>
 <hr>
 <h2 id="conclusion">
-    Conclusion</h2><p>I hope one of the above solutions helped you resolve the &ldquo;Cannot Find Module &lsquo;&hellip;&rsquo; &quot; error in TypeScript. <del>If it did not, then quit TypeScript and go Rust!</del></p>
+    Conclusion</h2><p>I hope one of the above solutions helped you resolve the <code>Cannot Find Module '...'</code> error in TypeScript. <del>If it did not, then quit TypeScript and go Rust!</del></p>
 
 
   </div>
@@ -707,7 +706,7 @@
 
     
         
-        <script src="/js/glossary.min.44c9d26a0dc47af256df49458f5b2b0daaea6ee8b016ea2d535ea21fbe2905bd.js"></script>
+        <script src="/js/glossary.min.40322288ad406138bb3ae2ad1beec71ecbd98d7aca814aad3e1fdce1f751642d.js"></script>
     
 </body>
 

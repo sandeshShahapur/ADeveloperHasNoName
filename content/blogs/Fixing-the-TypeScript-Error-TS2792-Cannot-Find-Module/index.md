@@ -10,7 +10,7 @@ categories: ["Programming", "Tutorials", "Troubleshooting"]
 
 > **Error** TS2792: Cannot find module '...'. Did you mean to set the 'moduleResolution' option to 'nodenext', or to add aliases to the 'paths' option?
 
-This error can seem weird, as the TypeScript compiler sometimes complains about missing modules that don’t seem directly related to your project. It can be a non-blocking error i.e. the transpilation or other processes are not affected. It occurs when the compiler is not able to locate the required module. At times stack traces have not found to be helpful for me.
+This error can seem weird because the TypeScript {{< glossary term="transpiler" displayTerm="compiler" >}} sometimes complains about missing modules that don’t seem directly related to your project. It can be a non-blocking error i.e. the {{< glossary term="transpile" displayTerm="transpilation" >}} or other processes are not affected. It occurs when the compiler is not able to locate the required module. At times stack traces have not been found to be helpful for me.
 
 Nevertheless, there are a few options to resolve it. If you are not a project maintainer and you are seeing this error in a project/software that you are trying to run, then it is better to contact the project/software maintainer and ask them to resolve it. You could also try the below steps to fix the error yourself.
 
@@ -44,7 +44,7 @@ If `moduleResolution` is misconfigured, you may encounter this error.
 
     - Set it to `node`. For example:
 
-        ```json {lineNos=inline}
+        ```json {style="average"}
         "moduleResolution": "node"
         ```
 
@@ -104,9 +104,17 @@ Sometimes, the error is caused by stale or corrupted dependencies.
 
 1. Delete the `node_modules` directory and `package-lock.json` file:
 
-   ```bash
-   rm -rf node_modules package-lock.json
-   ```
+   - bash (Linux/macOS):
+
+    ``` bash
+    rm -rf node_modules package-lock.json
+    ```
+
+    - cmd (Windows):
+
+    ``` cmd
+    rmdir /s /q node_modules && del package-lock.json
+    ```
 
 2. Recompile your project:
 
@@ -114,18 +122,18 @@ Sometimes, the error is caused by stale or corrupted dependencies.
    tsc
    ```
 
-If the issue persists, ensure that none of the parent directories of the project have a `node_modules` directory which could be causing conflicts. Then re-run the TypeScript compiler.
+If the issue persists, ensure that none of the parent directories of the project have a `node_modules` directory because it could be causing conflicts. Then re-run the TypeScript compiler.
 
 ## Solution 4: Solution 3 + Reinstall Dependencies
 
-If you have tried Solution 3 and it did not work, you can try reinstalling all dependencies.
+If you have tried Solution 3 and it did not work, you can then try reinstalling all dependencies.
 
 ### Steps
 
-1. Run:
+1. Install dependencies again (after deleting `node_modules` and `package-lock.json`):
 
     ``` bash
-    rm -rf node_modules package-lock.json && npm install
+    npm install
     ```
 
 2. Compile again:
@@ -152,7 +160,7 @@ If the error is caused by a specific module, you can try downgrading it to a ver
 
 2. Determine the compatible version:
 
-   Refer to the module’s documentation, changelog, or issue tracker to find a version compatible with your project’s configuration.
+   Refer to the module’s documentation, changelog, issue tracker, or try trial and error to find a version compatible with your project’s configuration.
 
 3. Modify your `package.json` file:
 
@@ -196,4 +204,4 @@ If the error is caused by a specific module, you can try downgrading it to a ver
 
 ## Conclusion
 
-I hope one of the above solutions helped you resolve the "Cannot Find Module '...' " error in TypeScript. ~If it did not, then quit TypeScript and go Rust!~
+I hope one of the above solutions helped you resolve the `Cannot Find Module '...'` error in TypeScript. ~If it did not, then quit TypeScript and go Rust!~

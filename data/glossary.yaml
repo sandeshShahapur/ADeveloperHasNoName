@@ -119,7 +119,7 @@ cascading: '
 ccsld: Country Code Second-Level Domain is the part of a {{< glossary term="domain" >}} name that comes to the left of the {{< glossary term="ccTLD" >}}. It is a hierarchy to the TLD that indicates the type of entity intended to register the SLD under it (e.g. .co (commercial), .gov (government), etc). For example in the .uk namespace an academic institution would register under the .ac.uk ccSLD, while companies would register under .co.uk.
 
 
-cctld: Country Code Top-Level Domain is a two-letter **{{< glossary term="TLD" >}}** that is **specific to a country or territory**. It is considered a domain extension that is used to identify websites associated with a particular country or region. Examples include .us (United States), .uk (United Kingdom), .in (India), etc.
+cctld: Country Code Top-Level Domain is a two-letter **{{< glossary term="TLD" >}}** that is **specific to a country or territory**. It is considered a domain extension that is used to identify {{< glossary term="website" displayTerm="websites" >}} associated with a particular country or region. Examples include .us (United States), .uk (United Kingdom), .in (India), etc.
 
 
 character-encoding-scheme: A character encoding scheme defines how {{< glossary term="code-point" displayTerm="code-points" >}} of a {{< glossary term="character-encoding-standard" >}} are represented in {{< glossary term="binary-code" >}} or memory. Examples include {{< glossary term="UTF-8" >}}, {{< glossary term="UTF-16" >}}, {{< glossary term="ASCII" >}}, etc.
@@ -262,7 +262,7 @@ digital: Digital is a **discrete representation of data** where the data is repr
 discord: Discord is a platform where you can chat, speak, stream with your friends or communities. A Discord server is like a big group space. Servers contain channels which are like chat/voice rooms for a specific topic. Roles are assignable to server members which are for allowing/denying members access to certain things or for identifications like age, region, etc. Discord bots are user interactable community-made programs that can help you manage your server, play music, play games, etc that you can add to your server.
 
 
-dns: The Domain Name System **translates/resolves {{< glossary term="website" >}} {{< glossary term="domain" >}} names into {{< glossary term="IP-Address" displayTerm="IP Addresses" >}}** of the {{< glossary term="web-server" displayTerm="web-servers" >}} that hosts the {{< glossary term="website" >}}. Browsers use it to find the location/device to {{< glossary term="request" >}} the website from. It acts as the internet's phone book, eliminating the need for users to remember IP addresses and instead use human-readable domain names.
+dns: The Domain Name System **translates/resolves {{< glossary term="website" >}} {{< glossary term="domain" >}} names into {{< glossary term="IP-Address" displayTerm="IP Addresses" >}}** of the {{< glossary term="web-server" displayTerm="web-servers" >}} that hosts the website. Browsers use it to find the location/device to {{< glossary term="request" >}} the website from. It acts as the internet's phone book, eliminating the need for users to remember IP addresses and instead use human-readable domain names.
 
 
 # add learn more !2
@@ -300,10 +300,10 @@ framework: A framework is **a collection of tools and {{< glossary term="library
 
 
 # frontend -> client-side -> client
-frontend: Frontend is the **{{< glossary term="client-side" >}}/front-scenes** of a application that is responsible for rendering of the {{< glossary term="UI" >}}, handling user interactions and events, communicating with the {{< glossary term="backend" >}}, computing.
+frontend: Frontend is the **{{< glossary term="client-side" >}}/front-scenes** of an application that is responsible for rendering of the {{< glossary term="UI" >}}, handling user interactions and events, communicating with the {{< glossary term="backend" >}}, computing.
 
 
-ftp: "File Transfer Protocol is a standard network {{< glossary term=protocol >}} used to **transfer files between a {{< glossary term=client >}} and a {{< glossary term=server >}}** on a computer network. It uses two separate connections: a control connection to send commands between the client and server, and a data connection to transfer the actual files. FTP is commonly used to upload files to a website, download software, and share files between devices."
+ftp: "File Transfer Protocol is a standard network {{< glossary term=protocol >}} used to **transfer files between a {{< glossary term=client >}} and a {{< glossary term=server >}}** on a computer network. It uses two separate connections: a control connection to send commands between the client and server, and a data connection to transfer the actual files. FTP is commonly used to upload files to a {{< glossary term='website' >}}, download software, and share files between devices."
 
 
 function: A function is a **block of code that performs a specific task or operation**. It may take in {{< glossary term="argument"  displayTerm="arguments" >}}, performs its work, and may return a result. In some programming languages, functions are {{< glossary term="first-class-citizen" >}} i.e. they are like any other data value (which are {{< glossary term="reference" displayTerm="references" >}} to the first instruction of the function).
@@ -327,7 +327,7 @@ heap: "
 high-level: High-Level refers to **programming languages that are closer to human language and further from {{< glossary term="machine-language" >}}**, making it easier to read, write and understand for humans.  It is abstracted from the details of the computer's hardware and provides more simplicity and features to the programmer, making it easier to develop software. However, they are less efficient and slower to execute than {{< glossary term="low-level" >}} languages and more work is required to convert them to machine language. Examples include Python, Java, JavaScript, etc.
 
 
-html: '{{< glossary term="HyperText" >}} markup language is the **standard {{< glossary term="Markup-Language" >}} for creating {{< glossary term="webpage" displayTerm="webpages" >}} and web applications**. It **describes the structure and semantic meaning** of web page content using a system of tags and attributes. HTML elements are the building blocks of a website, e.g. headings (<​h1-6/>), paragraphs (<​p/>), images (<​img>), links (<​a/>), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.'
+html: '{{< glossary term="HyperText" >}} markup language is the **standard {{< glossary term="Markup-Language" >}} for creating {{< glossary term="webpage" displayTerm="webpages" >}} and web applications**. It **describes the structure and semantic meaning** of web page content using a system of tags and attributes. HTML elements are the building blocks of a {{< glossary term="website" >}}, e.g. headings (<​h1-6/>), paragraphs (<​p/>), images (<​img>), links (<​a/>), etc which can be nested inside each other. The browser reads the HTML file and renders the content on the screen.'
 
 
 http: '
@@ -552,6 +552,9 @@ request: When a {{< glossary term="frontend" >}}/{{< glossary term="client" >}} 
 response: When a {{< glossary term="backend" >}}/{{< glossary term="server" >}} receives a {{< glossary term="request" >}} for some resource or service from a {{< glossary term="frontend" >}}/{{< glossary term="client" >}}, it figures out what the client wants, processes the request and answers back to the client with the result. **This answer is called a response**. The response typically contains the requested data or information, along with a status code indicating the success or failure of the request.
 
 
+responsive: Responsiveness is the ability of a {{< glossary term="webpage" >}} to adjust/conform itself to different device screen sizes (from large desktop monitors to small mobile screens) while maintaining its looks (layout, design, and content) and ease of use. Examples of poor responsiveness include overflowing text/content from its container or screen, 2 or more overlapping elements, stretched or squished images, clipped text/content, etc.
+
+
 request-response: Request-Response is **a common communication pattern/{{< glossary term="protocol" >}}** in which one system ({{< glossary term="client" >}}) **sends a {{< glossary term="request" >}}** for some data to another system ({{< glossary term="server" >}}), and the second system **{{< glossary term="response" displayTerm="responds" >}} to the request** by sending back the requested data.
 
 
@@ -603,7 +606,7 @@ smtp: Simple Mail Transfer Protocol is a standard {{< glossary term="protocol" >
 socket: A socket is an **{{< glossary term="IP-Address" >}} + {{< glossary term="Port" >}}**, also known as a communication endpoint. It is used to establish a connection between two computers on a network to exchange data.
 
 
-software-component: Software components include **{{< glossary term="server-process" displayTerm="server-processes" >}}, client applications (e.g. a website/browser, mobile app, desktop app, etc.), or {{< glossary term="library" displayTerm="libraries" >}}/{{< glossary term="module" displayTerm="modules" >}}** that provides specific functionality to a software system.
+software-component: Software components include **{{< glossary term="server-process" displayTerm="server-processes" >}}, client applications (e.g. a {{< glossary term="website" >}}/browser, mobile app, desktop app, etc.), or {{< glossary term="library" displayTerm="libraries" >}}/{{< glossary term="module" displayTerm="modules" >}}** that provides specific functionality to a software system.
 
 
 source-code: Source code is the **raw textual human-readable code** of a computer program written by a programmer in a programming language. Computers do not understand this version of code, thus it needs to be translated through the process of {{< glossary term="compile" displayTerm="compilation" >}}/{{< glossary term="interpret" displayTerm="interpretation" >}} into {{< glossary term="machine-language" >}} before it can be executed.
@@ -646,7 +649,7 @@ style-sheet-language: A style sheet language **describes the presentation or for
 subclass: SubClass/ChildClass is a **{{< glossary term="class" >}} that **{{< glossary term="inheritance" displayTerm="inherits" >}} {{< glossary term="state" displayTerm="properties" >}} and {{< glossary term="behavior" displayTerm="behaviors" >}}** from another class**, called a {{< glossary term="superclass" displayTerm="superclass/ParentClass" >}}.
 
 
-subdomain: A subdomain is **a different site that is part of the main {{< glossary term="domain" >}} ({{< glossary term="SLD" >}}+{{< glossary term="TLD" >}})**. For example, blog.example.com and shop.example.com are subdomains of example.com. Websites often redirect all subdomains to a single  subdomain (commonly 'www' or empty), but they can also be used to create separate sites or sections of a site with different content or functionality.
+subdomain: A subdomain is **a different site that is part of the main {{< glossary term="domain" >}} ({{< glossary term="SLD" >}}+{{< glossary term="TLD" >}})**. For example, blog.example.com and shop.example.com are subdomains of example.com. {{< glossary term="Website" displayTerm="Websites" >}} often redirect all subdomains to a single  subdomain (commonly 'www' or empty), but they can also be used to create separate sites or sections of a site with different content or functionality.
 
 
 superclass: SuperClass/ParentClass is a **{{< glossary term="class" >}} that provides {{< glossary term="state" displayTerm="properties" >}} and {{< glossary term="behavior" displayTerm="behaviors" >}}** to another class, called a {{< glossary term="subclass" displayTerm="SubClass/ChildClass" >}} through {{< glossary term="inheritance" >}}.
@@ -687,7 +690,7 @@ tcp/ip-transport: The Transport Layer is the **fourth layer of the {{< glossary 
 thread: A thread is a separate, single **sequence of execution of instructions within a {{< glossary term="process" >}}**. All {{< glossary term="process" displayTerm="processes" >}} have at least one thread, known as the main thread. Threads have their own {{< glossary term="memory-stack" displayTerm="stack" >}} but share the same {{< glossary term="memory-heap" displayTerm="heap" >}}. Multiple threads of a process can be run {{< glossary term="concurrency" displayTerm="concurrently" >}} or {{< glossary term="parallelism" displayTerm="parallelly" >}}.
 
 
-tld: Top-Level Domain is the last part of a {{< glossary term="domain" >}} name, such as .com, .org, .net, .edu, etc. It **helps to classify and communicate the purpose, owner, or geographical area of a website**. For example, a ".com" TLD indicates a commercial website, while a ".edu" TLD indicates an educational institution.
+tld: Top-Level Domain is the last part of a {{< glossary term="domain" >}} name, such as .com, .org, .net, .edu, etc. It **helps to classify and communicate the purpose, owner, or geographical area of a {{< glossary term="website" >}}**. For example, a ".com" TLD indicates a commercial website, while a ".edu" TLD indicates an educational institution.
 
 
 # TODO maybe add term integrity
@@ -695,6 +698,12 @@ tls/ssl: "Transport Layer Security (formerly known as Secure Sockets Layer) is a
 
 
 transfer: Transfer is the exchange of data between the {{< glossary term="client" >}} and {{< glossary term="server" >}}.
+
+
+transpile: Transpiling is the process of **converting {{< glossary term="source-code" >}} of one programming language to another**. The target language is not {{< glossary term="machine-language" >}} that can be directly executed by the computer. E.g., PHP -> CPP, TypeScript -> JavaScript, JAVA 8 -> JAVA 15, SCSS -> CSS, etc.
+
+
+transpiler: A transpiler is a **{{< glossary term="software-component" >}} that {{< glossary term="transpile" displayTerm="transpiles" >}}**. It is colloquially interchanged with the term '**{{< glossary term="compiler" >}}**' but is more specific to {{< glossary term="source-code" displayTerm="source-to-source" >}} compilation.
 
 
 udp: User Datagram Protocol is a **connectionless {{< glossary term="protocol" >}}** (no connection formation between devices before transferring data) that operates on the {{< glossary term="tcp/ip-transport" displayTerm="transport layer" >}} of the {{< glossary term="TCP/IP" >}} model. It is used for **fast transmission of data where reliability is not critical**, some data loss or misorder of packet arrival is acceptable.
@@ -709,7 +718,7 @@ unicode: "{{< glossary term=ASCII >}} is limited to representing only 128 charac
 uri: A Uniform Resource Identifier is a text string that **identifies a particular {{< glossary term="internet-resource" displayTerm="resource" >}}** on the internet (by location or name) and is used to access that resource. URIs include {{< glossary term="URL" displayTerm="URLs" >}} and {{< glossary term="URN" displayTerm="URNs" >}}.
 
 
-url: A Uniform Resource Locator is a text string that **{{< glossary term="URI" displayTerm="identifies" >}} a particular {{< glossary term="internet-resource" displayTerm="resource" >}} on the internet by its location**. In the context of the {{< glossary term="web" >}}, it is called "web address" or "link". It consists of a {{< glossary term="protocol" >}}, a {{< glossary term="domain" >}} name, a {{< glossary term="url-path" displayTerm="path" >}} to the resource and {{< glossary term="query-parameter" displayTerm="query parameters" >}}. E.g., https://example.com/tutorials/what-is-a-url?lang=en specifies the location of a tutorial on URLs in English on the example.com website and uses the {{< glossary term="HTTPS" >}} protocol.
+url: A Uniform Resource Locator is a text string that **{{< glossary term="URI" displayTerm="identifies" >}} a particular {{< glossary term="internet-resource" displayTerm="resource" >}} on the internet by its location**. In the context of the {{< glossary term="web" >}}, it is called "web address" or "link". It consists of a {{< glossary term="protocol" >}}, a {{< glossary term="domain" >}} name, a {{< glossary term="url-path" displayTerm="path" >}} to the resource and {{< glossary term="query-parameter" displayTerm="query parameters" >}}. E.g., https://example.com/tutorials/what-is-a-url?lang=en specifies the location of a tutorial on URLs in English on the example.com {{< glossary term="website" >}} and uses the {{< glossary term="HTTPS" >}} protocol.
 
 
 url-path: A URL Path is the part of a {{< glossary term="URL" >}} that **specifies the location of an {{< glossary term="internet-resource" >}}** on a {{< glossary term="website" >}}. It can contain {{< glossary term="path-parameter" displayTerm="path parameters" >}}. For example, in the URL https://example.com/tutorials/what-is-a-url, "/tutorials/what-is-a-url" is the URL path.
@@ -730,7 +739,7 @@ utf-32: '{{< glossary term="UTF" >}}-32 is a **fixed-width character {{< glossar
 utf-8: '{{< glossary term="UTF" >}}-8 is a **variable-width character {{< glossary term="encode" displayTerm="encoding" >}} of {{< glossary term="unicode" >}} that uses one to four single-{{< glossary term="bit" displayTerm="byte" >}} code units**. It is the most commonly used character encoding on the {{< glossary term="web" >}}. One byte is used for {{< glossary term="ASCII" >}} characters, two bytes for most Latin characters, and three or four bytes for less common characters.'
 
 
-ux: User Experience is the **overall experience of a person using a product** such as a website or computer application, especially in terms of how easy or pleasing it is to use.
+ux: User Experience is the **overall experience of a person using a product** such as a {{< glossary term="website" >}} or computer application, especially in terms of how easy or pleasing it is to use.
 
 
 # add learn more - !1

@@ -101,8 +101,8 @@
   "keywords": [
     "eSports", "FIFA", "web interface", "Discord integration", "team management", "Redis", "OAuth2"
   ],
-  "articleBody": "SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.\nFeatures User Authentication: Users can login with their Discord account to access the service. Team Creation and Joining: Users can create teams and join teams. Player/Team/League Profiles: Detailed profiles with stats and role-based views. Team Management: Managers can manage teams and players. Search: Public searching for players, teams, and leagues. Gallery\rImplementation Authentication: Discord OAuth for user authentication using JWT and cookies. Backend: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management. Challenges Rate Limiting: Discord API has strict rate-limits for some endpoints. I used fetching with cache fallback\rusing Redis to handle this. Concurrent Refresh Requests: In session management, multiple requests to refresh the access-token was causing issues. I handled this by using Redis as a mutex lock manager\r. Mistakes and Learnings Development environment flexibility: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug. Backend software architecture: I initially started developing the backend with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend. Testing: I didn’t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing. Tech Stack Frontend: React, Tailwind CSS Backend: Node.js, Express, Redis, Sequelize ",
-  "wordCount" : "335",
+  "articleBody": "SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.\nFeatures User Authentication: Users can login with their Discord account to access the service. Team Creation and Joining: Users can create teams and join teams. Player/Team/League Profiles: Detailed profiles with stats and role-based views. Team Management: Managers can manage teams and players. Search: Public searching for players, teams, and leagues. Gallery\nImplementation Authentication: Discord OAuth for user authentication using JWT and cookies. Backend: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management. Challenges Rate Limiting: Discord API has strict rate-limits for some endpoints. I used fetching with cache fallback using Redis to handle this. Concurrent Refresh Requests: In session management, multiple requests to refresh the access-token was causing issues. I handled this by using Redis as a mutex lock manager. Mistakes and Learnings Development environment flexibility: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug. Backend software architecture: I initially started developing the backend with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend. Testing: I didn’t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing. Tech Stack Frontend: React, Tailwind CSS Backend: Node.js, Express, Redis, Sequelize ",
+  "wordCount" : "334",
   "inLanguage": "en",
   "datePublished": "2024-11-20T11:35:30+05:30",
   "dateModified": "2024-11-21T15:48:09+05:30",
@@ -293,19 +293,19 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="512149106711511423813"
+      glossary-data-tree-id="155481361011472121193"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="101391415112718312546"
+       glossary-data-tree-id="411211261310579148153"
        glossary-data-tree-node-id="0"
        glossary-data-term="ui"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="481113621013151297514"
+      glossary-data-tree-id="729121431113654181510"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="131268321511101457914"
+      glossary-data-tree-id="123115149112874610135"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
@@ -319,47 +319,31 @@
 </ol>
 <p><a
 
-	
-
 		href = "https://imgur.com/a/safa-JpSDADI"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		Gallery
-	</span>
-
-</a></p>
+		rel = "nofollow noopener noreferrer"><span>Gallery</span></a></p>
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="256101579131431141281"
+      glossary-data-tree-id="612131141194521038715"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="541031122151391167148"
+      glossary-data-tree-id="831321112144510761519"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="210151417481312536119"
+      glossary-data-tree-id="911121144215136587310"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="962714431315118510121"
+      glossary-data-tree-id="943135610212148151117"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="144789131012152311615"
+      glossary-data-tree-id="141147983521511310126"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
@@ -367,71 +351,39 @@
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="516154131014911122378"
+      glossary-data-tree-id="451213876312159141011"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a
 
-	
-
 		href = "http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		used fetching with cache fallback
-	</span>
-
-</a> using Redis to handle this.</li>
+		rel = "nofollow noopener noreferrer"><span>used fetching with cache fallback</span></a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="141311294531110156278"
+      glossary-data-tree-id="111469101258313141572"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="131225613715811491410"
+      glossary-data-tree-id="914732451213161511108"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a
 
-	
-
 		href = "http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		by using Redis as a mutex lock manager
-	</span>
-
-</a>.</li>
+		rel = "nofollow noopener noreferrer"><span>by using Redis as a mutex lock manager</span></a>.</li>
 </ul>
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="710181312151429645113"
+      glossary-data-tree-id="141110121569257141383"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="121115143139765108412"
+      glossary-data-tree-id="810141174911351523612"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
@@ -668,7 +620,7 @@
 
     
         
-        <script src="/js/glossary.min.44c9d26a0dc47af256df49458f5b2b0daaea6ee8b016ea2d535ea21fbe2905bd.js"></script>
+        <script src="/js/glossary.min.40322288ad406138bb3ae2ad1beec71ecbd98d7aca814aad3e1fdce1f751642d.js"></script>
     
 </body>
 

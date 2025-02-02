@@ -101,7 +101,7 @@
   "keywords": [
     "NPTEL", "UI/UX", "Online Education", "Student Experience", "Government Websites"
   ],
-  "articleBody": "NPTEL, the National Programme on Technology Enhanced Learning, is a project funded by the Indian Ministry of Education and initiated by IITs and IISc. NPTEL\rprovides E-learning through online Web and Video courses in Engineering, Science and Humanities streams.\nI recently had to enrol in an NPTEL course and was surprised by the poor user experience on their website. The navigation is unintuitive, the UI is non-responsive, and the authentication system is outright broken. The frustrating and outdated system is not a standard to be expected from a government funded, cutting-edge\reducational platform.\nEnrolling in an NPTEL Course: A Frustrating ExperienceI started at their Courses\rpage to find my desired course, which I found\r. However, there was no clear “Enroll” button, only a “Log in” option and ‘Swayam Certificate’ option. Assuming I needed to log in first, I clicked it and was directed to the Login\rpage, which displayed the message: “Please make sure that you login using the same email id you had used while enrolling to the course.”\nAt this point, I hadn’t created an account yet, so I attempted to sign up. After filling in the required fields, I clicked “Create,” only to be redirected and be met with a bizarre error: “Your email id doesn’t match our records!” Below it was a “Logout” button which was confusing, since the sign up attempt seemed to have failed. Clicking it redirected me again, this time to an “Unauthorized” error page. Now, I was stuck - unable to sign up, log in, log out or even try again.\nSince I had an understanding of how sessions work\r, I cleared my browser cookies and tried logging in with the same id and password, thinking my account might have been created. But once again, I got the same “email id doesn’t match” error. I repeated this process multiple times with different email IDs and passwords on different days, but the issue persisted.\nThe Unexpected SWAYAM DetourAfter multiple failed attempts, I checked NPTEL’s FAQ\rpage. Under FAQ -\u003e Online Courses -\u003e “How do I enroll/register for an NPTEL online course?”, I found that I was supposed to enroll through the SWAYAM\rwebsite. This was not indicated on the NPTEL course page, except for the button labelled ‘Swayam Certificate’ which new users might not understand, leading to confusion.\nOn SWAYAM, I attempted to sign up\rusing the same ids I tried on NPTEL, only to receive yet another error: “A user with the specified ID already exists. Please choose a different one.” This suggests:\nThe NPTEL and SWAYAM websites share the same database. My failed account creation on NPTEL still stored my credentials on this database. This could mean either:\nThe NPTEL login system is not intended for students The NPTEL login system is broken (or maybe it is only for old-users/archived-purposes?) The course page on NPTEL should have an explicit button for enrolling as new users will not realize that the ‘Swayam Certificate’ button is where they should click on. After using a new username, I was finally able to register on SWAYAM and enroll in my course.\nA Non-Responsive UIThe UI on NPTEL for desktop is functional. However, on mobile which is through which most students access online content from, it is not responsive.\nUp to 90% of Indian households do not own a computer (desktop PC, laptop etc. ) whereas over 95% of households own a mobile phone (\rCAMS-mospi\r). Up to ~9% of Higher Education Institutions (considering all streams) in India lack a ‘computer center’ (\rAISHE-s2waas\r). Up to ~ 80% of web traffic in India comes from mobile devices (\rstatcounter\r). Below are some screenshots of the NPTEL website on mobile screen dimensions with the issues highlighted (click on the images to view them in full size with the issues described):\nThe Exam Form and Spammy EmailTo receive a certificate, students must pay for and take an exam. The registration form redundantly asks for details already provided when enrolling in a course. Worse, when uploading a photo, signature, and ID proof, the system enforces an arbitrary minimum file size of 50KB. This makes no sense:\nIf it’s about quality, check the image dimensions instead. If it’s about security, use proper validation rather than enforcing a file size range. This may lead to students having to unnecessarily increase file size by adding padding or noise.\nExam Registration Form\nAfter partially filling the form but not submitting it or registering for the exam, I received multiple reminder emails to complete the payment. Worse, there was no option to unsubscribe.\nConclusion: NPTEL Needs a UI / UX FixingNPTEL is a good initiative, but its platform especially for new users is disappointing. A government-backed educational platform should not have such usability flaws. At the very least, they should:\nRemove or properly integrate the NPTEL login system by fixing session handling and database inconsistencies. Clearly instruct students to use SWAYAM for enrollment on every course page by adding an explicit “Enroll” button. Improve mobile responsiveness. Stop sending spammy emails or provide an option to unsubscribe. Until these issues are resolved, students will continue to struggle with unnecessary roadblocks on a platform that is supposed to make learning accessible.\n",
+  "articleBody": "NPTEL, the National Programme on Technology Enhanced Learning, is a project funded by the Indian Ministry of Education and initiated by IITs and IISc. NPTEL provides E-learning through online Web and Video courses in Engineering, Science and Humanities streams.\nI recently had to enrol in an NPTEL course and was surprised by the poor user experience on their website. The navigation is unintuitive, the UI is non-responsive, and the authentication system is outright broken. The frustrating and outdated system is not a standard to be expected from a government funded, cutting-edge educational platform.\nEnrolling in an NPTEL Course: A Frustrating ExperienceI started at their Courses page to find my desired course, which I found. However, there was no clear “Enroll” button; only a “Log in” option and ‘Swayam Certificate’ option were visible. Assuming I needed to log in first, I clicked “Log in” and was directed to the Login page, which displayed the message: “Please make sure that you login using the same email id you had used while enrolling to the course.”\nAt this point, I hadn’t created an account yet, so I attempted to sign up. After filling in the required fields, I clicked “Create,” only to be redirected and be met with a bizarre error: “Your email id doesn’t match our records!” Below it was a “Logout” button which was confusing, since the sign up attempt seemed to have failed. Clicking it redirected me again, this time to an “Unauthorized“ error page. Now, I was stuck - unable to sign up, log in, log out or even try again.\nSince I had an understanding of how sessions work, I cleared my browser cookies and tried logging in with the same id and password, thinking my account might have been created. But once again, I got the same “email id doesn’t match” error. I repeated this process multiple times with different email IDs and passwords on different days, but the issue persisted.\nThe Unexpected SWAYAM DetourAfter multiple failed attempts, I checked NPTEL’s FAQ page. Under FAQ -\u003e Online Courses -\u003e “How do I enroll/register for an NPTEL online course?”, I found that I was supposed to enroll through the SWAYAM website. This was not indicated on the NPTEL course page, except for the button labelled ‘Swayam Certificate’ which new users might not understand such as myself, leading to confusion.\nOn SWAYAM, I attempted to sign up using the same ids I tried on NPTEL, only to receive yet another error: “A user with the specified ID already exists. Please choose a different one.” This suggests:\nThe NPTEL and SWAYAM websites share the same database. My failed account creation on NPTEL still stored my credentials on this database. This raises issues:\nWhy does NPTEL’s login system exist if students are supposed to enroll via SWAYAM? Is the NPTEL login system abandoned/archived with lingering session issues? The course pages on NPTEL should have an explicit button for enrolling as new users will not realize that the ‘Swayam Certificate’ button is where they should click on. After using a new username, I was finally able to register on SWAYAM and enroll in my course.\nA Non-Responsive UIThe UI on NPTEL for desktop is functional. However, on mobile it is not responsive which is through which most students access online content from.\nUp to 90% of Indian households do not own a computer (desktop PC, laptop etc. ) whereas over 95% of households own a mobile phone (CAMS-mospi). Up to ~9% of Higher Education Institutions (considering all streams) in India lack a ‘computer center’ (AISHE-s2waas). Up to ~ 80% of web traffic in India comes from mobile devices (statcounter). Below are some screenshots of the NPTEL website on mobile screen sizes with the issues highlighted (click on the images to view them in full size with the issues described):\nThe Exam Form and Spammy EmailTo receive a certificate for the course, students must pay for and take an exam. The registration form redundantly asks for details already provided when enrolling in a course. Worse, when uploading a photo, signature, and ID proof, the system enforces an arbitrary minimum file size of 50KB. This makes no sense:\nIf it’s about quality, check the image dimensions instead. If it’s about security, use proper validation rather than enforcing a file size range. This may lead to students having to unnecessarily increase file size by adding padding or noise.\nExam Registration Form\nAfter partially filling the form but not submitting it or completing registration for the exam, I received multiple reminder emails to complete the payment. Worse, there was no option to unsubscribe.\nConclusion: NPTEL Needs a UI / UX FixingNPTEL is a good initiative, but its platform especially for new users is disappointing. A government-backed educational platform should not have such usability flaws. At the very least, they should:\nRemove or properly integrate the NPTEL login system by fixing session handling and database inconsistencies. Clearly instruct students to use SWAYAM for enrollment on every course page by adding an explicit “Enroll” button. Improve mobile responsiveness. Stop sending spammy emails or provide an option to unsubscribe. Until these issues are resolved, students will continue to struggle with a platform that is supposed to make learning accessible.\n",
   "wordCount" : "870",
   "inLanguage": "en",
   "datePublished": "2025-01-28T19:17:58+05:30",
@@ -265,12 +265,6 @@
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/blogs/">Blogs</a></div>
     <h1 class="post-title entry-hint-parent">
       NPTEL&#39;s Broken Login System and Poor UI / UX
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
     </h1>
     <div class="post-meta"><span title='2025-01-28 19:17:58 +0530 IST'>January 28, 2025</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Sandesh Shahapur&nbsp;|&nbsp;<a href="https://github.com/sandeshShahapur/ADeveloperHasNoName/tree/main/content/blogs/NPTEL%27s-Broken-Login-System-and-Poor-UI-Ux/index.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
@@ -300,283 +294,120 @@
 
   <div class="post-content"><p>NPTEL, the National Programme on Technology Enhanced Learning, is a project funded by the Indian Ministry of Education and initiated by IITs and IISc. <a
 
-	
-
 		href = "https://nptel.ac.in/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		NPTEL
-	</span>
-
-</a> provides E-learning through online Web and Video courses in Engineering, Science and Humanities streams.</p>
-<p>I recently had to enrol in an NPTEL course and was surprised by the poor user experience on their website. The navigation is unintuitive, the UI is non-responsive, and the authentication system is outright broken. The frustrating and outdated system is not a standard to be expected from a government funded, <a
-
-	
+		rel = "nofollow noopener noreferrer"><span>NPTEL</span></a> provides E-learning through online Web and Video courses in Engineering, Science and Humanities streams.</p>
+<p>I recently had to enrol in an NPTEL course and was surprised by the poor <span class="glossary-term"
+      glossary-data-tree-id="111913124107148621553"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="ux"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">user experience</span> on their website. The navigation is unintuitive, the <span class="glossary-term"
+      glossary-data-tree-id="678111051241592113314"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="ui"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">UI</span> is <span class="glossary-term"
+      glossary-data-tree-id="109145137311211286415"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="responsive"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">non-responsive</span>, and the <span class="glossary-term"
+      glossary-data-tree-id="151013712348141112695"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="authentication"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> system is outright broken. The frustrating and outdated system is not a standard to be expected from a government funded, <a
 
 		href = "https://web.archive.org/web/20240505163215/https://stories.nptel.ac.in/index.php/about/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		cutting-edge
-	</span>
-
-</a> educational platform.</p>
+		rel = "nofollow noopener noreferrer"><span>cutting-edge</span></a> educational platform.</p>
 <h2 id="enrolling-in-an-nptel-course-a-frustrating-experience">
     Enrolling in an NPTEL Course: A Frustrating Experience</h2><p>I started at their <a
 
-	
-
 		href = "https://nptel.ac.in/courses/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		Courses
-	</span>
-
-</a> page to find my desired course, which I <a
-
-	
+		rel = "nofollow noopener noreferrer"><span>Courses</span></a> page to find my desired course, which I <a
 
 		href = "https://nptel.ac.in/courses/106106179"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		found
-	</span>
-
-</a>. However, there was no clear “Enroll” button, only a “Log in” option and &lsquo;Swayam Certificate&rsquo; option. Assuming I needed to log in first, I clicked it and was directed to the <a
-
-	
+		rel = "nofollow noopener noreferrer"><span>found</span></a>. However, there was no clear “Enroll” button; only a “Log in” option and &lsquo;Swayam Certificate&rsquo; option were visible. Assuming I needed to log in first, I clicked &ldquo;Log in&rdquo; and was directed to the <a
 
 		href = "https://archive.nptel.ac.in/noc/B2C/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		Login
-	</span>
-
-</a> page, which displayed the message: “Please make sure that you login using the same email id you had used while enrolling to the course.”</p>
-<p>At this point, I hadn’t created an account yet, so I attempted to sign up. After filling in the required fields, I clicked “Create,” only to be redirected and be met with a bizarre error: “Your email id doesn’t match our records!” Below it was a “Logout” button which was confusing, since the sign up attempt seemed to have failed. Clicking it redirected me again, this time to an “Unauthorized” error page. Now, I was stuck - unable to sign up, log in, log out or even try again.</p>
+		rel = "nofollow noopener noreferrer"><span>Login</span></a> page, which displayed the message: “Please make sure that you login using the same email id you had used while enrolling to the course.”</p>
+<p>At this point, I hadn’t created an account yet, so I attempted to sign up. After filling in the required fields, I clicked “Create,” only to be redirected and be met with a bizarre error: “Your email id doesn’t match our records!” Below it was a “Logout” button which was confusing, since the sign up attempt seemed to have failed. Clicking it redirected me again, this time to an “<span class="glossary-term"
+      glossary-data-tree-id="105231364158149121117"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="authorization"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Unauthorized</span>“ error page. Now, I was stuck - unable to sign up, log in, log out or even try again.</p>
 <p>Since I had an understanding of <a
-
-	
 
 		href = "http://localhost:1313/blogs/what-are-browser-http-cookies/#why-are-cookies-used"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		how sessions work
-	</span>
-
-</a>, I cleared my browser cookies and tried logging in with the same id and password, thinking my account might have been created. But once again, I got the same “email id doesn’t match” error. I repeated this process multiple times with different email IDs and passwords on different days, but the issue persisted.</p>
+		rel = "nofollow noopener noreferrer"><span>how sessions work</span></a>, I cleared my browser <span class="glossary-term"
+      glossary-data-tree-id="146101215118973213415"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="cookie"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span> and tried logging in with the same id and password, thinking my account might have been created. But once again, I got the same “email id doesn’t match” error. I repeated this process multiple times with different email IDs and passwords on different days, but the issue persisted.</p>
 <h2 id="the-unexpected-swayam-detour">
     The Unexpected SWAYAM Detour</h2><p>After multiple failed attempts, I checked NPTEL’s <a
 
-	
-
 		href = "https://nptel.ac.in/faq/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		FAQ
-	</span>
-
-</a> page. Under FAQ -&gt; Online Courses -&gt; &ldquo;How do I enroll/register for an NPTEL online course?&rdquo;, I found that I was supposed to enroll through the <a
-
-	
+		rel = "nofollow noopener noreferrer"><span>FAQ</span></a> page. Under FAQ -&gt; Online Courses -&gt; &ldquo;How do I enroll/register for an NPTEL online course?&rdquo;, I found that I was supposed to enroll through the <a
 
 		href = "https://swayam.gov.in/NPTEL"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		SWAYAM
-	</span>
-
-</a> website. This was not indicated on the NPTEL course page, except for the button labelled &lsquo;Swayam Certificate&rsquo; which new users might not understand, leading to confusion.</p>
+		rel = "nofollow noopener noreferrer"><span>SWAYAM</span></a> website. This was not indicated on the NPTEL course page, except for the button labelled &lsquo;Swayam Certificate&rsquo; which new users might not understand such as myself, leading to confusion.</p>
 <p>On SWAYAM, I attempted to <a
-
-	
 
 		href = "https://swayam.gov.in/wso?redirect=/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		sign up
-	</span>
-
-</a> using the same ids I tried on NPTEL, only to receive yet another error: “A user with the specified ID already exists. Please choose a different one.” This suggests:</p>
+		rel = "nofollow noopener noreferrer"><span>sign up</span></a> using the same ids I tried on NPTEL, only to receive yet another error: “A user with the specified ID already exists. Please choose a different one.” This suggests:</p>
 <ul>
-<li>The NPTEL and SWAYAM websites share the same database.</li>
+<li>The NPTEL and SWAYAM websites share the same <span class="glossary-term"
+      glossary-data-tree-id="387101361415952411121"
+      glossary-data-tree-node-id="0"
+      glossary-data-term="database"
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span>.</li>
 <li>My failed account creation on NPTEL still stored my credentials on this database.</li>
 </ul>
-<p>This could mean either:</p>
+<p>This raises issues:</p>
 <ul>
-<li>The NPTEL login system is not intended for students</li>
-<li>The NPTEL login system is broken (or maybe it is only for old-users/archived-purposes?)</li>
+<li>Why does NPTEL’s login system exist if students are supposed to enroll via SWAYAM?</li>
+<li>Is the NPTEL login system abandoned/archived with lingering session issues?</li>
+<li>The course pages on NPTEL should have an explicit button for enrolling as new users will not realize that the &lsquo;Swayam Certificate&rsquo; button is where they should click on.</li>
 </ul>
-<p>The course page on NPTEL should have an explicit button for enrolling as new users will not realize that the &lsquo;Swayam Certificate&rsquo; button is where they should click on. After using a new username, I was finally able to register on SWAYAM and enroll in my course.</p>
+<p>After using a new username, I was finally able to register on SWAYAM and enroll in my course.</p>
 <h2 id="a-non-responsive-ui">
-    A Non-Responsive UI</h2><p>The UI on NPTEL for desktop is functional. However, on mobile which is through which most students access online content from, it is not responsive.</p>
+    A Non-Responsive UI</h2><p>The UI on NPTEL for desktop is functional. However, on mobile it is not responsive which is through which most students access online content from.</p>
 <ul>
 <li>Up to 90% of Indian households do not own a computer (desktop PC, laptop etc. ) whereas over 95% of households own a mobile phone (<a
 
-	
-
 		href = "https://www.mospi.gov.in/sites/default/files/publication_reports/CAMS%20Report_October_N.pdf"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		CAMS-mospi
-	</span>
-
-</a>).</li>
+		rel = "nofollow noopener noreferrer"><span>CAMS-mospi</span></a>).</li>
 <li>Up to ~9% of Higher Education Institutions (considering all streams) in India lack a &lsquo;computer center&rsquo; (<a
-
-	
 
 		href = "https://cdnbbsr.s3waas.gov.in/s392049debbe566ca5782a3045cf300a3c/uploads/2024/02/20240719952688509.pdf"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		AISHE-s2waas
-	</span>
-
-</a>).</li>
+		rel = "nofollow noopener noreferrer"><span>AISHE-s2waas</span></a>).</li>
 <li>Up to ~ 80% of web traffic in India comes from mobile devices (<a
-
-	
 
 		href = "https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/india/#monthly-202001-202501-bar"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		statcounter
-	</span>
-
-</a>).</li>
+		rel = "nofollow noopener noreferrer"><span>statcounter</span></a>).</li>
 </ul>
-<p>Below are some screenshots of the NPTEL website on mobile screen dimensions with the issues highlighted (click on the images to view them in full size with the issues described):</p>
+<p>Below are some screenshots of the NPTEL website on mobile screen sizes with the issues highlighted (click on the images to view them in full size with the issues described):</p>
 
 <div class="swiper-container">
     <div class="swiper mySwiper">
@@ -885,7 +716,7 @@
 </script>
 
 <h2 id="the-exam-form-and-spammy-email">
-    The Exam Form and Spammy Email</h2><p>To receive a certificate, students must pay for and take an exam. The registration form redundantly asks for details already provided when enrolling in a course. Worse, when uploading a photo, signature, and ID proof, the system enforces an arbitrary minimum file size of 50KB. This makes no sense:</p>
+    The Exam Form and Spammy Email</h2><p>To receive a certificate for the course, students must pay for and take an exam. The registration form redundantly asks for details already provided when enrolling in a course. Worse, when uploading a photo, signature, and ID proof, the system enforces an arbitrary minimum file size of 50KB. This makes no sense:</p>
 <ul>
 <li>If it’s about quality, check the image dimensions instead.</li>
 <li>If it’s about security, use proper validation rather than enforcing a file size range.</li>
@@ -899,7 +730,7 @@
       <p>Exam Registration Form</p>
     </figcaption>
 </figure>
-<p>After partially filling the form but not submitting it or registering for the exam, I received multiple reminder emails to complete the payment. Worse, there was no option to unsubscribe.</p>
+<p>After partially filling the form but not submitting it or completing registration for the exam, I received multiple reminder emails to complete the payment. Worse, there was no option to unsubscribe.</p>
 <h2 id="conclusion-nptel-needs-a-ui--ux-fixing">
     Conclusion: NPTEL Needs a UI / UX Fixing</h2><p>NPTEL is a good initiative, but its platform especially for new users is disappointing. A government-backed educational platform should not have such usability flaws. At the very least, they should:</p>
 <ul>
@@ -908,7 +739,7 @@
 <li>Improve mobile responsiveness.</li>
 <li>Stop sending spammy emails or provide an option to unsubscribe.</li>
 </ul>
-<p>Until these issues are resolved, students will continue to struggle with unnecessary roadblocks on a platform that is supposed to make learning accessible.</p>
+<p>Until these issues are resolved, students will continue to struggle with a platform that is supposed to make learning accessible.</p>
 
 
   </div>
@@ -1128,7 +959,7 @@
 
     
         
-        <script src="/js/glossary.min.44c9d26a0dc47af256df49458f5b2b0daaea6ee8b016ea2d535ea21fbe2905bd.js"></script>
+        <script src="/js/glossary.min.40322288ad406138bb3ae2ad1beec71ecbd98d7aca814aad3e1fdce1f751642d.js"></script>
     
 </body>
 

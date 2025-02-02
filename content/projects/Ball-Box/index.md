@@ -2,7 +2,7 @@
 title: 'Ball Box'
 date: 2025-01-26T23:22:53+05:30
 author: "Sandesh Shahapur"
-draft: true
+draft: false
 summary: "Explore Ball Box, a minimal-dependency 2D interactive game that introduces players to survival mechanics while building the fundamentals of game development using TypeScript and the Canvas API."
 tags: ["game development", "typescript", "canvas api", "2d games", "interactive"]
 categories: ["Game Development", "Projects"]
@@ -26,17 +26,17 @@ Live Demo: [Ball Box](https://sandeshshahapur.github.io/ball-box/)
 
 ## Motivation
 
-As far as my memory goes, I have always been into games. I remember playing the default games on my dad's Windows XP PC. However, I never got into game development until now.
+As far as my memory goes, I have always been into games. At the earliest, I remember playing the default games on my dad's Windows XP PC. However, I never got into game development until now.
 
-Lately, I haven't been playing much due to having a potato laptop with a dead GPU and not being into any mobile games and since I'm doing Comp Sci and have picked up some programming skills, I thought why not try game development.
+Lately, I haven't been gaming much due to having a potato laptop with a dead GPU and not being into any mobile games and since I'm doing Comp Sci and have picked up some programming skills, I thought why not try game development.
 
-I started thinking about what game I could make. I don't think of myself as a creative person, but I kept returning to the idea of simple 2D box games. Then I thought of Ball Box which seemed like a good place to start. I started working on it and here we are.
+I started thinking about what game I could start with. I don't think of myself being a creative individual, but I kept returning to the idea of simple 2D box games. Then I thought of Ball Box which seemed like a good place to start. I started working on it and here we are.
 
 ## Challenges Faced
 
-Being my first game, I deliberately avoided using game engines or high-level tools that would abstract away the underlying mechanics. I wanted to understand the basics of game development and how things work under the hood. This made me to use TypeScript and the HTML5 Canvas API to build the game from scratch.
+Being my first game, I deliberately avoided using game engines or high-level tools that would abstract away the underlying mechanics. I wanted to understand the basics of game development and how things work under the hood. This got me choosing [TypeScript](https://www.typescriptlang.org/) and the HTML5 [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) to build the game from scratch.
 
-This meant I had to figure out all the required mechanics:
+This meant I've had to figure out all the required mechanics:
 
 - Game loop
 - Collision detection (Canvas API for bounding box of text is not friendly)
@@ -47,7 +47,7 @@ This meant I had to figure out all the required mechanics:
 
 I had a lot of fun building Ball Box and got to learn a lot in the process. While I don't plan on extending Ball Box much, I plan to step up by working on more complex games and sticking to minimal-dependency development.
 
-The above has to wait because I only realize now while writing this, that using Canvas API abstracts away a lot of the underlying mechanics and is not true to the minimal-dependency approach I wanted to take. So, I have to backtrack and start lower like with rendering.
+The above has to wait because I only realize now while writing this, that using Canvas API abstracts away a lot of the underlying mechanics and is not 'true' to the minimal-dependency approach I wanted to take. So, I have to backtrack and start lower like with rendering.
 
 ## Tech Stack
 
@@ -55,4 +55,4 @@ The above has to wait because I only realize now while writing this, that using 
   - TypeScript/HTML/CSS
 
 - **Tools:**
-  - Webpack
+  - [Webpack](https://webpack.js.org/)

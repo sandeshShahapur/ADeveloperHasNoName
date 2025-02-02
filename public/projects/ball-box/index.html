@@ -101,8 +101,8 @@
   "keywords": [
     "game development", "typescript", "canvas api", "2d games", "interactive"
   ],
-  "articleBody": "Ball Box is an interactive game where you control a ball, inside a box, duh. The objective is to avoid touching the box boundary and evade weapon projections to survive.\nLive Demo: Ball Box\rFeatures User Controls: Arrow keys or ‘wsad’ keys for desktop. JoyStick controls for mobile or tablet devices. Gameplay Mechanics: Avoid touching the box boundaries. Evade weapon projections (shaped as characters) that increase ball size upon collision. Smaller projections cause larger size increments. Difficulty Adjustment: Adjustable difficulty levels via a slider. MotivationAs far as my memory goes, I have always been into games. I remember playing the default games on my dad’s Windows XP PC. However, I never got into game development until now.\nLately, I haven’t been playing much due to having a potato laptop with a dead GPU and not being into any mobile games and since I’m doing Comp Sci and have picked up some programming skills, I thought why not try game development.\nI started thinking about what game I could make. I don’t think of myself as a creative person, but I kept returning to the idea of simple 2D box games. Then I thought of Ball Box which seemed like a good place to start. I started working on it and here we are.\nChallenges FacedBeing my first game, I deliberately avoided using game engines or high-level tools that would abstract away the underlying mechanics. I wanted to understand the basics of game development and how things work under the hood. This made me to use TypeScript and the HTML5 Canvas API to build the game from scratch.\nThis meant I had to figure out all the required mechanics:\nGame loop Collision detection (Canvas API for bounding box of text is not friendly) Joystick controls for mobile devices And more… Future PlansI had a lot of fun building Ball Box and got to learn a lot in the process. While I don’t plan on extending Ball Box much, I plan to step up by working on more complex games and sticking to minimal-dependency development.\nThe above has to wait because I only realize now while writing this, that using Canvas API abstracts away a lot of the underlying mechanics and is not true to the minimal-dependency approach I wanted to take. So, I have to backtrack and start lower like with rendering.\nTech Stack Languages:\nTypeScript/HTML/CSS Tools:\nWebpack ",
-  "wordCount" : "397",
+  "articleBody": "Ball Box is an interactive game where you control a ball, inside a box, duh. The objective is to avoid touching the box boundary and evade weapon projections to survive.\nLive Demo: Ball Box\nFeatures User Controls: Arrow keys or ‘wsad’ keys for desktop. JoyStick controls for mobile or tablet devices. Gameplay Mechanics: Avoid touching the box boundaries. Evade weapon projections (shaped as characters) that increase ball size upon collision. Smaller projections cause larger size increments. Difficulty Adjustment: Adjustable difficulty levels via a slider. MotivationAs far as my memory goes, I have always been into games. At the earliest, I remember playing the default games on my dad’s Windows XP PC. However, I never got into game development until now.\nLately, I haven’t been gaming much due to having a potato laptop with a dead GPU and not being into any mobile games and since I’m doing Comp Sci and have picked up some programming skills, I thought why not try game development.\nI started thinking about what game I could start with. I don’t think of myself being a creative individual, but I kept returning to the idea of simple 2D box games. Then I thought of Ball Box which seemed like a good place to start. I started working on it and here we are.\nChallenges FacedBeing my first game, I deliberately avoided using game engines or high-level tools that would abstract away the underlying mechanics. I wanted to understand the basics of game development and how things work under the hood. This got me choosing TypeScript and the HTML5 Canvas API to build the game from scratch.\nThis meant I’ve had to figure out all the required mechanics:\nGame loop Collision detection (Canvas API for bounding box of text is not friendly) Joystick controls for mobile devices And more… Future PlansI had a lot of fun building Ball Box and got to learn a lot in the process. While I don’t plan on extending Ball Box much, I plan to step up by working on more complex games and sticking to minimal-dependency development.\nThe above has to wait because I only realize now while writing this, that using Canvas API abstracts away a lot of the underlying mechanics and is not ’true’ to the minimal-dependency approach I wanted to take. So, I have to backtrack and start lower like with rendering.\nTech Stack Languages:\nTypeScript/HTML/CSS Tools:\nWebpack ",
+  "wordCount" : "400",
   "inLanguage": "en",
   "datePublished": "2025-01-26T23:22:53+05:30",
   "dateModified": "2025-02-02T10:10:34+05:30",
@@ -265,12 +265,6 @@
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/projects/">Projects</a></div>
     <h1 class="post-title entry-hint-parent">
       Ball Box
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
     </h1>
     <div class="post-meta"><span title='2025-01-26 23:22:53 +0530 IST'>January 26, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Sandesh Shahapur&nbsp;|&nbsp;<a href="https://github.com/sandeshShahapur/ADeveloperHasNoName/tree/main/content/projects/Ball-Box/index.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
 
@@ -301,26 +295,10 @@
   <div class="post-content"><p>Ball Box is an interactive game where you control a ball, inside a box, duh. The objective is to avoid touching the box boundary and evade weapon projections to survive.</p>
 <p>Live Demo: <a
 
-	
-
 		href = "https://sandeshshahapur.github.io/ball-box/"
 
-		
-
-	
-
-	
-
 		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-    >
-
-	<span>
-		Ball Box
-	</span>
-
-</a></p>
+		rel = "nofollow noopener noreferrer"><span>Ball Box</span></a></p>
 <h2 id="features">
     Features</h2><ul>
 <li><strong>User Controls:</strong>
@@ -343,12 +321,22 @@
 </li>
 </ul>
 <h2 id="motivation">
-    Motivation</h2><p>As far as my memory goes, I have always been into games. I remember playing the default games on my dad&rsquo;s Windows XP PC. However, I never got into game development until now.</p>
-<p>Lately, I haven&rsquo;t been playing much due to having a potato laptop with a dead GPU and not being into any mobile games and since I&rsquo;m doing Comp Sci and have picked up some programming skills, I thought why not try game development.</p>
-<p>I started thinking about what game I could make. I don&rsquo;t think of myself as a creative person, but I kept returning to the idea of simple 2D box games. Then I thought of Ball Box which seemed like a good place to start. I started working on it and here we are.</p>
+    Motivation</h2><p>As far as my memory goes, I have always been into games. At the earliest, I remember playing the default games on my dad&rsquo;s Windows XP PC. However, I never got into game development until now.</p>
+<p>Lately, I haven&rsquo;t been gaming much due to having a potato laptop with a dead GPU and not being into any mobile games and since I&rsquo;m doing Comp Sci and have picked up some programming skills, I thought why not try game development.</p>
+<p>I started thinking about what game I could start with. I don&rsquo;t think of myself being a creative individual, but I kept returning to the idea of simple 2D box games. Then I thought of Ball Box which seemed like a good place to start. I started working on it and here we are.</p>
 <h2 id="challenges-faced">
-    Challenges Faced</h2><p>Being my first game, I deliberately avoided using game engines or high-level tools that would abstract away the underlying mechanics. I wanted to understand the basics of game development and how things work under the hood. This made me to use TypeScript and the HTML5 Canvas API to build the game from scratch.</p>
-<p>This meant I had to figure out all the required mechanics:</p>
+    Challenges Faced</h2><p>Being my first game, I deliberately avoided using game engines or high-level tools that would abstract away the underlying mechanics. I wanted to understand the basics of game development and how things work under the hood. This got me choosing <a
+
+		href = "https://www.typescriptlang.org/"
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"><span>TypeScript</span></a> and the HTML5 <a
+
+		href = "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"><span>Canvas API</span></a> to build the game from scratch.</p>
+<p>This meant I&rsquo;ve had to figure out all the required mechanics:</p>
 <ul>
 <li>Game loop</li>
 <li>Collision detection (Canvas API for bounding box of text is not friendly)</li>
@@ -357,7 +345,7 @@
 </ul>
 <h2 id="future-plans">
     Future Plans</h2><p>I had a lot of fun building Ball Box and got to learn a lot in the process. While I don&rsquo;t plan on extending Ball Box much, I plan to step up by working on more complex games and sticking to minimal-dependency development.</p>
-<p>The above has to wait because I only realize now while writing this, that using Canvas API abstracts away a lot of the underlying mechanics and is not true to the minimal-dependency approach I wanted to take. So, I have to backtrack and start lower like with rendering.</p>
+<p>The above has to wait because I only realize now while writing this, that using Canvas API abstracts away a lot of the underlying mechanics and is not &rsquo;true&rsquo; to the minimal-dependency approach I wanted to take. So, I have to backtrack and start lower like with rendering.</p>
 <h2 id="tech-stack">
     Tech Stack</h2><ul>
 <li>
@@ -369,7 +357,12 @@
 <li>
 <p><strong>Tools:</strong></p>
 <ul>
-<li>Webpack</li>
+<li><a
+
+		href = "https://webpack.js.org/"
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"><span>Webpack</span></a></li>
 </ul>
 </li>
 </ul>
@@ -597,7 +590,7 @@
 
     
         
-        <script src="/js/glossary.min.44c9d26a0dc47af256df49458f5b2b0daaea6ee8b016ea2d535ea21fbe2905bd.js"></script>
+        <script src="/js/glossary.min.40322288ad406138bb3ae2ad1beec71ecbd98d7aca814aad3e1fdce1f751642d.js"></script>
     
 </body>
 
