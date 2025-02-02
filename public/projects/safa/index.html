@@ -12,7 +12,7 @@
 <meta name="description" content="SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/projects/safa/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.31b1956430ca9461e540aa556b875710592f6073c93a0aadee6a5eeb28ac2d93.css" integrity="sha256-MbGVZDDKlGHlQKpVa4dXEFkvYHPJOgqt7mpe6yisLZM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b947bd8f70e2c32a92be7c29e29049def10daba478772dd30c4cb9f7aa18470a.css" integrity="sha256-uUe9j3DiwyqSvnwp4pBJ3vENq6R4dy3TDEy596oYRwo=" rel="preload stylesheet" as="style">
 <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:1313/favicon-96x96.png" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg" />
 <link rel="shortcut icon" href="http://localhost:1313/favicon.ico" />
@@ -101,8 +101,8 @@
   "keywords": [
     "eSports", "FIFA", "web interface", "Discord integration", "team management", "Redis", "OAuth2"
   ],
-  "articleBody": "SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.\nFeatures User Authentication: Users can login with their Discord account to access the service. Team Creation and Joining: Users can create teams and join teams. Player/Team/League Profiles: Detailed profiles with stats and role-based views. Team Management: Managers can manage teams and players. Search: Public searching for players, teams, and leagues. Gallery\nImplementation Authentication: Discord OAuth for user authentication using JWT and cookies. Backend: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management. Challenges Rate Limiting: Discord API has strict rate-limits for some endpoints. I used fetching with cache fallback using Redis to handle this. Concurrent Refresh Requests: In session management, multiple requests to refresh the access-token was causing issues. I handled this by using Redis as a mutex lock manager. Mistakes and Learnings Development environment flexibility: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug. Backend software architecture: I initially started developing the backend with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend. Testing: I didn’t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing. Tech Stack Frontend: React, Tailwind CSS Backend: Node.js, Express, Redis, Sequelize ",
-  "wordCount" : "334",
+  "articleBody": "SAFA is a web interface for an eSports FIFA tournament service that was operating in Discord through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user authentication and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.\nFeatures User Authentication: Users can login with their Discord account to access the service. Team Creation and Joining: Users can create teams and join teams. Player/Team/League Profiles: Detailed profiles with stats and role-based views. Team Management: Managers can manage teams and players. Search: Public searching for players, teams, and leagues. Gallery\rImplementation Authentication: Discord OAuth for user authentication using JWT and cookies. Backend: Three layered architecture (controller, service, DAO) with Express and Sequelize. Redis for caching and session management. Challenges Rate Limiting: Discord API has strict rate-limits for some endpoints. I used fetching with cache fallback\rusing Redis to handle this. Concurrent Refresh Requests: In session management, multiple requests to refresh the access-token was causing issues. I handled this by using Redis as a mutex lock manager\r. Mistakes and Learnings Development environment flexibility: When testing features, at frontend I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug. Backend software architecture: I initially started developing the backend with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend. Testing: I didn’t write tests for the frontend and backend. This made it difficult to refactor and add new features which taught me the importance of testing. Tech Stack Frontend: React, Tailwind CSS Backend: Node.js, Express, Redis, Sequelize ",
+  "wordCount" : "335",
   "inLanguage": "en",
   "datePublished": "2024-11-20T11:35:30+05:30",
   "dateModified": "2024-11-21T15:48:09+05:30",
@@ -293,19 +293,19 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="511928110126154714133"
+      glossary-data-tree-id="410811629714351311512"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="131091221543511178146"
+       glossary-data-tree-id="151271491381110453126"
        glossary-data-tree-node-id="0"
        glossary-data-term="ui"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="123151413810194576211"
+      glossary-data-tree-id="114131211532157968104"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="312961114827110151354"
+      glossary-data-tree-id="121112475159810314136"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
@@ -317,28 +317,49 @@
 <li><strong>Team Management</strong>: Managers can manage teams and players.</li>
 <li><strong>Search</strong>: Public searching for players, teams, and leagues.</li>
 </ol>
-<p><a href="https://imgur.com/a/safa-JpSDADI">Gallery</a></p>
+<p><a
+
+	
+
+		href = "https://imgur.com/a/safa-JpSDADI"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+    >
+
+	<span>
+		Gallery
+	</span>
+
+</a></p>
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="251415121394113861107"
+      glossary-data-tree-id="121112679415135101438"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="476512318152111391410"
+      glossary-data-tree-id="610121237413158911514"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="159710821251413111436"
+      glossary-data-tree-id="111214133415861109527"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="671591211101821335414"
+      glossary-data-tree-id="761410941313112128515"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="148161521193512104137"
+      glossary-data-tree-id="112151413510114987362"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
@@ -346,29 +367,71 @@
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="815141213152411937610"
+      glossary-data-tree-id="712621114381311545109"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
-      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a href="http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/">used fetching with cache fallback</a> using Redis to handle this.</li>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a
+
+	
+
+		href = "http://localhost:1313/blogs/overcoming-discord-api-rate-limits-with-redis-cache/"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+    >
+
+	<span>
+		used fetching with cache fallback
+	</span>
+
+</a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="125131139672414101158"
+      glossary-data-tree-id="413195153111262107814"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="691338714152121141105"
+      glossary-data-tree-id="811312515469171421310"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
-      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">by using Redis as a mutex lock manager</a>.</li>
+      aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a
+
+	
+
+		href = "http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+    >
+
+	<span>
+		by using Redis as a mutex lock manager
+	</span>
+
+</a>.</li>
 </ul>
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="137941514321011168512"
+      glossary-data-tree-id="141331019215611412875"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="210137361411198124515"
+      glossary-data-tree-id="131112549131015782614"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
@@ -394,6 +457,11 @@
       <li><a href="http://localhost:1313/tags/oauth2/">OAuth2</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:1313/blogs/fixing-the-typescript-error-ts2792-cannot-find-module/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Fixing the TypeScript Error TS2792: Cannot Find Module &#39;...&#39;</span>
+  </a>
   <a class="next" href="http://localhost:1313/projects/abothasnoname/">
     <span class="title">Next »</span>
     <br>
@@ -474,7 +542,12 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">ADeveloperHasNoName</a></span>
+            <span>
+                &copy;
+                2025
+                <a href="http://localhost:1313/">ADeveloperHasNoName</a>
+                <a href="http://creativecommons.org/licenses/by/4.0/legalcode">CC-BY-4.0</a>
+            </span>
         
 
     

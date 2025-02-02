@@ -12,7 +12,7 @@
 <meta name="description" content="A deep dive into handling concurrent refresh attempts of access tokens in a single-page application using JWT, OAuth, and Redis-based locking mechanisms to enhance token management security.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.31b1956430ca9461e540aa556b875710592f6073c93a0aadee6a5eeb28ac2d93.css" integrity="sha256-MbGVZDDKlGHlQKpVa4dXEFkvYHPJOgqt7mpe6yisLZM=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b947bd8f70e2c32a92be7c29e29049def10daba478772dd30c4cb9f7aa18470a.css" integrity="sha256-uUe9j3DiwyqSvnwp4pBJ3vENq6R4dy3TDEy596oYRwo=" rel="preload stylesheet" as="style">
 <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:1313/favicon-96x96.png" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg" />
 <link rel="shortcut icon" href="http://localhost:1313/favicon.ico" />
@@ -300,80 +300,80 @@
 
   <div class="post-content"><h2 id="background">
     Background</h2><p>I was tasked with extending an e-sports FIFA tournament service (SAFA) that had been operating primarily on <span class="glossary-term"
-      glossary-data-tree-id="729635814121511341011"
+      glossary-data-tree-id="158364112711312149510"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot, to the web. Since the <span class="glossary-term"
-      glossary-data-tree-id="154142125113713861910"
+      glossary-data-tree-id="212614314851513710119"
       glossary-data-tree-node-id="0"
       glossary-data-term="database"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">database</span> for users was modeled around their Discord account ID, the aim was to develop a <span class="glossary-term"
-      glossary-data-tree-id="121082147615951431311"
+      glossary-data-tree-id="138175291461015312114"
       glossary-data-tree-node-id="0"
       glossary-data-term="ui"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web interface</span> by integrating it with Discord. Thus I implemented login functionality using Discord <span class="glossary-term"
-      glossary-data-tree-id="310871221114619415513"
+      glossary-data-tree-id="378112611245914131510"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span>.</p>
 <h2 id="session-management-workflow">
     Session Management Workflow</h2><p>Initially, the user is logged out. When the user logs in with their discord account, an <span class="glossary-term"
-      glossary-data-tree-id="157101314823611211954"
+      glossary-data-tree-id="396510121113271415184"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> and <span class="glossary-term"
-      glossary-data-tree-id="491121410151213536187"
+      glossary-data-tree-id="134911102146712151583"
       glossary-data-tree-node-id="0"
       glossary-data-term="refresh-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">refresh-token</span> is created, both stored as <span class="glossary-term"
-      glossary-data-tree-id="314171196515121021384"
+      glossary-data-tree-id="102714118549113156312"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWTs</span> in <span class="glossary-term"
-      glossary-data-tree-id="158413121151479136102"
+      glossary-data-tree-id="671281351524113914110"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>. The access token is sent with all <span class="glossary-term"
-      glossary-data-tree-id="845117156129314211013"
+      glossary-data-tree-id="946215101214118113735"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> via the bearer authorization header for <span class="glossary-term"
-      glossary-data-tree-id="131112651810149215734"
+      glossary-data-tree-id="105126151214839111374"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and <span class="glossary-term"
-      glossary-data-tree-id="811126724131514915310"
+      glossary-data-tree-id="481296101214711155313"
       glossary-data-tree-node-id="0"
       glossary-data-term="authorization"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authorization</span> purposes, while the refresh token is only sent to a specific refresh endpoint (<code>/refresh</code>). The <span class="glossary-term"
-      glossary-data-tree-id="713128365151441191210"
+      glossary-data-tree-id="121513196357148111042"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> verifies these tokens (JWT verification) whenever <span class="glossary-term"
-      glossary-data-tree-id="712511141213108439615"
+      glossary-data-tree-id="816912210134711531415"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> (<span class="glossary-term"
-      glossary-data-tree-id="148549311121015721136"
+      glossary-data-tree-id="147315410128136129511"
       glossary-data-tree-node-id="0"
       glossary-data-term="website"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">website</span>) makes a request to it.</p>
 <p>If verification fails for reasons other than token expiration (missing token, invalid token signature), the user is logged out. If the token has expired, the frontend silently attempts to refresh it by sending an additional request to backend at <code>/refresh</code>. If the refresh is successful, new access and refresh tokens are issued, and the original request is retried. If any error occurs during this process, including token expiry, the user is logged out.</p>
 <h2 id="the-problem">
     The Problem</h2><p>This process works well when only one request is sent at a time. However, since the website uses <span class="glossary-term"
-      glossary-data-tree-id="714462111151310123958"
+      glossary-data-tree-id="214111210134576151398"
       glossary-data-tree-node-id="0"
       glossary-data-term="client-side-rendering"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">client-side-rendering</span> and is a <span class="glossary-term"
-      glossary-data-tree-id="141311215591108467123"
+      glossary-data-tree-id="814712649131510251311"
       glossary-data-tree-node-id="0"
       glossary-data-term="single-page-application"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">single-page-application</span> built with React, the web app often sends multiple <span class="glossary-term"
-      glossary-data-tree-id="129113615107813415142"
+      glossary-data-tree-id="831015597141112613142"
       glossary-data-tree-node-id="0"
       glossary-data-term="ajax-request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">ajax-requests</span> simultaneously. This can lead to unintended session termination due to <span class="glossary-term"
-      glossary-data-tree-id="471012148263115119513"
+      glossary-data-tree-id="914274156101381115312"
       glossary-data-tree-node-id="0"
       glossary-data-term="concurrency"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">concurrent</span> refresh attempts which logs the user out.</p>
@@ -405,7 +405,7 @@
     </figcaption>
 </figure>
 <p>I chose to implement a locking mechanism using <span class="glossary-term"
-      glossary-data-tree-id="132715114101149368125"
+      glossary-data-tree-id="618111031471351241529"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span>, a fast in-memory data store with built-in key expiry.</p>
@@ -534,7 +534,12 @@ Here’s how it works:</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">ADeveloperHasNoName</a></span>
+            <span>
+                &copy;
+                2025
+                <a href="http://localhost:1313/">ADeveloperHasNoName</a>
+                <a href="http://creativecommons.org/licenses/by/4.0/legalcode">CC-BY-4.0</a>
+            </span>
         
 
     

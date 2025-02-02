@@ -6,8 +6,57 @@
     <description>Recent content in Categories on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Dec 2024 16:08:47 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2025 19:17:58 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Education</title>
+      <link>http://localhost:1313/categories/education/</link>
+      <pubDate>Tue, 28 Jan 2025 19:17:58 +0530</pubDate>
+      <guid>http://localhost:1313/categories/education/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>http://localhost:1313/categories/technology/</link>
+      <pubDate>Tue, 28 Jan 2025 19:17:58 +0530</pubDate>
+      <guid>http://localhost:1313/categories/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game Development</title>
+      <link>http://localhost:1313/categories/game-development/</link>
+      <pubDate>Sun, 26 Jan 2025 23:22:53 +0530</pubDate>
+      <guid>http://localhost:1313/categories/game-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Projects</title>
+      <link>http://localhost:1313/categories/projects/</link>
+      <pubDate>Sun, 26 Jan 2025 23:22:53 +0530</pubDate>
+      <guid>http://localhost:1313/categories/projects/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/categories/programming/</link>
+      <pubDate>Thu, 23 Jan 2025 18:55:48 +0530</pubDate>
+      <guid>http://localhost:1313/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Troubleshooting</title>
+      <link>http://localhost:1313/categories/troubleshooting/</link>
+      <pubDate>Thu, 23 Jan 2025 18:55:48 +0530</pubDate>
+      <guid>http://localhost:1313/categories/troubleshooting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorials</title>
+      <link>http://localhost:1313/categories/tutorials/</link>
+      <pubDate>Thu, 23 Jan 2025 18:55:48 +0530</pubDate>
+      <guid>http://localhost:1313/categories/tutorials/</guid>
+      <description></description>
+    </item>
     <item>
       <title>ESports</title>
       <link>http://localhost:1313/categories/esports/</link>
@@ -83,13 +132,6 @@
       <link>http://localhost:1313/categories/security/</link>
       <pubDate>Sat, 12 Oct 2024 18:32:49 +0530</pubDate>
       <guid>http://localhost:1313/categories/security/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tutorials</title>
-      <link>http://localhost:1313/categories/tutorials/</link>
-      <pubDate>Wed, 09 Oct 2024 10:04:58 +0530</pubDate>
-      <guid>http://localhost:1313/categories/tutorials/</guid>
       <description></description>
     </item>
   </channel>

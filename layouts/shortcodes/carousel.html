@@ -1,0 +1,244 @@
+{{/*  container is for placing controls outside slides  */}}
+<div class="swiper-container">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            {{ .Inner }}
+        </div>
+    </div>
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+    {{/*  for controls outside slides  */}}
+    .swiper-container {
+      position: relative;
+      margin: 0 auto;
+      width: 80%; /* to fit swiper controls (arrows) */
+      aspect-ratio: 1/1; /* height not exceeding width looks alright */
+    }
+
+    {{/*
+      /* padding-bottom is used to give 'margin'. it sacrifices height of container/images
+      /* 45px is required for one row of slide pagination
+      /* 25px is required for each additional row of slide pagination
+      /* for viewport width less than 360px, one row fits 9 images
+      /* for ..., ...
+    */}}
+    @media (max-width: 360px) {
+      .swiper-container {
+        padding-bottom: {{ add 45 (mul (( math.Floor (div (sub (.Get "numSlides" | int ) 1) 9))) 25) }}px;
+      }
+    }
+    @media (min-width: 361px) and (max-width: 640px) {
+      .swiper-container {
+        padding-bottom: {{ add 45 (mul (( math.Floor (div (sub (.Get "numSlides" | int ) 1) 17))) 25) }}px;
+      }
+    }
+    @media (min-width: 641px) {
+      .swiper-container {
+        padding-bottom: {{ add 45 (mul (( math.Floor (div (sub (.Get "numSlides" | int ) 1) 20))) 25) }}px;
+      }
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+
+      border: 3px solid black;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      cursor: zoom-in;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    {{/*  for controls outside slides  */}}
+    .swiper-container .swiper-button-prev{
+        left: -40px;
+    }
+    .swiper-container .swiper-button-next{
+        right: -40px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: var(--primary);
+      opacity: 1;
+      background: var(--code-bg);
+    }
+
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 20,
+    loop: true,
+    lazy: true,
+
+    {{ if ne ( .Get "autoplay" | default "0" ) "0" }}
+        autoplay: {
+            delay: {{ .Get "autoplay" }},
+            disableOnInteraction: true,
+        },
+    {{ end }}
+
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      },
+    },
+  });
+</script>
+
+{{/*  slide.html  */}}
+<script>
+    function openCarouselSlideModal(imgElement, descText) {
+        let existingModal = document.getElementById("carousel-slide-modal");
+
+        if (!existingModal) {
+            disableBackgroundScroll(); // Prevent background scrolling
+
+            let modal = document.createElement("div");
+            modal.id = "carousel-slide-modal";
+            modal.style.position = "fixed";
+            modal.style.top = "0";
+            modal.style.left = "0";
+            modal.style.width = "100vw";
+            modal.style.height = "100vh";
+            modal.style.backgroundColor = "var(--code-bg);";
+            modal.style.backdropFilter = "blur(7px)";
+            modal.style.display = "flex";
+            modal.style.alignItems = "center";
+            modal.style.justifyContent = "center";
+            modal.style.zIndex = "1000";
+
+            let modalContent = document.createElement("div");
+            modalContent.style.position = "relative";
+            modalContent.style.width = "90%";
+            modalContent.style.height = "70%";
+            modalContent.style.display = "flex";
+            modalContent.style.flexDirection = "column";
+            modalContent.style.alignItems = "around";
+            modalContent.style.justifyContent = "center";
+            modalContent.style.gap = "25px";
+
+            let modalImg = document.createElement("img");
+            modalImg.src = imgElement.src;
+            modalImg.style.width = "100%";
+            modalImg.style.height = "100%";
+            modalImg.style.objectFit = "contain";
+            modalImg.style.cursor = "zoom-in";
+
+            // Enable zooming
+            modalImg.onclick = function () {
+                if (modalImg.style.transform === "scale(2)") {
+                    modalImg.style.transform = "scale(1)";
+                    modalImg.style.cursor = "zoom-in";
+                } else {
+                    modalImg.style.transform = "scale(2)";
+                    modalImg.style.cursor = "zoom-out";
+                }
+            };
+
+            if (descText) {
+                let desc = document.createElement("p");
+                desc.innerText = descText;
+                desc.style.color = "var(--primary);";
+                desc.style.textAlign = "center";
+                desc.style.marginTop = "10px";
+                desc.style.fontWeight = "bold";
+                desc.style.fontSize = "18px";
+                desc.style.textShadow = "-1px -1px 0 var(--code-bg), 1px -1px 0 var(--code-bg), -1px 1px 0 var(--code-bg), 1px 1px 0 var(--code-bg)";
+                modalContent.appendChild(desc);
+            }
+
+            let closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&#x2716;";
+            closeBtn.style.position = "absolute";
+            closeBtn.style.top = "30px";
+            closeBtn.style.right = "45px";
+            closeBtn.style.fontSize = "30px";
+            closeBtn.style.color = "var(--primary);";
+            closeBtn.style.fontWeight = "bold";
+            closeBtn.style.cursor = "pointer";
+            closeBtn.onclick = closeModal;
+
+            modalContent.appendChild(modalImg);
+            modal.appendChild(modalContent);
+            modal.appendChild(closeBtn);
+            modal.onclick = function (event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            };
+
+            document.body.appendChild(modal);
+        }
+    }
+
+    function closeModal() {
+        document.body.style.overflow = ""; // Restore scrolling
+        enableBackgroundScroll();
+        let modal = document.getElementById("carousel-slide-modal");
+        if (modal) {
+            document.body.removeChild(modal);
+        }
+    }
+
+    // Prevent background scrolling
+    function disableBackgroundScroll() {
+        document.body.style.overflow = "hidden"; // Disable scrolling
+        document.addEventListener("wheel", preventScroll, { passive: false });
+        document.addEventListener("keydown", preventArrowScroll);
+    }
+
+    // Restore scrolling after modal is closed
+    function enableBackgroundScroll() {
+        document.body.style.overflow = "";
+        document.removeEventListener("wheel", preventScroll);
+        document.removeEventListener("keydown", preventArrowScroll);
+    }
+
+    // Prevent scrolling via mouse wheel
+    function preventScroll(event) {
+        event.preventDefault();
+    }
+
+    // Prevent scrolling via arrow keys (Up, Down, Left, Right)
+    function preventArrowScroll(event) {
+        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Space"].includes(event.key)) {
+            event.preventDefault();
+        }
+    }
+</script>

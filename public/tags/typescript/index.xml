@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Typescript on ADeveloperHasNoName</title>
+    <link>http://localhost:1313/tags/typescript/</link>
+    <description>Recent content in Typescript on ADeveloperHasNoName</description>
+    <generator>Hugo -- 0.135.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jan 2025 23:22:53 +0530</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ball Box</title>
+      <link>http://localhost:1313/projects/ball-box/</link>
+      <pubDate>Sun, 26 Jan 2025 23:22:53 +0530</pubDate>
+      <guid>http://localhost:1313/projects/ball-box/</guid>
+      <description>Explore Ball Box, a minimal-dependency 2D interactive game that introduces players to survival mechanics while building the fundamentals of game development using TypeScript and the Canvas API.</description>
+    </item>
+    <item>
+      <title>Fixing the TypeScript Error TS2792: Cannot Find Module &#39;...&#39;</title>
+      <link>http://localhost:1313/blogs/fixing-the-typescript-error-ts2792-cannot-find-module/</link>
+      <pubDate>Thu, 23 Jan 2025 18:55:48 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/fixing-the-typescript-error-ts2792-cannot-find-module/</guid>
+      <description>Learn how to troubleshoot and fix the common TypeScript error &amp;lsquo;Cannot find module&amp;rsquo; (example: undici-types), including modifying compiler options, adding path aliases, and reinstalling dependencies.</description>
+    </item>
+  </channel>
+</rss>

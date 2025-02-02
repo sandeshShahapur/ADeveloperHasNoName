@@ -6,8 +6,15 @@
     <description>Recent content in Tutorials on ADeveloperHasNoName</description>
     <generator>Hugo -- 0.135.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Dec 2024 16:08:47 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2025 18:55:48 +0530</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing the TypeScript Error TS2792: Cannot Find Module &#39;...&#39;</title>
+      <link>http://localhost:1313/blogs/fixing-the-typescript-error-ts2792-cannot-find-module/</link>
+      <pubDate>Thu, 23 Jan 2025 18:55:48 +0530</pubDate>
+      <guid>http://localhost:1313/blogs/fixing-the-typescript-error-ts2792-cannot-find-module/</guid>
+      <description>Learn how to troubleshoot and fix the common TypeScript error &amp;lsquo;Cannot find module&amp;rsquo; (example: undici-types), including modifying compiler options, adding path aliases, and reinstalling dependencies.</description>
+    </item>
     <item>
       <title>Overcoming Concurrent Refresh Attempts of Access Tokens (JWT)</title>
       <link>http://localhost:1313/blogs/overcoming-concurrent-refresh-attempts-of-access-tokens-jwt/</link>
