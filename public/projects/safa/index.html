@@ -293,19 +293,19 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="410811629714351311512"
+      glossary-data-tree-id="131073815649214121115"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="151271491381110453126"
+       glossary-data-tree-id="812611159571034114213"
        glossary-data-tree-node-id="0"
        glossary-data-term="ui"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="114131211532157968104"
+      glossary-data-tree-id="311131281792514641510"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="121112475159810314136"
+      glossary-data-tree-id="141213457693151018112"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
@@ -342,24 +342,24 @@
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="121112679415135101438"
+      glossary-data-tree-id="107312654142915113811"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="610121237413158911514"
+      glossary-data-tree-id="151098116121312735144"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="111214133415861109527"
+      glossary-data-tree-id="159141141072311356812"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="761410941313112128515"
+      glossary-data-tree-id="481312142151153197610"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="112151413510114987362"
+      glossary-data-tree-id="414710131591216115823"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
@@ -367,7 +367,7 @@
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="712621114381311545109"
+      glossary-data-tree-id="412913214715311105168"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a
@@ -393,11 +393,11 @@
 
 </a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="413195153111262107814"
+      glossary-data-tree-id="121098234515111371614"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="811312515469171421310"
+      glossary-data-tree-id="710134912865151123141"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a
@@ -426,12 +426,12 @@
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="141331019215611412875"
+      glossary-data-tree-id="141511619122347108135"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="131112549131015782614"
+      glossary-data-tree-id="811141331721512964510"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
