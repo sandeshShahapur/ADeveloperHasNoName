@@ -1,0 +1,62 @@
+/*  1. .logo consists of website logo, name and theme toggle button
+    2. On screens 374px and below, the theme toggle button wraps
+    3. so we decrease the font size of the logo
+
+    4. below media works 318px and upwards but as typical min width is 320, it is better to not go lower
+*/
+@media (max-width: 328px) {
+    .logo a {
+        font-size: 19px;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 329px) and (max-width: 340px) {
+    .logo a {
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 341px) and (max-width: 351px) {
+    .logo a {
+        font-size: 21px;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 352px) and (max-width: 374px) {
+    .logo a {
+        font-size: 22px;
+        font-weight: 700;
+    }
+}
+
+/*  1. #menu consists of the menu items (home, search, blogs, etc)
+    2. On screens 394px and below, the menu items wrap
+    3. So we decrease the font size of the menu items
+
+    4. below media works from 321 and upwards but as typical min width is 320, it is better to not go lower
+*/
+@media (max-width: 338px) {
+    #menu a {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 339px) and (max-width: 394px) {
+    #menu a {
+        font-size: 13px;
+    }
+}
+
+
+/* 1. .nav consists of the .logo and #menu
+   2. On screens 859px and below, the logo and menu items wrap
+   3. So we get them to center by space-around (default is space-between)
+*/
+@media (max-width: 859px) {
+    .nav {
+        justify-content: space-around;
+    }
+}

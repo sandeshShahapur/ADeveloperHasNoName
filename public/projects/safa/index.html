@@ -12,7 +12,7 @@
 <meta name="description" content="SAFA is a web platform for FIFA eSports tournaments, transitioning from a Discord bot to a full-fledged web interface with features like team management, stats tracking, and user authentication through Discord.">
 <meta name="author" content="Sandesh Shahapur">
 <link rel="canonical" href="http://localhost:1313/projects/safa/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b947bd8f70e2c32a92be7c29e29049def10daba478772dd30c4cb9f7aa18470a.css" integrity="sha256-uUe9j3DiwyqSvnwp4pBJ3vENq6R4dy3TDEy596oYRwo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7bdf4f1cbd4c2d0bdb349f6035e5b51f63e3510a218228c5fdaf0af144462fb7.css" integrity="sha256-e99PHL1MLQvbNJ9gNeW1H2PjUQohgijF/a8K8URGL7c=" rel="preload stylesheet" as="style">
 <link rel="icon" type="image/png" sizes="96x96" href="http://localhost:1313/favicon-96x96.png" />
 <link rel="icon" type="image/svg+xml" href="http://localhost:1313/favicon.svg" />
 <link rel="shortcut icon" href="http://localhost:1313/favicon.ico" />
@@ -293,19 +293,19 @@
 </div>
 
   <div class="post-content"><p>SAFA is a <span class="glossary-term"
-      glossary-data-tree-id="174285146913111215103"
+      glossary-data-tree-id="151264375813101921411"
       glossary-data-tree-node-id="0"
       glossary-data-term="web"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">web</span> <span class="glossary-term"
-       glossary-data-tree-id="131072114128155913146"
+       glossary-data-tree-id="495111017681415123132"
        glossary-data-tree-node-id="0"
        glossary-data-term="ui"
        aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">interface</span> for an eSports FIFA tournament service that was operating in <span class="glossary-term"
-      glossary-data-tree-id="718142410511126315913"
+      glossary-data-tree-id="134141229107515311681"
       glossary-data-tree-node-id="0"
       glossary-data-term="discord"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Discord</span> through a Discord bot. The goal was to expand the service to the web. The service hosts FIFA tournaments where users can register as players, create teams, and participate in tournaments. It is integrated with Discord for user <span class="glossary-term"
-      glossary-data-tree-id="412109853146113112157"
+      glossary-data-tree-id="141589725161334101211"
       glossary-data-tree-node-id="0"
       glossary-data-term="authentication"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">authentication</span> and provides features such as team creation and joining, player/team/league profiles with detailed stats and role-based views through public searching, and team management for managers.</p>
@@ -326,24 +326,24 @@
 <h2 id="implementation">
     Implementation</h2><ul>
 <li><strong>Authentication</strong>: Discord <span class="glossary-term"
-      glossary-data-tree-id="115148943111210137562"
+      glossary-data-tree-id="816111214243139107155"
       glossary-data-tree-node-id="0"
       glossary-data-term="oauth"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">OAuth</span> for user authentication using <span class="glossary-term"
-      glossary-data-tree-id="105151133711214861249"
+      glossary-data-tree-id="143137611012155498112"
       glossary-data-tree-node-id="0"
       glossary-data-term="jwt"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">JWT</span> and <span class="glossary-term"
-      glossary-data-tree-id="591141513316147102128"
+      glossary-data-tree-id="215951211781014411336"
       glossary-data-tree-node-id="0"
       glossary-data-term="cookie"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">cookies</span>.</li>
 <li><strong>Backend</strong>: Three layered architecture (controller, service, DAO) with Express and Sequelize. <span class="glossary-term"
-      glossary-data-tree-id="859151110121314123647"
+      glossary-data-tree-id="121315196147118102354"
       glossary-data-tree-node-id="0"
       glossary-data-term="redis"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">Redis</span> for <span class="glossary-term"
-      glossary-data-tree-id="481213156141510371129"
+      glossary-data-tree-id="698111423121513741105"
       glossary-data-tree-node-id="0"
       glossary-data-term="cache"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">caching</span> and session management.</li>
@@ -351,7 +351,7 @@
 <h2 id="challenges">
     Challenges</h2><ul>
 <li><strong>Rate Limiting</strong>: Discord API has strict <span class="glossary-term"
-      glossary-data-tree-id="117122831551410149613"
+      glossary-data-tree-id="110414311961527813125"
       glossary-data-tree-node-id="0"
       glossary-data-term="rate-limit"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">rate-limits</span> for some endpoints. I <a
@@ -361,11 +361,11 @@
 		target = "_blank"
 		rel = "nofollow noopener noreferrer"><span>used fetching with cache fallback</span></a> using Redis to handle this.</li>
 <li><strong>Concurrent Refresh Requests</strong>: In session management, multiple <span class="glossary-term"
-      glossary-data-tree-id="910157514112812643131"
+      glossary-data-tree-id="915118136141251014327"
       glossary-data-tree-node-id="0"
       glossary-data-term="request"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">requests</span> to refresh the <span class="glossary-term"
-      glossary-data-tree-id="649710513213141512118"
+      glossary-data-tree-id="153161171012142841359"
       glossary-data-tree-node-id="0"
       glossary-data-term="access-token"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">access-token</span> was causing issues. I handled this <a
@@ -378,12 +378,12 @@
 <h2 id="mistakes-and-learnings">
     Mistakes and Learnings</h2><ul>
 <li><strong>Development environment flexibility</strong>: When testing features, at <span class="glossary-term"
-      glossary-data-tree-id="315112451213681014971"
+      glossary-data-tree-id="914106531113812715412"
       glossary-data-tree-node-id="0"
       glossary-data-term="frontend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">frontend</span> I often needed to change my configurations like player ID, team ID, isManager, etc. which I initially hardcoded in the frontend code instead of conditionally using environment variables based on the environment (development/production). This made it difficult to test and debug.</li>
 <li><strong>Backend software architecture</strong>: I initially started developing the <span class="glossary-term"
-      glossary-data-tree-id="621210155141971334118"
+      glossary-data-tree-id="151291381147361214510"
       glossary-data-tree-node-id="0"
       glossary-data-term="backend"
       aria-haspopup="dialog"onclick="fetchAndRenderGlossaryDefinition(this)">backend</span> with a monolithic architecture which made it difficult to extend and maintain. I later refactored it to a three-layered architecture which made it easier to manage and extend.</li>
