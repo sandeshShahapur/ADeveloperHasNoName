@@ -5,9 +5,9 @@ markup:
         block: true
         title: true
 
+title: ADeveloperHasNoName
 baseURL: https://adeveloperhasnoname.dev/
 languageCode: en-us
-title: ADeveloperHasNoName
 
 theme: ["PaperMod"]
 menu:
@@ -36,6 +36,7 @@ menu:
       name: Glossary
       url: /glossary/
       weight: 6
+
 params:
   env: production
   author: "Sandesh Shahapur"
@@ -83,6 +84,7 @@ params:
     URL: "https://github.com/sandeshShahapur/ADeveloperHasNoName/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
+
   socialIcons:
     - name: GitHub
       url: "https://github.com/sandeshshahapur"
@@ -99,12 +101,15 @@ params:
     - name: buymeacoffee
       url: "https://buymeacoffee.com/adeveloperl"
       icon: buymeacoffee
+
   ShowBreadcrumbs: true
   ShowReadingTime: true
   ShowCodeCopyButtons: true
   ShowToc: true
   ShowPostNavLinks: true
   ShowShareButtons: true
+
+
 outputs:
   home:
     - HTML
