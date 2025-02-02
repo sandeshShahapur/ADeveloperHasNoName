@@ -14,8 +14,6 @@ function handleImageAsPerTheme() {
 
     // Get all images that support current theme
     const images = document.querySelectorAll(`img[${themeSrc}]`);
-    console.log(images);
-
 
     // Handle the limitation (lint 45) - Fade out the image after which the src will be replaced and then fade in
     images.forEach(image => {

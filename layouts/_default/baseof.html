@@ -27,7 +27,10 @@
         const environment = '{{ .Site.Params.env }}';
     </script>
 
-    {{/*  load in all sites as it is used in header.html */}}
+    {{/*
+    *    Required for images that have light/dark variants i.e. uses `data-src-light` and `data-src-dark`
+    *    We will always load it because the logo in header (present in all sites) uses it
+    */}}
     {{ $theme_js := resources.Get "js/theme.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $theme_js.RelPermalink }}"></script>
 
